@@ -656,12 +656,12 @@ def check_obvious_number(m, first=1, only=False):
                     possible.append(p2)
                 if len(possible) == 1:
                     sets += 1
-                    SetInMoreObvious = False
+                    flag_set_more_obvious = False
                     if CHECK_MORE_OBVIOUS:
-                        SetInMoreObvious = set_obvious_method_for_pos(m, METHOD_CHECK_OBVIOUS, possible[0], num)
-                    if not SetInMoreObvious:
+                        flag_set_more_obvious = set_obvious_method_for_pos(m, METHOD_CHECK_OBVIOUS, possible[0], num)
+                    if not flag_set_more_obvious:
                         m.setit(possible[0].x, possible[0].y, num, d="checkObviousNumber", info=info)
-                    # call self to solve the same number completly
+                    # call self to solve the same number completely
                     r = check_obvious_number(m, first=num, only=SCAN_ALL_NUMBER)
                     sets += r[0]
                     return sets, r[1], r[2], r[3], r[4]
