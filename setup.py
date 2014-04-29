@@ -15,6 +15,7 @@ setup(name='SudokuStudyLib',
       description='Sudoku Solving Library',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
+          "Environment :: Console",
           "Programming Language :: Python",
           "Topic :: Games/Entertainment :: Puzzle Games",
           "Topic :: Education",

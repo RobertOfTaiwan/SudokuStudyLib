@@ -1,41 +1,51 @@
+"""
+.. module:: sudoku
+   :platform: Unix, Windows
+   :synopsis: oop's method of solving sudoku
+
+.. moduleauthor:: Robert J. Hwang <RobertOfTaiwan@gmail.com>
+"""
+
 import sys
 import copy
 import itertools
 import traceback
 import time
+import os
 
 # global variable
-methodLoopIdx = 0   # the index of the methods loops
-methodIdx = 0   # the method idx which run now
-checkPos = None     # set this varible, if you want to make an exception when this position has been set
-writeDownAlready = False    # if the every un-assigned positions have been writen down their possible number?
-emulatePossibles = 2    # to set the possibles when using emulate method, for both positions and numbers
-tryStack = []   # the try Stack
+methodLoopIdx = 0  # the index of the methods loops
+methodIdx = 0  # the method idx which run now
+checkPos = None  # set this varible, if you want to make an exception when this position has been set
+writeDownAlready = False  # if the every un-assigned positions have been writen down their possible number?
+emulatePossibles = 2  # to set the possibles when using emulate method, for both positions and numbers
+tryStack = []  # the try Stack
 tryIdx = 0
 tryUse = True
 emuUse = True
-Scope = 0   # the scope of difficult level
-Level = 0   # the level Limit, 0 means no limit
+Scope = 0  # the scope of difficult level
+Level = 0  # the level Limit, 0 means no limit
+NowPath = os.path.abspath(os.path.dirname(__file__))
 
-ACTION_SET = 's'        # action of set number
-ACTION_REDUCE = 'r'     # action of reduce number
+ACTION_SET = 's'  # action of set number
+ACTION_REDUCE = 'r'  # action of reduce number
 WRITEN_POSSIBLE_LIMITS = 3  # When a position's possible numbers <= this numer,
-                            # it will be assume that it's possible number has been writen down for a human,
-                            # 0 is same as 9 means no any limit
-ACTION_GET_INFO = False     # if want to get the info of an action,
-                            # those can be re-played by the info to describe the action
-SCAN_ONE_NUMBER = True      # in the methods of scanning numbers, use this to scan only one number
-SCAN_ALL_NUMBER = False     # in the methods of scanning numbers, use this to scan all numbers
-SCAN_DEF_BEGIN = 1          # in the methods of scanning number, the default begin number
-METHOD_DEF_BEGIN = 0        # the default idx of a serial methods to start
-METHOD_FILL_LAST = 0        # the idx of the method of filling the last position in a group
+# it will be assume that it's possible number has been writen down for a human,
+# 0 is same as 9 means no any limit
+ACTION_GET_INFO = False  # if want to get the info of an action,
+# those can be re-played by the info to describe the action
+SCAN_ONE_NUMBER = True  # in the methods of scanning numbers, use this to scan only one number
+SCAN_ALL_NUMBER = False  # in the methods of scanning numbers, use this to scan all numbers
+SCAN_DEF_BEGIN = 1  # in the methods of scanning number, the default begin number
+METHOD_DEF_BEGIN = 0  # the default idx of a serial methods to start
+METHOD_FILL_LAST = 0  # the idx of the method of filling the last position in a group
 METHOD_CHECK_OBVIOUS = 1  # the idx of the method of check obvious numbers
 METHOD_WRITE_POSSIBLE = 4  # the method which write down all possible numbers in the positions
-DEBUG_MODE = True   # it is in the debug mode?
-CHECK_MORE_OBVIOUS = True   # When a postion will be setting in a method, does check it for more obvious way?
+DEBUG_MODE = True  # it is in the debug mode?
+CHECK_MORE_OBVIOUS = True  # When a postion will be setting in a method, does check it for more obvious way?
 METHOD_BASIC_LEVEL = 7  # Basic methods
-METHOD_EMULATE_START = 8    # the emulate method begin idx
-METHOD_USE_TRY = True   # the default of using try method or not
+METHOD_EMULATE_START = 8  # the emulate method begin idx
+METHOD_USE_TRY = True  # the default of using try method or not
 METHOD_USE_EMU = False  # the default of using emulator
 METHOD_LEVEL_LIMIT_WHENTRY = 2  # if start using try, set the level limit to use
 
@@ -43,6 +53,7 @@ METHOD_LEVEL_LIMIT_WHENTRY = 2  # if start using try, set the level limit to use
 class SudokuError(Exception):
     """An exception when x, y can't be set or reduce to or form the number v
     t: is the type: 's' means set, 'r' means reduce"""
+
     def __init__(self, x, y, v, t):
         self.x = x
         self.y = y
@@ -52,6 +63,7 @@ class SudokuError(Exception):
 
 class SudokuDone(Exception):
     """An exception When the table has been filled 81 positions"""
+
     def __init__(self, x, y, v):
         self.x = x
         self.y = y
@@ -60,12 +72,14 @@ class SudokuDone(Exception):
 
 class SudokuStop(Exception):
     """An exception When the the record number >= recLimit"""
+
     def __init__(self):
         pass
 
 
 class SudokuWhenPosSet(Exception):
     """An exception When the position, checkPos, has been set, and program want to setit"""
+
     def __init__(self, x, y, v):
         self.x = x
         self.y = y
@@ -74,13 +88,14 @@ class SudokuWhenPosSet(Exception):
 
 class Point:
     """A Position in a Sudoku's table"""
+
     def __init__(self, x, y):
         self.x = x
         self.y = y
         self.v = 0
         self.possible = list(i for i in range(1, 10))
         self.writen = False  # does the position's possible number has been writen by man
-        self.b = int(x / 3) * 3 + int(y / 3)   # the box index which this position belong to
+        self.b = int(x / 3) * 3 + int(y / 3)  # the box index which this position belong to
 
     def __repr__(self):
         return "p({0},{1})".format(self.x + 1, self.y + 1)
@@ -111,7 +126,7 @@ class Point:
             if x == self.x or y == self.y:
                 rtn.append((x, y))
         return rtn
-                
+
 
 class GroupBase:
     def __init__(self, idx, p):
@@ -119,7 +134,7 @@ class GroupBase:
         self.p = p
         self.filled = 0
         self.possible = list(i for i in range(1, 10))
-        self.chain = []     # store this group's chain positions
+        self.chain = []  # store this group's chain positions
 
     def allow(self, v):
         """check the group can be filled the number(v)?"""
@@ -140,7 +155,7 @@ class GroupBase:
     def count_num_possible(self, count=1):
         """get the un-assigned position in this group, and possible numbers only in [count] postions
         return: [(num,[p1, p2...]),...]"""
-        
+
         rtn = []
         # count all possible number in to c and pos list, c is the times it show in the posiiton,
         # p records which positions
@@ -154,7 +169,7 @@ class GroupBase:
         for i in range(9):
             if c[i] == count:
                 rtn.append((i + 1, pos[i]))
-                
+
         return rtn
 
     def get_all_pos(self, diff=[], method="a", num=0, notInLineX=None, notInLineY=None, chain=None, possibles=None):
@@ -191,7 +206,7 @@ class GroupBase:
 
 class LineX(GroupBase):
     """Line of X"""
-        
+
     def __repr__(self):
         rtn = ""
         for x in self.p:
@@ -201,7 +216,7 @@ class LineX(GroupBase):
 
 class LineY(GroupBase):
     """Line of Y"""
-            
+
     def __repr__(self):
         rtn = ""
         for x in self.p:
@@ -211,27 +226,28 @@ class LineY(GroupBase):
 
 class Box(GroupBase):
     """Box"""
+
     def __init__(self, idx, p):
         super(Box, self).__init__(idx, p)
         x = int(idx / 3)
         y = idx % 3
         # record all the box's related boxes 
         self.effects = set()
-        self.effectsX = set()   # x-direction's effect boxes
-        self.effectsY = set()   # y-direction's effect boxes
+        self.effectsX = set()  # x-direction's effect boxes
+        self.effectsY = set()  # y-direction's effect boxes
         for i in range(3):
             for j in range(3):
                 if (i == x and j != y) or (i != x and j == y):
                     idx = i * 3 + j
                     self.effectsX.add(idx) if i == x else self.effectsY.add(idx)
                     self.effects.add(idx)
-        self.groupnumber = set()    # record the box's group number
-        
+        self.groupnumber = set()  # record the box's group number
+
     def __repr__(self):
         rtn = ""
         for i in range(3):
             for j in range(3):
-                p1 = self.p[j*3 + i]
+                p1 = self.p[j * 3 + i]
                 rtn = rtn + "{0:3d}".format(p1.v)
             rtn += "\n"
         return rtn
@@ -241,7 +257,7 @@ class Box(GroupBase):
         we call it as a GroupNumber"""
         if len(pos) <= 0:
             pos = super(Box, self).get_all_pos(num=num, method="u", notInLineX=notInLineX, notInLineY=notInLineY)
-        
+
         amt = len(pos)
         if amt < 2 or amt > 3:
             return None
@@ -262,36 +278,38 @@ class Box(GroupBase):
                 return None
         # record the number
         self.groupnumber.add(num)
-        
+
         return GroupNumber(self.idx, num, pos, direction, idx)
-            
-            
+
+
 class GroupNumber():
     """Group Number in Box"""
-    
+
     def __init__(self, b, num, p, direction, idx):
         self.b = b  # box idx
         self.num = num  # 1..9
         self.p = p  # the positions' list which form a group number
         self.direction = direction  # "x": as a x-line's number, "y": as a y-line's number
         self.idx = idx  # x-line or y-line's index
-        
+
     def __repr__(self):
-        rtn = "GroupNumber({0}) in box({1}) formed by {2} at line-{3}({4})".format(self.num, self.b, repr(self.p), self.direction, self.idx)
+        rtn = "GroupNumber({0}) in box({1}) formed by {2} at line-{3}({4})".format(self.num, self.b, repr(self.p),
+                                                                                   self.direction, self.idx)
         return rtn
 
 
 class Number:
     """Number Object"""
+
     def __init__(self, v):
         self.v = v
         self.p = list()
         self.filled = 0
-        self.group = []     # store the GroupNumber info
+        self.group = []  # store the GroupNumber info
 
     def __repr__(self):
         return repr(self.p)
-        
+
     def setit(self, p1):
         """save assigned position in the p list"""
         self.p.append(p1)
@@ -313,23 +331,25 @@ class Number:
 class Chain:
     """A chain of two and above positions which are not in the same box but in the same line
     and can form a chain, means the possible number in this chain positions only can be filled in these positions"""
+
     def __init__(self, numList, posList):
         self.numList = numList
         self.posList = posList
         #self.direction = "x" if posList[0].x == posList[1].x else "y"
         #self.idx = posList[0].x if self.direction == "x" else posList[0].y
+
     def __repr__(self):
         return "chain({0} in Pos({1})".format(self.numList, self.posList)
 
 
 class Matrix:
     """A Table of a Sudoku"""
-    
+
     def __init__(self, file=""):
-        self.rec = []       # record all the steps,
-                            # element's format is (x, y, v, t, d), t="s"|"r", d="Description String"
-        self.filled = 0     # record how many numbers have been assigned in this table
-        self.done = False   # if solved or not
+        self.rec = []  # record all the steps,
+        # element's format is (x, y, v, t, d), t="s"|"r", d="Description String"
+        self.filled = 0  # record how many numbers have been assigned in this table
+        self.done = False  # if solved or not
         self.error = False  # if there is an error occurs
         self.lineX = list([] for i in range(9))
         self.lineY = list([] for i in range(9))
@@ -344,10 +364,10 @@ class Matrix:
             for j in range(3):
                 idx = i * 3 + j
                 self.b[idx] = Box(idx, list(self.p[3 * i + x][3 * j + y] for x in range(3) for y in range(3)))
-        for i in range(1, 10):   # the first, index=0 will not be used
+        for i in range(1, 10):  # the first, index=0 will not be used
             self.n[i] = Number(i)
 
-        self.chain = [] # store chains in this list
+        self.chain = []  # store chains in this list
 
         # read define  
         if file != "":
@@ -358,7 +378,7 @@ class Matrix:
         rtn = []
         for line in self.lineX:
             rtn = rtn + line.get_all_pos(method=method, num=num, chain=chain, diff=diff, possibles=possibles)
-        return(rtn)
+        return (rtn)
 
     def sort_unassigned_pos_by_possibles(self, possibles=0):
         """Get unassign position's possible number list, format is [p1, p2,...]
@@ -374,7 +394,7 @@ class Matrix:
                     continue
                 rtn.append(self.p[i][j])
         rtn = sorted(rtn, key=lambda pos: len(pos.possible))
-        return rtn        
+        return rtn
 
     def can_see(self, p0, method="u", num=0):
         """get the possition list which can see the position, p
@@ -394,13 +414,13 @@ class Matrix:
                         continue
                 rtn.append(p1)
         return rtn
-            
+
     def setit(self, x, y, v, d="define", info=""):
         """set the position x, y to be the number v
         return: >=1 if set successfully, 0 if it can't be set the number v"""
 
         global checkPos  # the position want to check
-        
+
         sets = 0
         if not self.allow(x, y, v):
             raise SudokuError(x, y, v, ACTION_SET)
@@ -431,7 +451,7 @@ class Matrix:
             rtn = self.reduce(p1.x, p1.y, v, d="set")
             if rtn >= 2:
                 sets += 1
-       
+
         # record the number's position
         self.n[v].setit(self.p[x][y])
 
@@ -462,15 +482,17 @@ class Matrix:
 
     def reduce(self, x, y, v, d="set", check=False, info=""):
         """reduce the position(x, y)'s possible numbers from v
-        return : 2 if set a number,
-                 1 if just set number
-                 0 if is not in the possible set, if check is True, it will raise an SudokuError exception
+        Return:
+            int, as following::
+                2 -- if set a number,
+                1 -- if just set number
+                0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception
         """
         global methodLoopIdx, methodIdx
 
         if len(self.p[x][y].possible) <= 1:
             raise SudokuError(x, y, v, ACTION_REDUCE)
-        
+
         if v in self.p[x][y].possible:
             self.p[x][y].possible.remove(v)
             # record this step
@@ -503,7 +525,7 @@ class Matrix:
                 self.setit(x, y, v)
                 i += 1
         return i
-        
+
     def __repr__(self):
         rtn = ""
         for i in range(9):
@@ -514,17 +536,27 @@ class Matrix:
 
 
 def fill_only_one_possible(m, first=1, only=False):
-    """Check every unassigned position, if it's possible numbers left one only
-    WRITEN_POSSIBLE_LIMIT:  True, Check position's writen is True or note
-                            False, don't check"""
+    """Check every unassigned position, if it's possible numbers left one only WRITEN_POSSIBLE_LIMIT:  True, Check position's writen is True or note False, don't check.
+
+    Args:
+        m: Matrix Object
+        first (int): the first number of checking
+        only (bool): just check the first number or not
+
+    Returns:
+        in the tuple format (sets, reduces, method Index to restart using, first, only)
+
+    """
     sets = 0
     for line in m.p:
         for p1 in line:
-            if (WRITEN_POSSIBLE_LIMITS == 0 or (WRITEN_POSSIBLE_LIMITS > 0 and p1.writen)) and p1.v == 0 and len(p1.possible) == 1:
+            if (WRITEN_POSSIBLE_LIMITS == 0 or (WRITEN_POSSIBLE_LIMITS > 0 and p1.writen)) and p1.v == 0 and len(
+                    p1.possible) == 1:
                 m.setit(p1.x, p1.y, p1.possible[0], d="Only One Possible")
                 sets += 1
     return sets, 0, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
-    
+
+
 def fill_last_position_of_group(m, first=1, only=False):
     """If the un-assigned positions in a group(line or box) are only one left"""
     sets = 0
@@ -533,7 +565,8 @@ def fill_last_position_of_group(m, first=1, only=False):
             if grp.filled == 8:
                 for p1 in grp.p:
                     if p1.v == 0:
-                        m.setit(p1.x, p1.y, grp.possible[0], d="Last Position in a {0}: {1}".format(grp.__doc__, grp.idx))
+                        m.setit(p1.x, p1.y, grp.possible[0],
+                                d="Last Position in a {0}: {1}".format(grp.__doc__, grp.idx))
                         sets += 1
                         break
     return sets, 0, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
@@ -554,8 +587,9 @@ def fill_last_position_by_setting(m, sets):
                 recIdx -= 1
             else:
                 break
-        x = r[0]; y = r[1]
-            
+        x = r[0];
+        y = r[1]
+
         for group in (m.lineX[x], m.lineY[y], m.b[m.p[x][y].b]):
             if len(group.possible) != 1:
                 continue
@@ -564,7 +598,7 @@ def fill_last_position_by_setting(m, sets):
                     v = group.possible[0]
                     m.setit(p1.x, p1.y, v, d="Last Position By Setting")
                     rtn += 1
-                      
+
         idx += 1  # next settings
 
     return rtn, 0, METHOD_CHECK_OBVIOUS, v, SCAN_ALL_NUMBER
@@ -601,15 +635,15 @@ def set_obvious_method_for_pos(m, method1, p1, v):
         return True
 
     return False
-    
-                    
+
+
 def check_obvious_number(m, first=1, only=False):
     """Check every number which has been assigned and its effect's boxes' does not have assigned that number
     Only: False, check all numbers
           True, check the first number only
     first: the first number to be checked"""
     sets = 0
-    end = 9 if not only else 1 # if check the first number
+    end = 9 if not only else 1  # if check the first number
     for i in range(end):
         num = first + i
         num = num if num < 10 else num - 9
@@ -618,7 +652,7 @@ def check_obvious_number(m, first=1, only=False):
             for b in m.b[p1.b].effects:
                 #print("check number {0} of pos({1},{2})!".format(num, p1.x, p1.y))
                 possible = []
-                info = ""   # record how to descide to set
+                info = ""  # record how to descide to set
                 if b in checked:
                     continue
                 else:
@@ -640,12 +674,12 @@ def check_obvious_number(m, first=1, only=False):
                     possible.append(p2)
                 if len(possible) == 1:
                     sets += 1
-                    SetInMoreObvious = False
+                    flag_set_more_obvious = False
                     if CHECK_MORE_OBVIOUS:
-                        SetInMoreObvious = set_obvious_method_for_pos(m, METHOD_CHECK_OBVIOUS, possible[0], num)
-                    if not SetInMoreObvious:
+                        flag_set_more_obvious = set_obvious_method_for_pos(m, METHOD_CHECK_OBVIOUS, possible[0], num)
+                    if not flag_set_more_obvious:
                         m.setit(possible[0].x, possible[0].y, num, d="checkObviousNumber", info=info)
-                    # call self to solve the same number completly
+                    # call self to solve the same number completely
                     r = check_obvious_number(m, first=num, only=SCAN_ALL_NUMBER)
                     sets += r[0]
                     return sets, r[1], r[2], r[3], r[4]
@@ -668,14 +702,14 @@ def update_group_number(m, num):
             #print(m.b[i], pos, num)
             if ACTION_GET_INFO:
                 pass
-            
+
             SetInMoreObvious = False
             if CHECK_MORE_OBVIOUS:
                 SetInMoreObvious = set_obvious_method_for_pos(m, 3, pos[0], num)
             if not SetInMoreObvious:
                 m.setit(pos[0].x, pos[0].y, num, d="UpdateGroupNumber", info=info)
             return 1, 0, METHOD_CHECK_OBVIOUS, num, SCAN_ONE_NUMBER
-        
+
         gn = m.b[i].get_group_number(num, pos=pos)
         if gn is not None:
             m.n[num].group.append(gn)
@@ -687,7 +721,7 @@ def update_group_number(m, num):
         start = METHOD_DEF_BEGIN
         first = SCAN_DEF_BEGIN
         only = SCAN_ALL_NUMBER
-        
+
     return sets, actions, start, first, only
 
 
@@ -696,10 +730,10 @@ def update_indirect_group_number(m, num, amt=0, start=METHOD_DEF_BEGIN, first=SC
     a recursive function"""
     info = ""
     for gn in m.n[num].group:
-        effectBoxes = m.b[gn.b].effectsX if gn.direction=="x" else m.b[gn.b].effectsY
+        effects = m.b[gn.b].effectsX if gn.direction == "x" else m.b[gn.b].effectsY
         #print(amt, effectBoxes, gn)
-        for idx in effectBoxes:     # check every effect box, does the possible position for the num can form a group
-                                    # number or not
+        for idx in effects:  # check every effect box, does the possible position for the num can form a group
+            # number or not
             # check if the num is existed in the box, or already as a groupnumber
             if num not in m.b[idx].possible or num in m.b[idx].groupnumber:
                 continue
@@ -710,15 +744,15 @@ def update_indirect_group_number(m, num, amt=0, start=METHOD_DEF_BEGIN, first=SC
             if len(pos) == 1:
                 if ACTION_GET_INFO:
                     pass
-                
-                SetInMoreObvious = False
+
+                flag = False
                 if CHECK_MORE_OBVIOUS:
-                    SetInMoreObvious = set_obvious_method_for_pos(m, 4, pos[0], num)
-                if not SetInMoreObvious:
+                    flag = set_obvious_method_for_pos(m, 4, pos[0], num)
+                if not flag:
                     m.setit(pos[0].x, pos[0].y, num, d="UpdateInDirectGroupNumber", info=info)
-                    
+
                 return 1, amt, METHOD_CHECK_OBVIOUS, num, SCAN_ONE_NUMBER
-            
+
             gn0 = m.b[idx].get_group_number(num, pos=pos)
             if gn0 is not None:
                 m.n[num].group.append(gn0)
@@ -735,7 +769,7 @@ def check_inobvious_number(m, first=1, only=False):
     first: the first number to be checked"""
     sets = 0
     actions = 0
-    end = 9 if not only else 1 # if check the first number
+    end = 9 if not only else 1  # if check the first number
     for i in range(end):
         num = first + i
         num = num if num < 10 else num - 9
@@ -759,14 +793,14 @@ def check_inobvious_number(m, first=1, only=False):
                     pos.append(p1)
             if len(pos) == 1:
 
-                SetInMoreObvious = False
+                flag = False
                 if CHECK_MORE_OBVIOUS:
-                    SetInMoreObvious = set_obvious_method_for_pos(m, 5, pos[0], num)
-                if not SetInMoreObvious:
+                    flag = set_obvious_method_for_pos(m, 5, pos[0], num)
+                if not flag:
                     m.setit(pos[0].x, pos[0].y, num, d="checkInObviousNumber", info=info)
-                    
+
                 return 1, actions, METHOD_CHECK_OBVIOUS, num, SCAN_ALL_NUMBER
-        
+
     return sets, actions, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
@@ -787,7 +821,7 @@ def check_line_last_possible_for_number(m, first=1, only=False):
                 sets += 1
                 # if get one, just return, let other methods to process others
                 return sets, 0, METHOD_DEF_BEGIN, c[0], SCAN_ONE_NUMBER
-        
+
     return sets, 0, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
@@ -816,10 +850,10 @@ def write_down_possible(m, first=1, only=False):
 
 
 def reduce_by_group_number(m, first=1, only=False):
-    """Reduce the possible number in a possition by GroupNumber"""
+    """Reduce the possible number in a posiition by GroupNumber"""
     sets = 0
     actions = 0
-    end = 9 if not only else 1 # if check the first number
+    end = 9 if not only else 1  # if check the first number
     for i in range(9):
         num = first + i
         num = num if num < 10 else num - 9
@@ -855,18 +889,18 @@ def get_chains(m, group, pos, numbers):
             for p1 in c:
                 group.chain.append(p1)
             amt = amt + 1
-            
+
     return rtn
 
 
 def update_chain(m, first=1, only=False):
     """Update the chain of line
     return: >=0 means the chain number's amount in the matrix, m"""
-    
+
     sets = 0
     reduces = 0
     info = ""
-    
+
     for groupType in (m.lineX, m.lineY, m.b):
         for g in groupType:
             pos = g.get_all_pos(method="u", chain=False)
@@ -892,21 +926,21 @@ def update_chain(m, first=1, only=False):
                                     reduces += 1
                     if reduces > 0:
                         return 0, reduces, METHOD_CHECK_OBVIOUS, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
-        
+
     return sets, reduces, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
 def reduce_by_two_possible_in_one_position(m, first=1, only=False):
-    """when a position(p1) has two possible numbers only, we can assume if the postion is one number(first)
-    then try to emulate to set the postion with the other number(second),
-    then see the first number will be filled in a postion(p2) which the postion can see it
-    if so, we can reduce all these postions which can see p1 and p2 at the same time from the first number"""
-    
+    """when a position(p1) has two possible numbers only, we can assume if the position is one number(first)
+    then try to emulate to set the position with the other number(second),
+    then see the first number will be filled in a position(p2) which the position can see it
+    if so, we can reduce all these positions which can see p1 and p2 at the same time from the first number"""
+
     reduces = 0
     sets = 0
     for p1 in m.get_all_pos(method="u", possibles=2):
         for i in range(2):
-            if i==0:
+            if i == 0:
                 first, second = p1.possible
             else:
                 second, first = p1.possible
@@ -924,10 +958,12 @@ def reduce_by_two_possible_in_one_position(m, first=1, only=False):
                 for x, y in p0.can_see_those(targets):
                     if first in m.p[x][y].possible:
                         #print("{4} and {5} reduce ({0},{1})'s possilbe={2} from {3}".format(x+1, y+1, m.p[x][y].possible, first, p1, p0))
-                        r = m.reduce(x, y, first, d="reduceByTwoPossibleInOnePostion{0}, first={1}, second={2} with postion:{3}".format((p1.x,p1.y), first, second, p0))
-                        if r==1:
+                        r = m.reduce(x, y, first,
+                                     d="reduceByTwoPossibleInOnePostion{0}, first={1}, second={2} with postion:{3}".format(
+                                         (p1.x, p1.y), first, second, p0))
+                        if r == 1:
                             reduces += 1
-                        elif r==2:
+                        elif r == 2:
                             sets += 1
                 if sets > 0 or reduces > 0:
                     return sets, reduces, METHOD_CHECK_OBVIOUS, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
@@ -936,7 +972,7 @@ def reduce_by_two_possible_in_one_position(m, first=1, only=False):
                 return 1, 0, METHOD_CHECK_OBVIOUS, first, SCAN_ALL_NUMBER
             else:
                 continue
-            
+
     return sets, reduces, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
@@ -953,8 +989,8 @@ def reduce_by_emulate_possible_in_one_position(m, first=1, only=False):
     print("reduceByEmulatePossibleInOnePositions: {0}".format(emulatePossibles))
     reduces = 0
     sets = 0
-    emu = []    # record the emulate method, [(p1,v),....]
-    result = []     # save the emulate result of matrix for every possible number
+    emu = []  # record the emulate method, [(p1,v),....]
+    result = []  # save the emulate result of matrix for every possible number
     for p1 in m.get_all_pos(method="u", possibles=emulatePossibles):
         for num in p1.possible:
             emu.append((p1, num))
@@ -968,10 +1004,10 @@ def reduce_by_emulate_possible_in_one_position(m, first=1, only=False):
             else:
                 result.append(m1)
                 continue
-            
+
     if len(result) == emulatePossibles:
         sets, reduces = compare_result(m, emu, result)
-            
+
     return sets, reduces, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
@@ -988,8 +1024,8 @@ def reduce_by_emulate_possible_number_in_group(m, first=1, only=False):
     print("reduceByEmulatePossibleNumberInGroup: {0}".format(emulatePossibles))
     reduces = 0
     sets = 0
-    emu = []    # record the emulate method, [(p1,v),....]
-    result = []     # save the emulate result of matrix for every possible number
+    emu = []  # record the emulate method, [(p1,v),....]
+    result = []  # save the emulate result of matrix for every possible number
     for groupType in (m.lineX, m.lineY, m.b):
         for idx in range(9):
             for num, pos in groupType[idx].count_num_possible(count=emulatePossibles):
@@ -1004,12 +1040,12 @@ def reduce_by_emulate_possible_number_in_group(m, first=1, only=False):
                         return 0, 1, METHOD_CHECK_OBVIOUS, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
                     else:
                         result.append(m1)
-                        continue   
+                        continue
             if len(result) == emulatePossibles:
                 s, r = compare_result(m, emu, result)
                 sets += s
                 reduces += r
-            
+
     return sets, reduces, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
@@ -1017,14 +1053,14 @@ def compare_result(m, emu, result):
     """compare the result list, to check if there are same result in every step after the last record of original m.rec
     if same for all emulate result, it means that it must be true, so can do by it
     """
-    
+
     global emulatePossibles
-    
+
     sets = 0
     reduces = 0
     recIdx = len(m.rec)
     results = len(result)
-    m1 = result[0] # use the first result to compare with others
+    m1 = result[0]  # use the first result to compare with others
     i = 0
     for r1 in m1.rec[recIdx:]:
         i += 1  # step idx of m1
@@ -1033,12 +1069,13 @@ def compare_result(m, emu, result):
         resultIdx = 0
         for m2 in result[1:]:
             resultIdx += 1
-            idx = 0     # step idx of others
+            idx = 0  # step idx of others
             for r2 in m2.rec[recIdx:]:
                 idx += 1
                 if (r1[0], r1[1], r1[2], r1[3]) == (r2[0], r2[1], r2[2], r2[3]):
                     if ACTION_GET_INFO:
-                        info = info + "\nThe #{0} step of the {1} emulate as {2}".format(idx, emu[resultIdx][0], emu[resultIdx][1])
+                        info = info + "\nThe #{0} step of the {1} emulate as {2}".format(idx, emu[resultIdx][0],
+                                                                                         emu[resultIdx][1])
                     same += 1
                     break
         if same == results - 1:
@@ -1059,7 +1096,7 @@ def emulator(m, x, y, v, targets=[], checkval=0):
     -1: error is True
     0: all basic methods have been tested, and can't solve
     and the result matrix"""
-    
+
     global writeDownAlready, checkPos
 
     check_pos_save = checkPos
@@ -1078,20 +1115,20 @@ def emulator(m, x, y, v, targets=[], checkval=0):
     num = 1
     only = False
     rtn = 0
-    idx = 0     # the index of the targets, which = checkval
+    idx = 0  # the index of the targets, which = checkval
     emulate_first = True
-    
+
     while True:
         actions = 0
         methodLoopIdx += 1
         try:
-            
+
             if emulate_first:
                 #print(m1.p[2][2].possible)
                 #print("Emulator Start in P({0},{1})={2}!".format(x, y, v))
                 m1.setit(x, y, v, d="Emulator Start!")
                 emulate_first = False
-                
+
             for method in allmethods[start:METHOD_BASIC_LEVEL]:
                 methodIdx = method.idx
                 # every method have 5 return values:
@@ -1100,22 +1137,27 @@ def emulator(m, x, y, v, targets=[], checkval=0):
                 # start: which method will start to be used, default is 1
                 # num: which number will be the first number to be procossed, for methods that look over all numbers
                 # only: for methods which look over all numbers to process one only, which is the num
-                sets, reduces, start,  num, only = method.run(m1, first=num, only=only)
+                sets, reduces, start, num, only = method.run(m1, first=num, only=only)
                 #print("Emulate#{0}-{2}: {1}, sets={3}, reduces={4}".format(methodLoopIdx, method.name, methodIdx, sets, reduces))
                 if sets > 0:
                     rtn = fill_last_position_by_setting(m1, sets)
                     if rtn[0] > 0:
-                        start = rtn[2]; first = rtn[3]; only = rtn[4]
+                        start = rtn[2];
+                        first = rtn[3];
+                        only = rtn[4]
                         #print("Emulate#{0}-last: {1}, sets={3}, reduces={4}".format(methodLoopIdx, "LastPosition", methodIdx, rtn, reduces))
                         sets = sets + rtn[0]
                 if (sets > 0 or reduces > 0) and writeDownAlready:
                     rtn = fill_only_one_possible(m1)
                     if rtn[0] > 0:
-                        sets = rtn[0]; start = rtn[2]; first = rtn[3]; only = rtn[4]
+                        sets = rtn[0];
+                        start = rtn[2];
+                        first = rtn[3];
+                        only = rtn[4]
                         #print("Emulate#{0}-only: {1}, sets={3}, reduces={4}".format(methodLoopIdx, "LastPossible", methodIdx, rtn, reduces))
-                if sets > 0 or reduces >0:
+                if sets > 0 or reduces > 0:
                     actions = actions + sets + reduces
-                    break    
+                    break
         except SudokuDone as err:
             print("It is done by the last position({0},{1}) to set to be {2}!".format(err.x, err.y, err.v))
             rtn = 2
@@ -1133,11 +1175,11 @@ def emulator(m, x, y, v, targets=[], checkval=0):
             print("It is impossible for {0}, {1} to set/reduce {2}! ({3})".format(err.x, err.y, err.v, err.t))
             #traceback.print_exc()
             break
-        except:     # unexcepted error
+        except:  # unexpected error
             print("Unexpected error:", sys.exc_info()[0])
             traceback.print_exc()
             break
-        
+
         if actions <= 0:
             break
 
@@ -1160,7 +1202,7 @@ def try_error(m=None, file="", depth=0):
     m1 = copy.deepcopy(m)
 
     p1 = possibles[0]
-    
+
     k = len(p1.possible)
     if k <= 0:
         #print("try#{0}: {1} has empty possible!".format(depth, p1))
@@ -1222,21 +1264,23 @@ def guess(m, idx=0, first=0, only=False):
     Level = METHOD_LEVEL_LIMIT_WHENTRY
 
     Scope += 5  # it is easy as the method of write down possible
-    if idx == 0:    # Add New Try
+    if idx == 0:  # Add New Try
         tryIdx += 1
         possibles = m.sort_unassigned_pos_by_possibles()  # get all unassigned postion and sorted by the possibles number
         m1 = copy.deepcopy(m)
-        p1 = possibles[0]   # the first un-assigned postion
-        x = p1.x; y = p1.y
+        p1 = possibles[0]  # the first un-assigned postion
+        x = p1.x;
+        y = p1.y
         tryStack.append([m1, x, y, 0])
         print("Try Add: {0},{1} to set {2} of {3}".format(x, y, p1.possible[0], p1.possible))
     else:
         i = tryIdx - 1
         tryStack[i][3] = idx
-        x = tryStack[i][1]; y = tryStack[i][2]
+        x = tryStack[i][1];
+        y = tryStack[i][2]
         print("Try Idx={3}: {0},{1} to set {2} of {4}".format(x, y, m.p[x][y].possible[idx], idx, m.p[x][y].possible))
 
-    v = m.p[x][y].possible[idx] 
+    v = m.p[x][y].possible[idx]
     m.setit(x, y, v, d="try")
     return 1, 0, METHOD_CHECK_OBVIOUS, v, SCAN_ALL_NUMBER
 
@@ -1244,6 +1288,7 @@ def guess(m, idx=0, first=0, only=False):
 class SolveMethod():
     """Method Object"""
     lastNumber = 1
+
     def __init__(self, fun, idx, name="", level=0, obvious=True):
         self.fun = fun
         self.idx = idx
@@ -1260,7 +1305,7 @@ def reg_method():
     """register all method as an object and save them into a list to return"""
 
     global tryUse, emuUse
-    
+
     methods = []
     #methods.append(SolveMethod(fillOnlyOnePossible, 0, level=0))
     methods.append(SolveMethod(fill_last_position_of_group, 1, level=0))
@@ -1279,16 +1324,17 @@ def reg_method():
     return methods
 
 
-def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits=2, use_try=METHOD_USE_TRY, use_emu=METHOD_USE_EMU):
+def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits=2, use_try=METHOD_USE_TRY,
+          use_emu=METHOD_USE_EMU):
     """Solve a sudoku which define in a file!
     loopLimit: the limit for the method loops, 0: no limits
     recLimit: when the records >= recLimit, it will stop, 0: no limits"""
-    
-    global methodLoopIdx        # how many method loops it has taken
-    global methodIdx            # the method idx of now running
-    global checkPos             # setting the position want to check
-    global writeDownAlready     # if the every un-assigned positions have been writen down their possible number?
-    global emulatePossibles     # set the emulate possibles
+
+    global methodLoopIdx  # how many method loops it has taken
+    global methodIdx  # the method idx of now running
+    global checkPos  # setting the position want to check
+    global writeDownAlready  # if the every un-assigned positions have been writen down their possible number?
+    global emulatePossibles  # set the emulate possibles
     global tryStack, tryIdx, tryUse, Scope, emuUse
     global Level
 
@@ -1308,11 +1354,11 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
     tryStack = []
     allmethods = reg_method()
     Level = level_limit
-   
+
     while True:
         actions = 0
         methodLoopIdx += 1
-        try: 
+        try:
             for method in allmethods[start:]:
                 if 0 < Level < method.level:
                     continue
@@ -1326,24 +1372,29 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                 sets, reduces, start, num, only = method.run(m, first=num, only=only)
                 Scope = Scope + method.level
                 max_method = max(max_method, method.idx)
-                print("Try#{0}-{2}: {1}, sets={3}, reduces={4}".format(methodLoopIdx, method.name, methodIdx, sets, reduces))
+                print("Try#{0}-{2}: {1}, sets={3}, reduces={4}".format(methodLoopIdx, method.name, methodIdx, sets,
+                                                                       reduces))
                 if sets > 0:
                     rtn = fill_last_position_by_setting(m, sets)
                     if rtn[0] > 0:
                         start, first, only = rtn[2:]
-                        print("Try#{0}-last: {1}, sets={3}, reduces={4}".format(methodLoopIdx, "LastPosition", methodIdx, rtn, reduces))
+                        print(
+                            "Try#{0}-last: {1}, sets={3}, reduces={4}".format(methodLoopIdx, "LastPosition", methodIdx,
+                                                                              rtn, reduces))
                         sets = sets + rtn[0]
                 if (sets > 0 or reduces > 0) and writeDownAlready:
                     rtn = fill_only_one_possible(m)
                     if rtn[0] > 0:
                         sets = rtn[0]
                         start, first, only = rtn[2:]
-                        print("Try#{0}-only: {1}, sets={3}, reduces={4}".format(methodLoopIdx, "LastPossible", methodIdx, rtn, reduces))
+                        print(
+                            "Try#{0}-only: {1}, sets={3}, reduces={4}".format(methodLoopIdx, "LastPossible", methodIdx,
+                                                                              rtn, reduces))
                 if DEBUG_MODE:
                     if 0 < rec_limit <= len(m.rec):
                         raise SudokuStop()
                 if sets > 0 or reduces > 0:
-                    emulatePossibles = 2    # if any thing work, the emulatePossible set to the begin number
+                    emulatePossibles = 2  # if any thing work, the emulatePossible set to the begin number
                     actions = actions + sets + reduces
                     break
         except SudokuDone as err:
@@ -1367,7 +1418,7 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                     idx += 1
                     if len(m1.p[x][y].possible) > idx:
                         m = copy.deepcopy(m1)
-                        sets, reduces, start,  num, only = guess(m, idx=idx)
+                        sets, reduces, start, num, only = guess(m, idx=idx)
                         flag = True
                         break
                     else:
@@ -1386,7 +1437,7 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
             # for testing
             if methodLoopIdx == loop_limit:
                 break
-        
+
         if actions <= 0:
             if emulatePossibles < emu_limits:
                 Scope += 1000
@@ -1396,12 +1447,13 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                 continue
             else:
                 break
-        
+
     print(m)
     if m.filled < 81:
         print("Can't solve it, still need {0} more effort!".format(81 - m.filled))
     else:
-        print("Done! good job, it takes {0}! Level={1}, Methods Used={2}".format(time.time() - begin, Scope, max_method))
+        print(
+            "Done! good job, it takes {0}! Level={1}, Methods Used={2}".format(time.time() - begin, Scope, max_method))
 
     return m
 

@@ -1,3 +1,11 @@
+"""
+.. module:: sudoku
+   :platform: Unix, Windows
+   :synopsis: oop's method of solving sudoku
+
+.. moduleauthor:: Robert J. Hwang <RobertOfTaiwan@gmail.com>
+"""
+
 import sys
 import copy
 import itertools
@@ -474,9 +482,11 @@ class Matrix:
 
     def reduce(self, x, y, v, d="set", check=False, info=""):
         """reduce the position(x, y)'s possible numbers from v
-        return : 2 if set a number,
-                 1 if just set number
-                 0 if is not in the possible set, if check is True, it will raise an SudokuError exception
+        Return:
+            int, as following::
+                2 -- if set a number,
+                1 -- if just set number
+                0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception
         """
         global methodLoopIdx, methodIdx
 
@@ -526,9 +536,17 @@ class Matrix:
 
 
 def fill_only_one_possible(m, first=1, only=False):
-    """Check every unassigned position, if it's possible numbers left one only
-    WRITEN_POSSIBLE_LIMIT:  True, Check position's writen is True or note
-                            False, don't check"""
+    """Check every unassigned position, if it's possible numbers left one only WRITEN_POSSIBLE_LIMIT:  True, Check position's writen is True or note False, don't check.
+
+    Args:
+        m: Matrix Object
+        first (int): the first number of checking
+        only (bool): just check the first number or not
+
+    Returns:
+        in the tuple format (sets, reduces, method Index to restart using, first, only)
+
+    """
     sets = 0
     for line in m.p:
         for p1 in line:
@@ -712,9 +730,9 @@ def update_indirect_group_number(m, num, amt=0, start=METHOD_DEF_BEGIN, first=SC
     a recursive function"""
     info = ""
     for gn in m.n[num].group:
-        effectBoxes = m.b[gn.b].effectsX if gn.direction == "x" else m.b[gn.b].effectsY
+        effects = m.b[gn.b].effectsX if gn.direction == "x" else m.b[gn.b].effectsY
         #print(amt, effectBoxes, gn)
-        for idx in effectBoxes:  # check every effect box, does the possible position for the num can form a group
+        for idx in effects:  # check every effect box, does the possible position for the num can form a group
             # number or not
             # check if the num is existed in the box, or already as a groupnumber
             if num not in m.b[idx].possible or num in m.b[idx].groupnumber:
@@ -727,10 +745,10 @@ def update_indirect_group_number(m, num, amt=0, start=METHOD_DEF_BEGIN, first=SC
                 if ACTION_GET_INFO:
                     pass
 
-                SetInMoreObvious = False
+                flag = False
                 if CHECK_MORE_OBVIOUS:
-                    SetInMoreObvious = set_obvious_method_for_pos(m, 4, pos[0], num)
-                if not SetInMoreObvious:
+                    flag = set_obvious_method_for_pos(m, 4, pos[0], num)
+                if not flag:
                     m.setit(pos[0].x, pos[0].y, num, d="UpdateInDirectGroupNumber", info=info)
 
                 return 1, amt, METHOD_CHECK_OBVIOUS, num, SCAN_ONE_NUMBER
@@ -775,10 +793,10 @@ def check_inobvious_number(m, first=1, only=False):
                     pos.append(p1)
             if len(pos) == 1:
 
-                SetInMoreObvious = False
+                flag = False
                 if CHECK_MORE_OBVIOUS:
-                    SetInMoreObvious = set_obvious_method_for_pos(m, 5, pos[0], num)
-                if not SetInMoreObvious:
+                    flag = set_obvious_method_for_pos(m, 5, pos[0], num)
+                if not flag:
                     m.setit(pos[0].x, pos[0].y, num, d="checkInObviousNumber", info=info)
 
                 return 1, actions, METHOD_CHECK_OBVIOUS, num, SCAN_ALL_NUMBER
@@ -832,7 +850,7 @@ def write_down_possible(m, first=1, only=False):
 
 
 def reduce_by_group_number(m, first=1, only=False):
-    """Reduce the possible number in a possition by GroupNumber"""
+    """Reduce the possible number in a posiition by GroupNumber"""
     sets = 0
     actions = 0
     end = 9 if not only else 1  # if check the first number
@@ -913,10 +931,10 @@ def update_chain(m, first=1, only=False):
 
 
 def reduce_by_two_possible_in_one_position(m, first=1, only=False):
-    """when a position(p1) has two possible numbers only, we can assume if the postion is one number(first)
-    then try to emulate to set the postion with the other number(second),
-    then see the first number will be filled in a postion(p2) which the postion can see it
-    if so, we can reduce all these postions which can see p1 and p2 at the same time from the first number"""
+    """when a position(p1) has two possible numbers only, we can assume if the position is one number(first)
+    then try to emulate to set the position with the other number(second),
+    then see the first number will be filled in a position(p2) which the position can see it
+    if so, we can reduce all these positions which can see p1 and p2 at the same time from the first number"""
 
     reduces = 0
     sets = 0
@@ -1157,7 +1175,7 @@ def emulator(m, x, y, v, targets=[], checkval=0):
             print("It is impossible for {0}, {1} to set/reduce {2}! ({3})".format(err.x, err.y, err.v, err.t))
             #traceback.print_exc()
             break
-        except:  # unexcepted error
+        except:  # unexpected error
             print("Unexpected error:", sys.exc_info()[0])
             traceback.print_exc()
             break
