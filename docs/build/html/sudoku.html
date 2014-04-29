@@ -1,0 +1,740 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>OOP Method: Sudoku &mdash; SudokuStudyLib 0.5 documentation</title>
+
+    <link rel="stylesheet" href="_static/default.css" type="text/css"/>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT: './',
+            VERSION: '0.5',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE: true
+        };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="SudokuStudyLib 0.5 documentation" href="index.html"/>
+    <link rel="next" title="Traditional Method: Matrix" href="matrix.html"/>
+    <link rel="prev" title="Welcome to SudokuStudyLib’s documentation!" href="intro.html"/>
+</head>
+<body>
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+        <li class="right" style="margin-right: 10px">
+            <a href="genindex.html" title="General Index"
+               accesskey="I">index</a></li>
+        <li class="right">
+            <a href="py-modindex.html" title="Python Module Index"
+                    >modules</a> |
+        </li>
+        <li class="right">
+            <a href="matrix.html" title="Traditional Method: Matrix"
+               accesskey="N">next</a> |
+        </li>
+        <li class="right">
+            <a href="intro.html" title="Welcome to SudokuStudyLib’s documentation!"
+               accesskey="P">previous</a> |
+        </li>
+        <li><a href="index.html">SudokuStudyLib 0.5 documentation</a> &raquo;</li>
+    </ul>
+</div>
+
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+
+<div class="section" id="module-sudoku">
+<span id="oop-method-sudoku"></span>
+
+<h1>OOP Method: Sudoku<a class="headerlink" href="#module-sudoku" title="Permalink to this headline">¶</a></h1>
+
+<p>This is the oop method to solve the Sudoku.</p>
+<span class="target" id="module-sudoku.sudoku"></span><span class="target" id="module-sudoku"></span>
+<dl class="class">
+    <dt id="sudoku.sudoku.Box">
+        <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">Box</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal"
+                                                                                        href="_modules/sudoku/sudoku.html#Box"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Box"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Box</p>
+        <dl class="method">
+            <dt id="sudoku.sudoku.Box.get_group_number">
+                <tt class="descname">get_group_number</tt><big>(</big><em>num</em>, <em>pos=</em>, <span
+                    class="optional">[</span><span class="optional">]</span><em>notInLineX=None</em>, <em>notInLineY=None</em><big>)</big><a
+                    class="reference internal" href="_modules/sudoku/sudoku.html#Box.get_group_number"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                                href="#sudoku.sudoku.Box.get_group_number"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>if the unassigned num in this box which it&#8217;s all possible positions have the same direction,
+                we call it as a GroupNumber</p>
+            </dd>
+        </dl>
+
+    </dd>
+</dl>
+
+<dl class="class">
+    <dt id="sudoku.sudoku.Chain">
+        <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">Chain</tt><big>(</big><em>numList</em>, <em>posList</em><big>)</big><a
+            class="reference internal" href="_modules/sudoku/sudoku.html#Chain"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Chain"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>A chain of two and above positions which are not in the same box but in the same line
+        and can form a chain, means the possible number in this chain positions only can be filled in these
+        positions</p>
+    </dd>
+</dl>
+
+<dl class="class">
+    <dt id="sudoku.sudoku.GroupNumber">
+        <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">GroupNumber</tt><big>(</big><em>b</em>, <em>num</em>, <em>p</em>, <em>direction</em>, <em>idx</em><big>)</big><a
+            class="reference internal" href="_modules/sudoku/sudoku.html#GroupNumber"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#sudoku.sudoku.GroupNumber" title="Permalink to this definition">¶</a></dt>
+    <dd><p>Group Number in Box</p>
+    </dd>
+</dl>
+
+<dl class="class">
+    <dt id="sudoku.sudoku.LineX">
+        <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">LineX</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal"
+                                                                                          href="_modules/sudoku/sudoku.html#LineX"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.LineX"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Line of X</p>
+    </dd>
+</dl>
+
+<dl class="class">
+    <dt id="sudoku.sudoku.LineY">
+        <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">LineY</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal"
+                                                                                          href="_modules/sudoku/sudoku.html#LineY"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.LineY"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Line of Y</p>
+    </dd>
+</dl>
+
+<dl class="class">
+    <dt id="sudoku.sudoku.Matrix">
+        <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">Matrix</tt><big>(</big><em>file=''</em><big>)</big><a class="reference internal"
+                                                                                   href="_modules/sudoku/sudoku.html#Matrix"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>A Table of a Sudoku</p>
+        <dl class="method">
+            <dt id="sudoku.sudoku.Matrix.allow">
+                <tt class="descname">allow</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a
+                    class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.allow"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.allow"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>Checking if the position x, y, can be set the value v</p>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.Matrix.can_see">
+                <tt class="descname">can_see</tt><big>(</big><em>p0</em>, <em>method='u'</em>,
+                <em>num=0</em><big>)</big><a class="reference internal"
+                                             href="_modules/sudoku/sudoku.html#Matrix.can_see"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.can_see"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>get the possition list which can see the position, p
+                method: &#8220;u&#8221;: un-assigned positions, &#8220;a&#8221;: all, &#8220;s&#8221;: assigned
+                positions
+                num: if method=&#8221;u&#8221;, the position must have be possible to be filled the number</p>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.Matrix.get_all_pos">
+                <tt class="descname">get_all_pos</tt><big>(</big><em>diff=</em>, <span class="optional">[</span><span
+                    class="optional">]</span><em>method='a'</em>, <em>num=0</em>, <em>chain=None</em>, <em>possibles=None</em><big>)</big><a
+                    class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.get_all_pos"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                                href="#sudoku.sudoku.Matrix.get_all_pos"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>get all postion</p>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.Matrix.print_rec">
+                <tt class="descname">print_rec</tt><big>(</big><big>)</big><a class="reference internal"
+                                                                              href="_modules/sudoku/sudoku.html#Matrix.print_rec"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                                href="#sudoku.sudoku.Matrix.print_rec"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>Print all the steps of solving process</p>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.Matrix.read">
+                <tt class="descname">read</tt><big>(</big><em>file</em><big>)</big><a class="reference internal"
+                                                                                      href="_modules/sudoku/sudoku.html#Matrix.read"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.read"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>Read Sudoku&#8217;s Define from file</p>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.Matrix.reduce">
+                <tt class="descname">reduce</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>d='set'</em>, <em>check=False</em>,
+                <em>info=''</em><big>)</big><a class="reference internal"
+                                               href="_modules/sudoku/sudoku.html#Matrix.reduce"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.reduce"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>reduce the position(x, y)&#8217;s possible numbers from v
+                Return:</p>
+                <blockquote>
+                    <div>
+                        <dl class="docutils">
+                            <dt>int, as following::</dt>
+                            <dd>2 &#8211; if set a number,
+                                1 &#8211; if just set number
+                                0 &#8211; if is not in the possible set, if check is True, it will raise an SudokuError
+                                exception
+                            </dd>
+                        </dl>
+                    </div>
+                </blockquote>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.Matrix.setit">
+                <tt class="descname">setit</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>d='define'</em>, <em>info=''</em><big>)</big><a
+                    class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.setit"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.setit"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>set the position x, y to be the number v
+                return: &gt;=1 if set successfully, 0 if it can&#8217;t be set the number v</p>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles">
+                <tt class="descname">sort_unassigned_pos_by_possibles</tt><big>(</big><em>possibles=0</em><big>)</big><a
+                    class="reference internal"
+                    href="_modules/sudoku/sudoku.html#Matrix.sort_unassigned_pos_by_possibles"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                                href="#sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>Get unassign position&#8217;s possible number list, format is [p1, p2,...]
+                and Sorted By the possible numbers
+                possibles: 0 for all, &gt;=2, mean get only the possible numbers for it</p>
+            </dd>
+        </dl>
+
+    </dd>
+</dl>
+
+<dl class="class">
+    <dt id="sudoku.sudoku.Number">
+        <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">Number</tt><big>(</big><em>v</em><big>)</big><a class="reference internal"
+                                                                             href="_modules/sudoku/sudoku.html#Number"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Number"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Number Object</p>
+        <dl class="method">
+            <dt id="sudoku.sudoku.Number.can_see_by_group_number">
+                <tt class="descname">can_see_by_group_number</tt><big>(</big><em>p1</em><big>)</big><a
+                    class="reference internal" href="_modules/sudoku/sudoku.html#Number.can_see_by_group_number"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                                href="#sudoku.sudoku.Number.can_see_by_group_number"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>Check if the position, p1, can be seen of all this number&#8217;s group number&#8221;
+                return: gn if can be seen by it, or None</p>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.Number.setit">
+                <tt class="descname">setit</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal"
+                                                                                     href="_modules/sudoku/sudoku.html#Number.setit"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Number.setit"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>save assigned position in the p list</p>
+            </dd>
+        </dl>
+
+    </dd>
+</dl>
+
+<dl class="class">
+    <dt id="sudoku.sudoku.Point">
+        <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">Point</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="reference internal"
+                                                                                        href="_modules/sudoku/sudoku.html#Point"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Point"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>A Position in a Sudoku&#8217;s table</p>
+        <dl class="method">
+            <dt id="sudoku.sudoku.Point.can_see">
+                <tt class="descname">can_see</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal"
+                                                                                       href="_modules/sudoku/sudoku.html#Point.can_see"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Point.can_see"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>this position can see p1? the value can&#8217;t be 3 or 7 it means the same pos
+                rtn: 0: can&#8217;t see p1</p>
+                <blockquote>
+                    <div>1: can see it in x line
+                        2: can see it in y line
+                        4: can see it in the box
+                    </div>
+                </blockquote>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.Point.can_see_those">
+                <tt class="descname">can_see_those</tt><big>(</big><em>posList</em><big>)</big><a
+                    class="reference internal" href="_modules/sudoku/sudoku.html#Point.can_see_those"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                                href="#sudoku.sudoku.Point.can_see_those"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>check this position can see which positions in the posList, a [(x, y),...] list</p>
+            </dd>
+        </dl>
+
+    </dd>
+</dl>
+
+<dl class="class">
+    <dt id="sudoku.sudoku.SolveMethod">
+        <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">SolveMethod</tt><big>(</big><em>fun</em>, <em>idx</em>, <em>name=''</em>, <em>level=0</em>,
+        <em>obvious=True</em><big>)</big><a class="reference internal"
+                                            href="_modules/sudoku/sudoku.html#SolveMethod"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#sudoku.sudoku.SolveMethod" title="Permalink to this definition">¶</a></dt>
+    <dd><p>Method Object</p>
+    </dd>
+</dl>
+
+<dl class="exception">
+    <dt id="sudoku.sudoku.SudokuDone">
+        <em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">SudokuDone</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a
+            class="reference internal" href="_modules/sudoku/sudoku.html#SudokuDone"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#sudoku.sudoku.SudokuDone" title="Permalink to this definition">¶</a></dt>
+    <dd><p>An exception When the table has been filled 81 positions</p>
+    </dd>
+</dl>
+
+<dl class="exception">
+    <dt id="sudoku.sudoku.SudokuError">
+        <em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuError</tt><big>(</big><em>x</em>,
+        <em>y</em>, <em>v</em>, <em>t</em><big>)</big><a class="reference internal"
+                                                         href="_modules/sudoku/sudoku.html#SudokuError"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuError"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>An exception when x, y can&#8217;t be set or reduce to or form the number v
+        t: is the type: &#8216;s&#8217; means set, &#8216;r&#8217; means reduce</p>
+    </dd>
+</dl>
+
+<dl class="exception">
+    <dt id="sudoku.sudoku.SudokuStop">
+        <em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">SudokuStop</tt><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuStop"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuStop"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>An exception When the the record number &gt;= recLimit</p>
+    </dd>
+</dl>
+
+<dl class="exception">
+    <dt id="sudoku.sudoku.SudokuWhenPosSet">
+        <em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuWhenPosSet</tt><big>(</big><em>x</em>,
+        <em>y</em>, <em>v</em><big>)</big><a class="reference internal"
+                                             href="_modules/sudoku/sudoku.html#SudokuWhenPosSet"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuWhenPosSet"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>An exception When the position, checkPos, has been set, and program want to setit</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.check_inobvious_number">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">check_inobvious_number</tt><big>(</big><em>m</em>, <em>first=1</em>,
+        <em>only=False</em><big>)</big><a class="reference internal"
+                                          href="_modules/sudoku/sudoku.html#check_inobvious_number"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.check_inobvious_number"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check every number which has been assigned and known as group-number and its effect&#8217;s boxes&#8217; does
+        not have assigned that number&#8221;
+        Only: False, check all numbers</p>
+        <blockquote>
+            <div>True, check the first number only</div>
+        </blockquote>
+        <p>first: the first number to be checked</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.check_line_last_possible_for_number">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">check_line_last_possible_for_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a
+            class="reference internal" href="_modules/sudoku/sudoku.html#check_line_last_possible_for_number"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#sudoku.sudoku.check_line_last_possible_for_number"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check every line that only have one position for un-assigned number</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.check_obvious_number">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">check_obvious_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a
+            class="reference internal" href="_modules/sudoku/sudoku.html#check_obvious_number"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.check_obvious_number"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check every number which has been assigned and its effect&#8217;s boxes&#8217; does not have assigned that
+        number
+        Only: False, check all numbers</p>
+        <blockquote>
+            <div>True, check the first number only</div>
+        </blockquote>
+        <p>first: the first number to be checked</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.compare_result">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">compare_result</tt><big>(</big><em>m</em>,
+        <em>emu</em>, <em>result</em><big>)</big><a class="reference internal"
+                                                    href="_modules/sudoku/sudoku.html#compare_result"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.compare_result"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>compare the result list, to check if there are same result in every step after the last record of original
+        m.rec
+        if same for all emulate result, it means that it must be true, so can do by it</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.emulator">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">emulator</tt><big>(</big><em>m</em>,
+        <em>x</em>, <em>y</em>, <em>v</em>, <em>targets=</em>, <span class="optional">[</span><span
+            class="optional">]</span><em>checkval=0</em><big>)</big><a class="reference internal"
+                                                                       href="_modules/sudoku/sudoku.html#emulator"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.emulator"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>emulate the x, y to be set v, then start to use some basic methods to try to solve
+        it will stop when and return
+        1: one of the targets have been set the checkval
+        2: isDone
+        -1: error is True
+        0: all basic methods have been tested, and can&#8217;t solve
+        and the result matrix</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.fill_last_position_by_setting">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">fill_last_position_by_setting</tt><big>(</big><em>m</em>,
+        <em>sets</em><big>)</big><a class="reference internal"
+                                    href="_modules/sudoku/sudoku.html#fill_last_position_by_setting"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#sudoku.sudoku.fill_last_position_by_setting"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>When setting a number, may cause 1-3 groups left only one possible position
+        check if a group have only position left, just set it</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.fill_last_position_of_group">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">fill_last_position_of_group</tt><big>(</big><em>m</em>, <em>first=1</em>,
+        <em>only=False</em><big>)</big><a class="reference internal"
+                                          href="_modules/sudoku/sudoku.html#fill_last_position_of_group"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#sudoku.sudoku.fill_last_position_of_group"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>If the un-assigned positions in a group(line or box) are only one left</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.fill_only_one_possible">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">fill_only_one_possible</tt><big>(</big><em>m</em>, <em>first=1</em>,
+        <em>only=False</em><big>)</big><a class="reference internal"
+                                          href="_modules/sudoku/sudoku.html#fill_only_one_possible"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.fill_only_one_possible"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check every unassigned position, if it&#8217;s possible numbers left one only WRITEN_POSSIBLE_LIMIT: True,
+        Check position&#8217;s writen is True or note False, don&#8217;t check.</p>
+        <dl class="docutils">
+            <dt>Args:</dt>
+            <dd>m: Matrix Object
+                first (int): the first number of checking
+                only (bool): just check the first number or not
+            </dd>
+            <dt>Returns:</dt>
+            <dd>in the tuple format (sets, reduces, method Index to restart using, first, only)</dd>
+        </dl>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.guess">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">guess</tt><big>(</big><em>m</em>,
+        <em>idx=0</em>, <em>first=0</em>, <em>only=False</em><big>)</big><a class="reference internal"
+                                                                            href="_modules/sudoku/sudoku.html#guess"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.guess"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Guess Method</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.reduce_by_emulate_possible_in_one_position">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">reduce_by_emulate_possible_in_one_position</tt><big>(</big><em>m</em>, <em>first=1</em>,
+        <em>only=False</em><big>)</big><a class="reference internal"
+                                          href="_modules/sudoku/sudoku.html#reduce_by_emulate_possible_in_one_position"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#sudoku.sudoku.reduce_by_emulate_possible_in_one_position"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>when a position(p1) has 2 or more possible numbers,
+        we can emulate every possible number and get its result,
+        1. if it causes an error, we can reduce that number,
+        2. if it can solve the sudoku, we can set this number,
+        3. if all possible number can&#8217;s get condition 1 or 2, we can compare their rec, if they have the same
+        records, we can do it.</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.reduce_by_emulate_possible_number_in_group">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">reduce_by_emulate_possible_number_in_group</tt><big>(</big><em>m</em>, <em>first=1</em>,
+        <em>only=False</em><big>)</big><a class="reference internal"
+                                          href="_modules/sudoku/sudoku.html#reduce_by_emulate_possible_number_in_group"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#sudoku.sudoku.reduce_by_emulate_possible_number_in_group"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>when a group(lineX, lineY, Box) has 2 or more position have the same possible number,
+        we can emulate every position to set the number and get its result,
+        1. if it causes an error, we can reduce the position&#8217;s possible number from that number,
+        2. if it can solve the sudoku, we can set this number in the position,
+        3. if all possible position can&#8217;s get condition 1 or 2, we can compare their rec, if they have the same
+        records, we can do it.</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.reduce_by_group_number">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">reduce_by_group_number</tt><big>(</big><em>m</em>, <em>first=1</em>,
+        <em>only=False</em><big>)</big><a class="reference internal"
+                                          href="_modules/sudoku/sudoku.html#reduce_by_group_number"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_group_number"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reduce the possible number in a posiition by GroupNumber</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.reduce_by_two_possible_in_one_position">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">reduce_by_two_possible_in_one_position</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a
+            class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_two_possible_in_one_position"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#sudoku.sudoku.reduce_by_two_possible_in_one_position"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>when a position(p1) has two possible numbers only, we can assume if the position is one number(first)
+        then try to emulate to set the position with the other number(second),
+        then see the first number will be filled in a position(p2) which the position can see it
+        if so, we can reduce all these positions which can see p1 and p2 at the same time from the first number</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.reg_method">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reg_method</tt><big>(</big><big>)</big><a
+            class="reference internal" href="_modules/sudoku/sudoku.html#reg_method"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#sudoku.sudoku.reg_method" title="Permalink to this definition">¶</a></dt>
+    <dd><p>register all method as an object and save them into a list to return</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.set_obvious_method_for_pos">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">set_obvious_method_for_pos</tt><big>(</big><em>m</em>, <em>method1</em>, <em>p1</em>,
+        <em>v</em><big>)</big><a class="reference internal"
+                                 href="_modules/sudoku/sudoku.html#set_obvious_method_for_pos"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#sudoku.sudoku.set_obvious_method_for_pos"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check is there an more obvious method for the position, p1 than method1
+        Obvious methods include fillLastPostionOfGroup=0 and checkObviousNumber=1
+        return: True: set, False: not set</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.solve">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">solve</tt><big>(</big><em>file</em>, <em>loop_limit=0</em>,
+        <em>rec_limit=0</em>, <em>check=None</em>, <em>level_limit=0</em>, <em>emu_limits=2</em>, <em>use_try=True</em>,
+        <em>use_emu=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#solve"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.solve"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Solve a sudoku which define in a file!
+        loopLimit: the limit for the method loops, 0: no limits
+        recLimit: when the records &gt;= recLimit, it will stop, 0: no limits</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.try_error">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">try_error</tt><big>(</big><em>m=None</em>,
+        <em>file=''</em>, <em>depth=0</em><big>)</big><a class="reference internal"
+                                                         href="_modules/sudoku/sudoku.html#try_error"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.try_error"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Try Error Method, only fill the first possible postion</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.update_chain">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_chain</tt><big>(</big><em>m</em>, <em>first=1</em>,
+        <em>only=False</em><big>)</big><a class="reference internal"
+                                          href="_modules/sudoku/sudoku.html#update_chain"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#sudoku.sudoku.update_chain" title="Permalink to this definition">¶</a></dt>
+    <dd><p>Update the chain of line
+        return: &gt;=0 means the chain number&#8217;s amount in the matrix, m</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.update_group_number">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_group_number</tt><big>(</big><em>m</em>,
+        <em>num</em><big>)</big><a class="reference internal"
+                                   href="_modules/sudoku/sudoku.html#update_group_number"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#sudoku.sudoku.update_group_number" title="Permalink to this definition">¶</a></dt>
+    <dd><p>Update the group number, num, in a box, and store those group number in m.n.group list
+        return: &gt;=0 means the group number&#8217;s amount in the matrix, m</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.update_indirect_group_number">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt
+            class="descname">update_indirect_group_number</tt><big>(</big><em>m</em>, <em>num</em>, <em>amt=0</em>, <em>start=0</em>,
+        <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal"
+                                                            href="_modules/sudoku/sudoku.html#update_indirect_group_number"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#sudoku.sudoku.update_indirect_group_number"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Update in-direct Group Number, formed by the assigned number and groupnumber already known,
+        a recursive function</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="sudoku.sudoku.write_down_possible">
+        <tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">write_down_possible</tt><big>(</big><em>m</em>,
+        <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal"
+                                                            href="_modules/sudoku/sudoku.html#write_down_possible"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.write_down_possible"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Write down the possible numbers in every un-assigned position
+        if WRITEN_POSSIBLE_LIMITS has set to 1..9, it will only write down the
+        possibles which &lt;= that limits</p>
+    </dd>
+</dl>
+
+</div>
+
+
+</div>
+</div>
+</div>
+<div class="sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+        <h4>Previous topic</h4>
+
+        <p class="topless"><a href="intro.html"
+                              title="previous chapter">Welcome to SudokuStudyLib&#8217;s documentation!</a></p>
+        <h4>Next topic</h4>
+
+        <p class="topless"><a href="matrix.html"
+                              title="next chapter">Traditional Method: Matrix</a></p>
+
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+            <li><a href="_sources/sudoku.txt"
+                   rel="nofollow">Show Source</a></li>
+        </ul>
+        <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q"/>
+                <input type="submit" value="Go"/>
+                <input type="hidden" name="check_keywords" value="yes"/>
+                <input type="hidden" name="area" value="default"/>
+            </form>
+            <p class="searchtip" style="font-size: 90%">
+                Enter search terms or a module, class or function name.
+            </p>
+        </div>
+        <script type="text/javascript">$('#searchbox').show(0);</script>
+    </div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+        <li class="right" style="margin-right: 10px">
+            <a href="genindex.html" title="General Index"
+                    >index</a></li>
+        <li class="right">
+            <a href="py-modindex.html" title="Python Module Index"
+                    >modules</a> |
+        </li>
+        <li class="right">
+            <a href="matrix.html" title="Traditional Method: Matrix"
+                    >next</a> |
+        </li>
+        <li class="right">
+            <a href="intro.html" title="Welcome to SudokuStudyLib’s documentation!"
+                    >previous</a> |
+        </li>
+        <li><a href="index.html">SudokuStudyLib 0.5 documentation</a> &raquo;</li>
+    </ul>
+</div>
+<div class="footer">
+    &copy; Copyright 2014, Robert J. Hwang.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+</div>
+</body>
+</html>
