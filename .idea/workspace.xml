@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b64838e7-f7b1-48c3-9963-39a5d39b9c79" name="Default" comment="changing some local variable to be lower case&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/sudoku/__init__.py" afterPath="$PROJECT_DIR$/build/lib/sudoku/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
+    <list default="true" id="b64838e7-f7b1-48c3-9963-39a5d39b9c79" name="Default" comment="Add document&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_modules/matrix/matrix.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/lib/matrix/matrix2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/matrix.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/matrix.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/objects.inv" afterPath="$PROJECT_DIR$/docs/build/html/objects.inv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/sudoku.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/sudoku.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_static/basic.css" afterPath="$PROJECT_DIR$/docs/build/html/_static/basic.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_static/default.css" afterPath="$PROJECT_DIR$/docs/build/html/_static/default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_static/doctools.js" afterPath="$PROJECT_DIR$/docs/build/html/_static/doctools.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/genindex.html" afterPath="$PROJECT_DIR$/docs/build/html/genindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/index.html" afterPath="$PROJECT_DIR$/docs/build/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/index.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/index.rst" afterPath="$PROJECT_DIR$/docs/source/index.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/index.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/index.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_static/jquery.js" afterPath="$PROJECT_DIR$/docs/build/html/_static/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/matrix.html" afterPath="$PROJECT_DIR$/docs/build/html/matrix.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/matrix/matrix.py" afterPath="$PROJECT_DIR$/build/lib/matrix/matrix.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matrix/matrix.py" afterPath="$PROJECT_DIR$/matrix/matrix.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/matrix.rst" afterPath="$PROJECT_DIR$/docs/source/matrix.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/matrix.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/matrix.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/py-modindex.html" afterPath="$PROJECT_DIR$/docs/build/html/py-modindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_static/pygments.css" afterPath="$PROJECT_DIR$/docs/build/html/_static/pygments.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/search.html" afterPath="$PROJECT_DIR$/docs/build/html/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/searchindex.js" afterPath="$PROJECT_DIR$/docs/build/html/searchindex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_static/searchtools.js" afterPath="$PROJECT_DIR$/docs/build/html/_static/searchtools.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_static/sidebar.js" afterPath="$PROJECT_DIR$/docs/build/html/_static/sidebar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/sudoku.html" afterPath="$PROJECT_DIR$/docs/build/html/sudoku.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/sudoku.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/sudoku.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/sudoku/sudoku.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/sudoku/sudoku.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib/sudoku/sudoku.py" afterPath="$PROJECT_DIR$/build/lib/sudoku/sudoku.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sudoku/sudoku.py" afterPath="$PROJECT_DIR$/sudoku/sudoku.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/sudoku.rst" afterPath="$PROJECT_DIR$/docs/source/sudoku.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/sudoku.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/sudoku.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_static/underscore.js" afterPath="$PROJECT_DIR$/docs/build/html/_static/underscore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_static/websupport.js" afterPath="$PROJECT_DIR$/docs/build/html/_static/websupport.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sudokulib.iws" />
@@ -31,19 +62,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="setup.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="31" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0" vertical-offset="400" max-vertical-offset="760">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="440">
+            <state line="3" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
@@ -60,13 +82,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sudoku.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sudoku.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="492" column="43" selection-start="17212" selection-end="17212" vertical-scroll-proportion="12.61658" vertical-offset="100" max-vertical-offset="29300">
+            <state line="1" column="3" selection-start="0" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="29260">
               <folding>
                 <element signature="e#163#173#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="0" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="matrix.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/matrix/matrix.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1553" column="0" selection-start="55333" selection-end="55333" vertical-scroll-proportion="8.53886" vertical-offset="24468" max-vertical-offset="31360">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,6 +183,8 @@
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/sudoku/sudoku.py" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/matrix/matrix.py" />
       </list>
     </option>
   </component>
@@ -451,7 +493,15 @@
       <created>1398601930346</created>
       <updated>1398601930346</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add document&#10;">
+      <created>1398758369432</created>
+      <updated>1398758369432</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add document&#10;">
+      <created>1398758583062</created>
+      <updated>1398758583062</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -478,12 +528,13 @@
     <frame x="368" y="16" width="1400" height="1000" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25409836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25409836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -493,7 +544,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -515,11 +565,14 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="First Commit&#10;&#10;" />
     <MESSAGE value="changing some local variable to be lower case&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing some local variable to be lower case&#10;" />
+    <MESSAGE value="Add document&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add document&#10;" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/setup.py">
@@ -665,10 +718,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="492" column="43" selection-start="17212" selection-end="17212" vertical-scroll-proportion="12.61658" vertical-offset="100" max-vertical-offset="29300">
+        <state line="1" column="3" selection-start="0" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="29260">
           <folding>
             <element signature="e#163#173#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matrix/matrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1553" column="0" selection-start="55333" selection-end="55333" vertical-scroll-proportion="8.53886" vertical-offset="24468" max-vertical-offset="31360">
+          <folding />
         </state>
       </provider>
     </entry>

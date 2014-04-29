@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Traditional Method: Matrix &mdash; SudokuStudyLib 0.5 documentation</title>
+    <title>Traditional Method: Matrix V.0.5 Rev.005 &mdash; SudokuStudyLib 0.5 documentation</title>
 
     <link rel="stylesheet" href="_static/default.css" type="text/css"/>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
@@ -24,8 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SudokuStudyLib 0.5 documentation" href="index.html"/>
-    <link rel="next" title="OOP Method: Sudoku" href="sudoku.html"/>
-    <link rel="prev" title="Welcome to SudokuStudyLib’s documentation!" href="intro.html"/>
+    <link rel="prev" title="OOP Method: Sudoku" href="sudoku.html"/>
 </head>
 <body>
 <div class="related">
@@ -40,10 +39,6 @@
         </li>
         <li class="right">
             <a href="sudoku.html" title="OOP Method: Sudoku"
-               accesskey="N">next</a> |
-        </li>
-        <li class="right">
-            <a href="intro.html" title="Welcome to SudokuStudyLib’s documentation!"
                accesskey="P">previous</a> |
         </li>
         <li><a href="index.html">SudokuStudyLib 0.5 documentation</a> &raquo;</li>
@@ -51,56 +46,661 @@
 </div>
 
 <div class="document">
-    <div class="documentwrapper">
-        <div class="bodywrapper">
-            <div class="body">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
 
-                <div class="section" id="module-matrix">
-                    <span id="traditional-method-matrix"></span>
+<div class="section" id="module-matrix">
+<span id="traditional-method-matrix-v-0-5-rev-005"></span>
 
-                    <h1>Traditional Method: Matrix<a class="headerlink" href="#module-matrix"
-                                                     title="Permalink to this headline">¶</a></h1>
+<h1>Traditional Method: Matrix V.0.5 Rev.005<a class="headerlink" href="#module-matrix"
+                                               title="Permalink to this headline">¶</a></h1>
 
-                    <p>This is the traditional method to solve the Sudoku.</p>
-                    <span class="target" id="module-matrix.matrix"></span></div>
+<p>This is the traditional method to solve the Sudoku.</p>
+<span class="target" id="module-matrix.matrix"></span><span class="target" id="module-matrix"></span>
+<dl class="function">
+    <dt id="matrix.matrix.CheckInObvious">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">CheckInObvious</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>amt=0</em><big>)</big><a class="reference internal"
+                                                             href="_modules/matrix/matrix.html#CheckInObvious"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.CheckInObvious"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Checking the number in every two different position can descide
+        the number in other box which does not have the number yet
+        Parameters:</p>
+        <blockquote>
+            <div>groups: [((x,0)|(0,y), [(x1,y1),(x2,y2)...]),...]</div>
+        </blockquote>
+    </dd>
+</dl>
 
+<dl class="function">
+    <dt id="matrix.matrix.CheckObvious">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">CheckObvious</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>amt=0</em><big>)</big><a class="reference internal"
+                                                             href="_modules/matrix/matrix.html#CheckObvious"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.CheckObvious"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Checking the every number in every two different position can descide
+        the number in other box which does not have the number yet</p>
+    </dd>
+</dl>
 
+<dl class="function">
+    <dt id="matrix.matrix.CheckObviousByOne">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">CheckObviousByOne</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>amt=0</em><big>)</big><a class="reference internal"
+                                                             href="_modules/matrix/matrix.html#CheckObviousByOne"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.CheckObviousByOne"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Checking every number with only one assigned numer or a group number to decide
+        the number in other box which does not have the number yet</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.CheckOnlyOnePossible">
+        <tt class="descclassname">matrix.matrix.</tt><tt
+            class="descname">CheckOnlyOnePossible</tt><big>(</big><em>m</em>, <em>n</em>, <em>p</em>,
+        <em>amt=0</em><big>)</big><a class="reference internal" href="_modules/matrix/matrix.html#CheckOnlyOnePossible"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.CheckOnlyOnePossible"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Checking the position which only has one possible value</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.CheckOnlyOnePossibleByNum">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">CheckOnlyOnePossibleByNum</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>amt=0</em><big>)</big><a class="reference internal"
+                                                             href="_modules/matrix/matrix.html#CheckOnlyOnePossibleByNum"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#matrix.matrix.CheckOnlyOnePossibleByNum"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check if there is only one number left in the same x, y or box</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.CheckOnlyOnePossibleByPos">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">CheckOnlyOnePossibleByPos</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>amt=0</em><big>)</big><a class="reference internal"
+                                                             href="_modules/matrix/matrix.html#CheckOnlyOnePossibleByPos"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#matrix.matrix.CheckOnlyOnePossibleByPos"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Checking the same positions is only one possible for the number</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.CheckResultByTwoPossibleVal">
+        <tt class="descclassname">matrix.matrix.</tt><tt
+            class="descname">CheckResultByTwoPossibleVal</tt><big>(</big><em>m</em>, <em>n</em>, <em>p</em>, <em>r0</em>,
+        <em>r1</em>, <em>logic='CheckResultByTwoPossible'</em><big>)</big><a class="reference internal"
+                                                                             href="_modules/matrix/matrix.html#CheckResultByTwoPossibleVal"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#matrix.matrix.CheckResultByTwoPossibleVal"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check two emulate result records from a number only have two possible position in a box, line;
+        or a postion only have two possible numbers,
+        if they have same record or not!</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.CheckVal">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">CheckVal</tt><big>(</big><em>m</em>,
+        <em>pos</em>, <em>v</em><big>)</big><a class="reference internal"
+                                               href="_modules/matrix/matrix.html#CheckVal"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#matrix.matrix.CheckVal" title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check if one of the positions has been set the value</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.Emulator">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">Emulator</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>pos</em>, <em>v</em>, <em>targets=</em>, <span class="optional">[</span><span
+            class="optional">]</span><em>checkval=0</em><big>)</big><a class="reference internal"
+                                                                       href="_modules/matrix/matrix.html#Emulator"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.Emulator"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>emulate the pos to be set v, then start to use some basic methods to try to solve
+        it will stop when and return::
+        1: one of the targets have been set the checkval
+        2: isDone
+        -1: error is True
+        0: all basic methods have been tested, and can&#8217;t solve
+        and the result matrix</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetAllPosInBox">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetAllPosInBox</tt><big>(</big><em>m</em>,
+        <em>p</em>, <em>b</em>, <em>method='a'</em>, <em>num=0</em>, <em>diff=</em><span class="optional">[</span><span
+            class="optional">]</span><big>)</big><a class="reference internal"
+                                                    href="_modules/matrix/matrix.html#GetAllPosInBox"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetAllPosInBox"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Getting a box&#8217;s all position
+        method: a: all, s: all assigned, u: all un-assigned
+        num: 0(1-9), if method=&#8221;u&#8221;, if the num is 1-9, it will only take the positions that is possible be
+        filled by the num
+        diff: the posithon in diff must be excluded</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetAllPosOfX">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetAllPosOfX</tt><big>(</big><em>m</em>,
+        <em>p</em>, <em>idx</em>, <em>diff=</em>, <span class="optional">[</span><span class="optional">]</span><em>method='a'</em>,
+        <em>num=0</em><big>)</big><a class="reference internal" href="_modules/matrix/matrix.html#GetAllPosOfX"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetAllPosOfX"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Get all other possition of line from x = idx than those in diff
+        method: a: all, s:has assigned, u:not assigned
+        num: if method is u and set the number to 1-9, will get all possible pos which are possible to be assigned the
+        num</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetAllPosOfY">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetAllPosOfY</tt><big>(</big><em>m</em>,
+        <em>p</em>, <em>idx</em>, <em>diff=</em>, <span class="optional">[</span><span class="optional">]</span><em>method='a'</em>,
+        <em>num=0</em><big>)</big><a class="reference internal" href="_modules/matrix/matrix.html#GetAllPosOfY"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetAllPosOfY"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Get all other possition of line from y = idx than those in diff
+        method: a: all, s:has assigned, u:not assigned
+        num: if method is u and set the number to 1-9, will get all possible pos which are possible to be assigned the
+        num</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetCanNotSeenInBox">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetCanNotSeenInBox</tt><big>(</big><em>m</em>,
+        <em>b</em>, <em>p1</em>, <em>p2</em><big>)</big><a class="reference internal"
+                                                           href="_modules/matrix/matrix.html#GetCanNotSeenInBox"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetCanNotSeenInBox"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>get the postions in a box(b) which can not be seen in position p1 and p2 which are in the same box
+        and those positions are not filled
+        p1, p2 must be in different x and y, p1, p2 sometime as the form (x,0)|(0,y)</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetChains">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetChains</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>Pos</em>, <em>numbers=2</em><big>)</big><a class="reference internal"
+                                                                               href="_modules/matrix/matrix.html#GetChains"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetChains"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Get numbers Chains from a Pos list
+        return: [([num1, num2,...], [pos1, pos2,...]),...]</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetEffectBox">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetEffectBox</tt><big>(</big><em>p1</em>, <em>p2</em><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#GetEffectBox"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#matrix.matrix.GetEffectBox" title="Permalink to this definition">¶</a></dt>
+    <dd><p>get Boxes Position(i, j) list from two positions which will effect these boxes</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetEffectBoxByOne">
+        <tt class="descclassname">matrix.matrix.</tt><tt
+            class="descname">GetEffectBoxByOne</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal"
+                                                                                         href="_modules/matrix/matrix.html#GetEffectBoxByOne"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetEffectBoxByOne"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>get Boxes Position(i, j) list by one positions which will effect these boxes</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetEffectBoxByOneDir">
+        <tt class="descclassname">matrix.matrix.</tt><tt
+            class="descname">GetEffectBoxByOneDir</tt><big>(</big><em>grp</em><big>)</big><a class="reference internal"
+                                                                                             href="_modules/matrix/matrix.html#GetEffectBoxByOneDir"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetEffectBoxByOneDir"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>get Boxes Position(i, j) list by one group which will effect these boxes</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetEffectBoxByOnePosAndOneDir">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetEffectBoxByOnePosAndOneDir</tt><big>(</big><em>p1</em>,
+        <em>p2</em>, <em>grp</em><big>)</big><a class="reference internal"
+                                                href="_modules/matrix/matrix.html#GetEffectBoxByOnePosAndOneDir"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#matrix.matrix.GetEffectBoxByOnePosAndOneDir"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>get Boxes Position(i, j) list from one position and one group which will effect these boxes
+        but only get same x or same y box
+        grp: (x,0)|((0,y)</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetEffectBoxByTwoGrp">
+        <tt class="descclassname">matrix.matrix.</tt><tt
+            class="descname">GetEffectBoxByTwoGrp</tt><big>(</big><em>p1</em>, <em>p2</em>, <em>d1</em>,
+        <em>d2</em><big>)</big><a class="reference internal"
+                                  href="_modules/matrix/matrix.html#GetEffectBoxByTwoGrp"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#matrix.matrix.GetEffectBoxByTwoGrp" title="Permalink to this definition">¶</a>
+    </dt>
+    <dd><p>get Boxes Position(i, j) list by two directed group which will effect these boxes
+        p1, p2: any position of those groups to make sure the whichbox
+        d1, d2: format like (x,0) or (0, y) to say the group&#8217;s direction</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetGroupInBox">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetGroupInBox</tt><big>(</big><em>m</em>, <em>n</em>,
+        <em>p</em>, <em>number</em><big>)</big><a class="reference internal"
+                                                  href="_modules/matrix/matrix.html#GetGroupInBox"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetGroupInBox"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Get the number Groups which are formed natually in a box
+        because the remain possible positions can at the same line</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetIndirectNumberInBox">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetIndirectNumberInBox</tt><big>(</big><em>possiblePos</em><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#GetIndirectNumberInBox"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetIndirectNumberInBox"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Get Indirect Number Group in a box by possible positions of a number
+        judge by if all ther possiblePos has a same direction, means that those have same x or y
+        if so, it will return (x, 0) or (0, y), otherwise will return (0, 0)</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetNotAssignedByX">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetNotAssignedByX</tt><big>(</big><em>m</em>,
+        <em>x</em><big>)</big><a class="reference internal" href="_modules/matrix/matrix.html#GetNotAssignedByX"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetNotAssignedByX"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Get not yet be assigned positions and number by x</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.GetSameBoxOtherPos">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">GetSameBoxOtherPos</tt><big>(</big><em>m</em>,
+        <em>p</em>, <em>pos</em><big>)</big><a class="reference internal"
+                                               href="_modules/matrix/matrix.html#GetSameBoxOtherPos"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.GetSameBoxOtherPos"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>get the other postions in a box which there is a postion of x, y</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.ReduceByBoxChain">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">ReduceByBoxChain</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em><big>)</big><a class="reference internal"
+                                             href="_modules/matrix/matrix.html#ReduceByBoxChain"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.ReduceByBoxChain"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reduce By Box&#8217;s chaing</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.ReduceByBoxGroup">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">ReduceByBoxGroup</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em><big>)</big><a class="reference internal"
+                                             href="_modules/matrix/matrix.html#ReduceByBoxGroup"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.ReduceByBoxGroup"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reduce Method #1: Reduce by the group number in a box</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.ReduceByChain">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">ReduceByChain</tt><big>(</big><em>m</em>, <em>n</em>,
+        <em>p</em>, <em>numbers</em>, <em>pos</em>, <em>chainpos</em>, <em>logic='Reduced By Chain'</em><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#ReduceByChain"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#matrix.matrix.ReduceByChain" title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reduce numbers of positions of pos which other than positions of chainpos</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.ReduceByEmuResult">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">ReduceByEmuResult</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>m1</em>, <em>possible</em>, <em>v</em><big>)</big><a class="reference internal"
+                                                                                         href="_modules/matrix/matrix.html#ReduceByEmuResult"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.ReduceByEmuResult"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reduce v from some postions by emulate result m1</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.ReduceByLineChain">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">ReduceByLineChain</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>direction='x'</em><big>)</big><a class="reference internal"
+                                                                     href="_modules/matrix/matrix.html#ReduceByLineChain"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.ReduceByLineChain"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reduce By Line chain
+        direction: x: the same x postions, y: the same y positions</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.ReduceByTwoPositionInBox">
+        <tt class="descclassname">matrix.matrix.</tt><tt
+            class="descname">ReduceByTwoPositionInBox</tt><big>(</big><em>m</em>, <em>n</em>, <em>p</em><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#ReduceByTwoPositionInBox"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#matrix.matrix.ReduceByTwoPositionInBox"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reduce by two postions which in the same box or same line, and have a common
+        possible number which only be possible in these two different positions
+        we assume the position set the first, then test the second number where the first number in of the same box,
+        samy x, and same y
+        if we can get the number in the other position, we can make sure that in the other positions will not have the
+        first number
+        because both of two possible number have been tested.
+        return: reduces, sets</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.ReduceByTwoPositionOfLine">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">ReduceByTwoPositionOfLine</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>direction='x'</em><big>)</big><a class="reference internal"
+                                                                     href="_modules/matrix/matrix.html#ReduceByTwoPositionOfLine"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#matrix.matrix.ReduceByTwoPositionOfLine"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reduce by two postions which in the same line, and have a common
+        possible number which only be possible in these two different positions
+        we assume the position set the first, then test the second number where the first number in of the same box,
+        samy x, and same y
+        if we can get the number in the other position, we can make sure that in the other positions will not have the
+        first number
+        because both of two possible number have been tested.
+        return: reduces, sets</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.ReduceByTwoPossible">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">ReduceByTwoPossible</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em><big>)</big><a class="reference internal"
+                                             href="_modules/matrix/matrix.html#ReduceByTwoPossible"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.ReduceByTwoPossible"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reduce by a postion&#8217;s two possible number
+        we assume the position set the first, then test the second number where the first number in of the same box,
+        samy x, and same y
+        if we can get the number in the other position, we can make sure that in the other positions will not have the
+        first number
+        because both of two possible number have been tested.
+        return: reduces, sets</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.SortedUnAssignedPosByPossibles">
+        <tt class="descclassname">matrix.matrix.</tt><tt
+            class="descname">SortedUnAssignedPosByPossibles</tt><big>(</big><em>m</em>, <em>p</em>, <em>possibles=0</em><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#SortedUnAssignedPosByPossibles"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                        href="#matrix.matrix.SortedUnAssignedPosByPossibles"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Get unassign position&#8217;s possible number list, format is [(p1,[n1,n2,...]),(p2,[n1, n2,...]),...]
+        and Sorted By the possible numbers
+        possibles: 0 for all, &gt;=2, mean get only the possible numbers for it</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.TryError">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">TryError</tt><big>(</big><em>file=None</em>,
+        <em>m=</em>, <span class="optional">[</span><span class="optional">]</span><em>n=</em>, <span
+            class="optional">[</span><span class="optional">]</span><em>p=</em>, <span class="optional">[</span><span
+            class="optional">]</span><em>depth=0</em><big>)</big><a class="reference internal"
+                                                                    href="_modules/matrix/matrix.html#TryError"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.TryError"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Try Error method</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.WhichBox">
+        <tt class="descclassname">matrix.matrix.</tt><tt
+            class="descname">WhichBox</tt><big>(</big><em>pos</em><big>)</big><a class="reference internal"
+                                                                                 href="_modules/matrix/matrix.html#WhichBox"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.WhichBox"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>get a Box Postion(i, j) from a position (x, y)</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.emptyMatrix">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">emptyMatrix</tt><big>(</big><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#emptyMatrix"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#matrix.matrix.emptyMatrix" title="Permalink to this definition">¶</a></dt>
+    <dd><p>init the matrix
+        return: m: matrix map</p>
+        <blockquote>
+            <div>n: the number&#8217;s position, the first element save the numbers
+                p: the possible numbers in every position
             </div>
+        </blockquote>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.fillLastNumberByBox">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">fillLastNumberByBox</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>box</em><big>)</big><a class="reference internal"
+                                                           href="_modules/matrix/matrix.html#fillLastNumberByBox"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.fillLastNumberByBox"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>fill the Box&#8217;s last number</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.fillLastNumberByX">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">fillLastNumberByX</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>i</em><big>)</big><a class="reference internal"
+                                                         href="_modules/matrix/matrix.html#fillLastNumberByX"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.fillLastNumberByX"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>fill the x line&#8217;s last number</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.fillLastNumberByY">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">fillLastNumberByY</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>i</em><big>)</big><a class="reference internal"
+                                                         href="_modules/matrix/matrix.html#fillLastNumberByY"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.fillLastNumberByY"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>fill the y line&#8217;s last number</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.isDone">
+        <tt class="descclassname">matrix.matrix.</tt><tt
+            class="descname">isDone</tt><big>(</big><em>m</em><big>)</big><a class="reference internal"
+                                                                             href="_modules/matrix/matrix.html#isDone"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.isDone"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Checking the Matrix is done or not
+        note: only Check the vertical amount is 9</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.isInBox">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">isInBox</tt><big>(</big><em>m</em>, <em>p</em>,
+        <em>b</em>, <em>number</em><big>)</big><a class="reference internal" href="_modules/matrix/matrix.html#isInBox"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.isInBox"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check the number is filled in a box (i, j)</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.isPossible">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">isPossible</tt><big>(</big><em>m</em>,
+        <em>p</em>, <em>pos</em>, <em>v</em>, <em>groups=</em><span class="optional">[</span><span
+            class="optional">]</span><big>)</big><a class="reference internal"
+                                                    href="_modules/matrix/matrix.html#isPossible"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.isPossible"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check if the value v is possible at pos(x, y)</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.isPossibleByBox">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">isPossibleByBox</tt><big>(</big><em>m</em>,
+        <em>p</em>, <em>pos</em>, <em>v</em>, <em>groups=</em><span class="optional">[</span><span
+            class="optional">]</span><big>)</big><a class="reference internal"
+                                                    href="_modules/matrix/matrix.html#isPossibleByBox"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.isPossibleByBox"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check the same box if the value v is possible at pos(x, y)</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.isPossibleByX">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">isPossibleByX</tt><big>(</big><em>m</em>, <em>pos</em>,
+        <em>v</em>, <em>groups=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#isPossibleByX"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#matrix.matrix.isPossibleByX" title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check the same x if the value v is possible at pos(x, y)</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.isPossibleByY">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">isPossibleByY</tt><big>(</big><em>m</em>, <em>pos</em>,
+        <em>v</em>, <em>groups=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#isPossibleByY"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#matrix.matrix.isPossibleByY" title="Permalink to this definition">¶</a></dt>
+    <dd><p>Check the same y if the value v is possible at pos(x, y)
+        if group number has passed, should check box group number</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.main">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">main</tt><big>(</big><em>file</em>, <em>methods=0</em><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#main"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.main"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>main program</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.printMatrix">
+        <tt class="descclassname">matrix.matrix.</tt><tt
+            class="descname">printMatrix</tt><big>(</big><em>m</em><big>)</big><a class="reference internal"
+                                                                                  href="_modules/matrix/matrix.html#printMatrix"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.printMatrix"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>print matrix(m)</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.readDefine">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">readDefine</tt><big>(</big><em>file</em>, <em>m</em>,
+        <em>n</em>, <em>p</em><big>)</big><a class="reference internal"
+                                             href="_modules/matrix/matrix.html#readDefine"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#matrix.matrix.readDefine" title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reading the Matrix form a define file, the format must be as x,y,v
+        Save the file by the Unix text format</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.reduceNumber">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">reduceNumber</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>pos</em>, <em>v</em>, <em>logic='defined'</em><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#reduceNumber"><span class="viewcode-link">[source]</span></a><a
+            class="headerlink" href="#matrix.matrix.reduceNumber" title="Permalink to this definition">¶</a></dt>
+    <dd><p>Reduce the possible number of the position x, y from v
+        return: 0: Error, 1:reduce, 2:reduce and only one value left, so set the number</p>
+    </dd>
+</dl>
+
+<dl class="function">
+    <dt id="matrix.matrix.setNumber">
+        <tt class="descclassname">matrix.matrix.</tt><tt class="descname">setNumber</tt><big>(</big><em>m</em>,
+        <em>n</em>, <em>p</em>, <em>pos</em>, <em>v</em>, <em>logic='defined'</em><big>)</big><a
+            class="reference internal" href="_modules/matrix/matrix.html#setNumber"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.setNumber"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>Setting the position x, y to be number v</p>
+    </dd>
+</dl>
+
+</div>
+
+
+</div>
+</div>
+</div>
+<div class="sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+        <h4>Previous topic</h4>
+
+        <p class="topless"><a href="sudoku.html"
+                              title="previous chapter">OOP Method: Sudoku</a></p>
+
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+            <li><a href="_sources/matrix.txt"
+                   rel="nofollow">Show Source</a></li>
+        </ul>
+        <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q"/>
+                <input type="submit" value="Go"/>
+                <input type="hidden" name="check_keywords" value="yes"/>
+                <input type="hidden" name="area" value="default"/>
+            </form>
+            <p class="searchtip" style="font-size: 90%">
+                Enter search terms or a module, class or function name.
+            </p>
         </div>
+        <script type="text/javascript">$('#searchbox').show(0);</script>
     </div>
-    <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-            <h4>Previous topic</h4>
-
-            <p class="topless"><a href="intro.html"
-                                  title="previous chapter">Welcome to SudokuStudyLib&#8217;s documentation!</a></p>
-            <h4>Next topic</h4>
-
-            <p class="topless"><a href="sudoku.html"
-                                  title="next chapter">OOP Method: Sudoku</a></p>
-
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-                <li><a href="_sources/matrix.txt"
-                       rel="nofollow">Show Source</a></li>
-            </ul>
-            <div id="searchbox" style="display: none">
-                <h3>Quick search</h3>
-
-                <form class="search" action="search.html" method="get">
-                    <input type="text" name="q"/>
-                    <input type="submit" value="Go"/>
-                    <input type="hidden" name="check_keywords" value="yes"/>
-                    <input type="hidden" name="area" value="default"/>
-                </form>
-                <p class="searchtip" style="font-size: 90%">
-                    Enter search terms or a module, class or function name.
-                </p>
-            </div>
-            <script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-    </div>
-    <div class="clearer"></div>
+</div>
+<div class="clearer"></div>
 </div>
 <div class="related">
     <h3>Navigation</h3>
@@ -114,10 +714,6 @@
         </li>
         <li class="right">
             <a href="sudoku.html" title="OOP Method: Sudoku"
-                    >next</a> |
-        </li>
-        <li class="right">
-            <a href="intro.html" title="Welcome to SudokuStudyLib’s documentation!"
                     >previous</a> |
         </li>
         <li><a href="index.html">SudokuStudyLib 0.5 documentation</a> &raquo;</li>

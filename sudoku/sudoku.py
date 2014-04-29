@@ -1408,8 +1408,6 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
             print("It is stopped by the position({0}) be set! method={1}".format(checkPos, methodIdx))
             traceback.print_exc()
             break
-        except IOError as err:
-            print("I/O error: {0}".format(err))
         except SudokuError as err:
             if tryUse and tryIdx > 0:
                 flag = False
