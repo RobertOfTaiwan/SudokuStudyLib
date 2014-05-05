@@ -8,11 +8,11 @@ Welcome to SudokuStudyLib's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
-   
-   intro
-   sudoku
-   matrix
+    :maxdepth: 2
+
+    intro
+    sudoku
+    matrix
 
 Indices and tables
 ==================

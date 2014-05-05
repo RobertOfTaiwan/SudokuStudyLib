@@ -5,5 +5,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="ReSTService">
+    <option name="workdir" value="D:\workspace\sudokulib\docs" />
+    <option name="DOC_DIR" value="D:\workspace\sudokulib\docs" />
+  </component>
 </module>
 

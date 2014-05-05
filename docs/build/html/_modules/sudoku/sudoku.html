@@ -108,6 +108,12 @@
 <span class="n">METHOD_LEVEL_LIMIT_WHENTRY</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c"># if start using try, set the level limit to use</span>
 
 
+<span class="k">class</span> <span class="nc">Status</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span
+        class="p">):</span>
+        <span class="k">pass</span>
+
+
 <div class="viewcode-block" id="SudokuError"><a class="viewcode-back"
                                                 href="../../sudoku.html#sudoku.sudoku.SudokuError">[docs]</a><span
         class="k">class</span> <span class="nc">SudokuError</span><span class="p">(</span><span
@@ -255,148 +261,174 @@
 
     </div>
 </div>
-<span class="k">class</span> <span class="nc">GroupBase</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span
-        class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">p</span><span
-        class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">idx</span> <span class="o">=</span> <span
-        class="n">idx</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span
-        class="n">p</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filled</span> <span class="o">=</span> <span
-        class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">possible</span> <span
-        class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span
-        class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span
-        class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">chain</span> <span class="o">=</span> <span
-        class="p">[]</span>  <span class="c"># store this group&#39;s chain positions</span>
+<div class="viewcode-block" id="GroupBase"><a class="viewcode-back" href="../../sudoku.html#sudoku.sudoku.GroupBase">[docs]</a><span
+        class="k">class</span> <span class="nc">GroupBase</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;The Base Class of a Line or Box&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">allow</span><span class="p">(</span><span class="bp">self</span><span
-        class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span
+            class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">p</span><span
+            class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">idx</span> <span class="o">=</span> <span
+            class="n">idx</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span
+            class="n">p</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">filled</span> <span class="o">=</span> <span
+            class="mi">0</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">possible</span> <span class="o">=</span> <span
+            class="nb">list</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span
+            class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span
+            class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">chain</span> <span class="o">=</span> <span
+            class="p">[]</span> <span class="c"># store this group&#39;s chain positions</span>
+
+    <div class="viewcode-block" id="GroupBase.allow"><a class="viewcode-back"
+                                                        href="../../sudoku.html#sudoku.sudoku.GroupBase.allow">[docs]</a>
+        <span class="k">def</span> <span class="nf">allow</span><span class="p">(</span><span
+                class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;check the group can be filled the number(v)?&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">p1</span> <span class="ow">in</span> <span
-        class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">v</span> <span
-        class="o">==</span> <span class="n">v</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">False</span>
+                class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">v</span> <span
+                class="o">==</span> <span class="n">v</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
         <span class="k">return</span> <span class="bp">True</span>
-
-    <span class="k">def</span> <span class="nf">get_num_pos</span><span class="p">(</span><span
-        class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    </div>
+    <div class="viewcode-block" id="GroupBase.get_num_pos"><a class="viewcode-back"
+                                                              href="../../sudoku.html#sudoku.sudoku.GroupBase.get_num_pos">[docs]</a>
+        <span class="k">def</span> <span class="nf">get_num_pos</span><span class="p">(</span><span
+                class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;get the position of a group which have been filled the number(v)&quot;&quot;&quot;</span>
         <span class="n">rtn</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="k">for</span> <span class="n">p1</span> <span class="ow">in</span> <span
-        class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">v</span> <span
-        class="o">==</span> <span class="n">v</span><span class="p">:</span>
-                <span class="n">rtn</span> <span class="o">=</span> <span class="n">p1</span>
-                <span class="k">break</span>
+                class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">v</span> <span
+                class="o">==</span> <span class="n">v</span><span class="p">:</span>
+        <span class="n">rtn</span> <span class="o">=</span> <span class="n">p1</span>
+        <span class="k">break</span>
         <span class="k">return</span> <span class="n">rtn</span>
-
-    <span class="k">def</span> <span class="nf">count_num_possible</span><span class="p">(</span><span
-        class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span
-        class="mi">1</span><span class="p">):</span>
+    </div>
+    <div class="viewcode-block" id="GroupBase.count_num_possible"><a class="viewcode-back"
+                                                                     href="../../sudoku.html#sudoku.sudoku.GroupBase.count_num_possible">[docs]</a>
+        <span class="k">def</span> <span class="nf">count_num_possible</span><span class="p">(</span><span class="bp">self</span><span
+                class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span
+                class="p">):</span>
         <span class="sd">&quot;&quot;&quot;get the un-assigned position in this group, and possible numbers only in [count] postions</span>
-<span class="sd">        return: [(num,[p1, p2...]),...]&quot;&quot;&quot;</span>
+
+        <span class="sd">        .. note:: The output format is a tuple list, the tuple has two value, one is number,</span>
+        <span class="sd">                    another is s position list</span>
+
+        <span class="sd">        :count: how many positions are un-assigned to get</span>
+        <span class="sd">        :return: [(num,[p1, p2...]),...]</span>
+
+        <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="c"># count all possible number in to c and pos list, c is the times it show in the posiiton,</span>
         <span class="c"># p records which positions</span>
         <span class="n">c</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span
-        class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span
-        class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+                class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span
+                class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
         <span class="n">pos</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([]</span> <span
-        class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span
-        class="p">(</span><span class="mi">9</span><span class="p">))</span>
+                class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span
+                class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
         <span class="k">for</span> <span class="n">p1</span> <span class="ow">in</span> <span
-        class="bp">self</span><span class="o">.</span><span class="n">get_all_pos</span><span class="p">(</span><span
-        class="n">method</span><span class="o">=</span><span class="s">&quot;u&quot;</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span
-        class="n">p1</span><span class="o">.</span><span class="n">possible</span><span class="p">:</span>
-                <span class="n">c</span><span class="p">[</span><span class="n">num</span> <span
-        class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="n">pos</span><span class="p">[</span><span class="n">num</span> <span
-        class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span
-        class="p">(</span><span class="n">p1</span><span class="p">)</span>
+                class="bp">self</span><span class="o">.</span><span class="n">get_all_pos</span><span class="p">(</span><span
+                class="n">method</span><span class="o">=</span><span class="s">&quot;u&quot;</span><span
+                class="p">):</span>
+        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">p1</span><span
+                class="o">.</span><span class="n">possible</span><span class="p">:</span>
+        <span class="n">c</span><span class="p">[</span><span class="n">num</span> <span class="o">-</span> <span
+                class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">pos</span><span class="p">[</span><span class="n">num</span> <span class="o">-</span> <span
+                class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span
+                class="p">(</span><span class="n">p1</span><span class="p">)</span>
         <span class="c"># get all the times = count</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span
-        class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span
-        class="p">]</span> <span class="o">==</span> <span class="n">count</span><span class="p">:</span>
-                <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span
-        class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">pos</span><span
-        class="p">[</span><span class="n">i</span><span class="p">]))</span>
+                class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span
+                class="p">]</span> <span class="o">==</span> <span class="n">count</span><span class="p">:</span>
+        <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span
+                class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span
+                class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
 
         <span class="k">return</span> <span class="n">rtn</span>
-
-    <span class="k">def</span> <span class="nf">get_all_pos</span><span class="p">(</span><span
-        class="bp">self</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span
-        class="p">[],</span> <span class="n">method</span><span class="o">=</span><span
-        class="s">&quot;a&quot;</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span
-        class="mi">0</span><span class="p">,</span> <span class="n">notInLineX</span><span class="o">=</span><span
-        class="bp">None</span><span class="p">,</span> <span class="n">notInLineY</span><span class="o">=</span><span
-        class="bp">None</span><span class="p">,</span> <span class="n">chain</span><span class="o">=</span><span
-        class="bp">None</span><span class="p">,</span> <span class="n">possibles</span><span class="o">=</span><span
-        class="bp">None</span><span class="p">):</span>
+    </div>
+    <div class="viewcode-block" id="GroupBase.get_all_pos"><a class="viewcode-back"
+                                                              href="../../sudoku.html#sudoku.sudoku.GroupBase.get_all_pos">[docs]</a>
+        <span class="k">def</span> <span class="nf">get_all_pos</span><span class="p">(</span><span
+                class="bp">self</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span
+                class="p">[],</span> <span class="n">method</span><span class="o">=</span><span
+                class="s">&quot;a&quot;</span><span class="p">,</span> <span class="n">num</span><span
+                class="o">=</span><span class="mi">0</span><span class="p">,</span> <span
+                class="n">notInLineX</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">notInLineY</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="n">chain</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span
+                class="n">possibles</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        get position list in this group</span>
-<span class="sd">        diff: exclude the positions in it</span>
-<span class="sd">        method: a: all, s:has assigned, u:not assigned</span>
-<span class="sd">        num: if method is u and set the number to 1-9, will get all possible pos which are possible to be assigned the num</span>
-<span class="sd">        notInLineX: exclude the x line&#39;s positions</span>
-<span class="sd">        notInLineY: exclude the y line&#39;s positions</span>
-<span class="sd">        chain: if set, check it, if it is True, just get the chain positions, or get the un-chained postitions</span>
-<span class="sd">        possibles: if method=&quot;u&quot; and possibles!=None, it will only get the possible set&#39;s length = possibles</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="sd">        get position list in this group</span>
+
+        <span class="sd">        Parameters::</span>
+        <span class="sd">            :diff:        exclude the positions in it</span>
+        <span class="sd">            :method:      a: all, s:has assigned, u:not assigned</span>
+        <span class="sd">            :num:         if method is u and set the number to 1-9, will get all possible pos which are possible to be assigned the num</span>
+        <span class="sd">            :notInLineX:  exclude the x line&#39;s positions</span>
+        <span class="sd">            :notInLineY:  exclude the y line&#39;s positions</span>
+        <span class="sd">            :chain:       if set, check it, if it is True, just get the chain positions, or get the un-chained postitions</span>
+        <span class="sd">            :possibles:   if method=&quot;u&quot; and possibles!=None, it will only get the possible set&#39;s length = possibles</span>
+
+        <span class="sd">        Return::</span>
+        <span class="sd">            a List of Position</span>
+
+        <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">lGetOtherThan</span> <span class="o">=</span> <span class="nb">len</span><span
-        class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">&gt;</span> <span
-        class="mi">0</span>
+                class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">&gt;</span> <span
+                class="mi">0</span>
         <span class="k">for</span> <span class="n">p1</span> <span class="ow">in</span> <span
-        class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">:</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">method</span> <span
-        class="o">==</span> <span class="s">&quot;u&quot;</span> <span class="ow">and</span> <span
-        class="n">p1</span><span class="o">.</span><span class="n">v</span> <span class="o">!=</span> <span
-        class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">method</span> <span
-        class="o">==</span> <span class="s">&quot;s&quot;</span> <span class="ow">and</span> <span
-        class="n">p1</span><span class="o">.</span><span class="n">v</span> <span class="o">==</span> <span
-        class="mi">0</span><span class="p">):</span>
-                <span class="k">continue</span>
-            <span class="k">if</span> <span class="n">lGetOtherThan</span> <span class="ow">and</span> <span class="n">p1</span> <span
-        class="ow">in</span> <span class="n">diff</span><span class="p">:</span>
-                <span class="k">continue</span>
-            <span class="k">if</span> <span class="n">num</span> <span class="o">!=</span> <span
-        class="mi">0</span> <span class="ow">and</span> <span class="n">method</span> <span class="o">==</span> <span
-        class="s">&quot;u&quot;</span> <span class="ow">and</span> <span class="n">num</span> <span
-        class="ow">not</span> <span class="ow">in</span> <span class="n">p1</span><span class="o">.</span><span
-        class="n">possible</span><span class="p">:</span>
-                <span class="k">continue</span>
-            <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span
-        class="o">==</span> <span class="n">notInLineX</span> <span class="ow">or</span> <span class="n">p1</span><span
-        class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">notInLineY</span><span
-        class="p">:</span>
-                <span class="k">continue</span>
-            <span class="k">if</span> <span class="n">chain</span> <span class="ow">is</span> <span
-        class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">chain</span> <span
-        class="ow">and</span> <span class="n">p1</span> <span class="ow">not</span> <span class="ow">in</span> <span
-        class="bp">self</span><span class="o">.</span><span class="n">chain</span><span class="p">)</span> <span
-        class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">chain</span> <span
-        class="ow">and</span> <span class="n">p1</span> <span class="ow">in</span> <span class="bp">self</span><span
-        class="o">.</span><span class="n">chain</span><span class="p">):</span>
-                    <span class="k">continue</span>
-            <span class="k">if</span> <span class="n">possibles</span> <span class="ow">and</span> <span class="n">method</span> <span
-        class="o">==</span> <span class="s">&quot;u&quot;</span><span class="p">:</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span
-        class="n">p1</span><span class="o">.</span><span class="n">possible</span><span class="p">)</span> <span
-        class="o">!=</span> <span class="n">possibles</span><span class="p">:</span>
-                    <span class="k">continue</span>
-            <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span
-        class="n">p1</span><span class="p">)</span>
+                class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">method</span> <span class="o">==</span> <span
+                class="s">&quot;u&quot;</span> <span class="ow">and</span> <span class="n">p1</span><span
+                class="o">.</span><span class="n">v</span> <span class="o">!=</span> <span class="mi">0</span><span
+                class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">method</span>
+        <span class="o">==</span> <span class="s">&quot;s&quot;</span> <span class="ow">and</span> <span
+                class="n">p1</span><span class="o">.</span><span class="n">v</span> <span class="o">==</span> <span
+                class="mi">0</span><span class="p">):</span>
+        <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">lGetOtherThan</span> <span class="ow">and</span> <span
+                class="n">p1</span> <span class="ow">in</span> <span class="n">diff</span><span class="p">:</span>
+        <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">!=</span> <span class="mi">0</span> <span
+                class="ow">and</span> <span class="n">method</span> <span class="o">==</span> <span class="s">&quot;u&quot;</span>
+        <span class="ow">and</span> <span class="n">num</span> <span class="ow">not</span> <span class="ow">in</span>
+        <span class="n">p1</span><span class="o">.</span><span class="n">possible</span><span class="p">:</span>
+        <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span
+                class="o">==</span> <span class="n">notInLineX</span> <span class="ow">or</span> <span
+                class="n">p1</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span
+                class="n">notInLineY</span><span class="p">:</span>
+        <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">chain</span> <span class="ow">is</span> <span class="ow">not</span>
+        <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">chain</span> <span class="ow">and</span> <span
+                class="n">p1</span> <span class="ow">not</span> <span class="ow">in</span> <span
+                class="bp">self</span><span class="o">.</span><span class="n">chain</span><span class="p">)</span> <span
+                class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">chain</span>
+        <span class="ow">and</span> <span class="n">p1</span> <span class="ow">in</span> <span
+                class="bp">self</span><span class="o">.</span><span class="n">chain</span><span class="p">):</span>
+        <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">possibles</span> <span class="ow">and</span> <span
+                class="n">method</span> <span class="o">==</span> <span class="s">&quot;u&quot;</span><span
+                class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p1</span><span
+                class="o">.</span><span class="n">possible</span><span class="p">)</span> <span class="o">!=</span>
+        <span class="n">possibles</span><span class="p">:</span>
+        <span class="k">continue</span>
+        <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span
+                class="n">p1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">rtn</span>
 
-
+    </div>
+</div>
 <div class="viewcode-block" id="LineX"><a class="viewcode-back"
                                           href="../../sudoku.html#sudoku.sudoku.LineX">[docs]</a><span
         class="k">class</span> <span class="nc">LineX</span><span class="p">(</span><span
@@ -685,462 +717,456 @@
 <div class="viewcode-block" id="Matrix"><a class="viewcode-back"
                                            href="../../sudoku.html#sudoku.sudoku.Matrix">[docs]</a><span
         class="k">class</span> <span class="nc">Matrix</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;A Table of a Sudoku&quot;&quot;&quot;</span>
+<span class="sd">&quot;&quot;&quot;A Table of a Sudoku&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span
-            class="p">,</span> <span class="nb">file</span><span class="o">=</span><span
-            class="s">&quot;&quot;</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">rec</span> <span class="o">=</span> <span
-            class="p">[]</span> <span class="c"># record all the steps,</span>
-    <span class="c"># element&#39;s format is (x, y, v, t, d), t=&quot;s&quot;|&quot;r&quot;, d=&quot;Description String&quot;</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">filled</span> <span class="o">=</span> <span
-            class="mi">0</span> <span class="c"># record how many numbers have been assigned in this table</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">done</span> <span class="o">=</span> <span
-            class="bp">False</span> <span class="c"># if solved or not</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span
-            class="bp">False</span> <span class="c"># if there is an error occurs</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">lineX</span> <span class="o">=</span> <span
-            class="nb">list</span><span class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span
-            class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span
-            class="p">))</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">lineY</span> <span class="o">=</span> <span
-            class="nb">list</span><span class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span
-            class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span
-            class="p">))</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span
-            class="nb">list</span><span class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span
-            class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span
-            class="p">))</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span
-            class="nb">list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span
-            class="n">Point</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span
-            class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span
-            class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span
-            class="p">))</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span
-            class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span
-            class="nb">list</span><span class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span
-            class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span
-            class="p">))</span>
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span
+        class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="s">&quot;&quot;</span><span
+        class="p">):</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">rec</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c"># record all the steps,</span>
+<span class="c"># element&#39;s format is (x, y, v, t, d), t=&quot;s&quot;|&quot;r&quot;, d=&quot;Description String&quot;</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">filled</span> <span class="o">=</span> <span
+        class="mi">0</span> <span class="c"># record how many numbers have been assigned in this table</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">done</span> <span class="o">=</span> <span
+        class="bp">False</span> <span class="c"># if solved or not</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span
+        class="bp">False</span> <span class="c"># if there is an error occurs</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">lineX</span> <span class="o">=</span> <span
+        class="nb">list</span><span class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span
+        class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span
+        class="p">))</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">lineY</span> <span class="o">=</span> <span
+        class="nb">list</span><span class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span
+        class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span
+        class="p">))</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span
+        class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span
+        class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span class="nb">list</span><span
+        class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Point</span><span
+        class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span
+        class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span
+        class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span> <span
+        class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span
+        class="p">(</span><span class="mi">9</span><span class="p">))</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="nb">list</span><span
+        class="p">([]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span
+        class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span
+        class="p">(</span><span class="mi">9</span><span class="p">):</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">lineX</span><span class="p">[</span><span class="n">i</span><span
+        class="p">]</span> <span class="o">=</span> <span class="n">LineX</span><span class="p">(</span><span class="n">i</span><span
+        class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span
+        class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span
+        class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span
+        class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span
+        class="mi">9</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span
+        class="p">(</span><span class="mi">9</span><span class="p">):</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">lineY</span><span class="p">[</span><span class="n">i</span><span
+        class="p">]</span> <span class="o">=</span> <span class="n">LineY</span><span class="p">(</span><span class="n">i</span><span
+        class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span
+        class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">j</span><span
+        class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span
+        class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span
+        class="mi">9</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span
+        class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span
+        class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span
+        class="mi">3</span> <span class="o">+</span> <span class="n">j</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span
+        class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span
+        class="n">idx</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span
+        class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span
+        class="mi">3</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span
+        class="n">x</span><span class="p">][</span><span class="mi">3</span> <span class="o">*</span> <span
+        class="n">j</span> <span class="o">+</span> <span class="n">y</span><span class="p">]</span> <span
+        class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span
+        class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span
+        class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span
+        class="mi">3</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span
+        class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span
+        class="p">):</span> <span class="c"># the first, index=0 will not be used</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">[</span><span
+        class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Number</span><span
+        class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">chain</span> <span class="o">=</span> <span
+        class="p">[]</span> <span class="c"># store chains in this list</span>
+
+<span class="c"># read define  </span>
+<span class="k">if</span> <span class="nb">file</span> <span class="o">!=</span> <span
+        class="s">&quot;&quot;</span><span class="p">:</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">file</span><span
+        class="p">)</span>
+
+<div class="viewcode-block" id="Matrix.get_all_pos"><a class="viewcode-back"
+                                                       href="../../sudoku.html#sudoku.sudoku.Matrix.get_all_pos">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_all_pos</span><span class="p">(</span><span
+            class="bp">self</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span
+            class="p">[],</span> <span class="n">method</span><span class="o">=</span><span
+            class="s">&quot;a&quot;</span><span class="p">,</span> <span class="n">num</span><span
+            class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">chain</span><span
+            class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">possibles</span><span
+            class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;get all postion&quot;&quot;&quot;</span>
+    <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span
+            class="o">.</span><span class="n">lineX</span><span class="p">:</span>
+    <span class="n">rtn</span> <span class="o">=</span> <span class="n">rtn</span> <span class="o">+</span> <span
+            class="n">line</span><span class="o">.</span><span class="n">get_all_pos</span><span class="p">(</span><span
+            class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span
+            class="n">num</span><span class="o">=</span><span class="n">num</span><span class="p">,</span> <span
+            class="n">chain</span><span class="o">=</span><span class="n">chain</span><span class="p">,</span> <span
+            class="n">diff</span><span class="o">=</span><span class="n">diff</span><span class="p">,</span> <span
+            class="n">possibles</span><span class="o">=</span><span class="n">possibles</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rtn</span>
+</div>
+<div class="viewcode-block" id="Matrix.sort_unassigned_pos_by_possibles"><a class="viewcode-back"
+                                                                            href="../../sudoku.html#sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles">[docs]</a>
+    <span class="k">def</span> <span class="nf">sort_unassigned_pos_by_possibles</span><span class="p">(</span><span
+            class="bp">self</span><span class="p">,</span> <span class="n">possibles</span><span class="o">=</span><span
+            class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get unassign position&#39;s possible number list, format is [p1, p2,...]</span>
+    <span class="sd">        and Sorted By the possible numbers</span>
+    <span class="sd">        possibles: 0 for all, &gt;=2, mean get only the possible numbers for it&quot;&quot;&quot;</span>
+    <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">check</span> <span class="o">=</span> <span class="n">possibles</span> <span class="o">&gt;=</span>
+    <span class="mi">2</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span
             class="p">(</span><span class="mi">9</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">lineX</span><span class="p">[</span><span
-            class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">LineX</span><span
-            class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">list</span><span
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span
+            class="p">(</span><span class="mi">9</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span
+            class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span
+            class="p">]</span><span class="o">.</span><span class="n">v</span> <span class="o">!=</span> <span
+            class="mi">0</span><span class="p">:</span>
+    <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">check</span> <span class="ow">and</span> <span class="nb">len</span><span
             class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span
             class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span
-            class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span
-            class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span
-            class="p">(</span><span class="mi">9</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">lineY</span><span class="p">[</span><span
-            class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">LineY</span><span
-            class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">list</span><span
-            class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span
-            class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span
-            class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span
-            class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span
-            class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span
-            class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">idx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span
-            class="mi">3</span> <span class="o">+</span> <span class="n">j</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="n">idx</span><span
-            class="p">]</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span
-            class="n">idx</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span
+            class="p">]</span><span class="o">.</span><span class="n">possible</span><span class="p">)</span> <span
+            class="o">!=</span> <span class="n">possibles</span><span class="p">:</span>
+    <span class="k">continue</span>
+    <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span
             class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span
-            class="mi">3</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span
-            class="n">x</span><span class="p">][</span><span class="mi">3</span> <span class="o">*</span> <span
-            class="n">j</span> <span class="o">+</span> <span class="n">y</span><span class="p">]</span> <span
-            class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span
-            class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span
-            class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span
-            class="mi">3</span><span class="p">)))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span
-            class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span
-            class="p">):</span> <span class="c"># the first, index=0 will not be used</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span
-            class="p">]</span> <span class="o">=</span> <span class="n">Number</span><span class="p">(</span><span
-            class="n">i</span><span class="p">)</span>
-
-    <span class="bp">self</span><span class="o">.</span><span class="n">chain</span> <span class="o">=</span> <span
-            class="p">[]</span> <span class="c"># store chains in this list</span>
-
-    <span class="c"># read define  </span>
-    <span class="k">if</span> <span class="nb">file</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span
-            class="p">:</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span
-            class="nb">file</span><span class="p">)</span>
-
-    <div class="viewcode-block" id="Matrix.get_all_pos"><a class="viewcode-back"
-                                                           href="../../sudoku.html#sudoku.sudoku.Matrix.get_all_pos">[docs]</a>
-        <span class="k">def</span> <span class="nf">get_all_pos</span><span class="p">(</span><span
-                class="bp">self</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span
-                class="p">[],</span> <span class="n">method</span><span class="o">=</span><span
-                class="s">&quot;a&quot;</span><span class="p">,</span> <span class="n">num</span><span
-                class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">chain</span><span
-                class="o">=</span><span class="bp">None</span><span class="p">,</span> <span
-                class="n">possibles</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;get all postion&quot;&quot;&quot;</span>
-        <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span
-                class="bp">self</span><span class="o">.</span><span class="n">lineX</span><span class="p">:</span>
-        <span class="n">rtn</span> <span class="o">=</span> <span class="n">rtn</span> <span class="o">+</span> <span
-                class="n">line</span><span class="o">.</span><span class="n">get_all_pos</span><span
-                class="p">(</span><span class="n">method</span><span class="o">=</span><span
-                class="n">method</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span
-                class="n">num</span><span class="p">,</span> <span class="n">chain</span><span class="o">=</span><span
-                class="n">chain</span><span class="p">,</span> <span class="n">diff</span><span class="o">=</span><span
-                class="n">diff</span><span class="p">,</span> <span class="n">possibles</span><span
-                class="o">=</span><span class="n">possibles</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">rtn</span><span class="p">)</span>
-    </div>
-    <div class="viewcode-block" id="Matrix.sort_unassigned_pos_by_possibles"><a class="viewcode-back"
-                                                                                href="../../sudoku.html#sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles">[docs]</a>
-        <span class="k">def</span> <span class="nf">sort_unassigned_pos_by_possibles</span><span class="p">(</span><span
-                class="bp">self</span><span class="p">,</span> <span class="n">possibles</span><span
-                class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get unassign position&#39;s possible number list, format is [p1, p2,...]</span>
-        <span class="sd">        and Sorted By the possible numbers</span>
-        <span class="sd">        possibles: 0 for all, &gt;=2, mean get only the possible numbers for it&quot;&quot;&quot;</span>
-        <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">check</span> <span class="o">=</span> <span class="n">possibles</span> <span
-                class="o">&gt;=</span> <span class="mi">2</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span
-                class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span
-                class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span
-                class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span
-                class="p">]</span><span class="o">.</span><span class="n">v</span> <span class="o">!=</span> <span
-                class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-        <span class="k">if</span> <span class="n">check</span> <span class="ow">and</span> <span
-                class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span
-                class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span
-                class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">possible</span><span
-                class="p">)</span> <span class="o">!=</span> <span class="n">possibles</span><span class="p">:</span>
-        <span class="k">continue</span>
-        <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span
-                class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span
-                class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
-        <span class="n">rtn</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span
-                class="n">rtn</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span
-                class="k">lambda</span> <span class="n">pos</span><span class="p">:</span> <span
-                class="nb">len</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span
-                class="n">possible</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">rtn</span>
-    </div>
-    <div class="viewcode-block" id="Matrix.can_see"><a class="viewcode-back"
-                                                       href="../../sudoku.html#sudoku.sudoku.Matrix.can_see">[docs]</a>
-        <span class="k">def</span> <span class="nf">can_see</span><span class="p">(</span><span
-                class="bp">self</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span
-                class="n">method</span><span class="o">=</span><span class="s">&quot;u&quot;</span><span
-                class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">0</span><span
-                class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;get the possition list which can see the position, p</span>
-        <span class="sd">        method: &quot;u&quot;: un-assigned positions, &quot;a&quot;: all, &quot;s&quot;: assigned positions</span>
-        <span class="sd">        num: if method=&quot;u&quot;, the position must have be possible to be filled the number</span>
-        <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="p">(</span><span
-                class="bp">self</span><span class="o">.</span><span class="n">lineX</span><span class="p">[</span><span
-                class="n">p0</span><span class="o">.</span><span class="n">x</span><span class="p">]</span><span
-                class="o">.</span><span class="n">p</span><span class="p">,</span> <span class="bp">self</span><span
-                class="o">.</span><span class="n">lineY</span><span class="p">[</span><span class="n">p0</span><span
-                class="o">.</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span
-                class="n">p</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span
-                class="n">b</span><span class="p">[</span><span class="n">p0</span><span class="o">.</span><span
-                class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">p</span><span
-                class="p">):</span>
-        <span class="k">for</span> <span class="n">p1</span> <span class="ow">in</span> <span
-                class="n">group</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">p1</span> <span class="o">==</span> <span class="n">p0</span> <span
-                class="ow">or</span> <span class="n">p1</span> <span class="ow">in</span> <span
-                class="n">rtn</span><span class="p">:</span>
-        <span class="k">continue</span>
-        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span
-                class="s">&quot;u&quot;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">v</span> <span
-                class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span
-                class="n">num</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span>
-        <span class="n">num</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">p1</span><span
-                class="o">.</span><span class="n">possible</span><span class="p">):</span>
-        <span class="k">continue</span>
-        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s">&quot;s&quot;</span><span
-                class="p">:</span>
-        <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">v</span> <span
-                class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-        <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span
-                class="n">p1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">rtn</span>
-    </div>
-    <div class="viewcode-block" id="Matrix.setit"><a class="viewcode-back"
-                                                     href="../../sudoku.html#sudoku.sudoku.Matrix.setit">[docs]</a>
-        <span class="k">def</span> <span class="nf">setit</span><span class="p">(</span><span
-                class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span
-                class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span
-                class="n">d</span><span class="o">=</span><span class="s">&quot;define&quot;</span><span
-                class="p">,</span> <span class="n">info</span><span class="o">=</span><span
-                class="s">&quot;&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;set the position x, y to be the number v</span>
-        <span class="sd">        return: &gt;=1 if set successfully, 0 if it can&#39;t be set the number v&quot;&quot;&quot;</span>
-
-        <span class="k">global</span> <span class="n">checkPos</span> <span
-                class="c"># the position want to check</span>
-
-        <span class="n">sets</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span
-                class="n">allow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span
-                class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="n">SudokuError</span><span class="p">(</span><span
-                class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span
-                class="n">v</span><span class="p">,</span> <span class="n">ACTION_SET</span><span class="p">)</span>
-        <span class="k">return</span> <span class="mi">0</span>
-
-        <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span
-                class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span
-                class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">b</span>
-
-        <span class="c"># the position(x, y)&#39;s possible set to be empty</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span
-                class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span
-                class="o">.</span><span class="n">possible</span><span class="o">.</span><span
-                class="n">clear</span><span class="p">()</span>
-
-        <span class="c"># the filled numbers add one</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filled</span> <span class="o">+=</span>
-        <span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">lineX</span><span class="p">[</span><span
-                class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">filled</span> <span
-                class="o">+=</span> <span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">lineY</span><span class="p">[</span><span
-                class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">filled</span> <span
-                class="o">+=</span> <span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span
-                class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">filled</span> <span
-                class="o">+=</span> <span class="mi">1</span>
-
-        <span class="c"># reduce every group&#39;s possible number set</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span
-                class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">possible</span><span
-                class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v</span><span
-                class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">lineX</span><span class="p">[</span><span
-                class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">possible</span><span
-                class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v</span><span
-                class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">lineY</span><span class="p">[</span><span
-                class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">possible</span><span
-                class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v</span><span
-                class="p">)</span>
-
-        <span class="c"># set number in this position</span>
-        <span class="n">sets</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span
-                class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span
-                class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
-
-        <span class="c"># reduce all effect&#39;s positions&#39; possible numbers</span>
-        <span class="k">for</span> <span class="n">p1</span> <span class="ow">in</span> <span
-                class="bp">self</span><span class="o">.</span><span class="n">can_see</span><span
-                class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span
-                class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span
-                class="p">],</span> <span class="n">method</span><span class="o">=</span><span
-                class="s">&quot;u&quot;</span><span class="p">,</span> <span class="n">num</span><span
-                class="o">=</span><span class="n">v</span><span class="p">):</span>
-        <span class="n">rtn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span
-                class="n">reduce</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span
-                class="n">x</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span
-                class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span
-                class="n">d</span><span class="o">=</span><span class="s">&quot;set&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">rtn</span> <span class="o">&gt;=</span> <span class="mi">2</span><span
-                class="p">:</span>
-        <span class="n">sets</span> <span class="o">+=</span> <span class="mi">1</span>
-
-        <span class="c"># record the number&#39;s position</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">[</span><span
-                class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">setit</span><span
-                class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span
-                class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span
-                class="p">])</span>
-
-        <span class="c"># record this step</span>
-        <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span
-                class="s">&quot;define&quot;</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rec</span><span class="o">.</span><span
-                class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span
-                class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span
-                class="n">ACTION_SET</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span>
-        <span class="n">info</span><span class="p">))</span>
-
-        <span class="c"># check if it is done</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filled</span>
-        <span class="o">==</span> <span class="mi">81</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">SudokuDone</span><span class="p">(</span><span
-                class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span
-                class="n">v</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-        <span class="c"># check the checkPos is set and now the position is it or not</span>
-        <span class="k">if</span> <span class="n">checkPos</span> <span class="ow">and</span> <span
-                class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span
-                class="p">)</span> <span class="ow">in</span> <span class="n">checkPos</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">SudokuWhenPosSet</span><span class="p">(</span><span
-                class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span
-                class="n">v</span><span class="p">)</span>
-
-        <span class="c">#if d != &quot;define&quot;:</span>
-        <span class="c">#   print(&quot;set: p({0},{1})={2} by {3}({4})&quot;.format(x+1, y+1, v, d, info))</span>
-
-        <span class="k">return</span> <span class="n">sets</span>
-    </div>
-    <div class="viewcode-block" id="Matrix.print_rec"><a class="viewcode-back"
-                                                         href="../../sudoku.html#sudoku.sudoku.Matrix.print_rec">[docs]</a>
-        <span class="k">def</span> <span class="nf">print_rec</span><span class="p">(</span><span class="bp">self</span><span
-                class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Print all the steps of solving process&quot;&quot;&quot;</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span
-                class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">t</span><span
-                class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">info</span> <span
-                class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rec</span><span
-                class="p">:</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">&quot;{5:3d}-{4}: p({0},{1})={2} by {3} - {6}&quot;</span><span
-                class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span> <span
-                class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span
-                class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span
-                class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">t</span><span
-                class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">info</span><span
-                class="p">))</span>
-    </div>
-    <div class="viewcode-block" id="Matrix.reduce"><a class="viewcode-back"
-                                                      href="../../sudoku.html#sudoku.sudoku.Matrix.reduce">[docs]</a>
-        <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span
-                class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span
-                class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span
-                class="n">d</span><span class="o">=</span><span class="s">&quot;set&quot;</span><span class="p">,</span>
-        <span class="n">check</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span
-                class="n">info</span><span class="o">=</span><span class="s">&quot;&quot;</span><span
-                class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;reduce the position(x, y)&#39;s possible numbers from v</span>
-        <span class="sd">        Return:</span>
-        <span class="sd">            int, as following::</span>
-        <span class="sd">                2 -- if set a number,</span>
-        <span class="sd">                1 -- if just set number</span>
-        <span class="sd">                0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception</span>
-        <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">global</span> <span class="n">methodLoopIdx</span><span class="p">,</span> <span class="n">methodIdx</span>
-
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span
-                class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span
-                class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span
-                class="n">possible</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span
-                class="p">:</span>
-        <span class="k">raise</span> <span class="n">SudokuError</span><span class="p">(</span><span
-                class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span
-                class="n">v</span><span class="p">,</span> <span class="n">ACTION_REDUCE</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span
-                class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span
-                class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span
-                class="n">possible</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span
-                class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span
-                class="o">.</span><span class="n">possible</span><span class="o">.</span><span
-                class="n">remove</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-        <span class="c"># record this step</span>
-        <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span
-                class="s">&quot;set&quot;</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rec</span><span class="o">.</span><span
-                class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span
-                class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span
-                class="n">ACTION_REDUCE</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span>
-        <span class="n">info</span><span class="p">))</span>
-        <span class="k">return</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">check</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">SudokuError</span><span class="p">(</span><span
-                class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span
-                class="n">v</span><span class="p">,</span> <span class="n">ACTION_REDUCE</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    </div>
-    <div class="viewcode-block" id="Matrix.allow"><a class="viewcode-back"
-                                                     href="../../sudoku.html#sudoku.sudoku.Matrix.allow">[docs]</a>
-        <span class="k">def</span> <span class="nf">allow</span><span class="p">(</span><span
-                class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span
-                class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Checking if the position x, y, can be set the value v&quot;&quot;&quot;</span>
-        <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span
-                class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span
-                class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">b</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span
-                class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span
-                class="p">]</span><span class="o">.</span><span class="n">v</span> <span class="o">!=</span> <span
-                class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span
-                class="bp">self</span><span class="o">.</span><span class="n">lineX</span><span class="p">[</span><span
-                class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">allow</span><span
-                class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">or</span> <span
-                class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span
-                class="n">lineY</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span
-                class="o">.</span><span class="n">allow</span><span class="p">(</span><span class="n">v</span><span
-                class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span
-                class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span
-                class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">allow</span><span
-                class="p">(</span><span class="n">v</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">False</span>
-        <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">True</span>
-    </div>
-    <div class="viewcode-block" id="Matrix.read"><a class="viewcode-back"
-                                                    href="../../sudoku.html#sudoku.sudoku.Matrix.read">[docs]</a> <span
-            class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span
-            class="p">,</span> <span class="nb">file</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Read Sudoku&#39;s Define from file&quot;&quot;&quot;</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span
-                class="nb">file</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span
-                class="p">)</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span
-                class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span
-                class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">index</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span
-                class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span
-                class="p">)</span>
-        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span
-                class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">index</span><span
-                class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span
-                class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span
-                class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span
-                class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span
-                class="n">index</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setit</span><span class="p">(</span><span
-                class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span
-                class="n">v</span><span class="p">)</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">return</span> <span class="n">i</span>
-    </div>
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span
-            class="p">):</span>
-    <span class="n">rtn</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span
-            class="p">(</span><span class="mi">9</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span
-            class="p">(</span><span class="mi">9</span><span class="p">):</span>
-    <span class="n">rtn</span> <span class="o">=</span> <span class="n">rtn</span> <span class="o">+</span> <span
-            class="s">&quot;{0:3d}&quot;</span><span class="o">.</span><span class="n">format</span><span
-            class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span
-            class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span
-            class="p">]</span><span class="o">.</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">rtn</span> <span class="o">+=</span> <span class="s">&quot;</span><span class="se">\n</span><span
-            class="s">&quot;</span>
+            class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+    <span class="n">rtn</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span
+            class="n">rtn</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span
+            class="k">lambda</span> <span class="n">pos</span><span class="p">:</span> <span class="nb">len</span><span
+            class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">possible</span><span
+            class="p">))</span>
     <span class="k">return</span> <span class="n">rtn</span>
+</div>
+<div class="viewcode-block" id="Matrix.can_see"><a class="viewcode-back"
+                                                   href="../../sudoku.html#sudoku.sudoku.Matrix.can_see">[docs]</a>
+    <span class="k">def</span> <span class="nf">can_see</span><span class="p">(</span><span class="bp">self</span><span
+            class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">method</span><span
+            class="o">=</span><span class="s">&quot;u&quot;</span><span class="p">,</span> <span
+            class="n">num</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;get the possition list which can see the position, p</span>
+    <span class="sd">        method: &quot;u&quot;: un-assigned positions, &quot;a&quot;: all, &quot;s&quot;: assigned positions</span>
+    <span class="sd">        num: if method=&quot;u&quot;, the position must have be possible to be filled the number</span>
+    <span class="sd">        &quot;&quot;&quot;</span>
+    <span class="n">rtn</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="p">(</span><span
+            class="bp">self</span><span class="o">.</span><span class="n">lineX</span><span class="p">[</span><span
+            class="n">p0</span><span class="o">.</span><span class="n">x</span><span class="p">]</span><span
+            class="o">.</span><span class="n">p</span><span class="p">,</span> <span class="bp">self</span><span
+            class="o">.</span><span class="n">lineY</span><span class="p">[</span><span class="n">p0</span><span
+            class="o">.</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span
+            class="n">p</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span
+            class="n">b</span><span class="p">[</span><span class="n">p0</span><span class="o">.</span><span
+            class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">p</span><span
+            class="p">):</span>
+    <span class="k">for</span> <span class="n">p1</span> <span class="ow">in</span> <span class="n">group</span><span
+            class="p">:</span>
+    <span class="k">if</span> <span class="n">p1</span> <span class="o">==</span> <span class="n">p0</span> <span
+            class="ow">or</span> <span class="n">p1</span> <span class="ow">in</span> <span class="n">rtn</span><span
+            class="p">:</span>
+    <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span
+            class="s">&quot;u&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">v</span> <span class="o">!=</span>
+    <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="n">num</span> <span
+            class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">num</span> <span
+            class="ow">not</span> <span class="ow">in</span> <span class="n">p1</span><span class="o">.</span><span
+            class="n">possible</span><span class="p">):</span>
+    <span class="k">continue</span>
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span
+            class="s">&quot;s&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">v</span> <span class="o">==</span>
+    <span class="mi">0</span><span class="p">:</span>
+    <span class="k">continue</span>
+    <span class="n">rtn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span
+            class="n">p1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rtn</span>
+</div>
+<div class="viewcode-block" id="Matrix.setit"><a class="viewcode-back"
+                                                 href="../../sudoku.html#sudoku.sudoku.Matrix.setit">[docs]</a> <span
+        class="k">def</span> <span class="nf">setit</span><span class="p">(</span><span class="bp">self</span><span
+        class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span
+        class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span
+        class="o">=</span><span class="s">&quot;define&quot;</span><span class="p">,</span> <span
+        class="n">info</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;set the position x, y to be the number v</span>
+    <span class="sd">        return: &gt;=1 if set successfully, 0 if it can&#39;t be set the number v&quot;&quot;&quot;</span>
+
+    <span class="k">global</span> <span class="n">checkPos</span> <span class="c"># the position want to check</span>
+
+    <span class="n">sets</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span
+            class="n">allow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span
+            class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="n">SudokuError</span><span class="p">(</span><span class="n">x</span><span
+            class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span>
+    <span class="n">ACTION_SET</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span
+            class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span
+            class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">b</span>
+
+    <span class="c"># the position(x, y)&#39;s possible set to be empty</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span
+            class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">possible</span><span
+            class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="c"># the filled numbers add one</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">filled</span> <span class="o">+=</span> <span
+            class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">lineX</span><span class="p">[</span><span
+            class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">filled</span> <span
+            class="o">+=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">lineY</span><span class="p">[</span><span
+            class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">filled</span> <span
+            class="o">+=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="n">idx</span><span
+            class="p">]</span><span class="o">.</span><span class="n">filled</span> <span class="o">+=</span> <span
+            class="mi">1</span>
+
+    <span class="c"># reduce every group&#39;s possible number set</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="n">idx</span><span
+            class="p">]</span><span class="o">.</span><span class="n">possible</span><span class="o">.</span><span
+            class="n">remove</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">lineX</span><span class="p">[</span><span
+            class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">possible</span><span
+            class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v</span><span
+            class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">lineY</span><span class="p">[</span><span
+            class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">possible</span><span
+            class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v</span><span
+            class="p">)</span>
+
+    <span class="c"># set number in this position</span>
+    <span class="n">sets</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span
+            class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span
+            class="n">v</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="c"># reduce all effect&#39;s positions&#39; possible numbers</span>
+    <span class="k">for</span> <span class="n">p1</span> <span class="ow">in</span> <span class="bp">self</span><span
+            class="o">.</span><span class="n">can_see</span><span class="p">(</span><span class="bp">self</span><span
+            class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span
+            class="p">][</span><span class="n">y</span><span class="p">],</span> <span class="n">method</span><span
+            class="o">=</span><span class="s">&quot;u&quot;</span><span class="p">,</span> <span
+            class="n">num</span><span class="o">=</span><span class="n">v</span><span class="p">):</span>
+    <span class="n">rtn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span
+            class="n">reduce</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span
+            class="n">x</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span><span
+            class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span
+            class="s">&quot;set&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rtn</span> <span class="o">&gt;=</span> <span class="mi">2</span><span
+            class="p">:</span>
+    <span class="n">sets</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c"># record the number&#39;s position</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">[</span><span class="n">v</span><span
+            class="p">]</span><span class="o">.</span><span class="n">setit</span><span class="p">(</span><span
+            class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span
+            class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">])</span>
+
+    <span class="c"># record this step</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span
+            class="s">&quot;define&quot;</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">rec</span><span class="o">.</span><span
+            class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span
+            class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">ACTION_SET</span><span
+            class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">info</span><span
+            class="p">))</span>
+
+    <span class="c"># check if it is done</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filled</span> <span
+            class="o">==</span> <span class="mi">81</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">SudokuDone</span><span class="p">(</span><span class="n">x</span><span
+            class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
+    <span class="c"># check the checkPos is set and now the position is it or not</span>
+    <span class="k">if</span> <span class="n">checkPos</span> <span class="ow">and</span> <span class="p">(</span><span
+            class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span
+            class="ow">in</span> <span class="n">checkPos</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">SudokuWhenPosSet</span><span class="p">(</span><span class="n">x</span><span
+            class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+    <span class="c">#if d != &quot;define&quot;:</span>
+    <span class="c">#   print(&quot;set: p({0},{1})={2} by {3}({4})&quot;.format(x+1, y+1, v, d, info))</span>
+
+    <span class="k">return</span> <span class="n">sets</span>
+</div>
+<div class="viewcode-block" id="Matrix.print_rec"><a class="viewcode-back"
+                                                     href="../../sudoku.html#sudoku.sudoku.Matrix.print_rec">[docs]</a>
+    <span class="k">def</span> <span class="nf">print_rec</span><span class="p">(</span><span
+            class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Print all the steps of solving process&quot;&quot;&quot;</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
+    <span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span
+            class="n">d</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span
+            class="bp">self</span><span class="o">.</span><span class="n">rec</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;{5:3d}-{4}: p({0},{1})={2} by {3} - {6}&quot;</span><span
+            class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span> <span
+            class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span
+            class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span
+            class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">info</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="Matrix.reduce"><a class="viewcode-back"
+                                                  href="../../sudoku.html#sudoku.sudoku.Matrix.reduce">[docs]</a> <span
+        class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span
+        class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span
+        class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span
+        class="o">=</span><span class="s">&quot;set&quot;</span><span class="p">,</span> <span
+        class="n">check</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span
+        class="n">info</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;reduce the position(x, y)&#39;s possible numbers from v</span>
+    <span class="sd">        Return::</span>
+    <span class="sd">            int, as following</span>
+    <span class="sd">            2 -- if set a number,</span>
+    <span class="sd">            1 -- if just set number</span>
+    <span class="sd">            0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception</span>
+    <span class="sd">        &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">methodLoopIdx</span><span class="p">,</span> <span
+            class="n">methodIdx</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span
+            class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span
+            class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">possible</span><span
+            class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">SudokuError</span><span class="p">(</span><span class="n">x</span><span
+            class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span>
+    <span class="n">ACTION_REDUCE</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span
+            class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span
+            class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">possible</span><span
+            class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span
+            class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">possible</span><span
+            class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">v</span><span
+            class="p">)</span>
+    <span class="c"># record this step</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span
+            class="s">&quot;set&quot;</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">rec</span><span class="o">.</span><span
+            class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span
+            class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">ACTION_REDUCE</span><span
+            class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">info</span><span
+            class="p">))</span>
+    <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">check</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">SudokuError</span><span class="p">(</span><span class="n">x</span><span
+            class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span>
+    <span class="n">ACTION_REDUCE</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</div>
+<div class="viewcode-block" id="Matrix.allow"><a class="viewcode-back"
+                                                 href="../../sudoku.html#sudoku.sudoku.Matrix.allow">[docs]</a> <span
+        class="k">def</span> <span class="nf">allow</span><span class="p">(</span><span class="bp">self</span><span
+        class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span
+        class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Checking if the position x, y, can be set the value v&quot;&quot;&quot;</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span
+            class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span
+            class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">b</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span
+            class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span
+            class="p">]</span><span class="o">.</span><span class="n">v</span> <span class="o">!=</span> <span
+            class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span
+            class="o">.</span><span class="n">lineX</span><span class="p">[</span><span class="n">x</span><span
+            class="p">]</span><span class="o">.</span><span class="n">allow</span><span class="p">(</span><span
+            class="n">v</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span
+            class="bp">self</span><span class="o">.</span><span class="n">lineY</span><span class="p">[</span><span
+            class="n">y</span><span class="p">]</span><span class="o">.</span><span class="n">allow</span><span
+            class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">or</span> <span
+            class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span
+            class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">allow</span><span
+            class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</div>
+<div class="viewcode-block" id="Matrix.read"><a class="viewcode-back"
+                                                href="../../sudoku.html#sudoku.sudoku.Matrix.read">[docs]</a> <span
+        class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span
+        class="p">,</span> <span class="nb">file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Read Sudoku&#39;s Define from file&quot;&quot;&quot;</span>
+
+    <span class="k">global</span> <span class="n">NowPath</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span
+            class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span
+            class="nb">file</span><span class="p">):</span>
+    <span class="nb">file</span> <span class="o">=</span> <span class="s">&quot;data/&quot;</span> <span
+            class="o">+</span> <span class="nb">file</span>
+    <span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span
+            class="nb">file</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span
+            class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span
+            class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span
+            class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span
+            class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">index</span><span
+            class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span
+            class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span
+            class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span
+            class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span
+            class="n">index</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">setit</span><span class="p">(</span><span
+            class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">v</span><span
+            class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">i</span>
+</div>
+<span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span
+        class="p">):</span>
+<span class="n">rtn</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span
+        class="p">(</span><span class="mi">9</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span
+        class="p">(</span><span class="mi">9</span><span class="p">):</span>
+<span class="n">rtn</span> <span class="o">=</span> <span class="n">rtn</span> <span class="o">+</span> <span class="s">&quot;{0:3d}&quot;</span><span
+        class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span
+        class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">j</span><span
+        class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span
+        class="n">v</span><span class="p">)</span>
+<span class="n">rtn</span> <span class="o">+=</span> <span class="s">&quot;</span><span class="se">\n</span><span
+        class="s">&quot;</span>
+<span class="k">return</span> <span class="n">rtn</span>
 
 </div>
 <div class="viewcode-block" id="fill_only_one_possible"><a class="viewcode-back"

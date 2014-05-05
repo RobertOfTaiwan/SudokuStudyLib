@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Traditional Method: Matrix V.0.5 Rev.005 &mdash; SudokuStudyLib 0.5 documentation</title>
+    <title>Traditional Method: Matrix V.0.5 Rev.006 &mdash; SudokuStudyLib 0.5 documentation</title>
 
     <link rel="stylesheet" href="_static/default.css" type="text/css"/>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
@@ -50,10 +50,8 @@
 <div class="bodywrapper">
 <div class="body">
 
-<div class="section" id="module-matrix">
-<span id="traditional-method-matrix-v-0-5-rev-005"></span>
-
-<h1>Traditional Method: Matrix V.0.5 Rev.005<a class="headerlink" href="#module-matrix"
+<div class="section" id="traditional-method-matrix-v-0-5-rev-006">
+<h1>Traditional Method: Matrix V.0.5 Rev.006<a class="headerlink" href="#traditional-method-matrix-v-0-5-rev-006"
                                                title="Permalink to this headline">¶</a></h1>
 
 <p>This is the traditional method to solve the Sudoku.</p>
@@ -65,12 +63,10 @@
                                                              href="_modules/matrix/matrix.html#CheckInObvious"><span
             class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.CheckInObvious"
                                                         title="Permalink to this definition">¶</a></dt>
-    <dd><p>Checking the number in every two different position can descide
+    <dd><p>Checking the number in every two different position can decide
         the number in other box which does not have the number yet
-        Parameters:</p>
-        <blockquote>
-            <div>groups: [((x,0)|(0,y), [(x1,y1),(x2,y2)...]),...]</div>
-        </blockquote>
+        Parameters:
+        groups: [((x,0)|(0,y), [(x1,y1),(x2,y2)...]),...]</p>
     </dd>
 </dl>
 
@@ -503,12 +499,10 @@
             class="reference internal" href="_modules/matrix/matrix.html#emptyMatrix"><span class="viewcode-link">[source]</span></a><a
             class="headerlink" href="#matrix.matrix.emptyMatrix" title="Permalink to this definition">¶</a></dt>
     <dd><p>init the matrix
-        return: m: matrix map</p>
-        <blockquote>
-            <div>n: the number&#8217;s position, the first element save the numbers
-                p: the possible numbers in every position
-            </div>
-        </blockquote>
+        return::
+        m: matrix map
+        n: the number&#8217;s position, the first element save the numbers
+        p: the possible numbers in every position</p>
     </dd>
 </dl>
 
@@ -552,8 +546,7 @@
                                                                              href="_modules/matrix/matrix.html#isDone"><span
             class="viewcode-link">[source]</span></a><a class="headerlink" href="#matrix.matrix.isDone"
                                                         title="Permalink to this definition">¶</a></dt>
-    <dd><p>Checking the Matrix is done or not
-        note: only Check the vertical amount is 9</p>
+    <dd><p>Checking the Matrix is done or not</p>
     </dd>
 </dl>
 

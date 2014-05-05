@@ -13,19 +13,6 @@ import traceback
 import time
 import os
 
-# global variable
-methodLoopIdx = 0  # the index of the methods loops
-methodIdx = 0  # the method idx which run now
-checkPos = None  # set this varible, if you want to make an exception when this position has been set
-writeDownAlready = False  # if the every un-assigned positions have been writen down their possible number?
-emulatePossibles = 2  # to set the possibles when using emulate method, for both positions and numbers
-tryStack = []  # the try Stack
-tryIdx = 0
-tryUse = True
-emuUse = True
-Scope = 0  # the scope of difficult level
-Level = 0  # the level Limit, 0 means no limit
-NowPath = os.path.abspath(os.path.dirname(__file__))
 
 ACTION_SET = 's'  # action of set number
 ACTION_REDUCE = 'r'  # action of reduce number
@@ -48,6 +35,14 @@ METHOD_EMULATE_START = 8  # the emulate method begin idx
 METHOD_USE_TRY = True  # the default of using try method or not
 METHOD_USE_EMU = False  # the default of using emulator
 METHOD_LEVEL_LIMIT_WHENTRY = 2  # if start using try, set the level limit to use
+
+
+class Status():
+    """To Store running condition"""
+    name = {}
+
+    def __init__(self):
+        pass
 
 
 class SudokuError(Exception):
@@ -129,6 +124,8 @@ class Point:
 
 
 class GroupBase:
+    """The Base Class of a Line or Box"""
+
     def __init__(self, idx, p):
         self.idx = idx
         self.p = p
@@ -154,7 +151,14 @@ class GroupBase:
 
     def count_num_possible(self, count=1):
         """get the un-assigned position in this group, and possible numbers only in [count] postions
-        return: [(num,[p1, p2...]),...]"""
+
+        .. note:: The output format is a tuple list, the tuple has two value, one is number,
+                    another is s position list
+
+        :count: how many positions are un-assigned to get
+        :return: [(num,[p1, p2...]),...]
+
+        """
 
         rtn = []
         # count all possible number in to c and pos list, c is the times it show in the posiiton,
@@ -175,13 +179,19 @@ class GroupBase:
     def get_all_pos(self, diff=[], method="a", num=0, notInLineX=None, notInLineY=None, chain=None, possibles=None):
         """
         get position list in this group
-        diff: exclude the positions in it
-        method: a: all, s:has assigned, u:not assigned
-        num: if method is u and set the number to 1-9, will get all possible pos which are possible to be assigned the num
-        notInLineX: exclude the x line's positions
-        notInLineY: exclude the y line's positions
-        chain: if set, check it, if it is True, just get the chain positions, or get the un-chained postitions
-        possibles: if method="u" and possibles!=None, it will only get the possible set's length = possibles
+
+        Parameters::
+            :diff:        exclude the positions in it
+            :method:      a: all, s:has assigned, u:not assigned
+            :num:         if method is u and set the number to 1-9, will get all possible pos which are possible to be assigned the num
+            :notInLineX:  exclude the x line's positions
+            :notInLineY:  exclude the y line's positions
+            :chain:       if set, check it, if it is True, just get the chain positions, or get the un-chained postitions
+            :possibles:   if method="u" and possibles!=None, it will only get the possible set's length = possibles
+
+        Return::
+            a List of Position
+
         """
         rtn = []
         lGetOtherThan = len(diff) > 0
@@ -378,7 +388,7 @@ class Matrix:
         rtn = []
         for line in self.lineX:
             rtn = rtn + line.get_all_pos(method=method, num=num, chain=chain, diff=diff, possibles=possibles)
-        return (rtn)
+        return rtn
 
     def sort_unassigned_pos_by_possibles(self, possibles=0):
         """Get unassign position's possible number list, format is [p1, p2,...]
@@ -418,8 +428,6 @@ class Matrix:
     def setit(self, x, y, v, d="define", info=""):
         """set the position x, y to be the number v
         return: >=1 if set successfully, 0 if it can't be set the number v"""
-
-        global checkPos  # the position want to check
 
         sets = 0
         if not self.allow(x, y, v):
@@ -465,7 +473,7 @@ class Matrix:
 
         if DEBUG_MODE:
             # check the checkPos is set and now the position is it or not
-            if checkPos and (x, y) in checkPos:
+            if Status.name["checkPos"] and (x, y) in Status.name["checkPos"]:
                 raise SudokuWhenPosSet(x, y, v)
 
         #if d != "define":
@@ -482,13 +490,12 @@ class Matrix:
 
     def reduce(self, x, y, v, d="set", check=False, info=""):
         """reduce the position(x, y)'s possible numbers from v
-        Return:
-            int, as following::
-                2 -- if set a number,
-                1 -- if just set number
-                0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception
+        Return::
+            int, as following
+            2 -- if set a number,
+            1 -- if just set number
+            0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception
         """
-        global methodLoopIdx, methodIdx
 
         if len(self.p[x][y].possible) <= 1:
             raise SudokuError(x, y, v, ACTION_REDUCE)
@@ -515,7 +522,14 @@ class Matrix:
 
     def read(self, file):
         """Read Sudoku's Define from file"""
-        f = open(file, "r")
+
+        if not os.path.isfile(file):
+            file = "data/" + file
+        try:
+            f = open(file, "r")
+        except IOError:
+            return -1
+
         i = 0
         for line in f:
             if len(line) > 0:
@@ -830,9 +844,7 @@ def write_down_possible(m, first=1, only=False):
     if WRITEN_POSSIBLE_LIMITS has set to 1..9, it will only write down the
     possibles which <= that limits"""
 
-    global writeDownAlready
-
-    writeDownAlready = True
+    Status.name["writeDownAlready"] = True
     for line in m.p:
         for p1 in line:
             if p1.v != 0 or p1.writen:
@@ -984,14 +996,14 @@ def reduce_by_emulate_possible_in_one_position(m, first=1, only=False):
     3. if all possible number can's get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
     """
 
-    global emulatePossibles
+    emus = Status.name["emulatePossibles"]
 
-    print("reduceByEmulatePossibleInOnePositions: {0}".format(emulatePossibles))
+    print("reduceByEmulatePossibleInOnePositions: {0}".format(emus))
     reduces = 0
     sets = 0
     emu = []  # record the emulate method, [(p1,v),....]
     result = []  # save the emulate result of matrix for every possible number
-    for p1 in m.get_all_pos(method="u", possibles=emulatePossibles):
+    for p1 in m.get_all_pos(method="u", possibles=emus):
         for num in p1.possible:
             emu.append((p1, num))
             rtn, m1, idx = emulator(m, p1.x, p1.y, num)
@@ -1005,7 +1017,7 @@ def reduce_by_emulate_possible_in_one_position(m, first=1, only=False):
                 result.append(m1)
                 continue
 
-    if len(result) == emulatePossibles:
+    if len(result) == emus:
         sets, reduces = compare_result(m, emu, result)
 
     return sets, reduces, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
@@ -1019,16 +1031,16 @@ def reduce_by_emulate_possible_number_in_group(m, first=1, only=False):
     3. if all possible position can's get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
     """
 
-    global emulatePossibles
+    emus = Status.name["emulatePossibles"]
 
-    print("reduceByEmulatePossibleNumberInGroup: {0}".format(emulatePossibles))
+    print("reduceByEmulatePossibleNumberInGroup: {0}".format(emus))
     reduces = 0
     sets = 0
     emu = []  # record the emulate method, [(p1,v),....]
     result = []  # save the emulate result of matrix for every possible number
     for groupType in (m.lineX, m.lineY, m.b):
         for idx in range(9):
-            for num, pos in groupType[idx].count_num_possible(count=emulatePossibles):
+            for num, pos in groupType[idx].count_num_possible(count=emus):
                 for p1 in pos:
                     emu.append((p1, num))
                     rtn, m1, idx = emulator(m, p1.x, p1.y, num)
@@ -1041,7 +1053,7 @@ def reduce_by_emulate_possible_number_in_group(m, first=1, only=False):
                     else:
                         result.append(m1)
                         continue
-            if len(result) == emulatePossibles:
+            if len(result) == emus:
                 s, r = compare_result(m, emu, result)
                 sets += s
                 reduces += r
@@ -1054,7 +1066,7 @@ def compare_result(m, emu, result):
     if same for all emulate result, it means that it must be true, so can do by it
     """
 
-    global emulatePossibles
+    emus = Status.name["emulatePossibles"]
 
     sets = 0
     reduces = 0
@@ -1097,19 +1109,16 @@ def emulator(m, x, y, v, targets=[], checkval=0):
     0: all basic methods have been tested, and can't solve
     and the result matrix"""
 
-    global writeDownAlready, checkPos
-
-    check_pos_save = checkPos
+    check_pos_save = Status.name["checkPos"]
     m1 = copy.deepcopy(m)
 
     if len(targets) > 0:
         check_target = True
-        checkPos = targets
+        Status.name["checkPos"] = targets
     else:
         check_target = False
 
-    methodLoopIdx = 0
-    begin = time.time()
+    method_loop_idx = 0
     allmethods = reg_method()
     start = METHOD_CHECK_OBVIOUS  # start from for the first time
     num = 1
@@ -1120,7 +1129,7 @@ def emulator(m, x, y, v, targets=[], checkval=0):
 
     while True:
         actions = 0
-        methodLoopIdx += 1
+        method_loop_idx += 1
         try:
 
             if emulate_first:
@@ -1130,7 +1139,6 @@ def emulator(m, x, y, v, targets=[], checkval=0):
                 emulate_first = False
 
             for method in allmethods[start:METHOD_BASIC_LEVEL]:
-                methodIdx = method.idx
                 # every method have 5 return values:
                 # sets: how many positions have been set
                 # reduces: how many numbers have been reduced
@@ -1142,17 +1150,17 @@ def emulator(m, x, y, v, targets=[], checkval=0):
                 if sets > 0:
                     rtn = fill_last_position_by_setting(m1, sets)
                     if rtn[0] > 0:
-                        start = rtn[2];
-                        first = rtn[3];
+                        start = rtn[2]
+                        first = rtn[3]
                         only = rtn[4]
                         #print("Emulate#{0}-last: {1}, sets={3}, reduces={4}".format(methodLoopIdx, "LastPosition", methodIdx, rtn, reduces))
                         sets = sets + rtn[0]
-                if (sets > 0 or reduces > 0) and writeDownAlready:
+                if (sets > 0 or reduces > 0) and Status.name["writeDownAlready"]:
                     rtn = fill_only_one_possible(m1)
                     if rtn[0] > 0:
-                        sets = rtn[0];
-                        start = rtn[2];
-                        first = rtn[3];
+                        sets = rtn[0]
+                        start = rtn[2]
+                        first = rtn[3]
                         only = rtn[4]
                         #print("Emulate#{0}-only: {1}, sets={3}, reduces={4}".format(methodLoopIdx, "LastPossible", methodIdx, rtn, reduces))
                 if sets > 0 or reduces > 0:
@@ -1184,7 +1192,7 @@ def emulator(m, x, y, v, targets=[], checkval=0):
             break
 
     #restore
-    checkPos = check_pos_save
+    Status.name["checkPos"] = check_pos_save
     #print(checkPos)
     return rtn, m1, idx
 
@@ -1258,26 +1266,24 @@ def try_error(m=None, file="", depth=0):
 def guess(m, idx=0, first=0, only=False):
     """Guess Method"""
 
-    global tryStack, tryIdx, Scope, Level
-
     # if start using tryMethod, set the level to the METHOD_LEVEL_LIMIT_WHENTRY
-    Level = METHOD_LEVEL_LIMIT_WHENTRY
+    Status.name["Level"] = METHOD_LEVEL_LIMIT_WHENTRY
 
-    Scope += 5  # it is easy as the method of write down possible
+    Status.name["Scope"] += 5  # it is easy as the method of write down possible
     if idx == 0:  # Add New Try
-        tryIdx += 1
+        Status.name["tryIdx"] += 1
         possibles = m.sort_unassigned_pos_by_possibles()  # get all unassigned postion and sorted by the possibles number
         m1 = copy.deepcopy(m)
         p1 = possibles[0]  # the first un-assigned postion
-        x = p1.x;
+        x = p1.x
         y = p1.y
-        tryStack.append([m1, x, y, 0])
+        Status.name["tryStack"].append([m1, x, y, 0])
         print("Try Add: {0},{1} to set {2} of {3}".format(x, y, p1.possible[0], p1.possible))
     else:
-        i = tryIdx - 1
-        tryStack[i][3] = idx
-        x = tryStack[i][1];
-        y = tryStack[i][2]
+        i = Status.name["tryIdx"] - 1
+        Status.name["tryStack"][i][3] = idx
+        x = Status.name["tryStack"][i][1]
+        y = Status.name["tryStack"][i][2]
         print("Try Idx={3}: {0},{1} to set {2} of {4}".format(x, y, m.p[x][y].possible[idx], idx, m.p[x][y].possible))
 
     v = m.p[x][y].possible[idx]
@@ -1304,9 +1310,7 @@ class SolveMethod():
 def reg_method():
     """register all method as an object and save them into a list to return"""
 
-    global tryUse, emuUse
-
-    methods = []
+    methods = list()
     #methods.append(SolveMethod(fillOnlyOnePossible, 0, level=0))
     methods.append(SolveMethod(fill_last_position_of_group, 1, level=0))
     methods.append(SolveMethod(check_obvious_number, 2, level=1))
@@ -1316,12 +1320,30 @@ def reg_method():
     methods.append(SolveMethod(write_down_possible, 6, level=5))
     methods.append(SolveMethod(update_chain, 7, level=10))
     methods.append(SolveMethod(reduce_by_two_possible_in_one_position, 8, level=15))
-    if emuUse:
+    if Status.name["emuUse"]:
         methods.append(SolveMethod(reduce_by_emulate_possible_in_one_position, 9, level=20))
         methods.append(SolveMethod(reduce_by_emulate_possible_number_in_group, 10, level=20))
-    if tryUse:
+    if Status.name["tryUse"]:
         methods.append(SolveMethod(guess, 11, level=0))
     return methods
+
+
+def init():
+    """Init the status' values"""
+    Status.name["methodLoopIdx"] = 0  # the index of the methods loops
+    Status.name["methodIdx"] = 0  # the method idx which run now
+    Status.name["checkPos"] = None  # set this varible, if you want to make an exception when this position has been set
+    Status.name[
+        "writeDownAlready"] = False  # if the every un-assigned positions have been writen down their possible number?
+    Status.name[
+        "emulatePossibles"] = 2  # to set the possibles when using emulate method, for both positions and numbers
+    Status.name["tryStack"] = []  # the try Stack
+    Status.name["tryIdx"] = 0
+    Status.name["tryUse"] = True
+    Status.name["emuUse"] = True
+    Status.name["Scope"] = 0  # the scope of difficult level
+    Status.name["Level"] = 0  # the level Limit, 0 means no limit
+    return
 
 
 def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits=2, use_try=METHOD_USE_TRY,
@@ -1330,39 +1352,27 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
     loopLimit: the limit for the method loops, 0: no limits
     recLimit: when the records >= recLimit, it will stop, 0: no limits"""
 
-    global methodLoopIdx  # how many method loops it has taken
-    global methodIdx  # the method idx of now running
-    global checkPos  # setting the position want to check
-    global writeDownAlready  # if the every un-assigned positions have been writen down their possible number?
-    global emulatePossibles  # set the emulate possibles
-    global tryStack, tryIdx, tryUse, Scope, emuUse
-    global Level
-
-    writeDownAlready = False
-    checkPos = check
-    methodLoopIdx = 0
+    init()
+    Status.name["checkPos"] = check
     begin = time.time()
     m = Matrix(file=file)
     start = METHOD_CHECK_OBVIOUS  # start from for the first time
     num = 1
     only = False
-    Scope = 0
     max_method = 0
-    tryIdx = 0
-    tryUse = use_try
-    emuUse = use_emu
-    tryStack = []
+    Status.name["tryUse"] = use_try
+    Status.name["emuUse"] = use_emu
     allmethods = reg_method()
-    Level = level_limit
+    Status.name["Level"] = level_limit
 
     while True:
         actions = 0
-        methodLoopIdx += 1
+        Status.name["methodLoopIdx"] += 1
         try:
             for method in allmethods[start:]:
-                if 0 < Level < method.level:
+                if 0 < Status.name["Level"] < method.level:
                     continue
-                methodIdx = method.idx
+                Status.name["methodIdx"] = method.idx
                 # every method have 5 return values:
                 # sets: how many positions have been set
                 # reduces: how many numbers have been reduced
@@ -1370,31 +1380,34 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                 # num: which number will be the first number to be procossed, for methods that look over all numbers
                 # only: for methods which look over all numbers to process one only, which is the num
                 sets, reduces, start, num, only = method.run(m, first=num, only=only)
-                Scope = Scope + method.level
+                Status.name["Scope"] += method.level
                 max_method = max(max_method, method.idx)
-                print("Try#{0}-{2}: {1}, sets={3}, reduces={4}".format(methodLoopIdx, method.name, methodIdx, sets,
-                                                                       reduces))
+                print("Try#{0}-{2}: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"], method.name,
+                                                                       Status.name["methodIdx"], sets, reduces))
                 if sets > 0:
                     rtn = fill_last_position_by_setting(m, sets)
                     if rtn[0] > 0:
                         start, first, only = rtn[2:]
                         print(
-                            "Try#{0}-last: {1}, sets={3}, reduces={4}".format(methodLoopIdx, "LastPosition", methodIdx,
+                            "Try#{0}-last: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"],
+                                                                              "LastPosition", Status.name["methodIdx"],
                                                                               rtn, reduces))
                         sets = sets + rtn[0]
-                if (sets > 0 or reduces > 0) and writeDownAlready:
+                if (sets > 0 or reduces > 0) and Status.name["writeDownAlready"]:
                     rtn = fill_only_one_possible(m)
                     if rtn[0] > 0:
                         sets = rtn[0]
                         start, first, only = rtn[2:]
                         print(
-                            "Try#{0}-only: {1}, sets={3}, reduces={4}".format(methodLoopIdx, "LastPossible", methodIdx,
+                            "Try#{0}-only: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"],
+                                                                              "LastPossible", Status.name["methodIdx"],
                                                                               rtn, reduces))
                 if DEBUG_MODE:
                     if 0 < rec_limit <= len(m.rec):
                         raise SudokuStop()
                 if sets > 0 or reduces > 0:
-                    emulatePossibles = 2  # if any thing work, the emulatePossible set to the begin number
+                    Status.name[
+                        "emulatePossibles"] = 2  # if any thing work, the emulatePossible set to the begin number
                     actions = actions + sets + reduces
                     break
         except SudokuDone as err:
@@ -1405,14 +1418,15 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
             m.print_rec()
             break
         except SudokuWhenPosSet:
-            print("It is stopped by the position({0}) be set! method={1}".format(checkPos, methodIdx))
+            print("It is stopped by the position({0}) be set! method={1}".format(Status.name["checkPos"],
+                                                                                 Status.name["methodIdx"]))
             traceback.print_exc()
             break
         except SudokuError as err:
-            if tryUse and tryIdx > 0:
+            if Status.name["tryUse"] and Status.name["tryIdx"] > 0:
                 flag = False
-                while tryIdx > 0:
-                    m1, x, y, idx = tryStack[tryIdx - 1]
+                while Status.name["tryIdx"] > 0:
+                    m1, x, y, idx = Status.name["tryStack"][Status.name["tryIdx"] - 1]
                     idx += 1
                     if len(m1.p[x][y].possible) > idx:
                         m = copy.deepcopy(m1)
@@ -1420,8 +1434,8 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                         flag = True
                         break
                     else:
-                        tryIdx -= 1
-                        tryStack.pop(-1)
+                        Status.name["tryIdx"] -= 1
+                        Status.name["tryStack"].pop(-1)
                 if flag:
                     continue
             print("It is impossible for {0}, {1} to set/reduce {2}! ({3})".format(err.x, err.y, err.v, err.t))
@@ -1433,14 +1447,14 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
 
         if DEBUG_MODE:
             # for testing
-            if methodLoopIdx == loop_limit:
+            if Status.name["methodLoopIdx"] == loop_limit:
                 break
 
         if actions <= 0:
-            if emulatePossibles < emu_limits:
-                Scope += 1000
-                emulatePossibles += 1
-                print("Try emulate numbers = {0}".format(emulatePossibles))
+            if Status.name["emulatePossibles"] < emu_limits:
+                Status.name["Scope"] += 1000
+                Status.name["emulatePossibles"] += 1
+                print("Try emulate numbers = {0}".format(Status.name["emulatePossibles"]))
                 start = METHOD_EMULATE_START
                 continue
             else:
@@ -1451,7 +1465,8 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
         print("Can't solve it, still need {0} more effort!".format(81 - m.filled))
     else:
         print(
-            "Done! good job, it takes {0}! Level={1}, Methods Used={2}".format(time.time() - begin, Scope, max_method))
+            "Done! good job, it takes {0}! Level={1}, Methods Used={2}".format(time.time() - begin,
+                                                                               Status.name["Scope"], max_method))
 
     return m
 

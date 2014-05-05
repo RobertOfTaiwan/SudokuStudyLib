@@ -6,7 +6,7 @@
 .. moduleauthor:: Robert J. Hwang <RobertOfTaiwan@gmail.com>
 """
 
-import copy, sys, itertools, time
+import copy, sys, itertools, time, os
 
 #global var
 rec = list()
@@ -19,9 +19,10 @@ PrintStep = True
 
 def emptyMatrix():
     """init the matrix
-    return:   m: matrix map
-              n: the number's position, the first element save the numbers
-              p: the possible numbers in every position
+    return::
+    m: matrix map
+    n: the number's position, the first element save the numbers
+    p: the possible numbers in every position
     """
     global rec, records
     rec = list()
@@ -317,7 +318,9 @@ def GetCanNotSeenInBox(m, b, p1, p2):
 
 def isDone(m):
     """Checking the Matrix is done or not
-    note: only Check the vertical amount is 9"""
+
+    .. note: only Check the vertical amount is 9
+    """
 
     flag = True
     for i in range(1, 10):
@@ -584,10 +587,10 @@ def ReduceByBoxGroup(m, n, p):
 
 
 def CheckInObvious(m, n, p, amt=0):
-    """Checking the number in every two different position can descide
+    """Checking the number in every two different position can decide
     the number in other box which does not have the number yet
     Parameters:
-        groups: [((x,0)|(0,y), [(x1,y1),(x2,y2)...]),...]
+    groups: [((x,0)|(0,y), [(x1,y1),(x2,y2)...]),...]
     """
 
     #print("Step #2: CheckInObvious!")
@@ -883,6 +886,10 @@ def TryError(file=None, m=[], n=[], p=[], depth=0):
         HasWritenPossible = False
         done = False
         error = False
+
+        if not os.path.isfile(file):
+            file = "data/" + file
+
         try:
             f = open(file, 'r')
         except IOError:
@@ -1358,6 +1365,9 @@ def main(file, methods=0):
     HasWritenPossible = False
     done = False
     error = False
+    if not os.path.isfile(file):
+        file = "data/" + file
+
     try:
         f = open(file, 'r')
     except IOError:
@@ -1366,6 +1376,7 @@ def main(file, methods=0):
     else:
         print(file, 'has', len(f.readlines()), ' defined!')
         f.close()
+
     m, n, p = emptyMatrix()
 
     readDefine(file, m, n, p)

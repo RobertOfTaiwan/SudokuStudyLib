@@ -378,7 +378,7 @@ class Matrix:
         rtn = []
         for line in self.lineX:
             rtn = rtn + line.get_all_pos(method=method, num=num, chain=chain, diff=diff, possibles=possibles)
-        return (rtn)
+        return rtn
 
     def sort_unassigned_pos_by_possibles(self, possibles=0):
         """Get unassign position's possible number list, format is [p1, p2,...]
@@ -482,11 +482,11 @@ class Matrix:
 
     def reduce(self, x, y, v, d="set", check=False, info=""):
         """reduce the position(x, y)'s possible numbers from v
-        Return:
-            int, as following::
-                2 -- if set a number,
-                1 -- if just set number
-                0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception
+        Return::
+            int, as following
+            2 -- if set a number,
+            1 -- if just set number
+            0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception
         """
         global methodLoopIdx, methodIdx
 
@@ -515,7 +515,16 @@ class Matrix:
 
     def read(self, file):
         """Read Sudoku's Define from file"""
-        f = open(file, "r")
+
+        global NowPath
+
+        if not os.path.isfile(file):
+            file = "data/" + file
+        try:
+            f = open(file, "r")
+        except IOError:
+            return -1
+
         i = 0
         for line in f:
             if len(line) > 0:

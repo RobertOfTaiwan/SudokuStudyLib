@@ -10,9 +10,9 @@ Contents:
 .. toctree::
 :maxdepth: 2
 
-       intro
-       sudoku
-       matrix
+        intro
+        sudoku
+        matrix
 
 Indices and tables
 ==================

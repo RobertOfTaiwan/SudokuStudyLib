@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="SudokuStudyLib 0.5 documentation" href="index.html"/>
-    <link rel="next" title="Traditional Method: Matrix V.0.5 Rev.005" href="matrix.html"/>
+    <link rel="next" title="Traditional Method: Matrix V.0.5 Rev.006" href="matrix.html"/>
     <link rel="prev" title="Welcome to SudokuStudyLib’s documentation!" href="intro.html"/>
 </head>
 <body>
@@ -39,7 +39,7 @@
                     >modules</a> |
         </li>
         <li class="right">
-            <a href="matrix.html" title="Traditional Method: Matrix V.0.5 Rev.005"
+            <a href="matrix.html" title="Traditional Method: Matrix V.0.5 Rev.006"
                accesskey="N">next</a> |
         </li>
         <li class="right">
@@ -55,10 +55,8 @@
 <div class="bodywrapper">
 <div class="body">
 
-<div class="section" id="module-sudoku">
-<span id="oop-method-sudoku"></span>
-
-<h1>OOP Method: Sudoku<a class="headerlink" href="#module-sudoku" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="oop-method-sudoku">
+<h1>OOP Method: Sudoku<a class="headerlink" href="#oop-method-sudoku" title="Permalink to this headline">¶</a></h1>
 
 <p>This is the oop method to solve the Sudoku.</p>
 <span class="target" id="module-sudoku.sudoku"></span><span class="target" id="module-sudoku"></span>
@@ -96,6 +94,129 @@
     <dd><p>A chain of two and above positions which are not in the same box but in the same line
         and can form a chain, means the possible number in this chain positions only can be filled in these
         positions</p>
+    </dd>
+</dl>
+
+<dl class="class">
+    <dt id="sudoku.sudoku.GroupBase">
+        <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">GroupBase</tt><big>(</big><em>idx</em>,
+        <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase"><span
+            class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase"
+                                                        title="Permalink to this definition">¶</a></dt>
+    <dd><p>The Base Class of a Line or Box</p>
+        <dl class="method">
+            <dt id="sudoku.sudoku.GroupBase.allow">
+                <tt class="descname">allow</tt><big>(</big><em>v</em><big>)</big><a class="reference internal"
+                                                                                    href="_modules/sudoku/sudoku.html#GroupBase.allow"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.allow"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>check the group can be filled the number(v)?</p>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.GroupBase.count_num_possible">
+                <tt class="descname">count_num_possible</tt><big>(</big><em>count=1</em><big>)</big><a
+                    class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.count_num_possible"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                                href="#sudoku.sudoku.GroupBase.count_num_possible"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>get the un-assigned position in this group, and possible numbers only in [count] postions</p>
+
+                <div class="admonition note">
+                    <p class="first admonition-title">Note</p>
+
+                    <p class="last">The output format is a tuple list, the tuple has two value, one is number,
+                        another is s position list</p>
+                </div>
+                <table class="docutils field-list" frame="void" rules="none">
+                    <col class="field-name"/>
+                    <col class="field-body"/>
+                    <tbody valign="top">
+                    <tr class="field-odd field">
+                        <th class="field-name">Count:</th>
+                        <td class="field-body">how many positions are un-assigned to get</td>
+                    </tr>
+                    <tr class="field-even field">
+                        <th class="field-name">Returns:</th>
+                        <td class="field-body">[(num,[p1, p2...]),...]</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.GroupBase.get_all_pos">
+                <tt class="descname">get_all_pos</tt><big>(</big><em>diff=</em>, <span class="optional">[</span><span
+                    class="optional">]</span><em>method='a'</em>, <em>num=0</em>, <em>notInLineX=None</em>, <em>notInLineY=None</em>,
+                <em>chain=None</em>, <em>possibles=None</em><big>)</big><a class="reference internal"
+                                                                           href="_modules/sudoku/sudoku.html#GroupBase.get_all_pos"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                                href="#sudoku.sudoku.GroupBase.get_all_pos"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>get position list in this group</p>
+                <dl class="docutils">
+                    <dt>Parameters::</dt>
+                    <dd>
+                        <table class="first last docutils field-list" frame="void" rules="none">
+                            <col class="field-name"/>
+                            <col class="field-body"/>
+                            <tbody valign="top">
+                            <tr class="field-odd field">
+                                <th class="field-name">diff:</th>
+                                <td class="field-body">exclude the positions in it</td>
+                            </tr>
+                            <tr class="field-even field">
+                                <th class="field-name">method:</th>
+                                <td class="field-body">a: all, s:has assigned, u:not assigned</td>
+                            </tr>
+                            <tr class="field-odd field">
+                                <th class="field-name">num:</th>
+                                <td class="field-body">if method is u and set the number to 1-9, will get all possible
+                                    pos which are possible to be assigned the num
+                                </td>
+                            </tr>
+                            <tr class="field-even field">
+                                <th class="field-name">notInLineX:</th>
+                                <td class="field-body">exclude the x line&#8217;s positions</td>
+                            </tr>
+                            <tr class="field-odd field">
+                                <th class="field-name">notInLineY:</th>
+                                <td class="field-body">exclude the y line&#8217;s positions</td>
+                            </tr>
+                            <tr class="field-even field">
+                                <th class="field-name">chain:</th>
+                                <td class="field-body">if set, check it, if it is True, just get the chain positions, or
+                                    get the un-chained postitions
+                                </td>
+                            </tr>
+                            <tr class="field-odd field">
+                                <th class="field-name">possibles:</th>
+                                <td class="field-body">if method=&#8221;u&#8221; and possibles!=None, it will only get
+                                    the possible set&#8217;s length = possibles
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </dd>
+                    <dt>Return::</dt>
+                    <dd>a List of Position</dd>
+                </dl>
+            </dd>
+        </dl>
+
+        <dl class="method">
+            <dt id="sudoku.sudoku.GroupBase.get_num_pos">
+                <tt class="descname">get_num_pos</tt><big>(</big><em>v</em><big>)</big><a class="reference internal"
+                                                                                          href="_modules/sudoku/sudoku.html#GroupBase.get_num_pos"><span
+                    class="viewcode-link">[source]</span></a><a class="headerlink"
+                                                                href="#sudoku.sudoku.GroupBase.get_num_pos"
+                                                                title="Permalink to this definition">¶</a></dt>
+            <dd><p>get the position of a group which have been filled the number(v)</p>
+            </dd>
+        </dl>
+
     </dd>
 </dl>
 
@@ -205,18 +326,15 @@
                                                                 title="Permalink to this definition">¶</a></dt>
             <dd><p>reduce the position(x, y)&#8217;s possible numbers from v
                 Return:</p>
-                <blockquote>
-                    <div>
-                        <dl class="docutils">
-                            <dt>int, as following::</dt>
-                            <dd>2 &#8211; if set a number,
-                                1 &#8211; if just set number
-                                0 &#8211; if is not in the possible set, if check is True, it will raise an SudokuError
-                                exception
-                            </dd>
-                        </dl>
+
+                <div class="highlight-python">
+                    <div class="highlight"><pre>int, as following
+2 -- if set a number,
+1 -- if just set number
+0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception
+</pre>
                     </div>
-                </blockquote>
+                </div>
             </dd>
         </dl>
 
@@ -686,7 +804,7 @@
         <h4>Next topic</h4>
 
         <p class="topless"><a href="matrix.html"
-                              title="next chapter">Traditional Method: Matrix V.0.5 Rev.005</a></p>
+                              title="next chapter">Traditional Method: Matrix V.0.5 Rev.006</a></p>
 
         <h3>This Page</h3>
         <ul class="this-page-menu">
@@ -722,7 +840,7 @@
                     >modules</a> |
         </li>
         <li class="right">
-            <a href="matrix.html" title="Traditional Method: Matrix V.0.5 Rev.005"
+            <a href="matrix.html" title="Traditional Method: Matrix V.0.5 Rev.006"
                     >next</a> |
         </li>
         <li class="right">
