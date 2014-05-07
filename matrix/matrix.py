@@ -31,12 +31,12 @@ def emptyMatrix():
     n = list(x for x in range(10))  # By Number
     p = list(x for x in range(10))  # Possible Number
     for i in range(10):
-        m[i] = [0 for x in range(9)]
-        n[i] = [0 for x in range(9)]
-        p[i] = [0 for x in range(9)]
-        for j in range(1,10):
+        m[i] = [0 for x in range(10)]
+        n[i] = [0 for x in range(10)]
+        p[i] = [0 for x in range(10)]
+        for j in range(1, 10):
             p[i][j] = list(x for x in range(1, 10))
-    return m,n,p
+    return m, n, p
 
 
 def readDefine(file, m, n, p):
@@ -71,7 +71,7 @@ def setNumber(m, n, p, pos, v, logic="defined"):
     m[x][0] += 1
     m[0][y] += 1
 
-    n[v][0] += n[v][0]  # n[1..9][0] record every number(1..9)'s assigned numbers
+    n[v][0] += 1  # n[1..9][0] record every number(1..9)'s assigned numbers
     #print( pos, v, n[v][0])
     n[v][n[v][0]] = (x, y)  # n[1..9][1..9] record every number(1..9)'s assigned position
 

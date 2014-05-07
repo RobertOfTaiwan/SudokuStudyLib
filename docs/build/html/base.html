@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The base knowledge of sudoku &mdash; SudokuStudyLib 0.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="SudokuStudyLib 0.5 documentation" href="index.html" />
+    <link rel="next" title="What is logic?" href="logic.html" />
+    <link rel="prev" title="Welcome to SudokuStudyLib’s documentation!" href="intro.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="logic.html" title="What is logic?"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Welcome to SudokuStudyLib’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 0.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-base-knowledge-of-sudoku">
+<h1>The base knowledge of sudoku<a class="headerlink" href="#the-base-knowledge-of-sudoku" title="Permalink to this headline">¶</a></h1>
+<p>Sudoku is a kind of puzzle game. It is one of the best way to learn logic, and at the same time, the Python language is one of the best computer language to learn logic.
+So, if we can combine these two kinds of tools to teach children or young men to learn logic, it will be perfect. This is why the project be done and going to.</p>
+<div class="section" id="a-classic-sudoku">
+<h2>A classic sudoku<a class="headerlink" href="#a-classic-sudoku" title="Permalink to this headline">¶</a></h2>
+<p>You can study what is sudoku in Wiki Page: <a class="reference external" href="http://en.wikipedia.org/wiki/Sudoku">http://en.wikipedia.org/wiki/Sudoku</a>
+The following is a classic sudoku:</p>
+<img alt="_images/p2.png" src="_images/p2.png" />
+<p>and the following is the solution for it:</p>
+<img alt="_images/p3.png" src="_images/p3.png" />
+</div>
+<div class="section" id="rules">
+<h2>Rules<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h2>
+<p>The basic rules to solve a sudoku is very easy:</p>
+<div class="highlight-python"><div class="highlight"><pre>1. Put the number of 1-9 to every line(including x-way and y-way) and every box.
+2. every line and every box can&#39;t duplicate of the number of 1-9.
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-many-possible-puzzles-in-a-9x9-sudoku">
+<h2>How many possible puzzles in a 9x9 sudoku<a class="headerlink" href="#how-many-possible-puzzles-in-a-9x9-sudoku" title="Permalink to this headline">¶</a></h2>
+<p>If we put the first number in a the position (1, 1), there are must have 9 numbers can be selected to put in.
+Then we put the second number in the postion (1, 2), there are must have 8 numbers can be selected to put in. So, and as it going on, we can write down the possible numbers we can select in
+every position:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">9!</th>
+<th class="head">6!</th>
+<th class="head">3!</th>
+<th class="head">6!</th>
+<th class="head">3!</th>
+<th class="head">1!</th>
+<th class="head">3!</th>
+<th class="head">1!</th>
+<th class="head">1!</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>9</td>
+<td>6</td>
+<td>3</td>
+<td>6</td>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>5</td>
+<td>2</td>
+<td>5</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>So the possible combinations are 9!*6!*3!*6!*3!*1!*3!*1!*1* = 4,514,807,808,000</p>
+<p>if we use python to caculate it:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">n</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="go">    if x==1:</span>
+<span class="go">        return 1</span>
+<span class="go">    else:</span>
+<span class="go">        return x*n(x-1)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>About the mathematics of sudoku, you can get it at Wiki, <a class="reference external" href="http://en.wikipedia.org/wiki/Mathematics_of_Sudoku">http://en.wikipedia.org/wiki/Mathematics_of_Sudoku</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The base knowledge of sudoku</a><ul>
+<li><a class="reference internal" href="#a-classic-sudoku">A classic sudoku</a></li>
+<li><a class="reference internal" href="#rules">Rules</a></li>
+<li><a class="reference internal" href="#how-many-possible-puzzles-in-a-9x9-sudoku">How many possible puzzles in a 9x9 sudoku</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="intro.html"
+                        title="previous chapter">Welcome to SudokuStudyLib&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="logic.html"
+                        title="next chapter">What is logic?</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/base.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="logic.html" title="What is logic?"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Welcome to SudokuStudyLib’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 0.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Robert J. Hwang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

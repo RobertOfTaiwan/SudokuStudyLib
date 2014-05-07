@@ -4,6 +4,6 @@ OOP Method: Sudoku
 This is the oop method to solve the Sudoku.
 
 .. automodule:: sudoku.sudoku
-:members:
+   :members:
 
 

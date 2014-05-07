@@ -19,7 +19,7 @@ ACTION_REDUCE = 'r'  # action of reduce number
 WRITEN_POSSIBLE_LIMITS = 3  # When a position's possible numbers <= this numer,
 # it will be assume that it's possible number has been writen down for a human,
 # 0 is same as 9 means no any limit
-ACTION_GET_INFO = False  # if want to get the info of an action,
+ACTION_GET_INFO = True  # if want to get the info of an action,
 # those can be re-played by the info to describe the action
 SCAN_ONE_NUMBER = True  # in the methods of scanning numbers, use this to scan only one number
 SCAN_ALL_NUMBER = False  # in the methods of scanning numbers, use this to scan all numbers
@@ -601,7 +601,7 @@ def fill_last_position_by_setting(m, sets):
                 recIdx -= 1
             else:
                 break
-        x = r[0];
+        x = r[0]
         y = r[1]
 
         for group in (m.lineX[x], m.lineY[y], m.b[m.p[x][y].b]):
@@ -998,7 +998,8 @@ def reduce_by_emulate_possible_in_one_position(m, first=1, only=False):
 
     emus = Status.name["emulatePossibles"]
 
-    print("reduceByEmulatePossibleInOnePositions: {0}".format(emus))
+    if Status.name["printStep"]:
+        print("reduceByEmulatePossibleInOnePositions: {0}".format(emus))
     reduces = 0
     sets = 0
     emu = []  # record the emulate method, [(p1,v),....]
@@ -1033,7 +1034,8 @@ def reduce_by_emulate_possible_number_in_group(m, first=1, only=False):
 
     emus = Status.name["emulatePossibles"]
 
-    print("reduceByEmulatePossibleNumberInGroup: {0}".format(emus))
+    if Status.name["printStep"]:
+        print("reduceByEmulatePossibleNumberInGroup: {0}".format(emus))
     reduces = 0
     sets = 0
     emu = []  # record the emulate method, [(p1,v),....]
@@ -1102,11 +1104,12 @@ def compare_result(m, emu, result):
 
 def emulator(m, x, y, v, targets=[], checkval=0):
     """emulate the x, y to be set v, then start to use some basic methods to try to solve
-    it will stop when and return
-    1: one of the targets have been set the checkval
-    2: isDone
-    -1: error is True
-    0: all basic methods have been tested, and can't solve
+    it will stop when and return::
+        1: one of the targets have been set the checkval
+        2: isDone
+        -1: error is True
+        0: all basic methods have been tested, and can't solve
+
     and the result matrix"""
 
     check_pos_save = Status.name["checkPos"]
@@ -1167,7 +1170,8 @@ def emulator(m, x, y, v, targets=[], checkval=0):
                     actions = actions + sets + reduces
                     break
         except SudokuDone as err:
-            print("It is done by the last position({0},{1}) to set to be {2}!".format(err.x, err.y, err.v))
+            if Status.name["printStep"]:
+                print("It is done by the last position({0},{1}) to set to be {2}!".format(err.x, err.y, err.v))
             rtn = 2
             break
         except SudokuWhenPosSet as err:
@@ -1180,11 +1184,13 @@ def emulator(m, x, y, v, targets=[], checkval=0):
                 continue
         except SudokuError as err:
             rtn = -1
-            print("It is impossible for {0}, {1} to set/reduce {2}! ({3})".format(err.x, err.y, err.v, err.t))
+            if Status.name["printStep"]:
+                print("It is impossible for {0}, {1} to set/reduce {2}! ({3})".format(err.x, err.y, err.v, err.t))
             #traceback.print_exc()
             break
         except:  # unexpected error
-            print("Unexpected error:", sys.exc_info()[0])
+            if Status.name["printStep"]:
+                print("Unexpected error:", sys.exc_info()[0])
             traceback.print_exc()
             break
 
@@ -1278,13 +1284,15 @@ def guess(m, idx=0, first=0, only=False):
         x = p1.x
         y = p1.y
         Status.name["tryStack"].append([m1, x, y, 0])
-        print("Try Add: {0},{1} to set {2} of {3}".format(x, y, p1.possible[0], p1.possible))
+        if Status.name["printStep"]:
+            print("Try Add: {0},{1} to set {2} of {3}".format(x, y, p1.possible[0], p1.possible))
     else:
         i = Status.name["tryIdx"] - 1
         Status.name["tryStack"][i][3] = idx
         x = Status.name["tryStack"][i][1]
         y = Status.name["tryStack"][i][2]
-        print("Try Idx={3}: {0},{1} to set {2} of {4}".format(x, y, m.p[x][y].possible[idx], idx, m.p[x][y].possible))
+        if Status.name["printStep"]:
+            print("Try Idx={3}: {0},{1} to set {2} of {4}".format(x, y, m.p[x][y].possible[idx], idx, m.p[x][y].possible))
 
     v = m.p[x][y].possible[idx]
     m.setit(x, y, v, d="try")
@@ -1328,34 +1336,17 @@ def reg_method():
     return methods
 
 
-def init():
-    """Init the status' values"""
-    Status.name["methodLoopIdx"] = 0  # the index of the methods loops
-    Status.name["methodIdx"] = 0  # the method idx which run now
-    Status.name["checkPos"] = None  # set this varible, if you want to make an exception when this position has been set
-    Status.name[
-        "writeDownAlready"] = False  # if the every un-assigned positions have been writen down their possible number?
-    Status.name[
-        "emulatePossibles"] = 2  # to set the possibles when using emulate method, for both positions and numbers
-    Status.name["tryStack"] = []  # the try Stack
-    Status.name["tryIdx"] = 0
-    Status.name["tryUse"] = True
-    Status.name["emuUse"] = True
-    Status.name["Scope"] = 0  # the scope of difficult level
-    Status.name["Level"] = 0  # the level Limit, 0 means no limit
-    return
-
-
 def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits=2, use_try=METHOD_USE_TRY,
-          use_emu=METHOD_USE_EMU):
+          use_emu=METHOD_USE_EMU, print_step=False):
     """Solve a sudoku which define in a file!
     loopLimit: the limit for the method loops, 0: no limits
     recLimit: when the records >= recLimit, it will stop, 0: no limits"""
 
-    init()
     Status.name["checkPos"] = check
     begin = time.time()
     m = Matrix(file=file)
+    Status.name["Original"] = copy.deepcopy(m)
+    Status.name["Result"] = m
     start = METHOD_CHECK_OBVIOUS  # start from for the first time
     num = 1
     only = False
@@ -1364,6 +1355,7 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
     Status.name["emuUse"] = use_emu
     allmethods = reg_method()
     Status.name["Level"] = level_limit
+    Status.name["printStep"] = print_step
 
     while True:
         actions = 0
@@ -1377,19 +1369,21 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                 # sets: how many positions have been set
                 # reduces: how many numbers have been reduced
                 # start: which method will start to be used, default is 1
-                # num: which number will be the first number to be procossed, for methods that look over all numbers
+                # num: which number will be the first number to be processed, for methods that look over all numbers
                 # only: for methods which look over all numbers to process one only, which is the num
                 sets, reduces, start, num, only = method.run(m, first=num, only=only)
                 Status.name["Scope"] += method.level
                 max_method = max(max_method, method.idx)
-                print("Try#{0}-{2}: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"], method.name,
+                if Status.name["printStep"]:
+                    print("Try#{0}-{2}: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"], method.name,
                                                                        Status.name["methodIdx"], sets, reduces))
                 if sets > 0:
                     rtn = fill_last_position_by_setting(m, sets)
                     if rtn[0] > 0:
                         start, first, only = rtn[2:]
-                        print(
-                            "Try#{0}-last: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"],
+                        if Status.name["printStep"]:
+                            print(
+                                "Try#{0}-last: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"],
                                                                               "LastPosition", Status.name["methodIdx"],
                                                                               rtn, reduces))
                         sets = sets + rtn[0]
@@ -1398,8 +1392,9 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                     if rtn[0] > 0:
                         sets = rtn[0]
                         start, first, only = rtn[2:]
-                        print(
-                            "Try#{0}-only: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"],
+                        if Status.name["printStep"]:
+                            print(
+                                "Try#{0}-only: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"],
                                                                               "LastPossible", Status.name["methodIdx"],
                                                                               rtn, reduces))
                 if DEBUG_MODE:
@@ -1411,7 +1406,8 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                     actions = actions + sets + reduces
                     break
         except SudokuDone as err:
-            print("It is done by the last position({0},{1}) to set to be {2}!".format(err.x, err.y, err.v))
+            if Status.name["printStep"]:
+                print("It is done by the last position({0},{1}) to set to be {2}!".format(err.x, err.y, err.v))
             break
         except SudokuStop:
             print("It is stop by the limit of recLimit set to {0}:".format(rec_limit))
@@ -1438,8 +1434,9 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                         Status.name["tryStack"].pop(-1)
                 if flag:
                     continue
-            print("It is impossible for {0}, {1} to set/reduce {2}! ({3})".format(err.x, err.y, err.v, err.t))
-            traceback.print_exc()
+            if Status.name["printStep"]:
+                print("It is impossible for {0}, {1} to set/reduce {2}! ({3})".format(err.x, err.y, err.v, err.t))
+                traceback.print_exc()
             break
         except KeyboardInterrupt:
             traceback.print_exc()
@@ -1454,19 +1451,22 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
             if Status.name["emulatePossibles"] < emu_limits:
                 Status.name["Scope"] += 1000
                 Status.name["emulatePossibles"] += 1
-                print("Try emulate numbers = {0}".format(Status.name["emulatePossibles"]))
+                if Status.name["printStep"]:
+                    print("Try emulate numbers = {0}".format(Status.name["emulatePossibles"]))
                 start = METHOD_EMULATE_START
                 continue
             else:
                 break
 
-    print(m)
+    print("The Original: ")
+    print(Status.name["Original"])
+    print("The Result:")
+    print(Status.name["Result"])
     if m.filled < 81:
-        print("Can't solve it, still need {0} more effort!".format(81 - m.filled))
+        print("Can't solve it, still need {0} more effort, it takes {1}!".format(81 - m.filled, time.time() - begin))
     else:
         print(
             "Done! good job, it takes {0}! Level={1}, Methods Used={2}".format(time.time() - begin,
                                                                                Status.name["Scope"], max_method))
-
-    return m
+    return
 

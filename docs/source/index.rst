@@ -1,21 +1,24 @@
 SudokuStudyLib
-**************
+==============
 **This is a python library for studying logic by solving Sudoku and learning the programming of python language**
 
 Welcome to SudokuStudyLib's documentation!
-==========================================
+------------------------------------------
 
 Contents:
 
 .. toctree::
-:maxdepth: 2
+   :maxdepth: 2
 
-        intro
-        sudoku
-        matrix
+   intro
+   base
+   logic
+   courses
+   sudoku
+   matrix
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
