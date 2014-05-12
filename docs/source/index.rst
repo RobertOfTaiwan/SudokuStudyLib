@@ -15,14 +15,14 @@ Welcome to SudokuStudyLib's documentation!
 Contents:
 
 .. toctree::
-:maxdepth: 2
+   :maxdepth: 2
 
-       intro
-       base
-       logic
-       courses
-       data
-       program
+   intro
+   base
+   logic
+   courses
+   data
+   program
 
 Package Detail
 --------------
