@@ -21,6 +21,8 @@ When you has installed, it will contain two packages, sudoku, and matrix. The fo
 Usage
 -----
 
+.. py:module:: sudoku.sudoku
+
 1. OOP method: sudoku, in the test.py::
 
     from sudoku import *
@@ -53,6 +55,8 @@ Usage
     # by basic human methods and guess
     solve("m10.data", level_limit=10, use_try=True)
     solve("m10.data", level_limit=3, use_try=True)
+
+.. py:module:: matrix.matrix
     
 2. Traditional method: matrix, in the test.py::
 

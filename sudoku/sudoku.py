@@ -13,7 +13,6 @@ import traceback
 import time
 import os
 
-
 ACTION_SET = 's'  # action of set number
 ACTION_REDUCE = 'r'  # action of reduce number
 WRITEN_POSSIBLE_LIMITS = 3  # When a position's possible numbers <= this numer,
@@ -150,7 +149,7 @@ class GroupBase:
         return rtn
 
     def count_num_possible(self, count=1):
-        """get the un-assigned position in this group, and possible numbers only in [count] postions
+        """get the un-assigned position in this group, and possible numbers only in [count] positions
 
         .. note:: The output format is a tuple list, the tuple has two value, one is number,
                     another is s position list
@@ -161,7 +160,7 @@ class GroupBase:
         """
 
         rtn = []
-        # count all possible number in to c and pos list, c is the times it show in the posiiton,
+        # count all possible number in to c and pos list, c is the times it show in the position,
         # p records which positions
         c = list(0 for x in range(9))
         pos = list([] for x in range(9))
@@ -549,7 +548,7 @@ class Matrix:
         return rtn
 
 
-def fill_only_one_possible(m, first=1, only=False):
+def fill_only_one_possible(m, **kw):
     """Check every unassigned position, if it's possible numbers left one only WRITEN_POSSIBLE_LIMIT:  True, Check position's writen is True or note False, don't check.
 
     Args:
@@ -571,7 +570,7 @@ def fill_only_one_possible(m, first=1, only=False):
     return sets, 0, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
-def fill_last_position_of_group(m, first=1, only=False):
+def fill_last_position_of_group(m, **kw):
     """If the un-assigned positions in a group(line or box) are only one left"""
     sets = 0
     for grouptype in (m.lineX, m.lineY, m.b):
@@ -818,7 +817,7 @@ def check_inobvious_number(m, first=1, only=False):
     return sets, actions, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
-def check_line_last_possible_for_number(m, first=1, only=False):
+def check_line_last_possible_for_number(m, **kw):
     """Check every line that only have one position for un-assigned number"""
     sets = 0
 
@@ -839,7 +838,7 @@ def check_line_last_possible_for_number(m, first=1, only=False):
     return sets, 0, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
-def write_down_possible(m, first=1, only=False):
+def write_down_possible(m, **kw):
     """Write down the possible numbers in every un-assigned position
     if WRITEN_POSSIBLE_LIMITS has set to 1..9, it will only write down the
     possibles which <= that limits"""
@@ -905,7 +904,7 @@ def get_chains(m, group, pos, numbers):
     return rtn
 
 
-def update_chain(m, first=1, only=False):
+def update_chain(m, **kw):
     """Update the chain of line
     return: >=0 means the chain number's amount in the matrix, m"""
 
@@ -942,7 +941,7 @@ def update_chain(m, first=1, only=False):
     return sets, reduces, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
-def reduce_by_two_possible_in_one_position(m, first=1, only=False):
+def reduce_by_two_possible_in_one_position(m, **kw):
     """when a position(p1) has two possible numbers only, we can assume if the position is one number(first)
     then try to emulate to set the position with the other number(second),
     then see the first number will be filled in a position(p2) which the position can see it
@@ -988,7 +987,7 @@ def reduce_by_two_possible_in_one_position(m, first=1, only=False):
     return sets, reduces, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
-def reduce_by_emulate_possible_in_one_position(m, first=1, only=False):
+def reduce_by_emulate_possible_in_one_position(m, **kw):
     """when a position(p1) has 2 or more possible numbers,
     we can emulate every possible number and get its result,
     1. if it causes an error, we can reduce that number,
@@ -1024,7 +1023,7 @@ def reduce_by_emulate_possible_in_one_position(m, first=1, only=False):
     return sets, reduces, METHOD_DEF_BEGIN, SCAN_DEF_BEGIN, SCAN_ALL_NUMBER
 
 
-def reduce_by_emulate_possible_number_in_group(m, first=1, only=False):
+def reduce_by_emulate_possible_number_in_group(m, **kw):
     """when a group(lineX, lineY, Box) has 2 or more position have the same possible number,
     we can emulate every position to set the number and get its result,
     1. if it causes an error, we can reduce the position's possible number from that number,
@@ -1269,7 +1268,7 @@ def try_error(m=None, file="", depth=0):
             return True
 
 
-def guess(m, idx=0, first=0, only=False):
+def guess(m, idx=0, **kw):
     """Guess Method"""
 
     # if start using tryMethod, set the level to the METHOD_LEVEL_LIMIT_WHENTRY
@@ -1356,6 +1355,7 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
     allmethods = reg_method()
     Status.name["Level"] = level_limit
     Status.name["printStep"] = print_step
+    Status.name["Level"] = 0
 
     while True:
         actions = 0

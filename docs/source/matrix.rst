@@ -1,9 +1,9 @@
-Traditional Method: Matrix V.0.5 Rev.006
-****************************************
+Package: Matrix - the traditional programming method
+====================================================
 
 This is the traditional method to solve the Sudoku.
 
 .. automodule:: matrix.matrix
-   :members:
+:members:
 
 

@@ -8,13 +8,11 @@ A classic sudoku
 ----------------
 
 You can study what is sudoku in Wiki Page: http://en.wikipedia.org/wiki/Sudoku
-The following is a classic sudoku:
 
-.. image:: p2.png
-
-and the following is the solution for it:
-
-.. image:: p3.png
+=================================== ===== ===========================================
+ The following is a classic sudoku:        and the following is the solution for it:
+ .. image:: p2.png                         .. image:: p3.png
+=================================== ===== ===========================================
 
 
 Rules
