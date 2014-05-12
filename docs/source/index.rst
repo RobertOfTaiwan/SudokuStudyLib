@@ -22,8 +22,8 @@ Contents:
    data
    program
    
-Package Detail
---------------
+Package Coding Detail
+---------------------
 
 .. toctree::
 
