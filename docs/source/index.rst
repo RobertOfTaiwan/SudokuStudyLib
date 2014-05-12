@@ -6,8 +6,8 @@ SudokuStudyLib
 ======  ========================================================
 
 .. |logo| image:: animation.gif
-:width: 100 px
-    :align: middle
+            :width: 100 px
+            :align: middle
 
 Welcome to SudokuStudyLib's documentation!
 ------------------------------------------
@@ -16,14 +16,14 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-
+   
    intro
    base
    logic
    courses
    data
    program
-
+   
 Package Detail
 --------------
 

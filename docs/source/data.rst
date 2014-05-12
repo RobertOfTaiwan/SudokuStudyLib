@@ -8,7 +8,7 @@ So we can explain these data structures as a simulator environment to solve a su
 We can first image that there are 9x9 houses in a beautiful valley, and they are build like:
 
 .. image:: p4.png
-
+      
 .. topic:: **An Imagined World**
 
     There are 9 countries, every country has 9 people. They decide to live together in this beautiful valley. And there are 9x9 houses, They want to let every people live in one house, and every X-way line, Y-way line, 
@@ -94,7 +94,7 @@ The following are the major properties of all classes in this libryary:
     * possible: the list of country id which have not lived in this group
 
 .. sidebar:: What is **effects**?
-
+    
    Effects of a box are the 4 boxes which the same direction of x or y with it. So, effectsX are the boxes that have the same x-way direction, 
    while effectsY are the boxes that have the same y-way direction of it.
     
@@ -140,7 +140,7 @@ The following are the major methods of the classes in this library:
     * can_see_those(posList): to check a house can see a list of houses, and return the houses list which it can see them.
     
     .. Note:: What is "**SEE**"?
-
+    
         the houses in the same x-way or y-way line, or in the same box, of a house, this means that this house can **SEE** all of them.
     
 - GroupBase class:
@@ -156,7 +156,7 @@ The following are the major methods of the classes in this library:
     * get_group_number(num): To Check the num in a box's would form a Group Number or not.
   
     .. Note:: What is "**Group Number**"?
-
+    
         Group Number is in a box. Those houses in this box can and only can allow some country's people, and these houses in a same line(x-way line or y-way line), 
         then we call these houses form a **Group Number**, We don't know which house is the country's people should live finally, 
         but we know the other houses in this line will not allow the same country's people to live.
@@ -187,10 +187,10 @@ You can define sudoku's game by giving x, y, v line by line in a text file.
 like the following: its define file is in the [installed directory]/sudoku/data/
 
 .. csv-table:: A sample define and its original and result matrix
-:header: "m3.data", "Original Matrix", "Result Matrix"
+    :header: "m3.data", "Original Matrix", "Result Matrix"
     :widths: 15, 35, 35
-
-        .. image:: m3.png,.. image:: origin.png,.. image:: result.png
+    
+    .. image:: m3.png,.. image:: origin.png,.. image:: result.png
 
 
 

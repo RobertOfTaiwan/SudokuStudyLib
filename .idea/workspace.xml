@@ -2,34 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b64838e7-f7b1-48c3-9963-39a5d39b9c79" name="Default" comment="Document Update&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_images/animation.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/animation.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/doctrees/data.doctree" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_images/define.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_images/flowchart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/flowchart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_images/m3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/m3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_images/origin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/origin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_images/p4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/p4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_images/p5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/p5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_images/p6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/p6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_images/p7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/p7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/doctrees/program.doctree" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_images/result.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/result.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/data.rst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_sources/data.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/program.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/program.rst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_sources/program.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/data.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/data.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/intro.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/intro.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/matrix.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/matrix.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/objects.inv" afterPath="$PROJECT_DIR$/docs/build/html/objects.inv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/program.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/program.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/sudoku.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/sudoku.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/data.html" afterPath="$PROJECT_DIR$/docs/build/html/data.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/data.rst" afterPath="$PROJECT_DIR$/docs/source/data.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/genindex.html" afterPath="$PROJECT_DIR$/docs/build/html/genindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/index.html" afterPath="$PROJECT_DIR$/docs/build/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/index.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/index.rst" afterPath="$PROJECT_DIR$/docs/source/index.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/index.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/index.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/intro.html" afterPath="$PROJECT_DIR$/docs/build/html/intro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/intro.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/intro.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/matrix.html" afterPath="$PROJECT_DIR$/docs/build/html/matrix.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/matrix/matrix.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/matrix/matrix.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/matrix.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/matrix.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/program.html" afterPath="$PROJECT_DIR$/docs/build/html/program.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/program.rst" afterPath="$PROJECT_DIR$/docs/source/program.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/py-modindex.html" afterPath="$PROJECT_DIR$/docs/build/html/py-modindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/search.html" afterPath="$PROJECT_DIR$/docs/build/html/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/searchindex.js" afterPath="$PROJECT_DIR$/docs/build/html/searchindex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/sudoku.html" afterPath="$PROJECT_DIR$/docs/build/html/sudoku.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/sudoku/sudoku.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/sudoku/sudoku.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/sudoku.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/sudoku.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sudokulib.iml" afterPath="$PROJECT_DIR$/.idea/sudokulib.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sudokulib.iws" />
@@ -101,7 +102,7 @@
       <file leaf-file-name="sudoku.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="700" column="0" selection-start="24637" selection-end="24637" vertical-scroll-proportion="0.81511474" vertical-offset="13396" max-vertical-offset="29560">
+            <state line="464" column="26" selection-start="15786" selection-end="15786" vertical-scroll-proportion="1.6383266" vertical-offset="8066" max-vertical-offset="29560">
               <folding>
                 <element signature="e#163#173#0" expanded="true" />
               </folding>
@@ -275,7 +276,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+    <property name="options.lastSelected" value="com.jetbrains.python.templateLanguages.TemplateLanguageModulesConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -645,7 +646,11 @@
       <created>1399870125044</created>
       <updated>1399870125044</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Document Update&#10;">
+      <created>1399876714740</created>
+      <updated>1399876714740</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -973,7 +978,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="700" column="0" selection-start="24637" selection-end="24637" vertical-scroll-proportion="0.81511474" vertical-offset="13396" max-vertical-offset="29560">
+        <state line="464" column="26" selection-start="15786" selection-end="15786" vertical-scroll-proportion="1.6383266" vertical-offset="8066" max-vertical-offset="29560">
           <folding>
             <element signature="e#163#173#0" expanded="true" />
           </folding>

@@ -75,7 +75,7 @@ Some Basic Methods
    It is the same method as check_obvious_number, but some boxes' houses are formed as a **Group Number**.
 
 .. sidebar:: What is a **Chain**?
-
+   
    Chain is formed by two or above houses. In these houses, the amount of all different possible countries' people are equal to the amount of the houses.
    When a chain have formed, we can reduce the possible countries' people from the other houses in the same group of this chain.
    
@@ -94,31 +94,31 @@ How to implement a method?
 We could implement a method called check_obvious_for_a_country(m, num) method as an example:
 
 .. code::
-:number-lines: 1
-
-        def check_obvious_for_a country(m, num):
-        checked = list()
-        for p1 in m.n[num].p:
-            for b in m.b[p1.b].effects:
-                possible = []
-                if b in checked:
+   :number-lines: 1
+   
+    def check_obvious_for_a country(m, num):
+    checked = list()
+    for p1 in m.n[num].p:
+        for b in m.b[p1.b].effects:
+            possible = []
+            if b in checked:
+                continue
+            else:
+                checked.add(b)
+            if num not in m.b[b].possible:
+                continue
+            for p2 in m.b[b].p:
+                if p2.v != 0 or p2.can_see(p1) > 0:
+                    continue;
+                if not m.lineX[p2.x].allow(num):
                     continue
-                else:
-                    checked.add(b)
-                if num not in m.b[b].possible:
+                if not m.lineY[p2.y].allow(num):
                     continue
-                for p2 in m.b[b].p:
-                    if p2.v != 0 or p2.can_see(p1) > 0:
-                        continue;
-                    if not m.lineX[p2.x].allow(num):
-                        continue
-                    if not m.lineY[p2.y].allow(num):
-                        continue
-                    possible.append(p2)
-                if len(possible) == 1:
-                    m.setit(possible[0].x, possible[0].y, num, d="Obvious For a Country People")
+                possible.append(p2)
+            if len(possible) == 1:
+                m.setit(possible[0].x, possible[0].y, num, d="Obvious For a Country People")
 
-    #. line#1, define a method, *m* is the world of this game, and **num** is a country id, here is 1-9.
+#. line#1, define a method, *m* is the world of this game, and **num** is a country id, here is 1-9. 
 #. line#3, starts to find the all people who have lived in a house of a country.
 #. line#4-9, it scan all its effect boxes if those have not been checked.
 #. line#10-11, it the country people have live in this box, ignore it.

@@ -1,212 +1,145 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>Start Programming to Solve a Sudoku &mdash; SudokuStudyLib 0.7 documentation</title>
-
-    <link rel="stylesheet" href="_static/default.css" type="text/css"/>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
-
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT: './',
-            VERSION: '0.7',
-            COLLAPSE_INDEX: false,
-            FILE_SUFFIX: '.html',
-            HAS_SOURCE: true
-        };
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="SudokuStudyLib 0.7 documentation" href="index.html"/>
-    <link rel="next" title="Package: Sudoku - the OOP method" href="sudoku.html"/>
-    <link rel="prev" title="How to make a simulator environment in Python to solve a sudoku" href="data.html"/>
-</head>
-<body>
-<div class="related">
-    <h3>Navigation</h3>
-    <ul>
+    <link rel="top" title="SudokuStudyLib 0.7 documentation" href="index.html" />
+    <link rel="next" title="Package: Sudoku - the OOP method" href="sudoku.html" />
+    <link rel="prev" title="How to make a simulator environment in Python to solve a sudoku" href="data.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
         <li class="right" style="margin-right: 10px">
-            <a href="genindex.html" title="General Index"
-               accesskey="I">index</a></li>
-        <li class="right">
-            <a href="py-modindex.html" title="Python Module Index"
-                    >modules</a> |
-        </li>
-        <li class="right">
-            <a href="sudoku.html" title="Package: Sudoku - the OOP method"
-               accesskey="N">next</a> |
-        </li>
-        <li class="right">
-            <a href="data.html" title="How to make a simulator environment in Python to solve a sudoku"
-               accesskey="P">previous</a> |
-        </li>
-        <li><a href="index.html">SudokuStudyLib 0.7 documentation</a> &raquo;</li>
-    </ul>
-</div>
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sudoku.html" title="Package: Sudoku - the OOP method"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="data.html" title="How to make a simulator environment in Python to solve a sudoku"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 0.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-<div class="document">
-    <div class="documentwrapper">
+    <div class="document">
+      <div class="documentwrapper">
         <div class="bodywrapper">
-            <div class="body">
-
-                <div class="section" id="start-programming-to-solve-a-sudoku">
-                    <h1>Start Programming to Solve a Sudoku<a class="headerlink"
-                                                              href="#start-programming-to-solve-a-sudoku"
-                                                              title="Permalink to this headline">¶</a></h1>
-
-                    <p>When we have created a sudoku simulate world in the computer to solve a sudoku, now we should go
-                        ahead to implement some methods which we solve it in our own hands.
-                        In other world, programming, is the stuff which we teach computer to do something that we have
-                        known it.</p>
-
-                    <p>We first introduce the solve environment, then we will introduce some basic methods in this
-                        library.</p>
-
-                    <div class="section" id="solving-environment">
-                        <h2>Solving Environment<a class="headerlink" href="#solving-environment"
-                                                  title="Permalink to this headline">¶</a></h2>
-
-                        <p>We create a function solve() to do the real solving a sudoku, and we make two exception
-                            classes, SudokuDone, SudokuError to capture event happen when we use methods to solve a
-                            sudoku.</p>
-
-                        <div class="admonition note">
-                            <p class="first admonition-title">Note</p>
-
-                            <p>What is &#8220;Exception&#8221;?</p>
-
-                            <p>Exception is an event defined, when the event condition has occurred, system will stop
-                                the processing and jump to the exception processing.
-                                There are two major exceptions in the environment:</p>
-                            <dl class="last docutils">
-                                <dt>SudokuDone:</dt>
-                                <dd>when the sudoku has been solved, will raise this exception</dd>
-                                <dt>SudokuError:</dt>
-                                <dd>when a country people to set in a house, but will break the rule of game, this will
-                                    raise this exception
-                                </dd>
-                            </dl>
-                        </div>
-                        <p>To let the environment know how many methods they can use to solve a sudoku, we create a
-                            class, SolveMethod. We use this class to create all methods in a BRAIN. We can treat this
-                            BRAIN like the god of this valley. Every time,
-                            when people don&#8217;t how to choose their suitable houses, you can ask the god of valley,
-                            and it will give an answer, or it would say that, &#8220;<strong>I don&#8217;t know how to
-                                do either!</strong>&#8220;</p>
-
-                        <p>Every method register in the Brain as a SovleMethod object, they have these major
-                            properties:</p>
-                        <blockquote>
-                            <div>
-                                <ol class="arabic simple">
-                                    <li>fun: the function name of the method in python coding</li>
-                                    <li>idx: the index of the method, from the easier to the more difficult, the brain
-                                        will use this sequence to solve a game one by one.
-                                    </li>
-                                    <li>name: the name of the method</li>
-                                    <li>level: the difficult level for human, using to count a game&#8217;s difficult
-                                        level
-                                    </li>
-                                </ol>
-                            </div>
-                        </blockquote>
-                    </div>
-                    <div class="section" id="solving-process">
-                        <h2>Solving Process<a class="headerlink" href="#solving-process"
-                                              title="Permalink to this headline">¶</a></h2>
-
-                        <p>The following is the flow chart of solve():</p>
-                        <img alt="_images/flowchart.png" src="_images/flowchart.png"/>
-
-                        <div class="admonition note">
-                            <p class="first admonition-title">Note</p>
-
-                            <p><strong>WORK or NOT WORK?</strong></p>
-
-                            <p>A method works or not means that using this method can:</p>
-                            <ol class="last arabic simple">
-                                <li>let one or more people to find his or their own house,</li>
-                                <li>OR can let one or more houses know they are not allowed for some countries&#8217;
-                                    people.
-                                </li>
-                            </ol>
-                        </div>
-                        <p>In this flow chart, we know that:</p>
-                        <ol class="arabic simple">
-                            <li>When a method works to set a person or reduce a house&#8217;s allowed people, it will
-                                return to the first method to restart solving the game.
-                            </li>
-                            <li>If a method can&#8217;t work to solve a game, it will give the game to the next method
-                                to solve it.
-                            </li>
-                            <li>And if final method can&#8217;t solve a game, it will go out and say &#8220;I can&#8217;t
-                                figure out this game, sorry!&#8221;</li>
-                            <li>In the solving process, if &#8220;Done&#8221; or &#8220;Error&#8221; event occur, it
-                                will go out.
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="section" id="some-basic-methods">
-                        <h2>Some Basic Methods<a class="headerlink" href="#some-basic-methods"
-                                                 title="Permalink to this headline">¶</a></h2>
-                        <ol class="arabic">
-                            <li><p class="first">fill_only_one_possible:</p>
-
-                                <p>Find every house in a group, if there is only one house that one country people can
-                                    live there, that house must let that country&#8217;s people to live in.</p>
-                            </li>
-                            <li><p class="first">fill_last_position_of_group:</p>
-
-                                <p>When in a group(line or box) are only one left, it must allow only one country people
-                                    to live there.</p>
-                            </li>
-                            <li><p class="first">check_obvious_number:</p>
-
-                                <p>Check every country people who has lived in a house, and when these people observe
-                                    other boxes which has yet not lived their country people,
-                                    can find an only house that allowed their country people or not?</p>
-                            </li>
-                            <li><p class="first">check_inobvious_number:</p>
-
-                                <p>It is the same method as check_obvious_number, but some boxes&#8217; houses are
-                                    formed as a <strong>Group Number</strong>.</p>
-                            </li>
-                        </ol>
-                        <div class="sidebar">
-                            <p class="first sidebar-title">What is a <strong>Chain</strong>?</p>
-
-                            <p class="last">Chain is formed by two or above houses. In these houses, the amount of all
-                                different possible countries&#8217; people are equal to the amount of the houses.
-                                When a chain have formed, we can reduce the possible countries&#8217; people from the
-                                other houses in the same group of this chain.</p>
-                        </div>
-                        <ol class="arabic" start="5">
-                            <li><p class="first">reduce_by_group_number:</p>
-
-                                <p>If there is a <strong>Group Number</strong> in a box, the empty houses of its same
-                                    direction could be reduce the possible country people of this Group Number.</p>
-                            </li>
-                            <li><p class="first">update_chain:</p>
-
-                                <p>As the houses have been lived some people, this would make some empty houses reduce
-                                    some possible countries&#8217; people.
-                                    And then these empty houses in a group(x-way line, y-way line, box) may form a
-                                    <strong>Chain</strong>.</p>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="section" id="how-to-implement-a-method">
-                        <h2>How to implement a method?<a class="headerlink" href="#how-to-implement-a-method"
-                                                         title="Permalink to this headline">¶</a></h2>
-
-                        <p>We could implement a method called check_obvious_for_a_country(m, num) method as an
-                            example:</p>
+          <div class="body">
+            
+  <div class="section" id="start-programming-to-solve-a-sudoku">
+<h1>Start Programming to Solve a Sudoku<a class="headerlink" href="#start-programming-to-solve-a-sudoku" title="Permalink to this headline">¶</a></h1>
+<p>When we have created a sudoku simulate world in the computer to solve a sudoku, now we should go ahead to implement some methods which we solve it in our own hands.
+In other world, programming, is the stuff which we teach computer to do something that we have known it.</p>
+<p>We first introduce the solve environment, then we will introduce some basic methods in this library.</p>
+<div class="section" id="solving-environment">
+<h2>Solving Environment<a class="headerlink" href="#solving-environment" title="Permalink to this headline">¶</a></h2>
+<p>We create a function solve() to do the real solving a sudoku, and we make two exception classes, SudokuDone, SudokuError to capture event happen when we use methods to solve a sudoku.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>What is &#8220;Exception&#8221;?</p>
+<p>Exception is an event defined, when the event condition has occurred, system will stop the processing and jump to the exception processing.
+There are two major exceptions in the environment:</p>
+<dl class="last docutils">
+<dt>SudokuDone:</dt>
+<dd>when the sudoku has been solved, will raise this exception</dd>
+<dt>SudokuError:</dt>
+<dd>when a country people to set in a house, but will break the rule of game, this will raise this exception</dd>
+</dl>
+</div>
+<p>To let the environment know how many methods they can use to solve a sudoku, we create a class, SolveMethod. We use this class to create all methods in a BRAIN. We can treat this BRAIN like the god of this valley. Every time,
+when people don&#8217;t how to choose their suitable houses, you can ask the god of valley, and it will give an answer, or it would say that, &#8220;<strong>I don&#8217;t know how to do either!</strong>&#8220;</p>
+<p>Every method register in the Brain as a SovleMethod object, they have these major properties:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>fun: the function name of the method in python coding</li>
+<li>idx: the index of the method, from the easier to the more difficult, the brain will use this sequence to solve a game one by one.</li>
+<li>name: the name of the method</li>
+<li>level: the difficult level for human, using to count a game&#8217;s difficult level</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="solving-process">
+<h2>Solving Process<a class="headerlink" href="#solving-process" title="Permalink to this headline">¶</a></h2>
+<p>The following is the flow chart of solve():</p>
+<img alt="_images/flowchart.png" src="_images/flowchart.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>WORK or NOT WORK?</strong></p>
+<p>A method works or not means that using this method can:</p>
+<ol class="last arabic simple">
+<li>let one or more people to find his or their own house,</li>
+<li>OR can let one or more houses know they are not allowed for some countries&#8217; people.</li>
+</ol>
+</div>
+<p>In this flow chart, we know that:</p>
+<ol class="arabic simple">
+<li>When a method works to set a person or reduce a house&#8217;s allowed people, it will return to the first method to restart solving the game.</li>
+<li>If a method can&#8217;t work to solve a game, it will give the game to the next method to solve it.</li>
+<li>And if final method can&#8217;t solve a game, it will go out and say &#8220;I can&#8217;t figure out this game, sorry!&#8221;</li>
+<li>In the solving process, if &#8220;Done&#8221; or &#8220;Error&#8221; event occur, it will go out.</li>
+</ol>
+</div>
+<div class="section" id="some-basic-methods">
+<h2>Some Basic Methods<a class="headerlink" href="#some-basic-methods" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">fill_only_one_possible:</p>
+<p>Find every house in a group, if there is only one house that one country people can live there, that house must let that country&#8217;s people to live in.</p>
+</li>
+<li><p class="first">fill_last_position_of_group:</p>
+<p>When in a group(line or box) are only one left, it must allow only one country people to live there.</p>
+</li>
+<li><p class="first">check_obvious_number:</p>
+<p>Check every country people who has lived in a house, and when these people observe other boxes which has yet not lived their country people,
+can find an only house that allowed their country people or not?</p>
+</li>
+<li><p class="first">check_inobvious_number:</p>
+<p>It is the same method as check_obvious_number, but some boxes&#8217; houses are formed as a <strong>Group Number</strong>.</p>
+</li>
+</ol>
+<div class="sidebar">
+<p class="first sidebar-title">What is a <strong>Chain</strong>?</p>
+<p class="last">Chain is formed by two or above houses. In these houses, the amount of all different possible countries&#8217; people are equal to the amount of the houses.
+When a chain have formed, we can reduce the possible countries&#8217; people from the other houses in the same group of this chain.</p>
+</div>
+<ol class="arabic" start="5">
+<li><p class="first">reduce_by_group_number:</p>
+<p>If there is a <strong>Group Number</strong> in a box, the empty houses of its same direction could be reduce the possible country people of this Group Number.</p>
+</li>
+<li><p class="first">update_chain:</p>
+<p>As the houses have been lived some people, this would make some empty houses reduce some possible countries&#8217; people.
+And then these empty houses in a group(x-way line, y-way line, box) may form a <strong>Chain</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="how-to-implement-a-method">
+<h2>How to implement a method?<a class="headerlink" href="#how-to-implement-a-method" title="Permalink to this headline">¶</a></h2>
+<p>We could implement a method called check_obvious_for_a_country(m, num) method as an example:</p>
 <pre class="code literal-block">
 <span class="ln"> 1 </span> def check_obvious_for_a country(m, num):
 <span class="ln"> 2 </span> checked = list()
@@ -230,99 +163,83 @@
 <span class="ln">20 </span>         if len(possible) == 1:
 <span class="ln">21 </span>             m.setit(possible[0].x, possible[0].y, num, d=&quot;Obvious For a Country People&quot;)
 </pre>
-                        <ol class="arabic simple">
-                            <li>line#1, define a method, <em>m</em> is the world of this game, and <strong>num</strong>
-                                is a country id, here is 1-9.
-                            </li>
-                            <li>line#3, starts to find the all people who have lived in a house of a country.</li>
-                            <li>line#4-9, it scan all its effect boxes if those have not been checked.</li>
-                            <li>line#10-11, it the country people have live in this box, ignore it.</li>
-                            <li>line#12-19, check all empty houses in this box which allow the country&#8217;s people or
-                                not, if yes, put it in the Possible List.
-                            </li>
-                            <li>line#20-21, if the Possible List has only one house, it must can be assigned this house
-                                to the country&#8217;s people.
-                            </li>
-                        </ol>
-                    </div>
-                </div>
+<ol class="arabic simple">
+<li>line#1, define a method, <em>m</em> is the world of this game, and <strong>num</strong> is a country id, here is 1-9.</li>
+<li>line#3, starts to find the all people who have lived in a house of a country.</li>
+<li>line#4-9, it scan all its effect boxes if those have not been checked.</li>
+<li>line#10-11, it the country people have live in this box, ignore it.</li>
+<li>line#12-19, check all empty houses in this box which allow the country&#8217;s people or not, if yes, put it in the Possible List.</li>
+<li>line#20-21, if the Possible List has only one house, it must can be assigned this house to the country&#8217;s people.</li>
+</ol>
+</div>
+</div>
 
 
-            </div>
+          </div>
         </div>
-    </div>
-    <div class="sphinxsidebar">
+      </div>
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-            <h3><a href="index.html">Table Of Contents</a></h3>
-            <ul>
-                <li><a class="reference internal" href="#">Start Programming to Solve a Sudoku</a>
-                    <ul>
-                        <li><a class="reference internal" href="#solving-environment">Solving Environment</a></li>
-                        <li><a class="reference internal" href="#solving-process">Solving Process</a></li>
-                        <li><a class="reference internal" href="#some-basic-methods">Some Basic Methods</a></li>
-                        <li><a class="reference internal" href="#how-to-implement-a-method">How to implement a
-                            method?</a></li>
-                    </ul>
-                </li>
-            </ul>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Start Programming to Solve a Sudoku</a><ul>
+<li><a class="reference internal" href="#solving-environment">Solving Environment</a></li>
+<li><a class="reference internal" href="#solving-process">Solving Process</a></li>
+<li><a class="reference internal" href="#some-basic-methods">Some Basic Methods</a></li>
+<li><a class="reference internal" href="#how-to-implement-a-method">How to implement a method?</a></li>
+</ul>
+</li>
+</ul>
 
-            <h4>Previous topic</h4>
-
-            <p class="topless"><a href="data.html"
-                                  title="previous chapter">How to make a simulator environment in Python to solve a
-                sudoku</a></p>
-            <h4>Next topic</h4>
-
-            <p class="topless"><a href="sudoku.html"
-                                  title="next chapter">Package: Sudoku - the OOP method</a></p>
-
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-                <li><a href="_sources/program.txt"
-                       rel="nofollow">Show Source</a></li>
-            </ul>
-            <div id="searchbox" style="display: none">
-                <h3>Quick search</h3>
-
-                <form class="search" action="search.html" method="get">
-                    <input type="text" name="q"/>
-                    <input type="submit" value="Go"/>
-                    <input type="hidden" name="check_keywords" value="yes"/>
-                    <input type="hidden" name="area" value="default"/>
-                </form>
-                <p class="searchtip" style="font-size: 90%">
-                    Enter search terms or a module, class or function name.
-                </p>
-            </div>
-            <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="data.html"
+                        title="previous chapter">How to make a simulator environment in Python to solve a sudoku</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sudoku.html"
+                        title="next chapter">Package: Sudoku - the OOP method</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/program.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
+      </div>
+      <div class="clearer"></div>
     </div>
-    <div class="clearer"></div>
-</div>
-<div class="related">
-    <h3>Navigation</h3>
-    <ul>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
         <li class="right" style="margin-right: 10px">
-            <a href="genindex.html" title="General Index"
-                    >index</a></li>
-        <li class="right">
-            <a href="py-modindex.html" title="Python Module Index"
-                    >modules</a> |
-        </li>
-        <li class="right">
-            <a href="sudoku.html" title="Package: Sudoku - the OOP method"
-                    >next</a> |
-        </li>
-        <li class="right">
-            <a href="data.html" title="How to make a simulator environment in Python to solve a sudoku"
-                    >previous</a> |
-        </li>
-        <li><a href="index.html">SudokuStudyLib 0.7 documentation</a> &raquo;</li>
-    </ul>
-</div>
-<div class="footer">
-    &copy; Copyright 2014, Robert J. Hwang.
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
-</div>
-</body>
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sudoku.html" title="Package: Sudoku - the OOP method"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="data.html" title="How to make a simulator environment in Python to solve a sudoku"
+             >previous</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 0.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Robert J. Hwang.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
 </html>
