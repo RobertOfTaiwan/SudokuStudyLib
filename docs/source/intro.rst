@@ -57,7 +57,7 @@ Usage
     solve("m10.data", level_limit=3, use_try=True)
 
 .. py:module:: matrix.matrix
-
+    
 2. Traditional method: matrix, in the test.py::
 
     from matrix import *

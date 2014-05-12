@@ -1,36 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b64838e7-f7b1-48c3-9963-39a5d39b9c79" name="Default" comment="Document Update&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/data.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/data.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/intro.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/intro.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/matrix.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/matrix.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/objects.inv" afterPath="$PROJECT_DIR$/docs/build/html/objects.inv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/program.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/program.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/sudoku.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/sudoku.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/data.html" afterPath="$PROJECT_DIR$/docs/build/html/data.html" />
+    <list default="true" id="b64838e7-f7b1-48c3-9963-39a5d39b9c79" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/data.rst" afterPath="$PROJECT_DIR$/docs/source/data.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/genindex.html" afterPath="$PROJECT_DIR$/docs/build/html/genindex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/index.html" afterPath="$PROJECT_DIR$/docs/build/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/index.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/index.rst" afterPath="$PROJECT_DIR$/docs/source/index.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/index.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/index.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/intro.html" afterPath="$PROJECT_DIR$/docs/build/html/intro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/intro.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/intro.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/matrix.html" afterPath="$PROJECT_DIR$/docs/build/html/matrix.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/matrix/matrix.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/matrix/matrix.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/matrix.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/matrix.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/program.html" afterPath="$PROJECT_DIR$/docs/build/html/program.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/program.rst" afterPath="$PROJECT_DIR$/docs/source/program.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/py-modindex.html" afterPath="$PROJECT_DIR$/docs/build/html/py-modindex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/search.html" afterPath="$PROJECT_DIR$/docs/build/html/search.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/searchindex.js" afterPath="$PROJECT_DIR$/docs/build/html/searchindex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/sudoku.html" afterPath="$PROJECT_DIR$/docs/build/html/sudoku.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/sudoku/sudoku.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/sudoku/sudoku.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/sudoku.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/sudoku.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sudokulib.iml" afterPath="$PROJECT_DIR$/.idea/sudokulib.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/intro.rst" afterPath="$PROJECT_DIR$/docs/source/intro.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/matrix.rst" afterPath="$PROJECT_DIR$/docs/source/matrix.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/sudoku.rst" afterPath="$PROJECT_DIR$/docs/source/sudoku.rst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sudokulib.iws" />
@@ -650,7 +626,11 @@
       <created>1399876714740</created>
       <updated>1399876714740</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Document Update&#10;">
+      <created>1399878739155</created>
+      <updated>1399878739155</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -718,7 +698,6 @@
     <MESSAGE value="replacing the global variables in a class, Status&#10;" />
     <MESSAGE value="Document Update&#10;" />
     <option name="LAST_COMMIT_MESSAGE" value="Document Update&#10;" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
