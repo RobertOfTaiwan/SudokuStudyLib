@@ -1,6 +1,10 @@
 Sudoku Solving Library
 ======================
 
+.. image:: animation.gif
+    :width: 100
+    :align: left
+
 For the purpose of studying solving Sudoku and learning python programming,
 including traditional method and oop.
 
