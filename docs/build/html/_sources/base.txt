@@ -9,17 +9,17 @@ A classic sudoku
 
 You can study what is sudoku in Wiki Page: http://en.wikipedia.org/wiki/Sudoku
 
+.. |sudoku_init| image:: p2.png
+                 :width: 300 px
+
+.. |sudoku_result| image:: p3.png
+                   :width: 300 px
+
 =================================== ===== ===========================================
  The following is a classic sudoku:        and the following is the solution for it:
  |sudoku_init|                             |sudoku_result|
 =================================== ===== ===========================================
 
-.. |sudoku_init| image:: p2.png
-                 :width: 300 px
-                 
-.. |sudoku_result| image:: p3.png
-                   :width: 300 px
-            
 Rules
 -----
 
