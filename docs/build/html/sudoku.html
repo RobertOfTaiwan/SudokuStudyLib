@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Package: Sudoku - the OOP method &mdash; SudokuStudyLib 0.7 documentation</title>
+    <title>Package: Sudoku - the OOP method &mdash; SudokuStudyLib 1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.7',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="SudokuStudyLib 0.7 documentation" href="index.html" />
-    <link rel="next" title="Package: Matrix - the traditional programming method" href="matrix.html" />
+    <link rel="top" title="SudokuStudyLib 1.0 documentation" href="index.html" />
     <link rel="prev" title="Start Programming to Solve a Sudoku" href="program.html" /> 
   </head>
   <body>
@@ -38,12 +37,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="matrix.html" title="Package: Matrix - the traditional programming method"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
           <a href="program.html" title="Start Programming to Solve a Sudoku"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SudokuStudyLib 0.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -55,14 +51,1252 @@
   <div class="section" id="package-sudoku-the-oop-method">
 <h1>Package: Sudoku - the OOP method<a class="headerlink" href="#package-sudoku-the-oop-method" title="Permalink to this headline">¶</a></h1>
 <p>This is the oop method to solve the Sudoku.</p>
-<span class="target" id="module-sudoku.sudoku"></span><span class="target" id="module-sudoku"></span><table class="docutils field-list" frame="void" rules="none">
+<span class="target" id="module-sudoku.sudoku"></span><span class="target" id="module-sudoku"></span><dl class="class">
+<dt id="sudoku.sudoku.Box">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Box</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Box"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Box" title="Permalink to this definition">¶</a></dt>
+<dd><p>A 3x3 Box Object</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">members:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>idx</strong> &#8211; int, the box&#8217;s id</li>
+<li><strong>p</strong> &#8211; the Point object list of this object</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This will replace the original GroupBase&#8217;s init()</p>
+</div>
+<dl class="method">
+<dt id="sudoku.sudoku.Box.get_group_number">
+<tt class="descname">get_group_number</tt><big>(</big><em>num</em>, <em>pos=</em>, <span class="optional">[</span><span class="optional">]</span><em>notInLineX=None</em>, <em>notInLineY=None</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Box.get_group_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Box.get_group_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>if the unassigned num in this box which it&#8217;s all possible positions have the same direction,
+we call it as a GroupNumber</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>num</strong> &#8211; int, find this num, it is a group number in this box</li>
+<li><strong>pos</strong> &#8211; list, the Point object list which to find a group number, if it is empty, the function will get all unassigned points to be a list</li>
+<li><strong>notInLineX</strong> &#8211; bool, to call get_all_pos to not include x-line&#8217;s unassigned point</li>
+<li><strong>notInLineY</strong> &#8211; bool, as above, but y-line</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">GroupNumber, none or a GroupNumber Object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sudoku.sudoku.Chain">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Chain</tt><big>(</big><em>numList</em>, <em>posList</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Chain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Chain" title="Permalink to this definition">¶</a></dt>
+<dd><p>A chain of two and above positions which are not in the same box but in the same line and can form a chain,
+means the possible number in this chain positions only can be filled in these positions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>numList</strong> &#8211; int list, presents the numbers of this chain</li>
+<li><strong>posList</strong> &#8211; Point list, presents the positions that form the chain</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="sudoku.sudoku.GroupBase">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">GroupBase</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Base Class of a Line or Box</p>
+<p>The init function of a GroupBase object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>idx</strong> &#8211; int, the id of this object</li>
+<li><strong>p</strong> &#8211; the point object list in this object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sudoku.sudoku.GroupBase.allow">
+<tt class="descname">allow</tt><big>(</big><em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.allow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.allow" title="Permalink to this definition">¶</a></dt>
+<dd><p>check the group can be filled the number(v)?</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>v</strong> &#8211; int, the number to be checked</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True or False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.GroupBase.count_num_possible">
+<tt class="descname">count_num_possible</tt><big>(</big><em>count=1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.count_num_possible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.count_num_possible" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the un-assigned position in this group, and possible numbers only in [count] positions</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The output format is a tuple list, the tuple has two value, one is number,
+another is s position list</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>count</strong> &#8211; int, how many positions are un-assigned to get</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list, [(num,[p1, p2...]),...]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.GroupBase.get_all_pos">
+<tt class="descname">get_all_pos</tt><big>(</big><em>diff=</em>, <span class="optional">[</span><span class="optional">]</span><em>method='a'</em>, <em>num=0</em>, <em>notInLineX=None</em>, <em>notInLineY=None</em>, <em>chain=None</em>, <em>possibles=None</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.get_all_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.get_all_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>get position list in this group</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>diff</strong> &#8211; list, exclude the positions in it</li>
+<li><strong>method</strong> &#8211; char, a: all, s:has assigned, u:not assigned</li>
+<li><strong>num</strong> &#8211; int, if method is u and set the number to 1-9, will get all possible pos which are possible to be assigned the num</li>
+<li><strong>notInLineX</strong> &#8211; bool, exclude the x line&#8217;s positions</li>
+<li><strong>notInLineY</strong> &#8211; bool, exclude the y line&#8217;s positions</li>
+<li><strong>chain</strong> &#8211; bool, if set, check it, if it is True, just get the chain positions, or get the un-chained positions</li>
+<li><strong>possibles</strong> &#8211; int, if method=&#8221;u&#8221; and possibles!=None, it will only get the possible set&#8217;s length = possibles</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list: a List of Position</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.GroupBase.get_num_pos">
+<tt class="descname">get_num_pos</tt><big>(</big><em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.get_num_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.get_num_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the position of a group which have been filled the number(v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>v</strong> &#8211; int, the number to be found its position</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None or a Point object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sudoku.sudoku.GroupNumber">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">GroupNumber</tt><big>(</big><em>b</em>, <em>num</em>, <em>p</em>, <em>direction</em>, <em>idx</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupNumber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group Number in Box</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>b</strong> &#8211; int, the Box Object Idx</li>
+<li><strong>num</strong> &#8211; int, the number that the object presents</li>
+<li><strong>p</strong> &#8211; Point List, the Point Object List that form this Group Number</li>
+<li><strong>direction</strong> &#8211; char, &#8220;x&#8221; or &#8220;y&#8221; means the direction of this Group Number</li>
+<li><strong>idx</strong> &#8211; int, the line(x or y) index</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="sudoku.sudoku.LineX">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">LineX</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#LineX"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.LineX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Line of X</p>
+<p>The init function of a GroupBase object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>idx</strong> &#8211; int, the id of this object</li>
+<li><strong>p</strong> &#8211; the point object list in this object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="sudoku.sudoku.LineY">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">LineY</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#LineY"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.LineY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Line of Y</p>
+<p>The init function of a GroupBase object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>idx</strong> &#8211; int, the id of this object</li>
+<li><strong>p</strong> &#8211; the point object list in this object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="sudoku.sudoku.Matrix">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Matrix</tt><big>(</big><em>file=''</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Table of a Sudoku</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> &#8211; file, the define file of a sudoku</td>
+</tr>
+</tbody>
+</table>
+<p>Properties:</p>
+<div class="highlight-python"><div class="highlight"><pre>rec: list of (x, y, v, t, d), the record of all the solving steps
+filled: int, the amount of assigned points
+done: bool, if solved or not
+error: bool, if there is an error occurs
+lineX: LineX list
+lineY: LineY list
+b: Box List
+p: a two dimensions of list of Point
+n: Number list
+chain: Chain list
+</pre></div>
+</div>
+<dl class="method">
+<dt id="sudoku.sudoku.Matrix.allow">
+<tt class="descname">allow</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.allow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.allow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checking if the position x, y, can be set the value v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> &#8211; int, x position</li>
+<li><strong>y</strong> &#8211; int, y position</li>
+<li><strong>v</strong> &#8211; int, the number</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True or False</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.Matrix.can_see">
+<tt class="descname">can_see</tt><big>(</big><em>p0</em>, <em>method='u'</em>, <em>num=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.can_see"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.can_see" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the position list which can see the position, p</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>method</strong> &#8211; char, &#8220;u&#8221;: un-assigned positions, &#8220;a&#8221;: all, &#8220;s&#8221;: assigned positions</li>
+<li><strong>num</strong> &#8211; if method=&#8221;u&#8221;, the position must have be possible to be filled the number</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Point list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.Matrix.get_all_pos">
+<tt class="descname">get_all_pos</tt><big>(</big><em>diff=</em>, <span class="optional">[</span><span class="optional">]</span><em>method='a'</em>, <em>num=0</em>, <em>chain=None</em>, <em>possibles=None</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.get_all_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.get_all_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>get all positions, to call the :meth:GroupBase.get_all_pos function to get it</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>diff</strong> &#8211; Point list, other than the postions in this list</li>
+<li><strong>method</strong> &#8211; char, &#8220;a&#8221; &#8211; all, &#8220;u&#8221; &#8211; unassigned, &#8220;s&#8221; &#8211; assigned</li>
+<li><strong>num</strong> &#8211; int, the unassigned position which has the [num] in its possible numbers</li>
+<li><strong>chain</strong> &#8211; bool, if set, check it, if it is True, just get the chain positions, or get the un-chained positions</li>
+<li><strong>possibles</strong> &#8211; int, if set, only get the unassigned positions that those possible numbers are equal to it</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Point list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.Matrix.print_rec">
+<tt class="descname">print_rec</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.print_rec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.print_rec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print all the steps of solving process</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.Matrix.read">
+<tt class="descname">read</tt><big>(</big><em>file</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read Sudoku&#8217;s Define from file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> &#8211; file, the sudoku define file, can give it the absolute path name,
+if only the file name, it would find file in the data path.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.Matrix.reduce">
+<tt class="descname">reduce</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>d='set'</em>, <em>check=False</em>, <em>info=''</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.reduce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.reduce" title="Permalink to this definition">¶</a></dt>
+<dd><p>reduce the position(x, y)&#8217;s possible numbers from v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> &#8211; int, x position</li>
+<li><strong>y</strong> &#8211; int, y position</li>
+<li><strong>v</strong> &#8211; int, the possible number</li>
+<li><strong>d</strong> &#8211; str, the description of solving</li>
+<li><strong>check</strong> &#8211; bool, check or not</li>
+<li><strong>info</strong> &#8211; str, the details of solving</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int, as following code</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>2 -- if set a number,
+1 -- if just set number
+0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.Matrix.setit">
+<tt class="descname">setit</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>d='define'</em>, <em>info=''</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.setit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.setit" title="Permalink to this definition">¶</a></dt>
+<dd><p>set the position x, y to be the number v</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> &#8211; int, x position</li>
+<li><strong>y</strong> &#8211; int, y position</li>
+<li><strong>v</strong> &#8211; int, the number of this position</li>
+<li><strong>d</strong> &#8211; str, the description of the solving</li>
+<li><strong>info</strong> &#8211; str, the detail methods of the solving</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int, &gt;=1 if set successfully, 0 if it can&#8217;t be set the number v</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles">
+<tt class="descname">sort_unassigned_pos_by_possibles</tt><big>(</big><em>possibles=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.sort_unassigned_pos_by_possibles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get unassign position&#8217;s possible number list, format is [p1, p2,...]
+and Sorted By the possible numbers</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>possibles</strong> &#8211; 0 for all, &gt;=2, mean get only the possible numbers for it</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Point list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sudoku.sudoku.Number">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Number</tt><big>(</big><em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number Object</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can imagine that an object of this class is equal to a country,
+every country has its own id from 1-9.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>v</strong> &#8211; int, the id of the Number, from 1 to 9</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sudoku.sudoku.Number.can_see_by_group_number">
+<tt class="descname">can_see_by_group_number</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Number.can_see_by_group_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Number.can_see_by_group_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the position, p1, can be seen of all this number&#8217;s group number</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p1</strong> &#8211; Point, a position</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">gn if can be seen by it, or None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.Number.setit">
+<tt class="descname">setit</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Number.setit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Number.setit" title="Permalink to this definition">¶</a></dt>
+<dd><p>save assigned position in the p list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p1</strong> &#8211; Point, a position that are assigned to this object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sudoku.sudoku.Point">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Point</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Point" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Position in a Sudoku&#8217;s table</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We can imagine that a Point object is an house</p>
+</div>
+<p>This is the init of Point Object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; int, the x position of this object</li>
+<li><strong>y</strong> &#8211; int, the y position of this object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sudoku.sudoku.Point.can_see">
+<tt class="descname">can_see</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Point.can_see"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Point.can_see" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check this position can see p1?</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p1</strong> &#8211; Point, a point object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">int, the value can&#8217;t be 3 or 7 it means the same pos</td>
+</tr>
+</tbody>
+</table>
+<p>return code:</p>
+<div class="highlight-python"><div class="highlight"><pre>0: can&#39;t see p1
+1: can see it in x line
+2: can see it in y line
+4: can see it in the box
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sudoku.sudoku.Point.can_see_those">
+<tt class="descname">can_see_those</tt><big>(</big><em>posList</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Point.can_see_those"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Point.can_see_those" title="Permalink to this definition">¶</a></dt>
+<dd><p>check this position can see which positions in the posList</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>posList</strong> &#8211; list, a [(x, y),...] list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list, [(x, y),...</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sudoku.sudoku.SolveMethod">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SolveMethod</tt><big>(</big><em>fun</em>, <em>idx</em>, <em>name=''</em>, <em>level=0</em>, <em>obvious=True</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SolveMethod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SolveMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fun</strong> &#8211; function, the function name defined in Python</li>
+<li><strong>idx</strong> &#8211; int, the sequence of executing solving</li>
+<li><strong>name</strong> &#8211; str, the description of this function</li>
+<li><strong>level</strong> &#8211; int, the difficult level</li>
+<li><strong>obvious</strong> &#8211; bool, is it a obvious method for a human</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sudoku.sudoku.SolveMethod.run">
+<tt class="descname">run</tt><big>(</big><em>m</em>, <em>*args</em>, <em>**ks</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SolveMethod.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SolveMethod.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>To execute a method to solve a sudoku</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object</li>
+<li><strong>ks</strong> &#8211; first(int), only(bool)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sudoku.sudoku.Status">
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Status</tt><a class="reference internal" href="_modules/sudoku/sudoku.html#Status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Status" title="Permalink to this definition">¶</a></dt>
+<dd><p>To Store running condition</p>
+<div class="highlight-python"><div class="highlight"><pre>methodLoopIdx: int, the index of the methods loops
+methodIdx: int, the method idx which run now
+checkPos: Point list, set this variable, if you want to make an exception when this position has been set
+writeDownAlready: bool, if the every un-assigned positions have been writen down their possible number?
+emulatePossibles: int, to set the possibles when using emulate method, for both positions and numbers
+tryStack: list of (m, x, y, idx)
+    m: Matrix object, the Matrix copy before try to set (x, y) to be the idx of possible numbers
+    x: int, the position x of trying
+    y: int, the position y of trying
+    idx: int, the index of the possible numbers, starting from 0
+tryIdx: int, the depth index of trying
+tryUse: bool, if using Guess method or not
+emuUse: bool, if using emulator methods or not
+Scope: int, the difficult level of this sudoku
+Level: int, the level Limit, 0 means no limit
+Original: Matrix, the init Matrix
+Result: Matrix, the now Matrix
+printSteop: bool, if print the steps of solving
+nowPath: str, record now path
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="exception">
+<dt id="sudoku.sudoku.SudokuDone">
+<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuDone</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuDone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuDone" title="Permalink to this definition">¶</a></dt>
+<dd><p>An exception When the table has been filled 81 positions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; int, last position x, when done</li>
+<li><strong>y</strong> &#8211; int, last position y, when done</li>
+<li><strong>v</strong> &#8211; int, the last number be set, when done</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="exception">
+<dt id="sudoku.sudoku.SudokuError">
+<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuError</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>t</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuError" title="Permalink to this definition">¶</a></dt>
+<dd><p>An exception when x, y can&#8217;t be set or reduce to or form the number v
+t: is the type: &#8216;s&#8217; means set, &#8216;r&#8217; means reduce</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; int, position x, which occurs an error</li>
+<li><strong>y</strong> &#8211; int, position y, which occurs an error</li>
+<li><strong>v</strong> &#8211; int, the number be set or reduced that occurs an error</li>
+<li><strong>t</strong> &#8211; char, &#8220;s&#8221; &#8211; set, &#8220;r&#8221; &#8211; reduce</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="exception">
+<dt id="sudoku.sudoku.SudokuStop">
+<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuStop</tt><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuStop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuStop" title="Permalink to this definition">¶</a></dt>
+<dd><p>An exception When the the record number &gt;= recLimit</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="sudoku.sudoku.SudokuWhenPosSet">
+<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuWhenPosSet</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuWhenPosSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuWhenPosSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>An exception When the position, checkPos, has been set, and program want to setit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; int, position x, when one of the check positions has been set</li>
+<li><strong>y</strong> &#8211; int, position y, when one of the check positions has been set</li>
+<li><strong>v</strong> &#8211; int, the number be set</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.check_inobvious_number">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">check_inobvious_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#check_inobvious_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.check_inobvious_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check every number which has been assigned and known as group-number and its effect&#8217;s boxes&#8217; does not have assigned that number&#8221;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object</li>
+<li><strong>first</strong> &#8211; the first number to be checked</li>
+<li><strong>only</strong> &#8211; bool, False &#8211; check all numbers, True &#8211; check the first number only</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.check_line_last_possible_for_number">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">check_line_last_possible_for_number</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#check_line_last_possible_for_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.check_line_last_possible_for_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check every line that only have one position for un-assigned number</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.check_obvious_number">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">check_obvious_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#check_obvious_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.check_obvious_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check every number which has been assigned and its effect&#8217;s boxes&#8217; does not have assigned that number</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object</li>
+<li><strong>first</strong> &#8211; the first number to be checked</li>
+<li><strong>only</strong> &#8211; False, check all numbers, True, check the first number only</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.compare_result">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">compare_result</tt><big>(</big><em>m</em>, <em>emu</em>, <em>result</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#compare_result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.compare_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>compare the result list, to check if there are same result in every step after the last record of original m.rec
+if same for all emulate result, it means that it must be true, so can do by it</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object</li>
+<li><strong>emu</strong> &#8211; a two dimension list, [[Point, Assigned Number],...]</li>
+<li><strong>result</strong> &#8211; Matrix list, the list of Matrix object of emulating results</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces), sets: the amount of setting, reduces: the amount of reducing</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.emulator">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">emulator</tt><big>(</big><em>m</em>, <em>x</em>, <em>y</em>, <em>v</em>, <em>targets=</em>, <span class="optional">[</span><span class="optional">]</span><em>checkval=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#emulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.emulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>emulate the x, y to be set v, then start to use some basic methods to try to solve
+it will stop when and return:</p>
+<div class="highlight-python"><div class="highlight"><pre>1: one of the targets have been set the checkval
+2: isDone
+-1: error is True
+0: all basic methods have been tested, and can&#39;t solve
+</pre></div>
+</div>
+<p>and the result matrix</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object</li>
+<li><strong>x</strong> &#8211; int, the start x position</li>
+<li><strong>y</strong> &#8211; int, the start y position</li>
+<li><strong>v</strong> &#8211; int, the number to be emulated be in the (x, y) position</li>
+<li><strong>targets</strong> &#8211; Point list, tho target list to be checked</li>
+<li><strong>checkval</strong> &#8211; int, when the targets be set, it will check whether the checkval has been assigned in those</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (rtn, matrix, idx)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>rtn: 1: one of the targets have been set the checkval
+     2: isDone
+     -1: error is True
+     0: all basic methods have been tested, and can&#39;t solve
+matrix: Matrix, the reulst of emulating
+idx: int, if the rtn == 1, this will indicate the index of the target that has been assigned the number, checkval
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.fill_last_position_by_setting">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">fill_last_position_by_setting</tt><big>(</big><em>m</em>, <em>sets</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#fill_last_position_by_setting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.fill_last_position_by_setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>When setting a number, may cause 1-3 groups left only one possible position
+check if a group have only position left, just set it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix Object</li>
+<li><strong>sets</strong> &#8211; int, how many last sets want to be checked</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.fill_last_position_of_group">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">fill_last_position_of_group</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#fill_last_position_of_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.fill_last_position_of_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the un-assigned positions in a group(line or box) are only one left</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix Object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.fill_only_one_possible">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">fill_only_one_possible</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#fill_only_one_possible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.fill_only_one_possible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check every unassigned position, if it&#8217;s possible numbers left one only WRITEN_POSSIBLE_LIMIT:  True, Check position&#8217;s writen is True or note False, don&#8217;t check.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix Object</li>
+<li><strong>first</strong> &#8211; int, the first number of checking</li>
+<li><strong>only</strong> &#8211; bool, just check the first number or not</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.get_chains">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">get_chains</tt><big>(</big><em>m</em>, <em>group</em>, <em>pos</em>, <em>numbers</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#get_chains"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.get_chains" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the possible positions(pos) numbers chain</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object</li>
+<li><strong>group</strong> &#8211; lineX or lineY or Box object</li>
+<li><strong>pos</strong> &#8211; Point list of a group</li>
+<li><strong>numbers</strong> &#8211; int, the amount of the numbers to form a chain</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Chain list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.guess">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">guess</tt><big>(</big><em>m</em>, <em>idx=0</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#guess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.guess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Guess every possible number in a position by from the min possibles of positions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object</li>
+<li><strong>idx</strong> &#8211; int, 0 means the new guess, others mean the idx of the possible number of a position</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.reduce_by_emulate_possible_in_one_position">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_emulate_possible_in_one_position</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_emulate_possible_in_one_position"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_emulate_possible_in_one_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>when a position(p1) has 2 or more possible numbers, we can emulate every possible number and get its result:</p>
+<div class="highlight-python"><div class="highlight"><pre>1. if it causes an error, we can reduce that number,
+2. if it can solve the sudoku, we can set this number,
+3. if all possible number can&#39;s get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.reduce_by_emulate_possible_number_in_group">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_emulate_possible_number_in_group</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_emulate_possible_number_in_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_emulate_possible_number_in_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>when a group(lineX, lineY, Box) has 2 or more position have the same possible number,
+we can emulate every position to set the number and get its result:</p>
+<div class="highlight-python"><div class="highlight"><pre>1. if it causes an error, we can reduce the position&#39;s possible number from that number,
+2. if it can solve the sudoku, we can set this number in the position,
+3. if all possible position can&#39;s get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.reduce_by_group_number">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_group_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_group_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_group_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reduce the possible number in a posiition by GroupNumber</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.reduce_by_two_possible_in_one_position">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_two_possible_in_one_position</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_two_possible_in_one_position"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_two_possible_in_one_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>when a position(p1) has two possible numbers only, we can assume if the position is one number(first)
+then try to emulate to set the position with the other number(second),
+then see the first number will be filled in a position(p2) which the position can see it
+if so, we can reduce all these positions which can see p1 and p2 at the same time from the first number</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.reg_method">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reg_method</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reg_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reg_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>register all method as an object and save them into a list to return</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SolveMethod list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.set_obvious_method_for_pos">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">set_obvious_method_for_pos</tt><big>(</big><em>m</em>, <em>method1</em>, <em>p1</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#set_obvious_method_for_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.set_obvious_method_for_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check is there an more obvious method for the position, p1 than method1
+Obvious methods include fillLastPositionOfGroup=0 and checkObviousNumber=1</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object</li>
+<li><strong>method1</strong> &#8211; int, method index</li>
+<li><strong>p1</strong> &#8211; Point, the postion to be checked</li>
+<li><strong>v</strong> &#8211; int, the number to be assigned</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True: set, False: not set</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.solve">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">solve</tt><big>(</big><em>file</em>, <em>loop_limit=0</em>, <em>rec_limit=0</em>, <em>check=None</em>, <em>level_limit=0</em>, <em>emu_limits=2</em>, <em>use_try=True</em>, <em>use_emu=False</em>, <em>print_step=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#solve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve a sudoku which define in a file!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>loop_limit</strong> &#8211; int, the limit for the method loops, 0: no limits</li>
+<li><strong>rec_limit</strong> &#8211; int, for debug, when the records &gt;= recLimit, it will stop, 0: no limits</li>
+<li><strong>check</strong> &#8211; int, for debug, to set the a (x,y) list to check, it will stop when these positions have been set</li>
+<li><strong>level_limit</strong> &#8211; int, limit the methods using, 0 &#8211; no limit, &gt;0 &#8211; just using the methods which lever &lt; level_limit</li>
+<li><strong>emu_limits</strong> &#8211; imt, if using emulator method, this tells the emulator just emulate in emu_limits possible numbers or positions</li>
+<li><strong>use_try</strong> &#8211; bool, using guess method or not</li>
+<li><strong>use_emu</strong> &#8211; bool, using emulator methods or not</li>
+<li><strong>print_step</strong> &#8211; bool, printing the solving steps of not</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>SudokuDone</strong> &#8211; when a method can solve the sudoku</li>
+<li><strong>SudokuError</strong> &#8211; when a step will break the rules of sudoku game</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Matrix object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.try_error">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">try_error</tt><big>(</big><em>m=None</em>, <em>file=''</em>, <em>depth=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#try_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.try_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try Error Method, only fill the first possible position</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object, if it is None, you should give it the sudoku define file</li>
+<li><strong>file</strong> &#8211; file, the sudoku define file</li>
+<li><strong>depth</strong> &#8211; int, count the call depth of this function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">bool, True if the sudoku has been solved</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.update_chain">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_chain</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#update_chain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.update_chain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the chain of line
+return: &gt;=0 means the chain number&#8217;s amount in the matrix, m</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.update_group_number">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_group_number</tt><big>(</big><em>m</em>, <em>num</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#update_group_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.update_group_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the group number, num, in a box, and store those group number in m.n.group list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object</li>
+<li><strong>num</strong> &#8211; the number to be updated</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.update_indirect_group_number">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_indirect_group_number</tt><big>(</big><em>m</em>, <em>num</em>, <em>amt=0</em>, <em>start=0</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#update_indirect_group_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.update_indirect_group_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update in-direct Group Number, formed by the assigned number and Group Number already known,
+a recursive function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; Matrix object</li>
+<li><strong>num</strong> &#8211; int, the number to be checked</li>
+<li><strong>amt</strong> &#8211; int, the amount of Group Number found</li>
+<li><strong>start</strong> &#8211; int, the method idx which will be called when it return back to another method</li>
+<li><strong>first</strong> &#8211; int, the pointed number to be checked firstly when it return back to another method</li>
+<li><strong>only</strong> &#8211; bool, just check the first number or not when it return back to another method</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sudoku.sudoku.write_down_possible">
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">write_down_possible</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#write_down_possible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.write_down_possible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write down the possible numbers in every un-assigned position
+if WRITEN_POSSIBLE_LIMITS has set to 1..9, it will only write down the
+possibles which &lt;= that limits</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>sets: int, the amount of set a number
+reduces: int, the amount of reduce a number
+mothod index: int, method Index to restart using
+first: int, the first number to scan for the methods need this information
+only: bool, if only check the first number or not
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -74,9 +1308,6 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="program.html"
                         title="previous chapter">Start Programming to Solve a Sudoku</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="matrix.html"
-                        title="next chapter">Package: Matrix - the traditional programming method</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/sudoku.txt"
@@ -109,12 +1340,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="matrix.html" title="Package: Matrix - the traditional programming method"
-             >next</a> |</li>
-        <li class="right" >
           <a href="program.html" title="Start Programming to Solve a Sudoku"
              >previous</a> |</li>
-        <li><a href="index.html">SudokuStudyLib 0.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

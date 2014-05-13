@@ -1,7 +1,10 @@
 Welcome to SudokuStudyLib's documentation!
 ==========================================
 
-This is a tool and library for studying Logic and Python programming. It includes two packages, one is Sudoku, and another is Matrix. The Sudoku is an oop approaching library, while the Matrix is a traditional function processing library.
+This is a tool and library for studying Logic and Python programming. It includes two packages, one is Sudoku, and another is Matrix. The Sudoku is an oop approaching library, 
+while the Matrix is a traditional function processing library.
+
+This library and document are major for Soduku package, the Matrix package is just a reference for a traditional programmer.
 
 Install
 -------
@@ -20,8 +23,6 @@ When you has installed, it will contain two packages, sudoku, and matrix. The fo
 
 Usage
 -----
-
-.. py:module:: sudoku.sudoku
 
 1. OOP method: sudoku, in the test.py::
 
@@ -56,8 +57,7 @@ Usage
     solve("m10.data", level_limit=10, use_try=True)
     solve("m10.data", level_limit=3, use_try=True)
 
-.. py:module:: matrix.matrix
-    
+   
 2. Traditional method: matrix, in the test.py::
 
     from matrix import *

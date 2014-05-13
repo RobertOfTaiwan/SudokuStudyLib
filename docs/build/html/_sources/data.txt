@@ -202,4 +202,3 @@ like the following: its define file is in the [installed directory]/sudoku/data/
 
 
 
-

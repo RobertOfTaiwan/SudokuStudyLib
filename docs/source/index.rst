@@ -21,14 +21,7 @@ Contents:
    courses
    data
    program
-   
-Package Coding Detail
----------------------
-
-.. toctree::
-
    sudoku
-   matrix
 
 Indices and tables
 ------------------

@@ -37,8 +37,47 @@ METHOD_LEVEL_LIMIT_WHENTRY = 2  # if start using try, set the level limit to use
 
 
 class Status():
-    """To Store running condition"""
+    """To Store running condition
+
+    ::
+
+        methodLoopIdx: int, the index of the methods loops
+        methodIdx: int, the method idx which run now
+        checkPos: Point list, set this variable, if you want to make an exception when this position has been set
+        writeDownAlready: bool, if the every un-assigned positions have been writen down their possible number?
+        emulatePossibles: int, to set the possibles when using emulate method, for both positions and numbers
+        tryStack: list of (m, x, y, idx)
+            m: Matrix object, the Matrix copy before try to set (x, y) to be the idx of possible numbers
+            x: int, the position x of trying
+            y: int, the position y of trying
+            idx: int, the index of the possible numbers, starting from 0
+        tryIdx: int, the depth index of trying
+        tryUse: bool, if using Guess method or not
+        emuUse: bool, if using emulator methods or not
+        Scope: int, the difficult level of this sudoku
+        Level: int, the level Limit, 0 means no limit
+        Original: Matrix, the init Matrix
+        Result: Matrix, the now Matrix
+        printSteop: bool, if print the steps of solving
+        nowPath: str, record now path
+    """
+
     name = {}
+    name["methodLoopIdx"] = 0
+    name["methodIdx"] = 0
+    name["checkPos"] = None
+    name["writeDownAlready"] = False
+    name["emulatePossibles"] = 2
+    name["tryStack"] = []
+    name["tryIdx"] = 0
+    name["tryUse"] = True
+    name["emuUse"] = True
+    name["Scope"] = 0
+    name["Level"] = 0
+    name["Original"] = None
+    name["Result"] = None
+    name["printStep"] = False
+    name["nowPath"] = os.path.abspath(os.path.dirname(__file__))
 
     def __init__(self):
         pass
@@ -49,6 +88,12 @@ class SudokuError(Exception):
     t: is the type: 's' means set, 'r' means reduce"""
 
     def __init__(self, x, y, v, t):
+        """
+        :param x: int, position x, which occurs an error
+        :param y: int, position y, which occurs an error
+        :param v: int, the number be set or reduced that occurs an error
+        :param t: char, "s" -- set, "r" -- reduce
+        """
         self.x = x
         self.y = y
         self.v = v
@@ -59,6 +104,12 @@ class SudokuDone(Exception):
     """An exception When the table has been filled 81 positions"""
 
     def __init__(self, x, y, v):
+        """
+        :param x: int, last position x, when done
+        :param y: int, last position y, when done
+        :param v: int, the last number be set, when done
+        """
+
         self.x = x
         self.y = y
         self.v = v
@@ -75,15 +126,30 @@ class SudokuWhenPosSet(Exception):
     """An exception When the position, checkPos, has been set, and program want to setit"""
 
     def __init__(self, x, y, v):
+        """
+        :param x: int, position x, when one of the check positions has been set
+        :param y: int, position y, when one of the check positions has been set
+        :param v: int, the number be set
+        """
+
         self.x = x
         self.y = y
         self.v = v
 
 
 class Point:
-    """A Position in a Sudoku's table"""
+    """A Position in a Sudoku's table
+
+    .. note:: We can imagine that a Point object is an house
+
+    """
 
     def __init__(self, x, y):
+        """This is the init of Point Object
+
+        :param x: int, the x position of this object
+        :param y: int, the y position of this object
+        """
         self.x = x
         self.y = y
         self.v = 0
@@ -95,11 +161,19 @@ class Point:
         return "p({0},{1})".format(self.x + 1, self.y + 1)
 
     def can_see(self, p1):
-        """this position can see p1? the value can't be 3 or 7 it means the same pos
-        rtn: 0: can't see p1
-             1: can see it in x line
-             2: can see it in y line
-             4: can see it in the box"""
+        """Check this position can see p1?
+
+        :param p1: Point, a point object
+        :returns: int, the value can't be 3 or 7 it means the same pos
+
+        return code::
+
+            0: can't see p1
+            1: can see it in x line
+            2: can see it in y line
+            4: can see it in the box
+        """
+
         if self == p1:
             return -1
         rtn = 0
@@ -112,7 +186,13 @@ class Point:
         return rtn
 
     def can_see_those(self, posList):
-        """check this position can see which positions in the posList, a [(x, y),...] list"""
+        """check this position can see which positions in the posList
+
+        :param posList: list, a [(x, y),...] list
+        :returns: list, [(x, y),...
+
+        """
+
         rtn = []
         for x, y in posList:
             if self.x == x and self.y == y:
@@ -126,6 +206,13 @@ class GroupBase:
     """The Base Class of a Line or Box"""
 
     def __init__(self, idx, p):
+        """The init function of a GroupBase object
+
+        :param idx: int, the id of this object
+        :param p: the point object list in this object
+
+        """
+
         self.idx = idx
         self.p = p
         self.filled = 0
@@ -133,14 +220,28 @@ class GroupBase:
         self.chain = []  # store this group's chain positions
 
     def allow(self, v):
-        """check the group can be filled the number(v)?"""
+        """check the group can be filled the number(v)?
+
+        :param v: int, the number to be checked
+
+        :returns: True or False
+
+        """
+
         for p1 in self.p:
             if p1.v == v:
                 return False
         return True
 
     def get_num_pos(self, v):
-        """get the position of a group which have been filled the number(v)"""
+        """get the position of a group which have been filled the number(v
+
+        :param v: int, the number to be found its position
+
+        :returns: None or a Point object
+
+        """
+
         rtn = None
         for p1 in self.p:
             if p1.v == v:
@@ -152,10 +253,11 @@ class GroupBase:
         """get the un-assigned position in this group, and possible numbers only in [count] positions
 
         .. note:: The output format is a tuple list, the tuple has two value, one is number,
-                    another is s position list
+                  another is s position list
 
-        :count: how many positions are un-assigned to get
-        :return: [(num,[p1, p2...]),...]
+        :param count: int, how many positions are un-assigned to get
+
+        :returns: list, [(num,[p1, p2...]),...]
 
         """
 
@@ -176,21 +278,17 @@ class GroupBase:
         return rtn
 
     def get_all_pos(self, diff=[], method="a", num=0, notInLineX=None, notInLineY=None, chain=None, possibles=None):
-        """
-        get position list in this group
+        """get position list in this group
 
-        Parameters::
-            :diff:        exclude the positions in it
-            :method:      a: all, s:has assigned, u:not assigned
-            :num:         if method is u and set the number to 1-9, will get all possible pos which are possible to be assigned the num
-            :notInLineX:  exclude the x line's positions
-            :notInLineY:  exclude the y line's positions
-            :chain:       if set, check it, if it is True, just get the chain positions, or get the un-chained postitions
-            :possibles:   if method="u" and possibles!=None, it will only get the possible set's length = possibles
+        :param diff: list, exclude the positions in it
+        :param method: char, a: all, s:has assigned, u:not assigned
+        :param num: int, if method is u and set the number to 1-9, will get all possible pos which are possible to be assigned the num
+        :param notInLineX: bool, exclude the x line's positions
+        :param notInLineY: bool, exclude the y line's positions
+        :param chain: bool, if set, check it, if it is True, just get the chain positions, or get the un-chained positions
+        :param possibles: int, if method="u" and possibles!=None, it will only get the possible set's length = possibles
 
-        Return::
-            a List of Position
-
+        :returns: list: a List of Position
         """
         rtn = []
         lGetOtherThan = len(diff) > 0
@@ -234,13 +332,20 @@ class LineY(GroupBase):
 
 
 class Box(GroupBase):
-    """Box"""
+    """A 3x3 Box Object"""
 
     def __init__(self, idx, p):
+        """
+        :param idx: int, the box's id
+        :param p: the Point object list of this object
+
+        .. note:: This will replace the original GroupBase's init()
+
+        """
         super(Box, self).__init__(idx, p)
         x = int(idx / 3)
         y = idx % 3
-        # record all the box's related boxes 
+        # record all the box's related boxes
         self.effects = set()
         self.effectsX = set()  # x-direction's effect boxes
         self.effectsY = set()  # y-direction's effect boxes
@@ -263,7 +368,15 @@ class Box(GroupBase):
 
     def get_group_number(self, num, pos=[], notInLineX=None, notInLineY=None):
         """if the unassigned num in this box which it's all possible positions have the same direction,
-        we call it as a GroupNumber"""
+        we call it as a GroupNumber
+
+        :param num: int, find this num, it is a group number in this box
+        :param pos: list, the Point object list which to find a group number, if it is empty, the function will get all unassigned points to be a list
+        :param notInLineX: bool, to call get_all_pos to not include x-line's unassigned point
+        :param notInLineY: bool, as above, but y-line
+
+        :return: GroupNumber, none or a GroupNumber Object
+        """
         if len(pos) <= 0:
             pos = super(Box, self).get_all_pos(num=num, method="u", notInLineX=notInLineX, notInLineY=notInLineY)
 
@@ -295,6 +408,13 @@ class GroupNumber():
     """Group Number in Box"""
 
     def __init__(self, b, num, p, direction, idx):
+        """
+        :param b: int, the Box Object Idx
+        :param num: int, the number that the object presents
+        :param p: Point List, the Point Object List that form this Group Number
+        :param direction: char, "x" or "y" means the direction of this Group Number
+        :param idx: int, the line(x or y) index
+        """
         self.b = b  # box idx
         self.num = num  # 1..9
         self.p = p  # the positions' list which form a group number
@@ -308,11 +428,19 @@ class GroupNumber():
 
 
 class Number:
-    """Number Object"""
+    """Number Object
+
+    .. note:: You can imagine that an object of this class is equal to a country,
+              every country has its own id from 1-9.
+    """
 
     def __init__(self, v):
+        """
+        :param v: int, the id of the Number, from 1 to 9
+        """
+
         self.v = v
-        self.p = list()
+        self.p = list()  # record every member's position
         self.filled = 0
         self.group = []  # store the GroupNumber info
 
@@ -320,13 +448,21 @@ class Number:
         return repr(self.p)
 
     def setit(self, p1):
-        """save assigned position in the p list"""
+        """ save assigned position in the p list
+
+        :param p1: Point, a position that are assigned to this object
+        """
+
         self.p.append(p1)
         self.filled += 1
 
     def can_see_by_group_number(self, p1):
-        """Check if the position, p1, can be seen of all this number's group number"
-        return: gn if can be seen by it, or None"""
+        """Check if the position, p1, can be seen of all this number's group number
+
+        :param p1: Point, a position
+
+        :return: gn if can be seen by it, or None
+        """
         if len(self.group) <= 0:
             return None
         for gn in self.group:
@@ -338,10 +474,15 @@ class Number:
 
 
 class Chain:
-    """A chain of two and above positions which are not in the same box but in the same line
-    and can form a chain, means the possible number in this chain positions only can be filled in these positions"""
+    """A chain of two and above positions which are not in the same box but in the same line and can form a chain,
+    means the possible number in this chain positions only can be filled in these positions
+    """
 
     def __init__(self, numList, posList):
+        """
+        :param numList: int list, presents the numbers of this chain
+        :param posList: Point list, presents the positions that form the chain
+        """
         self.numList = numList
         self.posList = posList
         #self.direction = "x" if posList[0].x == posList[1].x else "y"
@@ -355,6 +496,22 @@ class Matrix:
     """A Table of a Sudoku"""
 
     def __init__(self, file=""):
+        """
+        :param file: file, the define file of a sudoku
+
+        Properties::
+
+            rec: list of (x, y, v, t, d), the record of all the solving steps
+            filled: int, the amount of assigned points
+            done: bool, if solved or not
+            error: bool, if there is an error occurs
+            lineX: LineX list
+            lineY: LineY list
+            b: Box List
+            p: a two dimensions of list of Point
+            n: Number list
+            chain: Chain list
+        """
         self.rec = []  # record all the steps,
         # element's format is (x, y, v, t, d), t="s"|"r", d="Description String"
         self.filled = 0  # record how many numbers have been assigned in this table
@@ -383,7 +540,16 @@ class Matrix:
             self.read(file)
 
     def get_all_pos(self, diff=[], method="a", num=0, chain=None, possibles=None):
-        """get all postion"""
+        """get all positions, to call the :meth:GroupBase.get_all_pos function to get it
+
+        :param diff: Point list, other than the postions in this list
+        :param method: char, "a" -- all, "u" -- unassigned, "s" -- assigned
+        :param num: int, the unassigned position which has the [num] in its possible numbers
+        :param chain: bool, if set, check it, if it is True, just get the chain positions, or get the un-chained positions
+        :param possibles: int, if set, only get the unassigned positions that those possible numbers are equal to it
+
+        :return: Point list
+        """
         rtn = []
         for line in self.lineX:
             rtn = rtn + line.get_all_pos(method=method, num=num, chain=chain, diff=diff, possibles=possibles)
@@ -392,7 +558,11 @@ class Matrix:
     def sort_unassigned_pos_by_possibles(self, possibles=0):
         """Get unassign position's possible number list, format is [p1, p2,...]
         and Sorted By the possible numbers
-        possibles: 0 for all, >=2, mean get only the possible numbers for it"""
+
+        :param possibles: 0 for all, >=2, mean get only the possible numbers for it
+
+        :return: Point list
+        """
         rtn = []
         check = possibles >= 2
         for i in range(9):
@@ -406,9 +576,12 @@ class Matrix:
         return rtn
 
     def can_see(self, p0, method="u", num=0):
-        """get the possition list which can see the position, p
-        method: "u": un-assigned positions, "a": all, "s": assigned positions
-        num: if method="u", the position must have be possible to be filled the number
+        """get the position list which can see the position, p
+
+        :param method: char, "u": un-assigned positions, "a": all, "s": assigned positions
+        :param num: if method="u", the position must have be possible to be filled the number
+
+        :return: Point list
         """
         rtn = []
         for group in (self.lineX[p0.x].p, self.lineY[p0.y].p, self.b[p0.b].p):
@@ -426,7 +599,15 @@ class Matrix:
 
     def setit(self, x, y, v, d="define", info=""):
         """set the position x, y to be the number v
-        return: >=1 if set successfully, 0 if it can't be set the number v"""
+
+        :param x: int, x position
+        :param y: int, y position
+        :param v: int, the number of this position
+        :param d: str, the description of the solving
+        :param info: str, the detail methods of the solving
+
+        :return: int, >=1 if set successfully, 0 if it can't be set the number v
+        """
 
         sets = 0
         if not self.allow(x, y, v):
@@ -489,8 +670,18 @@ class Matrix:
 
     def reduce(self, x, y, v, d="set", check=False, info=""):
         """reduce the position(x, y)'s possible numbers from v
-        Return::
-            int, as following
+
+        :param x: int, x position
+        :param y: int, y position
+        :param v: int, the possible number
+        :param d: str, the description of solving
+        :param check: bool, check or not
+        :param info: str, the details of solving
+
+        :return: int, as following code
+
+        ::
+
             2 -- if set a number,
             1 -- if just set number
             0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception
@@ -512,7 +703,15 @@ class Matrix:
                 return 0
 
     def allow(self, x, y, v):
-        """Checking if the position x, y, can be set the value v"""
+        """Checking if the position x, y, can be set the value v
+
+        :param x: int, x position
+        :param y: int, y position
+        :param v: int, the number
+
+        :return: True or False
+        """
+
         idx = self.p[x][y].b
         if self.p[x][y].v != 0 or not self.lineX[x].allow(v) or not self.lineY[y].allow(v) or not self.b[idx].allow(v):
             return False
@@ -520,7 +719,11 @@ class Matrix:
             return True
 
     def read(self, file):
-        """Read Sudoku's Define from file"""
+        """Read Sudoku's Define from file
+
+        :param file: file, the sudoku define file, can give it the absolute path name,
+                    if only the file name, it would find file in the data path.
+        """
 
         if not os.path.isfile(file):
             file = "data/" + file
@@ -551,14 +754,19 @@ class Matrix:
 def fill_only_one_possible(m, **kw):
     """Check every unassigned position, if it's possible numbers left one only WRITEN_POSSIBLE_LIMIT:  True, Check position's writen is True or note False, don't check.
 
-    Args:
-        m: Matrix Object
-        first (int): the first number of checking
-        only (bool): just check the first number or not
+    :param m: Matrix Object
+    :param first: int, the first number of checking
+    :param only: bool, just check the first number or not
 
-    Returns:
-        in the tuple format (sets, reduces, method Index to restart using, first, only)
+    :return: tuple, (sets, reduces, method index, first, only), as following
 
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
     """
     sets = 0
     for line in m.p:
@@ -571,7 +779,21 @@ def fill_only_one_possible(m, **kw):
 
 
 def fill_last_position_of_group(m, **kw):
-    """If the un-assigned positions in a group(line or box) are only one left"""
+    """If the un-assigned positions in a group(line or box) are only one left
+
+    :param m: Matrix Object
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
+
     sets = 0
     for grouptype in (m.lineX, m.lineY, m.b):
         for grp in grouptype:
@@ -587,7 +809,22 @@ def fill_last_position_of_group(m, **kw):
 
 def fill_last_position_by_setting(m, sets):
     """When setting a number, may cause 1-3 groups left only one possible position
-    check if a group have only position left, just set it"""
+    check if a group have only position left, just set it.
+
+    :param m: Matrix Object
+    :param sets: int, how many last sets want to be checked
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
+
     recIdx = len(m.rec) - 1
     idx = 1
     rtn = 0
@@ -619,8 +856,14 @@ def fill_last_position_by_setting(m, sets):
 
 def set_obvious_method_for_pos(m, method1, p1, v):
     """Check is there an more obvious method for the position, p1 than method1
-    Obvious methods include fillLastPostionOfGroup=0 and checkObviousNumber=1
-    return: True: set, False: not set
+    Obvious methods include fillLastPositionOfGroup=0 and checkObviousNumber=1
+
+    :param m: Matrix object
+    :param method1: int, method index
+    :param p1: Point, the postion to be checked
+    :param v: int, the number to be assigned
+
+    :return: True: set, False: not set
     """
 
     if method1 > METHOD_FILL_LAST:
@@ -652,9 +895,22 @@ def set_obvious_method_for_pos(m, method1, p1, v):
 
 def check_obvious_number(m, first=1, only=False):
     """Check every number which has been assigned and its effect's boxes' does not have assigned that number
-    Only: False, check all numbers
-          True, check the first number only
-    first: the first number to be checked"""
+
+    :param m: Matrix object
+    :param first: the first number to be checked
+    :param only: False, check all numbers, True, check the first number only
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
+
     sets = 0
     end = 9 if not only else 1  # if check the first number
     for i in range(end):
@@ -701,7 +957,21 @@ def check_obvious_number(m, first=1, only=False):
 
 def update_group_number(m, num):
     """Update the group number, num, in a box, and store those group number in m.n.group list
-    return: >=0 means the group number's amount in the matrix, m"""
+
+    :param m: Matrix object
+    :param num: the number to be updated
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
+
     sets = 0
     actions = 0
     info = ""
@@ -739,8 +1009,27 @@ def update_group_number(m, num):
 
 
 def update_indirect_group_number(m, num, amt=0, start=METHOD_DEF_BEGIN, first=SCAN_DEF_BEGIN, only=SCAN_ALL_NUMBER):
-    """Update in-direct Group Number, formed by the assigned number and groupnumber already known,
-    a recursive function"""
+    """Update in-direct Group Number, formed by the assigned number and Group Number already known,
+    a recursive function
+
+    :param m: Matrix object
+    :param num: int, the number to be checked
+    :param amt: int, the amount of Group Number found
+    :param start: int, the method idx which will be called when it return back to another method
+    :param first: int, the pointed number to be checked firstly when it return back to another method
+    :param only: bool, just check the first number or not when it return back to another method
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
+
     info = ""
     for gn in m.n[num].group:
         effects = m.b[gn.b].effectsX if gn.direction == "x" else m.b[gn.b].effectsY
@@ -777,9 +1066,22 @@ def update_indirect_group_number(m, num, amt=0, start=METHOD_DEF_BEGIN, first=SC
 
 def check_inobvious_number(m, first=1, only=False):
     """Check every number which has been assigned and known as group-number and its effect's boxes' does not have assigned that number"
-    Only: False, check all numbers
-          True, check the first number only
-    first: the first number to be checked"""
+
+    :param m: Matrix object
+    :param first: the first number to be checked
+    :param only: bool, False -- check all numbers, True -- check the first number only
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
+
     sets = 0
     actions = 0
     end = 9 if not only else 1  # if check the first number
@@ -818,7 +1120,21 @@ def check_inobvious_number(m, first=1, only=False):
 
 
 def check_line_last_possible_for_number(m, **kw):
-    """Check every line that only have one position for un-assigned number"""
+    """Check every line that only have one position for un-assigned number
+
+    :param m: Matrix object
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
+
     sets = 0
 
     for groupType in (m.lineX, m.lineY):
@@ -841,7 +1157,20 @@ def check_line_last_possible_for_number(m, **kw):
 def write_down_possible(m, **kw):
     """Write down the possible numbers in every un-assigned position
     if WRITEN_POSSIBLE_LIMITS has set to 1..9, it will only write down the
-    possibles which <= that limits"""
+    possibles which <= that limits
+
+    :param m: Matrix object
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
 
     Status.name["writeDownAlready"] = True
     for line in m.p:
@@ -861,7 +1190,20 @@ def write_down_possible(m, **kw):
 
 
 def reduce_by_group_number(m, first=1, only=False):
-    """Reduce the possible number in a posiition by GroupNumber"""
+    """Reduce the possible number in a posiition by GroupNumber
+
+    :param m: Matrix object
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
     sets = 0
     actions = 0
     end = 9 if not only else 1  # if check the first number
@@ -878,7 +1220,15 @@ def reduce_by_group_number(m, first=1, only=False):
 
 
 def get_chains(m, group, pos, numbers):
-    # get the possible pos's numbers chain
+    """ get the possible positions(pos) numbers chain
+
+    :param m: Matrix object
+    :param group: lineX or lineY or Box object
+    :param pos: Point list of a group
+    :param numbers: int, the amount of the numbers to form a chain
+
+    :return: Chain list
+    """
     amt = 0
     q = []
     for p1 in pos:
@@ -899,14 +1249,27 @@ def get_chains(m, group, pos, numbers):
             m.chain.append(chain)
             for p1 in c:
                 group.chain.append(p1)
-            amt = amt + 1
+            amt += 1
 
     return rtn
 
 
 def update_chain(m, **kw):
     """Update the chain of line
-    return: >=0 means the chain number's amount in the matrix, m"""
+    return: >=0 means the chain number's amount in the matrix, m
+
+    :param m: Matrix object
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
 
     sets = 0
     reduces = 0
@@ -945,7 +1308,20 @@ def reduce_by_two_possible_in_one_position(m, **kw):
     """when a position(p1) has two possible numbers only, we can assume if the position is one number(first)
     then try to emulate to set the position with the other number(second),
     then see the first number will be filled in a position(p2) which the position can see it
-    if so, we can reduce all these positions which can see p1 and p2 at the same time from the first number"""
+    if so, we can reduce all these positions which can see p1 and p2 at the same time from the first number
+
+    :param m: Matrix object
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
 
     reduces = 0
     sets = 0
@@ -988,11 +1364,23 @@ def reduce_by_two_possible_in_one_position(m, **kw):
 
 
 def reduce_by_emulate_possible_in_one_position(m, **kw):
-    """when a position(p1) has 2 or more possible numbers,
-    we can emulate every possible number and get its result,
-    1. if it causes an error, we can reduce that number,
-    2. if it can solve the sudoku, we can set this number,
-    3. if all possible number can's get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
+    """when a position(p1) has 2 or more possible numbers, we can emulate every possible number and get its result::
+
+        1. if it causes an error, we can reduce that number,
+        2. if it can solve the sudoku, we can set this number,
+        3. if all possible number can's get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
+
+    :param m: Matrix object
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
     """
 
     emus = Status.name["emulatePossibles"]
@@ -1025,10 +1413,23 @@ def reduce_by_emulate_possible_in_one_position(m, **kw):
 
 def reduce_by_emulate_possible_number_in_group(m, **kw):
     """when a group(lineX, lineY, Box) has 2 or more position have the same possible number,
-    we can emulate every position to set the number and get its result,
-    1. if it causes an error, we can reduce the position's possible number from that number,
-    2. if it can solve the sudoku, we can set this number in the position,
-    3. if all possible position can's get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
+    we can emulate every position to set the number and get its result::
+
+        1. if it causes an error, we can reduce the position's possible number from that number,
+        2. if it can solve the sudoku, we can set this number in the position,
+        3. if all possible position can's get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
+
+    :param m: Matrix object
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
     """
 
     emus = Status.name["emulatePossibles"]
@@ -1065,6 +1466,12 @@ def reduce_by_emulate_possible_number_in_group(m, **kw):
 def compare_result(m, emu, result):
     """compare the result list, to check if there are same result in every step after the last record of original m.rec
     if same for all emulate result, it means that it must be true, so can do by it
+
+    :param m: Matrix object
+    :param emu: a two dimension list, [[Point, Assigned Number],...]
+    :param result: Matrix list, the list of Matrix object of emulating results
+
+    :return: tuple, (sets, reduces), sets: the amount of setting, reduces: the amount of reducing
     """
 
     emus = Status.name["emulatePossibles"]
@@ -1104,12 +1511,32 @@ def compare_result(m, emu, result):
 def emulator(m, x, y, v, targets=[], checkval=0):
     """emulate the x, y to be set v, then start to use some basic methods to try to solve
     it will stop when and return::
+
         1: one of the targets have been set the checkval
         2: isDone
         -1: error is True
         0: all basic methods have been tested, and can't solve
 
-    and the result matrix"""
+    and the result matrix
+
+    :param m: Matrix object
+    :param x: int, the start x position
+    :param y: int, the start y position
+    :param v: int, the number to be emulated be in the (x, y) position
+    :param targets: Point list, tho target list to be checked
+    :param checkval: int, when the targets be set, it will check whether the checkval has been assigned in those
+
+    :return: tuple, (rtn, matrix, idx)
+
+    ::
+
+        rtn: 1: one of the targets have been set the checkval
+             2: isDone
+             -1: error is True
+             0: all basic methods have been tested, and can't solve
+        matrix: Matrix, the reulst of emulating
+        idx: int, if the rtn == 1, this will indicate the index of the target that has been assigned the number, checkval
+    """
 
     check_pos_save = Status.name["checkPos"]
     m1 = copy.deepcopy(m)
@@ -1203,7 +1630,16 @@ def emulator(m, x, y, v, targets=[], checkval=0):
 
 
 def try_error(m=None, file="", depth=0):
-    """Try Error Method, only fill the first possible postion"""
+    """Try Error Method, only fill the first possible position
+
+    .. note: This is an recursive function
+
+    :param m: Matrix object, if it is None, you should give it the sudoku define file
+    :param file: file, the sudoku define file
+    :param depth: int, count the call depth of this function
+
+    :return: bool, True if the sudoku has been solved
+    """
 
     if file != "":
         m = Matrix(file=file)
@@ -1269,7 +1705,21 @@ def try_error(m=None, file="", depth=0):
 
 
 def guess(m, idx=0, **kw):
-    """Guess Method"""
+    """Guess every possible number in a position by from the min possibles of positions
+
+    :param m: Matrix object
+    :param idx: int, 0 means the new guess, others mean the idx of the possible number of a position
+
+    :return: tuple, (sets, reduces, method index, first, only), as following
+
+    ::
+
+        sets: int, the amount of set a number
+        reduces: int, the amount of reduce a number
+        mothod index: int, method Index to restart using
+        first: int, the first number to scan for the methods need this information
+        only: bool, if only check the first number or not
+    """
 
     # if start using tryMethod, set the level to the METHOD_LEVEL_LIMIT_WHENTRY
     Status.name["Level"] = METHOD_LEVEL_LIMIT_WHENTRY
@@ -1277,7 +1727,7 @@ def guess(m, idx=0, **kw):
     Status.name["Scope"] += 5  # it is easy as the method of write down possible
     if idx == 0:  # Add New Try
         Status.name["tryIdx"] += 1
-        possibles = m.sort_unassigned_pos_by_possibles()  # get all unassigned postion and sorted by the possibles number
+        possibles = m.sort_unassigned_pos_by_possibles()  # get all unassigned position and sorted by the possibles number
         m1 = copy.deepcopy(m)
         p1 = possibles[0]  # the first un-assigned postion
         x = p1.x
@@ -1291,7 +1741,8 @@ def guess(m, idx=0, **kw):
         x = Status.name["tryStack"][i][1]
         y = Status.name["tryStack"][i][2]
         if Status.name["printStep"]:
-            print("Try Idx={3}: {0},{1} to set {2} of {4}".format(x, y, m.p[x][y].possible[idx], idx, m.p[x][y].possible))
+            print(
+                "Try Idx={3}: {0},{1} to set {2} of {4}".format(x, y, m.p[x][y].possible[idx], idx, m.p[x][y].possible))
 
     v = m.p[x][y].possible[idx]
     m.setit(x, y, v, d="try")
@@ -1303,6 +1754,13 @@ class SolveMethod():
     lastNumber = 1
 
     def __init__(self, fun, idx, name="", level=0, obvious=True):
+        """
+        :param fun: function, the function name defined in Python
+        :param idx: int, the sequence of executing solving
+        :param name: str, the description of this function
+        :param level: int, the difficult level
+        :param obvious: bool, is it a obvious method for a human
+        """
         self.fun = fun
         self.idx = idx
         self.name = name if name != "" else fun.__name__
@@ -1311,15 +1769,34 @@ class SolveMethod():
         self.obvious = obvious
 
     def run(self, m, *args, **ks):
+        """ To execute a method to solve a sudoku
+
+        :param m: Matrix object
+        :param ks: first(int), only(bool)
+
+        :return: tuple, (sets, reduces, method index, first, only), as following
+
+        ::
+
+            sets: int, the amount of set a number
+            reduces: int, the amount of reduce a number
+            mothod index: int, method Index to restart using
+            first: int, the first number to scan for the methods need this information
+            only: bool, if only check the first number or not
+        """
+
         return self.fun(m, *args, **ks)
 
 
 def reg_method():
-    """register all method as an object and save them into a list to return"""
+    """register all method as an object and save them into a list to return
+
+    :return: SolveMethod list
+    """
 
     methods = list()
     #methods.append(SolveMethod(fillOnlyOnePossible, 0, level=0))
-    methods.append(SolveMethod(fill_last_position_of_group, 1, level=0))
+    methods.append(SolveMethod(fill_last_position_of_group, 1, level=1))
     methods.append(SolveMethod(check_obvious_number, 2, level=1))
     methods.append(SolveMethod(check_line_last_possible_for_number, 3, level=2))
     methods.append(SolveMethod(check_inobvious_number, 4, level=3))
@@ -1338,8 +1815,22 @@ def reg_method():
 def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits=2, use_try=METHOD_USE_TRY,
           use_emu=METHOD_USE_EMU, print_step=False):
     """Solve a sudoku which define in a file!
-    loopLimit: the limit for the method loops, 0: no limits
-    recLimit: when the records >= recLimit, it will stop, 0: no limits"""
+
+    :param loop_limit: int, the limit for the method loops, 0: no limits
+    :param rec_limit: int, for debug, when the records >= recLimit, it will stop, 0: no limits
+    :param check: int, for debug, to set the a (x,y) list to check, it will stop when these positions have been set
+    :param level_limit: int, limit the methods using, 0 -- no limit, >0 -- just using the methods which lever < level_limit
+    :param emu_limits: imt, if using emulator method, this tells the emulator just emulate in emu_limits possible numbers or positions
+    :param use_try: bool, using guess method or not
+    :param use_emu: bool, using emulator methods or not
+    :param print_step: bool, printing the solving steps of not
+
+    :except SudokuDone: when a method can solve the sudoku
+    :except SudokuError: when a step will break the rules of sudoku game
+
+    :return: Matrix object
+
+    """
 
     Status.name["checkPos"] = check
     begin = time.time()
@@ -1376,7 +1867,7 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                 max_method = max(max_method, method.idx)
                 if Status.name["printStep"]:
                     print("Try#{0}-{2}: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"], method.name,
-                                                                       Status.name["methodIdx"], sets, reduces))
+                                                                           Status.name["methodIdx"], sets, reduces))
                 if sets > 0:
                     rtn = fill_last_position_by_setting(m, sets)
                     if rtn[0] > 0:
@@ -1384,8 +1875,9 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                         if Status.name["printStep"]:
                             print(
                                 "Try#{0}-last: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"],
-                                                                              "LastPosition", Status.name["methodIdx"],
-                                                                              rtn, reduces))
+                                                                                  "LastPosition",
+                                                                                  Status.name["methodIdx"],
+                                                                                  rtn, reduces))
                         sets = sets + rtn[0]
                 if (sets > 0 or reduces > 0) and Status.name["writeDownAlready"]:
                     rtn = fill_only_one_possible(m)
@@ -1395,8 +1887,9 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
                         if Status.name["printStep"]:
                             print(
                                 "Try#{0}-only: {1}, sets={3}, reduces={4}".format(Status.name["methodLoopIdx"],
-                                                                              "LastPossible", Status.name["methodIdx"],
-                                                                              rtn, reduces))
+                                                                                  "LastPossible",
+                                                                                  Status.name["methodIdx"],
+                                                                                  rtn, reduces))
                 if DEBUG_MODE:
                     if 0 < rec_limit <= len(m.rec):
                         raise SudokuStop()
@@ -1468,5 +1961,5 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
         print(
             "Done! good job, it takes {0}! Level={1}, Methods Used={2}".format(time.time() - begin,
                                                                                Status.name["Scope"], max_method))
-    return
+    return m
 
