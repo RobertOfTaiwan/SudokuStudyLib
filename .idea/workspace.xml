@@ -2,16 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b64838e7-f7b1-48c3-9963-39a5d39b9c79" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/logo.jpg" />
-      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\animation.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\test.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/base.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/base.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/courses.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/courses.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/data.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/data.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/intro.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/intro.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/logic.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/logic.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/objects.inv" afterPath="$PROJECT_DIR$/docs/build/html/objects.inv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/base.rst" afterPath="$PROJECT_DIR$/docs/source/base.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/base.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/base.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/program.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/program.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/sudoku.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/sudoku.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/conf.py" afterPath="$PROJECT_DIR$/docs/source/conf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/index.html" afterPath="$PROJECT_DIR$/docs/build/html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/index.rst" afterPath="$PROJECT_DIR$/docs/source/index.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/index.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/index.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/searchindex.js" afterPath="$PROJECT_DIR$/docs/build/html/searchindex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.cfg" afterPath="$PROJECT_DIR$/setup.cfg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sudokulib.iws" />
@@ -43,10 +49,8 @@
       <file leaf-file-name="setup.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state line="33" column="0" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="780">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,7 +58,7 @@
       <file leaf-file-name="MANIFEST.in" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MANIFEST.in">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+            <state line="3" column="0" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="180">
               <folding />
             </state>
           </provider>
@@ -63,7 +67,7 @@
       <file leaf-file-name="README.rst" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
+            <state line="32" column="0" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.0" vertical-offset="640" max-vertical-offset="760">
               <folding />
             </state>
           </provider>
@@ -72,7 +76,7 @@
       <file leaf-file-name="base.rst" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/source/base.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="1" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1480">
+            <state line="30" column="1" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1480">
               <folding />
             </state>
           </provider>
@@ -81,7 +85,7 @@
       <file leaf-file-name="index.rst" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/source/index.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="19" selection-start="50" selection-end="50" vertical-scroll-proportion="0.078023404" vertical-offset="0" max-vertical-offset="800">
+            <state line="20" column="7" selection-start="676" selection-end="676" vertical-scroll-proportion="0.520156" vertical-offset="0" max-vertical-offset="800">
               <folding />
             </state>
           </provider>
@@ -90,7 +94,7 @@
       <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sudoku/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+            <state line="8" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="280">
               <folding />
             </state>
           </provider>
@@ -99,10 +103,8 @@
       <file leaf-file-name="sudoku.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="13" selection-start="2975" selection-end="2975" vertical-scroll-proportion="-10.714286" vertical-offset="980" max-vertical-offset="39420">
-              <folding>
-                <element signature="e#163#173#0" expanded="true" />
-              </folding>
+            <state line="64" column="13" selection-start="2975" selection-end="2975" vertical-scroll-proportion="0.0" vertical-offset="980" max-vertical-offset="39420">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -429,23 +431,6 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="sudokulib" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="docs" factoryName="Docutils task">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -462,6 +447,23 @@
       <option name="docutils_params" value="" />
       <option name="docutils_task" value="" />
       <option name="docutils_open_in_browser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="sudokulib" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Python.PyramidServer" factoryName="Pyramid server">
@@ -483,7 +485,17 @@
       <option name="CONFIGURATION_FILE" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="PyRemoteDebugConfigurationType" factoryName="Python Remote Debug">
+      <module name="" />
+      <option name="PORT" value="0" />
+      <option name="HOST" value="null" />
+      <PathMappingSettings>
+        <option name="pathMappings">
+          <list />
+        </option>
+      </PathMappingSettings>
+      <option name="REDIRECT_OUTPUT" value="true" />
+      <option name="SUSPEND_AFTER_CONNECT" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -509,17 +521,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="PyRemoteDebugConfigurationType" factoryName="Python Remote Debug">
-      <module name="" />
-      <option name="PORT" value="0" />
-      <option name="HOST" value="null" />
-      <PathMappingSettings>
-        <option name="pathMappings">
-          <list />
-        </option>
-      </PathMappingSettings>
-      <option name="REDIRECT_OUTPUT" value="true" />
-      <option name="SUSPEND_AFTER_CONNECT" value="true" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -694,7 +696,15 @@
       <created>1400016027931</created>
       <updated>1400016027931</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add Logo&#10;">
+      <created>1400017037824</created>
+      <updated>1400017037824</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add Logo&#10;">
+      <created>1400017963286</created>
+      <updated>1400017963286</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -721,13 +731,12 @@
     <frame x="1" y="0" width="1364" height="997" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936978" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897863" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897863" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20214395" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20597243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39904988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936978" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -735,11 +744,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938388" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -771,10 +781,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/sudoku/sudoku.py</url>
           <line>538</line>
           <option name="timeStamp" value="9" />
@@ -797,6 +803,76 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MANIFEST.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.0" vertical-offset="640" max-vertical-offset="760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/source/base.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="1" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/source/index.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sudoku/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="280">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="13" selection-start="2975" selection-end="2975" vertical-scroll-proportion="0.0" vertical-offset="980" max-vertical-offset="39420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sudoku/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="3" selection-start="7" selection-end="7" vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="11" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matrix/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="59" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="200">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/matrix/matrix.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="139" column="16" selection-start="4215" selection-end="4215" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="31580">
@@ -806,11 +882,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/matrix/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="480">
-          <folding>
-            <marker date="1399352948745" expanded="true" signature="-1:-1" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-          </folding>
-        </state>
+        <state line="18" column="0" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="480" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MANIFEST.in">
@@ -830,9 +902,7 @@
     <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="464" column="26" selection-start="15786" selection-end="15786" vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="29560">
-          <folding>
-            <element signature="e#163#173#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -864,15 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="440">
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sudoku/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="33" selection-end="34" vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="260">
@@ -883,9 +944,7 @@
     <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="492" column="43" selection-start="17212" selection-end="17212" vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="29300">
-          <folding>
-            <element signature="e#163#173#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -935,9 +994,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/source/intro.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="785">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="785" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SudokuStudyLib.egg-info/not-zip-safe">
@@ -953,15 +1010,6 @@
     <entry file="file://$PROJECT_DIR$/SudokuStudyLib.egg-info/SOURCES.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="0.67114097" vertical-offset="0" max-vertical-offset="447">
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_execfile.py">
@@ -983,11 +1031,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/matrix/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <folding>
-            <marker date="1399352948745" expanded="true" signature="-1:-1" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-          </folding>
-        </state>
+        <state line="18" column="0" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matrix/matrix.py">
@@ -999,21 +1043,13 @@
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-643338342/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="644" column="8" selection-start="23446" selection-end="23446" vertical-scroll-proportion="0.8790637" vertical-offset="12204" max-vertical-offset="115800">
-          <folding>
-            <element signature="e#25068#25150#0" expanded="false" />
-            <element signature="e#25233#25275#0" expanded="false" />
-            <element signature="e#25356#25394#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="644" column="8" selection-start="23446" selection-end="23446" vertical-scroll-proportion="0.8790637" vertical-offset="12204" max-vertical-offset="115800" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="13" selection-start="2975" selection-end="2975" vertical-scroll-proportion="-10.714286" vertical-offset="980" max-vertical-offset="39420">
-          <folding>
-            <element signature="e#163#173#0" expanded="true" />
-          </folding>
+        <state line="64" column="13" selection-start="2975" selection-end="2975" vertical-scroll-proportion="0.0" vertical-offset="980" max-vertical-offset="39420">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,9 +1070,7 @@
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="0" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1063,7 +1097,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/source/index.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="50" selection-end="50" vertical-scroll-proportion="0.078023404" vertical-offset="0" max-vertical-offset="800">
+        <state line="20" column="7" selection-start="676" selection-end="676" vertical-scroll-proportion="0.520156" vertical-offset="0" max-vertical-offset="800">
           <folding />
         </state>
       </provider>

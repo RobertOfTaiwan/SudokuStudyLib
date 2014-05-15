@@ -32,6 +32,10 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.intersphin
 # to let __init__() in class be documented in autodoc, Added by Robert
 autoclass_content = 'both'
 
+# Add by Robert for Internationlization
+locale_dirs = ['source/locale/'] # path is example but recommended.
+gettext_compact = False # optional.
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
