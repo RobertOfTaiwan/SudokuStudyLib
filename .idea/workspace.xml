@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b64838e7-f7b1-48c3-9963-39a5d39b9c79" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/base.mo" afterPath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/base.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/index.mo" afterPath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/index.mo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/base.po" afterPath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/base.po" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/index.po" afterPath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/index.po" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sudokulib.iws" />
@@ -704,7 +708,11 @@
       <created>1400217752074</created>
       <updated>1400217752074</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add zh-TW language&#10;">
+      <created>1400217767689</created>
+      <updated>1400217767689</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
