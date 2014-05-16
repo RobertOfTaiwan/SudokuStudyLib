@@ -33,7 +33,11 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.intersphin
 autoclass_content = 'both'
 
 # Add by Robert for Internationlization
-locale_dirs = ['..\\build\\locale\\'] # path is example but recommended.
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+if on_rtd:
+    locale_dirs = ['../build/locale/']
+else:
+    locale_dirs = ['..\\build\\locale\\'] # path is example but recommended.
 gettext_compact = False # optional.
 
 # Add any paths that contain templates here, relative to this directory.
