@@ -1,0 +1,160 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-16 10:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\source\base.rst:2
+msgid "The base knowledge of sudoku"
+msgstr ""
+
+#: ..\..\source\base.rst:4
+msgid ""
+"Sudoku is a kind of puzzle game. It is one of the best way to learn logic, "
+"and at the same time, the Python language is one of the best computer "
+"language to learn logic. So, if we can combine these two kinds of tools to "
+"teach children or young men to learn logic, it will be perfect. This is why "
+"the project be done and going to."
+msgstr ""
+
+#: ..\..\source\base.rst:8
+msgid "A classic sudoku"
+msgstr ""
+
+#: ..\..\source\base.rst:10
+msgid ""
+"You can study what is sudoku in Wiki Page: "
+"http://en.wikipedia.org/wiki/Sudoku"
+msgstr ""
+
+#: ..\..\source\base.rst:19
+msgid "The following is a classic sudoku:"
+msgstr ""
+
+#: ..\..\source\base.rst:19
+msgid "and the following is the solution for it:"
+msgstr ""
+
+#: ..\..\source\base.rst:20
+msgid "|sudoku_init|"
+msgstr ""
+
+#: ..\..\source\base.rst:20
+msgid "|sudoku_result|"
+msgstr ""
+
+#: ..\..\source\base.rst:24
+msgid "Rules"
+msgstr ""
+
+#: ..\..\source\base.rst:26
+msgid "The basic rules to solve a sudoku is very easy::"
+msgstr ""
+
+#: ..\..\source\base.rst:32
+msgid "How many possible puzzles in a 9x9 sudoku"
+msgstr ""
+
+#: ..\..\source\base.rst:34
+msgid ""
+"If we put the first number in a the position (1, 1), there are must have 9 "
+"numbers can be selected to put in. Then we put the second number in the "
+"postion (1, 2), there are must have 8 numbers can be selected to put in. So,"
+" and as it going on, we can write down the possible numbers we can select in"
+" every position:"
+msgstr ""
+
+#: ..\..\source\base.rst:39
+msgid "9!"
+msgstr ""
+
+#: ..\..\source\base.rst:39 ..\..\source\base.rst:39
+msgid "6!"
+msgstr ""
+
+#: ..\..\source\base.rst:39 ..\..\source\base.rst:39 ..\..\source\base.rst:39
+msgid "3!"
+msgstr ""
+
+#: ..\..\source\base.rst:39 ..\..\source\base.rst:39 ..\..\source\base.rst:39
+msgid "1!"
+msgstr ""
+
+#: ..\..\source\base.rst:41
+msgid "9"
+msgstr ""
+
+#: ..\..\source\base.rst:41 ..\..\source\base.rst:41 ..\..\source\base.rst:44
+msgid "6"
+msgstr ""
+
+#: ..\..\source\base.rst:41 ..\..\source\base.rst:41 ..\..\source\base.rst:41
+#: ..\..\source\base.rst:44 ..\..\source\base.rst:44 ..\..\source\base.rst:47
+msgid "3"
+msgstr ""
+
+#: ..\..\source\base.rst:41 ..\..\source\base.rst:41 ..\..\source\base.rst:41
+#: ..\..\source\base.rst:42 ..\..\source\base.rst:42 ..\..\source\base.rst:42
+#: ..\..\source\base.rst:43 ..\..\source\base.rst:43 ..\..\source\base.rst:43
+#: ..\..\source\base.rst:43 ..\..\source\base.rst:43 ..\..\source\base.rst:43
+#: ..\..\source\base.rst:44 ..\..\source\base.rst:44 ..\..\source\base.rst:44
+#: ..\..\source\base.rst:44 ..\..\source\base.rst:44 ..\..\source\base.rst:44
+#: ..\..\source\base.rst:45 ..\..\source\base.rst:45 ..\..\source\base.rst:45
+#: ..\..\source\base.rst:45 ..\..\source\base.rst:45 ..\..\source\base.rst:45
+#: ..\..\source\base.rst:46 ..\..\source\base.rst:46 ..\..\source\base.rst:46
+#: ..\..\source\base.rst:46 ..\..\source\base.rst:46 ..\..\source\base.rst:46
+#: ..\..\source\base.rst:46 ..\..\source\base.rst:46 ..\..\source\base.rst:47
+#: ..\..\source\base.rst:47 ..\..\source\base.rst:47 ..\..\source\base.rst:47
+#: ..\..\source\base.rst:47 ..\..\source\base.rst:47 ..\..\source\base.rst:47
+#: ..\..\source\base.rst:47 ..\..\source\base.rst:48 ..\..\source\base.rst:48
+#: ..\..\source\base.rst:48 ..\..\source\base.rst:48 ..\..\source\base.rst:48
+#: ..\..\source\base.rst:48 ..\..\source\base.rst:48 ..\..\source\base.rst:48
+#: ..\..\source\base.rst:49 ..\..\source\base.rst:49 ..\..\source\base.rst:49
+#: ..\..\source\base.rst:49 ..\..\source\base.rst:49 ..\..\source\base.rst:49
+#: ..\..\source\base.rst:49 ..\..\source\base.rst:49 ..\..\source\base.rst:49
+msgid "1"
+msgstr ""
+
+#: ..\..\source\base.rst:42
+msgid "8"
+msgstr ""
+
+#: ..\..\source\base.rst:42 ..\..\source\base.rst:42 ..\..\source\base.rst:45
+msgid "5"
+msgstr ""
+
+#: ..\..\source\base.rst:42 ..\..\source\base.rst:42 ..\..\source\base.rst:42
+#: ..\..\source\base.rst:45 ..\..\source\base.rst:45 ..\..\source\base.rst:48
+msgid "2"
+msgstr ""
+
+#: ..\..\source\base.rst:43
+msgid "7"
+msgstr ""
+
+#: ..\..\source\base.rst:43 ..\..\source\base.rst:43 ..\..\source\base.rst:46
+msgid "4"
+msgstr ""
+
+#: ..\..\source\base.rst:52
+msgid ""
+"So the possible combinations are 9!*6!*3!*6!*3!*1!*3!*1!*1* = "
+"4,514,807,808,000"
+msgstr ""
+
+#: ..\..\source\base.rst:54
+msgid "if we use python to caculate it::"
+msgstr ""
+
+#: ..\..\source\base.rst:64
+msgid ""
+"About the mathematics of sudoku, you can get it at Wiki, "
+"http://en.wikipedia.org/wiki/Mathematics_of_Sudoku"
+msgstr ""

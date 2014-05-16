@@ -23,22 +23,23 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="top" title="SudokuStudyLib 1.0 documentation" href="index.html" />
     <link rel="prev" title="Start Programming to Solve a Sudoku" href="program.html" /> 
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>瀏覽</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="genindex.html" title="總索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+             >模組</a> |</li>
         <li class="right" >
           <a href="program.html" title="Start Programming to Solve a Sudoku"
-             accesskey="P">previous</a> |</li>
+             accesskey="P">上一頁</a> |</li>
         <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -59,7 +60,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>idx</strong> &#8211; int, the box&#8217;s id</li>
 <li><strong>p</strong> &#8211; the Point object list of this object</li>
 </ul>
@@ -68,7 +69,7 @@
 </tbody>
 </table>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">註解</p>
 <p class="last">This will replace the original GroupBase&#8217;s init()</p>
 </div>
 <dl class="method">
@@ -80,7 +81,7 @@ we call it as a GroupNumber</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>num</strong> &#8211; int, find this num, it is a group number in this box</li>
 <li><strong>pos</strong> &#8211; list, the Point object list which to find a group number, if it is empty, the function will get all unassigned points to be a list</li>
 <li><strong>notInLineX</strong> &#8211; bool, to call get_all_pos to not include x-line&#8217;s unassigned point</li>
@@ -88,7 +89,7 @@ we call it as a GroupNumber</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">GroupNumber, none or a GroupNumber Object</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">GroupNumber, none or a GroupNumber Object</p>
 </td>
 </tr>
 </tbody>
@@ -106,7 +107,7 @@ means the possible number in this chain positions only can be filled in these po
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>numList</strong> &#8211; int list, presents the numbers of this chain</li>
 <li><strong>posList</strong> &#8211; Point list, presents the positions that form the chain</li>
 </ul>
@@ -125,7 +126,7 @@ means the possible number in this chain positions only can be filled in these po
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>idx</strong> &#8211; int, the id of this object</li>
 <li><strong>p</strong> &#8211; the point object list in this object</li>
 </ul>
@@ -141,9 +142,9 @@ means the possible number in this chain positions only can be filled in these po
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>v</strong> &#8211; int, the number to be checked</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>v</strong> &#8211; int, the number to be checked</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True or False</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">True or False</td>
 </tr>
 </tbody>
 </table>
@@ -154,7 +155,7 @@ means the possible number in this chain positions only can be filled in these po
 <tt class="descname">count_num_possible</tt><big>(</big><em>count=1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.count_num_possible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.count_num_possible" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the un-assigned position in this group, and possible numbers only in [count] positions</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">註解</p>
 <p class="last">The output format is a tuple list, the tuple has two value, one is number,
 another is s position list</p>
 </div>
@@ -162,9 +163,9 @@ another is s position list</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>count</strong> &#8211; int, how many positions are un-assigned to get</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>count</strong> &#8211; int, how many positions are un-assigned to get</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list, [(num,[p1, p2...]),...]</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">list, [(num,[p1, p2...]),...]</td>
 </tr>
 </tbody>
 </table>
@@ -178,7 +179,7 @@ another is s position list</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>diff</strong> &#8211; list, exclude the positions in it</li>
 <li><strong>method</strong> &#8211; char, a: all, s:has assigned, u:not assigned</li>
 <li><strong>num</strong> &#8211; int, if method is u and set the number to 1-9, will get all possible pos which are possible to be assigned the num</li>
@@ -189,7 +190,7 @@ another is s position list</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list: a List of Position</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">list: a List of Position</p>
 </td>
 </tr>
 </tbody>
@@ -204,9 +205,9 @@ another is s position list</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>v</strong> &#8211; int, the number to be found its position</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>v</strong> &#8211; int, the number to be found its position</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None or a Point object</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">None or a Point object</td>
 </tr>
 </tbody>
 </table>
@@ -222,7 +223,7 @@ another is s position list</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>b</strong> &#8211; int, the Box Object Idx</li>
 <li><strong>num</strong> &#8211; int, the number that the object presents</li>
 <li><strong>p</strong> &#8211; Point List, the Point Object List that form this Group Number</li>
@@ -244,7 +245,7 @@ another is s position list</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>idx</strong> &#8211; int, the id of this object</li>
 <li><strong>p</strong> &#8211; the point object list in this object</li>
 </ul>
@@ -263,7 +264,7 @@ another is s position list</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>idx</strong> &#8211; int, the id of this object</li>
 <li><strong>p</strong> &#8211; the point object list in this object</li>
 </ul>
@@ -281,7 +282,7 @@ another is s position list</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> &#8211; file, the define file of a sudoku</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>file</strong> &#8211; file, the define file of a sudoku</td>
 </tr>
 </tbody>
 </table>
@@ -306,14 +307,14 @@ chain: Chain list
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>x</strong> &#8211; int, x position</li>
 <li><strong>y</strong> &#8211; int, y position</li>
 <li><strong>v</strong> &#8211; int, the number</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True or False</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">True or False</p>
 </td>
 </tr>
 </tbody>
@@ -328,13 +329,13 @@ chain: Chain list
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>method</strong> &#8211; char, &#8220;u&#8221;: un-assigned positions, &#8220;a&#8221;: all, &#8220;s&#8221;: assigned positions</li>
 <li><strong>num</strong> &#8211; if method=&#8221;u&#8221;, the position must have be possible to be filled the number</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Point list</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">Point list</p>
 </td>
 </tr>
 </tbody>
@@ -349,7 +350,7 @@ chain: Chain list
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>diff</strong> &#8211; Point list, other than the postions in this list</li>
 <li><strong>method</strong> &#8211; char, &#8220;a&#8221; &#8211; all, &#8220;u&#8221; &#8211; unassigned, &#8220;s&#8221; &#8211; assigned</li>
 <li><strong>num</strong> &#8211; int, the unassigned position which has the [num] in its possible numbers</li>
@@ -358,7 +359,7 @@ chain: Chain list
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Point list</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">Point list</p>
 </td>
 </tr>
 </tbody>
@@ -379,7 +380,7 @@ chain: Chain list
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> &#8211; file, the sudoku define file, can give it the absolute path name,
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>file</strong> &#8211; file, the sudoku define file, can give it the absolute path name,
 if only the file name, it would find file in the data path.</td>
 </tr>
 </tbody>
@@ -394,7 +395,7 @@ if only the file name, it would find file in the data path.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>x</strong> &#8211; int, x position</li>
 <li><strong>y</strong> &#8211; int, y position</li>
 <li><strong>v</strong> &#8211; int, the possible number</li>
@@ -404,7 +405,7 @@ if only the file name, it would find file in the data path.</td>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int, as following code</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">int, as following code</p>
 </td>
 </tr>
 </tbody>
@@ -424,7 +425,7 @@ if only the file name, it would find file in the data path.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>x</strong> &#8211; int, x position</li>
 <li><strong>y</strong> &#8211; int, y position</li>
 <li><strong>v</strong> &#8211; int, the number of this position</li>
@@ -433,7 +434,7 @@ if only the file name, it would find file in the data path.</td>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int, &gt;=1 if set successfully, 0 if it can&#8217;t be set the number v</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">int, &gt;=1 if set successfully, 0 if it can&#8217;t be set the number v</p>
 </td>
 </tr>
 </tbody>
@@ -449,9 +450,9 @@ and Sorted By the possible numbers</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>possibles</strong> &#8211; 0 for all, &gt;=2, mean get only the possible numbers for it</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>possibles</strong> &#8211; 0 for all, &gt;=2, mean get only the possible numbers for it</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Point list</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">Point list</td>
 </tr>
 </tbody>
 </table>
@@ -464,7 +465,7 @@ and Sorted By the possible numbers</p>
 <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Number</tt><big>(</big><em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Number" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number Object</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">註解</p>
 <p class="last">You can imagine that an object of this class is equal to a country,
 every country has its own id from 1-9.</p>
 </div>
@@ -472,7 +473,7 @@ every country has its own id from 1-9.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>v</strong> &#8211; int, the id of the Number, from 1 to 9</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>v</strong> &#8211; int, the id of the Number, from 1 to 9</td>
 </tr>
 </tbody>
 </table>
@@ -484,9 +485,9 @@ every country has its own id from 1-9.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p1</strong> &#8211; Point, a position</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>p1</strong> &#8211; Point, a position</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">gn if can be seen by it, or None</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">gn if can be seen by it, or None</td>
 </tr>
 </tbody>
 </table>
@@ -500,7 +501,7 @@ every country has its own id from 1-9.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p1</strong> &#8211; Point, a position that are assigned to this object</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>p1</strong> &#8211; Point, a position that are assigned to this object</td>
 </tr>
 </tbody>
 </table>
@@ -513,7 +514,7 @@ every country has its own id from 1-9.</p>
 <em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Point</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Point" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Position in a Sudoku&#8217;s table</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">註解</p>
 <p class="last">We can imagine that a Point object is an house</p>
 </div>
 <p>This is the init of Point Object</p>
@@ -521,7 +522,7 @@ every country has its own id from 1-9.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>x</strong> &#8211; int, the x position of this object</li>
 <li><strong>y</strong> &#8211; int, the y position of this object</li>
 </ul>
@@ -537,9 +538,9 @@ every country has its own id from 1-9.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p1</strong> &#8211; Point, a point object</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>p1</strong> &#8211; Point, a point object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">int, the value can&#8217;t be 3 or 7 it means the same pos</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">int, the value can&#8217;t be 3 or 7 it means the same pos</td>
 </tr>
 </tbody>
 </table>
@@ -560,9 +561,9 @@ every country has its own id from 1-9.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>posList</strong> &#8211; list, a [(x, y),...] list</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>posList</strong> &#8211; list, a [(x, y),...] list</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list, [(x, y),...</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">list, [(x, y),...</td>
 </tr>
 </tbody>
 </table>
@@ -578,7 +579,7 @@ every country has its own id from 1-9.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>fun</strong> &#8211; function, the function name defined in Python</li>
 <li><strong>idx</strong> &#8211; int, the sequence of executing solving</li>
 <li><strong>name</strong> &#8211; str, the description of this function</li>
@@ -597,13 +598,13 @@ every country has its own id from 1-9.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object</li>
 <li><strong>ks</strong> &#8211; first(int), only(bool)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
 </td>
 </tr>
 </tbody>
@@ -654,7 +655,7 @@ nowPath: str, record now path
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>x</strong> &#8211; int, last position x, when done</li>
 <li><strong>y</strong> &#8211; int, last position y, when done</li>
 <li><strong>v</strong> &#8211; int, the last number be set, when done</li>
@@ -674,7 +675,7 @@ t: is the type: &#8216;s&#8217; means set, &#8216;r&#8217; means reduce</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>x</strong> &#8211; int, position x, which occurs an error</li>
 <li><strong>y</strong> &#8211; int, position y, which occurs an error</li>
 <li><strong>v</strong> &#8211; int, the number be set or reduced that occurs an error</li>
@@ -700,7 +701,7 @@ t: is the type: &#8216;s&#8217; means set, &#8216;r&#8217; means reduce</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
 <li><strong>x</strong> &#8211; int, position x, when one of the check positions has been set</li>
 <li><strong>y</strong> &#8211; int, position y, when one of the check positions has been set</li>
 <li><strong>v</strong> &#8211; int, the number be set</li>
@@ -719,14 +720,14 @@ t: is the type: &#8216;s&#8217; means set, &#8216;r&#8217; means reduce</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object</li>
 <li><strong>first</strong> &#8211; the first number to be checked</li>
 <li><strong>only</strong> &#8211; bool, False &#8211; check all numbers, True &#8211; check the first number only</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
 </td>
 </tr>
 </tbody>
@@ -748,9 +749,9 @@ only: bool, if only check the first number or not
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
 </tr>
 </tbody>
 </table>
@@ -771,14 +772,14 @@ only: bool, if only check the first number or not
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object</li>
 <li><strong>first</strong> &#8211; the first number to be checked</li>
 <li><strong>only</strong> &#8211; False, check all numbers, True, check the first number only</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
 </td>
 </tr>
 </tbody>
@@ -801,14 +802,14 @@ if same for all emulate result, it means that it must be true, so can do by it</
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object</li>
 <li><strong>emu</strong> &#8211; a two dimension list, [[Point, Assigned Number],...]</li>
 <li><strong>result</strong> &#8211; Matrix list, the list of Matrix object of emulating results</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces), sets: the amount of setting, reduces: the amount of reducing</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, (sets, reduces), sets: the amount of setting, reduces: the amount of reducing</p>
 </td>
 </tr>
 </tbody>
@@ -831,7 +832,7 @@ it will stop when and return:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object</li>
 <li><strong>x</strong> &#8211; int, the start x position</li>
 <li><strong>y</strong> &#8211; int, the start y position</li>
@@ -841,7 +842,7 @@ it will stop when and return:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (rtn, matrix, idx)</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, (rtn, matrix, idx)</p>
 </td>
 </tr>
 </tbody>
@@ -865,13 +866,13 @@ check if a group have only position left, just set it.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix Object</li>
 <li><strong>sets</strong> &#8211; int, how many last sets want to be checked</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
 </td>
 </tr>
 </tbody>
@@ -893,9 +894,9 @@ only: bool, if only check the first number or not
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix Object</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; Matrix Object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
 </tr>
 </tbody>
 </table>
@@ -916,14 +917,14 @@ only: bool, if only check the first number or not
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix Object</li>
 <li><strong>first</strong> &#8211; int, the first number of checking</li>
 <li><strong>only</strong> &#8211; bool, just check the first number or not</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
 </td>
 </tr>
 </tbody>
@@ -945,7 +946,7 @@ only: bool, if only check the first number or not
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object</li>
 <li><strong>group</strong> &#8211; lineX or lineY or Box object</li>
 <li><strong>pos</strong> &#8211; Point list of a group</li>
@@ -953,7 +954,7 @@ only: bool, if only check the first number or not
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Chain list</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">Chain list</p>
 </td>
 </tr>
 </tbody>
@@ -968,13 +969,13 @@ only: bool, if only check the first number or not
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object</li>
 <li><strong>idx</strong> &#8211; int, 0 means the new guess, others mean the idx of the possible number of a position</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
 </td>
 </tr>
 </tbody>
@@ -1001,9 +1002,9 @@ only: bool, if only check the first number or not
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
 </tr>
 </tbody>
 </table>
@@ -1030,9 +1031,9 @@ we can emulate every position to set the number and get its result:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
 </tr>
 </tbody>
 </table>
@@ -1053,9 +1054,9 @@ only: bool, if only check the first number or not
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
 </tr>
 </tbody>
 </table>
@@ -1079,9 +1080,9 @@ if so, we can reduce all these positions which can see p1 and p2 at the same tim
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
 </tr>
 </tbody>
 </table>
@@ -1102,7 +1103,7 @@ only: bool, if only check the first number or not
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SolveMethod list</td>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">SolveMethod list</td>
 </tr>
 </tbody>
 </table>
@@ -1117,7 +1118,7 @@ Obvious methods include fillLastPositionOfGroup=0 and checkObviousNumber=1</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object</li>
 <li><strong>method1</strong> &#8211; int, method index</li>
 <li><strong>p1</strong> &#8211; Point, the postion to be checked</li>
@@ -1125,7 +1126,7 @@ Obvious methods include fillLastPositionOfGroup=0 and checkObviousNumber=1</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">True: set, False: not set</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">True: set, False: not set</p>
 </td>
 </tr>
 </tbody>
@@ -1140,7 +1141,7 @@ Obvious methods include fillLastPositionOfGroup=0 and checkObviousNumber=1</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>loop_limit</strong> &#8211; int, the limit for the method loops, 0: no limits</li>
 <li><strong>rec_limit</strong> &#8211; int, for debug, when the records &gt;= recLimit, it will stop, 0: no limits</li>
 <li><strong>check</strong> &#8211; int, for debug, to set the a (x,y) list to check, it will stop when these positions have been set</li>
@@ -1158,7 +1159,7 @@ Obvious methods include fillLastPositionOfGroup=0 and checkObviousNumber=1</p>
 </ul>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Matrix object</p>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">Matrix object</p>
 </td>
 </tr>
 </tbody>
@@ -1173,14 +1174,14 @@ Obvious methods include fillLastPositionOfGroup=0 and checkObviousNumber=1</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object, if it is None, you should give it the sudoku define file</li>
 <li><strong>file</strong> &#8211; file, the sudoku define file</li>
 <li><strong>depth</strong> &#8211; int, count the call depth of this function</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">bool, True if the sudoku has been solved</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">bool, True if the sudoku has been solved</p>
 </td>
 </tr>
 </tbody>
@@ -1196,9 +1197,9 @@ return: &gt;=0 means the chain number&#8217;s amount in the matrix, m</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
 </tr>
 </tbody>
 </table>
@@ -1219,13 +1220,13 @@ only: bool, if only check the first number or not
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object</li>
 <li><strong>num</strong> &#8211; the number to be updated</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
 </td>
 </tr>
 </tbody>
@@ -1248,7 +1249,7 @@ a recursive function</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
 <li><strong>m</strong> &#8211; Matrix object</li>
 <li><strong>num</strong> &#8211; int, the number to be checked</li>
 <li><strong>amt</strong> &#8211; int, the amount of Group Number found</li>
@@ -1258,7 +1259,7 @@ a recursive function</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, (sets, reduces, method index, first, only), as following</p>
 </td>
 </tr>
 </tbody>
@@ -1282,9 +1283,9 @@ possibles which &lt;= that limits</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
+<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; Matrix object</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, (sets, reduces, method index, first, only), as following</td>
 </tr>
 </tbody>
 </table>
@@ -1305,16 +1306,16 @@ only: bool, if only check the first number or not
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
+  <h4>上一個主題</h4>
   <p class="topless"><a href="program.html"
-                        title="previous chapter">Start Programming to Solve a Sudoku</a></p>
-  <h3>This Page</h3>
+                        title="上一章">Start Programming to Solve a Sudoku</a></p>
+  <h3>本頁</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/sudoku.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">顯示原始碼</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>快速搜尋</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
@@ -1331,17 +1332,17 @@ only: bool, if only check the first number or not
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>瀏覽</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
+          <a href="genindex.html" title="總索引"
+             >索引</a></li>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+             >模組</a> |</li>
         <li class="right" >
           <a href="program.html" title="Start Programming to Solve a Sudoku"
-             >previous</a> |</li>
+             >上一頁</a> |</li>
         <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
