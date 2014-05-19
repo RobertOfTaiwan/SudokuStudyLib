@@ -1807,7 +1807,7 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
     start = METHOD_CHECK_OBVIOUS  # start from for the first time
     num = 1
     only = False
-    max_method = 0
+    max_method = 0  # to record the max method index that be used
     Status.name["tryUse"] = use_try
     Status.name["emuUse"] = use_emu
     allmethods = reg_method()
