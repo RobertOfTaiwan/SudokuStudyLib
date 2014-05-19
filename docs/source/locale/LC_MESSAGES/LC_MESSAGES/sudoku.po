@@ -1214,12 +1214,6 @@ msgid ""
 "positions have been set"
 msgstr ""
 
-#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:6
-msgid ""
-"int, limit the methods using, 0 -- no limit, >0 -- just using the methods "
-"which lever < level_limit"
-msgstr ""
-
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:7
 msgid ""
 "imt, if using emulator method, this tells the emulator just emulate in "
@@ -1322,3 +1316,14 @@ msgid ""
 "WRITEN_POSSIBLE_LIMITS has set to 1..9, it will only write down the "
 "possibles which <= that limits"
 msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:6
+msgid ""
+"int, limit the methods using, 0: no limit, >0: just using the methods which "
+"lever < level_limit"
+msgstr ""
+
+#~ msgid ""
+#~ "int, limit the methods using, 0 -- no limit, >0 -- just using the methods "
+#~ "which lever < level_limit"
+#~ msgstr ""

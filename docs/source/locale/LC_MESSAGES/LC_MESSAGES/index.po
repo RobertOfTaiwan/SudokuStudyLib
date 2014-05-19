@@ -25,10 +25,6 @@ msgid ""
 "logic, it will be perfect. This is why the project be done and going to."
 msgstr ""
 
-#: ..\index.rst:13
-msgid "Welcome to SudokuStudyLib's documentation!"
-msgstr ""
-
 #: ..\index.rst:15
 msgid "Contents:"
 msgstr ""
@@ -48,3 +44,13 @@ msgstr ""
 #: ..\index.rst:33
 msgid ":ref:`search`"
 msgstr ""
+
+#: ..\index.rst:13
+msgid "Welcome to the Purest World of Human: Sudoku and Logic"
+msgstr ""
+
+#~ msgid "Welcome to the Purest World of Human!"
+#~ msgstr ""
+
+#~ msgid "Welcome to SudokuStudyLib's documentation!"
+#~ msgstr ""

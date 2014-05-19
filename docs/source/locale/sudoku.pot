@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SudokuStudyLib 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-18 05:24+0800\n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1396,7 +1396,7 @@ msgstr ""
 
 #: ..\..\..\sudoku\sudoku.py:docstring of sudoku.sudoku.solve:6
 # 07a9539f0f8943e6b2939a325e3d88de
-msgid "int, limit the methods using, 0 -- no limit, >0 -- just using the methods which lever < level_limit"
+msgid "int, limit the methods using, 0: no limit, >0: just using the methods which lever < level_limit"
 msgstr ""
 
 #: ..\..\..\sudoku\sudoku.py:docstring of sudoku.sudoku.solve:7

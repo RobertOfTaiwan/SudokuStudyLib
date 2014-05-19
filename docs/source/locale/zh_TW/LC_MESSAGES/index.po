@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: SudokuStudyLib 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-14 06:19+0800\n"
-"PO-Revision-Date: 2014-05-17 15:59+0800\n"
+"PO-Revision-Date: 2014-05-19 13:36+0800\n"
 "Last-Translator: Robert J. Hwang <RobertOfTaiwan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,10 +32,6 @@ msgstr ""
 "少年來學習邏輯的話，那將會是最好的組合！ 這也是這個專案的緣起，也是這個專案追"
 "求的目標。"
 
-#: ..\index.rst:13
-msgid "Welcome to SudokuStudyLib's documentation!"
-msgstr "歡迎來到宇宙最單純的世界：數獨與邏輯"
-
 #: ..\index.rst:15
 msgid "Contents:"
 msgstr "內容："
@@ -55,3 +51,13 @@ msgstr ":ref:`modindex`"
 #: ..\index.rst:33
 msgid ":ref:`search`"
 msgstr ":ref:`search`"
+
+#: ..\index.rst:13
+msgid "Welcome to the Purest World of Human: Sudoku and Logic"
+msgstr "歡迎來到人類最單純的世界：數獨與邏輯"
+
+#~ msgid "Welcome to the Purest World of Human!"
+#~ msgstr "歡迎來到人類最單純的世界：數獨與邏輯"
+
+#~ msgid "Welcome to SudokuStudyLib's documentation!"
+#~ msgstr "歡迎來到人類最單純的世界：數獨與邏輯"

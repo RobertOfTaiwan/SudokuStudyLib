@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SudokuStudyLib 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-18 05:24+0800\n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: ..\index.rst:13
 # cc995980cba34a24ab774a427a752625
-msgid "Welcome to SudokuStudyLib's documentation!"
+msgid "Welcome to the Purest World of Human: Sudoku and Logic"
 msgstr ""
 
 #: ..\index.rst:15

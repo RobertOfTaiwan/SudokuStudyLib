@@ -1,10 +1,10 @@
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: SudokuStudyLib 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-14 06:19+0800\n"
-"PO-Revision-Date: 2014-05-19 12:47+0800\n"
+"PO-Revision-Date: 2014-05-19 13:32+0800\n"
 "Last-Translator: Robert J. Hwang <RobertOfTaiwan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,11 +39,11 @@ msgstr "這將取代母類別，GroupBase，的 init()"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box.get_group_number:1
 msgid ""
-"if the unassigned num in this box which it's all possible positions have the "
-"same direction, we call it as a GroupNumber"
+"if the unassigned num in this box which it's all possible positions have the"
+" same direction, we call it as a GroupNumber"
 msgstr ""
-"如果在一個區塊群組中所有尚未被給填上的代碼, num, 其可能填上此 num 的 Point 物"
-"件有同樣的 x 軸或 y 軸座標時, 我們稱為 Group Numer。"
+"如果在一個區塊群組中所有尚未被給填上的代碼, num, 其可能填上此 num 的 Point 物件有同樣的 x 軸或 y 軸座標時, 我們稱為 "
+"Group Numer。"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box.get_group_number:4
 msgid "int, find this num, it is a group number in this box"
@@ -54,8 +54,7 @@ msgid ""
 "list, the Point object list which to find a group number, if it is empty, "
 "the function will get all unassigned points to be a list"
 msgstr ""
-"list, 一個 Point 物件列表，從中來尋找出 Group Number，如果是空白，則函數會取"
-"得區塊物件所有空白的 Point 物件。"
+"list, 一個 Point 物件列表，從中來尋找出 Group Number，如果是空白，則函數會取得區塊物件所有空白的 Point 物件。"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box.get_group_number:6
 msgid "bool, to call get_all_pos to not include x-line's unassigned point"
@@ -75,9 +74,7 @@ msgid ""
 "same line and can form a chain, means the possible number in this chain "
 "positions only can be filled in these positions"
 msgstr ""
-"一個鏈結(chain)是由同個群組中2個以上的空白點組合起來，在這些點上的可被填上的"
-"代碼總數剛好等於這些點數，所以在同個群組中的其他空白點就不可能被填上這個鏈結"
-"上的所有代碼。"
+"一個鏈結(chain)是由同個群組中2個以上的空白點組合起來，在這些點上的可被填上的代碼總數剛好等於這些點數，所以在同個群組中的其他空白點就不可能被填上這個鏈結上的所有代碼。"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Chain:4
 msgid "int list, presents the numbers of this chain"
@@ -92,17 +89,20 @@ msgid "The Base Class of a Line or Box"
 msgstr "所有群組類別(包含 x 軸, y 軸, 區塊等群組)的基本類別"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase:3
-#: sudoku.sudoku.LineX:3 sudoku.sudoku.LineY:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineX:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineY:3
 msgid "The init function of a GroupBase object"
 msgstr "基本群組類別的起始函數(init())"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase:5
-#: sudoku.sudoku.LineX:5 sudoku.sudoku.LineY:5
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineX:5
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineY:5
 msgid "int, the id of this object"
 msgstr "int, 這個物件的代碼"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase:6
-#: sudoku.sudoku.LineX:6 sudoku.sudoku.LineY:6
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineX:6
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineY:6
 msgid "the point object list in this object"
 msgstr "所屬這個物件的 Point 物件列表"
 
@@ -111,12 +111,13 @@ msgid "check the group can be filled the number(v)?"
 msgstr "檢查這個群組物件是否能夠被填上此代碼(v)？"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.allow:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.update_indirect_group_number:5
 msgid "int, the number to be checked"
 msgstr "int,要被檢查的代碼"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.allow:5
-#: sudoku.sudoku.Matrix.allow:7
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.allow:7
 msgid "True or False"
 msgstr "「是」或「非」"
 
@@ -125,17 +126,14 @@ msgstr "「是」或「非」"
 msgid ""
 "get the un-assigned position in this group, and possible numbers only in "
 "[count] positions"
-msgstr ""
-"取得這個群組中所有空白點列表，而且可被填寫的數字僅存於 [count] 個點上。"
+msgstr "取得這個群組中所有空白點列表，而且可被填寫的數字僅存於 [count] 個點上。"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.GroupBase.count_num_possible:3
 msgid ""
 "The output format is a tuple list, the tuple has two value, one is number, "
 "another is s position list"
-msgstr ""
-"輸出為一個 tuple 列表，這個 tuple包含兩個值，一個是數字，另一個是 Point 物件"
-"列表"
+msgstr "輸出為一個 tuple 列表，這個 tuple包含兩個值，一個是數字，另一個是 Point 物件列表"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.GroupBase.count_num_possible:6
@@ -163,9 +161,7 @@ msgstr "char, a: 全部, s:非空白, u:空白"
 msgid ""
 "int, if method is u and set the number to 1-9, will get all possible pos "
 "which are possible to be assigned the num"
-msgstr ""
-"int, 假如 method 是 u 時, 且此參數設為 1-9, 那就會取得可以容納此數字的所有空"
-"白點"
+msgstr "int, 假如 method 是 u 時, 且此參數設為 1-9, 那就會取得可以容納此數字的所有空白點"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_all_pos:6
 msgid "bool, exclude the x line's positions"
@@ -176,7 +172,7 @@ msgid "bool, exclude the y line's positions"
 msgstr "bool, 包含或不包含 y 軸的點"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_all_pos:8
-#: sudoku.sudoku.Matrix.get_all_pos:6
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:6
 msgid ""
 "bool, if set, check it, if it is True, just get the chain positions, or get "
 "the un-chained positions"
@@ -186,9 +182,7 @@ msgstr "bool, 如果有設定此參數則檢查是要取得 chain 的點或者�
 msgid ""
 "int, if method=\"u\" and possibles!=None, it will only get the possible "
 "set's length = possibles"
-msgstr ""
-"int, 如果 method=\"u\" 且 possibles!=None, 將只取得可填寫數字總數為 "
-"possibles 的點"
+msgstr "int, 如果 method=\"u\" 且 possibles!=None, 將只取得可填寫數字總數為 possibles 的點"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.GroupBase.get_all_pos:11
@@ -252,12 +246,14 @@ msgid "Checking if the position x, y, can be set the value v"
 msgstr "檢查座標為 (x, y)  的點(Point)物件能否填入數字 v"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.allow:3
-#: sudoku.sudoku.Matrix.reduce:3 sudoku.sudoku.Matrix.setit:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.setit:3
 msgid "int, x position"
 msgstr "int, x 座標"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.allow:4
-#: sudoku.sudoku.Matrix.reduce:4 sudoku.sudoku.Matrix.setit:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.setit:4
 msgid "int, y position"
 msgstr "int, y 座標"
 
@@ -270,8 +266,7 @@ msgid "get the position list which can see the position, p"
 msgstr "取得能看的見某點(p)的所有 Point 物件列表"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.can_see:3
-msgid ""
-"char, \"u\": un-assigned positions, \"a\": all, \"s\": assigned positions"
+msgid "char, \"u\": un-assigned positions, \"a\": all, \"s\": assigned positions"
 msgstr "char, \"u\": 空白點, \"a\": 全部, \"s\": 非空白點"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.can_see:4
@@ -280,14 +275,16 @@ msgid ""
 msgstr "如果 method==\"u\" 時，取得的點必須能夠被填入這個數字: number"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.can_see:6
-#: sudoku.sudoku.Matrix.get_all_pos:9
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles:6
 msgid "Point list"
 msgstr "Point 物件列表"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:1
 msgid ""
-"get all positions, to call the :meth:GroupBase.get_all_pos function to get it"
+"get all positions, to call the :meth:GroupBase.get_all_pos function to get "
+"it"
 msgstr "取得所有 Point 物件列表, 藉由呼叫 GroupBase.get_all_pos() 來取得"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:3
@@ -321,9 +318,7 @@ msgstr "讀取數獨遊戲的定義檔"
 msgid ""
 "file, the sudoku define file, can give it the absolute path name, if only "
 "the file name, it would find file in the data path."
-msgstr ""
-"file, 數獨定義檔案，你可以給予絕對的檔案位址，如果只有給予檔名，系統將到安裝"
-"目錄下的 data 中去取得檔案"
+msgstr "file, 數獨定義檔案，你可以給予絕對的檔案位址，如果只有給予檔名，系統將到安裝目錄下的 data 中去取得檔案"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:1
 msgid "reduce the position(x, y)'s possible numbers from v"
@@ -374,9 +369,7 @@ msgstr "int, >=1: 如果設定成功的話, 0: 如果不成功"
 msgid ""
 "Get unassign position's possible number list, format is [p1, p2,...] and "
 "Sorted By the possible numbers"
-msgstr ""
-"取得一個群組中的空白點列表，格式為[p1, p2,...]，且以允許填寫的數字總數從低排"
-"到高"
+msgstr "取得一個群組中的空白點列表，格式為[p1, p2,...]，且以允許填寫的數字總數從低排到高"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles:4
@@ -494,18 +487,29 @@ msgid "To execute a method to solve a sudoku"
 msgstr "執行一個求解法來解開一個數獨遊戲"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:3
-#: sudoku.sudoku.check_inobvious_number:3
-#: sudoku.sudoku.check_line_last_possible_for_number:3
-#: sudoku.sudoku.check_obvious_number:3 sudoku.sudoku.compare_result:4
-#: sudoku.sudoku.emulator:11 sudoku.sudoku.get_chains:3 sudoku.sudoku.guess:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:3 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.compare_result:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:11
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.get_chains:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.guess:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:8
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:9
-#: sudoku.sudoku.reduce_by_group_number:3
-#: sudoku.sudoku.reduce_by_two_possible_in_one_position:6
-#: sudoku.sudoku.set_obvious_method_for_pos:4 sudoku.sudoku.solve:15
-#: sudoku.sudoku.update_chain:4 sudoku.sudoku.update_group_number:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:3 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:6
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.set_obvious_method_for_pos:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:15
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.update_indirect_group_number:4
-#: sudoku.sudoku.write_down_possible:5
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:5
 msgid "Matrix object"
 msgstr "數獨世界整體物件"
 
@@ -514,19 +518,28 @@ msgid "first(int), only(bool)"
 msgstr "first(int): 起始數字(int), only(bool): 只檢查一個數"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:6
-#: sudoku.sudoku.check_inobvious_number:7
-#: sudoku.sudoku.check_line_last_possible_for_number:5
-#: sudoku.sudoku.check_obvious_number:7
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:7 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:5
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:7
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_by_setting:7
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_of_group:5
-#: sudoku.sudoku.fill_only_one_possible:7 sudoku.sudoku.guess:6
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:7 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:6 ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:11
-#: sudoku.sudoku.reduce_by_group_number:5
-#: sudoku.sudoku.reduce_by_two_possible_in_one_position:8
-#: sudoku.sudoku.update_chain:6 sudoku.sudoku.update_group_number:6
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:5 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:8
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:6
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:6
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.update_indirect_group_number:11
-#: sudoku.sudoku.write_down_possible:7
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:7
 msgid "tuple, (sets, reduces, method index, first, only), as following"
 msgstr "tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:"
 
@@ -554,9 +567,7 @@ msgstr "int, 當解完數獨時，最後一個點被填上的數字"
 msgid ""
 "An exception when x, y can't be set or reduce to or form the number v t: is "
 "the type: 's' means set, 'r' means reduce"
-msgstr ""
-"一個例外處理，當一個點無法被設定或減掉某個數字(v)時而產生, 其中 type 為 s 表"
-"示為設定動作, r 表示為減掉動作"
+msgstr "一個例外處理，當一個點無法被設定或減掉某個數字(v)時而產生, 其中 type 為 s 表示為設定動作, r 表示為減掉動作"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuError:4
 msgid "int, position x, which occurs an error"
@@ -583,8 +594,7 @@ msgid ""
 "An exception When the position, checkPos, has been set, and program want to "
 "setit"
 msgstr ""
-"一個例外處理, 當一個座標列表, [(x1, y1), ...], checkPos 有設定時, 這些點中如"
-"有被設定時, 就會引發此事件的處理"
+"一個例外處理, 當一個座標列表, [(x1, y1), ...], checkPos 有設定時, 這些點中如有被設定時, 就會引發此事件的處理"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuWhenPosSet:3
 msgid "int, position x, when one of the check positions has been set"
@@ -601,15 +611,15 @@ msgstr "int, 當要檢查的點被設定時, 所設定數字"
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.check_inobvious_number:1
 msgid ""
-"Check every number which has been assigned and known as group-number and its "
-"effect's boxes' does not have assigned that number\""
+"Check every number which has been assigned and known as group-number and its"
+" effect's boxes' does not have assigned that number\""
 msgstr ""
-"檢查每一個數字，從它們已被填寫的所在的位置與已發現的 Group Numer交叉影響下、"
-"那些尚未有該數字的區塊群組中，是否可以找到僅剩一個點來給予這個數字，如果是，"
-"則可以很明顯地此此點填上這個數字"
+"檢查每一個數字，從它們已被填寫的所在的位置與已發現的 Group "
+"Numer交叉影響下、那些尚未有該數字的區塊群組中，是否可以找到僅剩一個點來給予這個數字，如果是，則可以很明顯地此此點填上這個數字"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
-#: sudoku.sudoku.check_inobvious_number:4 sudoku.sudoku.check_obvious_number:4
+#: sudoku.sudoku.check_inobvious_number:4 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_obvious_number:4
 msgid "the first number to be checked"
 msgstr "要被檢查的第一個數字"
 
@@ -628,9 +638,7 @@ msgid ""
 "Check every number which has been assigned and its effect's boxes' does not "
 "have assigned that number"
 msgstr ""
-"檢查每一個數字，從它們已被填寫的所在的位置交叉影響下、那些尚未有該數字的區塊"
-"群組中，是否可以找到僅剩一個點來給予這個數字，如果是，則可以很明顯地此此點填"
-"上這個數字"
+"檢查每一個數字，從它們已被填寫的所在的位置交叉影響下、那些尚未有該數字的區塊群組中，是否可以找到僅剩一個點來給予這個數字，如果是，則可以很明顯地此此點填上這個數字"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:5
 msgid "False, check all numbers, True, check the first number only"
@@ -642,9 +650,7 @@ msgid ""
 "after the last record of original m.rec if same for all emulate result, it "
 "means that it must be true, so can do by it"
 msgstr ""
-"比較所有的結果列表，比較每個列表從原本最後一筆紀錄之後的行動紀錄，如果有相同"
-"者，則表示每一種狀況都會導致這個結果，那此行動就應該是符合邏輯的，可以照做無"
-"誤"
+"比較所有的結果列表，比較每個列表從原本最後一筆紀錄之後的行動紀錄，如果有相同者，則表示每一種狀況都會導致這個結果，那此行動就應該是符合邏輯的，可以照做無誤"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.compare_result:5
 msgid "a two dimension list, [[Point, Assigned Number],...]"
@@ -658,8 +664,7 @@ msgstr "Matrix 物件列表, 每一個的 Matrix 物件代表一個模擬結果"
 msgid ""
 "tuple, (sets, reduces), sets: the amount of setting, reduces: the amount of "
 "reducing"
-msgstr ""
-"tuple, 格式為 (sets, reduces), sets: 設定的總數， reduces: 削減可能性的總數"
+msgstr "tuple, 格式為 (sets, reduces), sets: 設定的總數， reduces: 削減可能性的總數"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:9
 msgid "and the result matrix"
@@ -697,12 +702,13 @@ msgid ""
 "When setting a number, may cause 1-3 groups left only one possible position "
 "check if a group have only position left, just set it."
 msgstr ""
-"當一個數字被設定在一個點上時，可能會造成 1 到 3 個群組只剩一個空白點，這裡就"
-"會檢查是否此狀況，如果有，則直接設定它，如同人的基本直覺一樣。"
+"當一個數字被設定在一個點上時，可能會造成 1 到 3 個群組只剩一個空白點，這裡就會檢查是否此狀況，如果有，則直接設定它，如同人的基本直覺一樣。"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_by_setting:4
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_of_group:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_only_one_possible:3
 msgid "Matrix Object"
 msgstr "數獨遊戲整體物件"
@@ -721,8 +727,8 @@ msgstr "假如在一群組(線或區塊)中只剩一個空白點時"
 #: sudoku.sudoku.fill_only_one_possible:1
 msgid ""
 "Check every unassigned position, if it's possible numbers left one only "
-"WRITEN_POSSIBLE_LIMIT:  True, Check position's writen is True or note False, "
-"don't check."
+"WRITEN_POSSIBLE_LIMIT:  True, Check position's writen is True or note False,"
+" don't check."
 msgstr "檢查每一個空白點，看是否在可能的數字列表中只剩一個。"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
@@ -759,9 +765,7 @@ msgstr "鍵結(chain)列表"
 msgid ""
 "Guess every possible number in a position by from the min possibles of "
 "positions"
-msgstr ""
-"以每個點剩下可填入的數字列表中，一一去猜測那一個數字可以求得數獨的解，猜測的"
-"點由最可填入的數字數從小排到大"
+msgstr "以每個點剩下可填入的數字列表中，一一去猜測那一個數字可以求得數獨的解，猜測的點由最可填入的數字數從小排到大"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.guess:4
 msgid ""
@@ -783,10 +787,7 @@ msgid ""
 "position(p2) which the position can see it if so, we can reduce all these "
 "positions which can see p1 and p2 at the same time from the first number"
 msgstr ""
-"當一個點(p1)只有兩個能數時，我們可以先假設這個點其中一數(設為first)，然後將此"
-"點設為另外一數(設為second)來模擬f求解，看這求解過程中，first這個數落在哪些點"
-"上，那對所落的點與p1有所交集(兩個點都能看見)的空白點而言，都不可能存在填入"
-"first這個數的可能，而可以讓這些點將這個可能數消除。"
+"當一個點(p1)只有兩個能數時，我們可以先假設這個點其中一數(設為first)，然後將此點設為另外一數(設為second)來模擬f求解，看這求解過程中，first這個數落在哪些點上，那對所落的點與p1有所交集(兩個點都能看見)的空白點而言，都不可能存在填入first這個數的可能，而可以讓這些點將這個可能數消除。"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.reg_method:1
 msgid "register all method as an object and save them into a list to return"
@@ -801,9 +802,7 @@ msgstr "求解法物件列表"
 msgid ""
 "Check is there an more obvious method for the position, p1 than method1 "
 "Obvious methods include fillLastPositionOfGroup=0 and checkObviousNumber=1"
-msgstr ""
-"當某(p1)點能夠以某求解法取得解答時，檢查此點是否能夠以更直覺的方法來設定，以"
-"便符合以人的角度來求解數獨"
+msgstr "當某(p1)點能夠以某求解法取得解答時，檢查此點是否能夠以更直覺的方法來設定，以便符合以人的角度來求解數獨"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.set_obvious_method_for_pos:5
@@ -844,14 +843,6 @@ msgid ""
 "positions have been set"
 msgstr "int, 除錯用, 如果一個座標 (x, y) 列表中其中的一點被設定時，則停止"
 
-#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:6
-msgid ""
-"int, limit the methods using, 0 -- no limit, >0 -- just using the methods "
-"which lever < level_limit"
-msgstr ""
-"int, 限制使用求解法的困難度， 0:  沒有限制， >0:  只使用困難度小於此參數的求"
-"解法"
-
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:7
 msgid ""
 "imt, if using emulator method, this tells the emulator just emulate in "
@@ -883,7 +874,8 @@ msgid "Try Error Method, only fill the first possible position"
 msgstr "電腦嘗試錯誤求解法，每一次呼叫只填第一個位置"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.try_error:5
-msgid "Matrix object, if it is None, you should give it the sudoku define file"
+msgid ""
+"Matrix object, if it is None, you should give it the sudoku define file"
 msgstr "Matrix 物件, 如果值為 None, 你必須給予數獨定義檔來產生 Matrix 初始物件"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.try_error:6
@@ -906,11 +898,9 @@ msgstr "檢查與更新 Matrix 物件(m)的鏈結狀況與資訊，並取得鏈�
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:1
 msgid ""
-"Update the group number, num, in a box, and store those group number in m.n."
-"group list"
-msgstr ""
-"檢查與更新這個數(num)在 Matrix 物件(m)是否有 Group Numbe，若有新的則更加至 m."
-"n.group 列表"
+"Update the group number, num, in a box, and store those group number in "
+"m.n.group list"
+msgstr "檢查與更新這個數(num)在 Matrix 物件(m)是否有 Group Numbe，若有新的則更加至 m.n.group 列表"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:4
 msgid "the number to be updated"
@@ -921,9 +911,7 @@ msgstr "要被更新的數字"
 msgid ""
 "Update in-direct Group Number, formed by the assigned number and Group "
 "Number already known, a recursive function"
-msgstr ""
-"一個遞迴函數，由已填在位置上的某數及其已知的 Group Number 遞迴地呼叫自己來找"
-"出此數所有其他可能的 Group Number"
+msgstr "一個遞迴函數，由已填在位置上的某數及其已知的 Group Number 遞迴地呼叫自己來找出此數所有其他可能的 Group Number"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.update_indirect_group_number:6
@@ -940,8 +928,8 @@ msgstr "int, 當此求解法有用時，解後要跳到哪一個求解法來繼�
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.update_indirect_group_number:8
 msgid ""
-"int, the pointed number to be checked firstly when it return back to another "
-"method"
+"int, the pointed number to be checked firstly when it return back to another"
+" method"
 msgstr "int, 當此求解法有用時，解後是否要指定某數當作其他求解法的起始數"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
@@ -957,8 +945,8 @@ msgid ""
 "WRITEN_POSSIBLE_LIMITS has set to 1..9, it will only write down the "
 "possibles which <= that limits"
 msgstr ""
-"如果常數 WRITEN_POSSIBLE_LIMITS 設定為 1..9 時，則表示要像人一樣將每個點的可"
-"能數 <= WRITEN_POSSIBLE_LIMITS 都寫在點上，讓人可以看出這些數的關聯而繼續求解"
+"如果常數 WRITEN_POSSIBLE_LIMITS 設定為 1..9 時，則表示要像人一樣將每個點的可能數 <= "
+"WRITEN_POSSIBLE_LIMITS 都寫在點上，讓人可以看出這些數的關聯而繼續求解"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:5
 msgid "Properties:"
@@ -1016,8 +1004,7 @@ msgstr "1: 如果只是消減一個數字"
 msgid ""
 "0: if is not in the possible set, if check is True, it will raise an "
 "SudokuError exception"
-msgstr ""
-"0: 無法消減該數，如果 check 是 True 時，就會啟動 SudokuError 這個例外處理"
+msgstr "0: 無法消減該數，如果 check 是 True 時，就會啟動 SudokuError 這個例外處理"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see:6
 msgid "return code:"
@@ -1040,88 +1027,133 @@ msgid "4: can see it in the box"
 msgstr "能夠在區塊群組看見它"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:8
-#: sudoku.sudoku.check_inobvious_number:9
-#: sudoku.sudoku.check_line_last_possible_for_number:7
-#: sudoku.sudoku.check_obvious_number:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:9 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:7
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_by_setting:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_of_group:7
-#: sudoku.sudoku.fill_only_one_possible:9 sudoku.sudoku.guess:8
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:9 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:8 ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:13
-#: sudoku.sudoku.reduce_by_group_number:7
-#: sudoku.sudoku.reduce_by_two_possible_in_one_position:10
-#: sudoku.sudoku.update_chain:8 sudoku.sudoku.update_group_number:8
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:7 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:10
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:8
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:8
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.update_indirect_group_number:13
-#: sudoku.sudoku.write_down_possible:9
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:9
 msgid "sets: int, the amount of set a number"
 msgstr "sets: int, 設定了多少點"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:9
-#: sudoku.sudoku.check_inobvious_number:10
-#: sudoku.sudoku.check_line_last_possible_for_number:8
-#: sudoku.sudoku.check_obvious_number:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:10 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:8
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_by_setting:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_of_group:8
-#: sudoku.sudoku.fill_only_one_possible:10 sudoku.sudoku.guess:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:10 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:9 ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:13
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:14
-#: sudoku.sudoku.reduce_by_group_number:8
-#: sudoku.sudoku.reduce_by_two_possible_in_one_position:11
-#: sudoku.sudoku.update_chain:9 sudoku.sudoku.update_group_number:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:8 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:11
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:9
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.update_indirect_group_number:14
-#: sudoku.sudoku.write_down_possible:10
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:10
 msgid "reduces: int, the amount of reduce a number"
 msgstr "reduces: int, 削減了多少點"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:10
-#: sudoku.sudoku.check_inobvious_number:11
-#: sudoku.sudoku.check_line_last_possible_for_number:9
-#: sudoku.sudoku.check_obvious_number:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:11 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:9
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_by_setting:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_of_group:9
-#: sudoku.sudoku.fill_only_one_possible:11 sudoku.sudoku.guess:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:11 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:10 ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:14
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:15
-#: sudoku.sudoku.reduce_by_group_number:9
-#: sudoku.sudoku.reduce_by_two_possible_in_one_position:12
-#: sudoku.sudoku.update_chain:10 sudoku.sudoku.update_group_number:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:9 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:12
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:10
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.update_indirect_group_number:15
-#: sudoku.sudoku.write_down_possible:11
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:11
 msgid "mothod index: int, method Index to restart using"
 msgstr "mothod index: int, 返回後要跳到哪一個求解法"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:11
-#: sudoku.sudoku.check_inobvious_number:12
-#: sudoku.sudoku.check_line_last_possible_for_number:10
-#: sudoku.sudoku.check_obvious_number:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:12 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:10
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_by_setting:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_of_group:10
-#: sudoku.sudoku.fill_only_one_possible:12 sudoku.sudoku.guess:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:12 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:11 ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:15
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:16
-#: sudoku.sudoku.reduce_by_group_number:10
-#: sudoku.sudoku.reduce_by_two_possible_in_one_position:13
-#: sudoku.sudoku.update_chain:11 sudoku.sudoku.update_group_number:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:10 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:13
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:11
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.update_indirect_group_number:16
-#: sudoku.sudoku.write_down_possible:12
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:12
 msgid ""
 "first: int, the first number to scan for the methods need this information"
 msgstr "first: int, 返回後要讓其他求解法從哪一個數字開始解"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:12
-#: sudoku.sudoku.check_inobvious_number:13
-#: sudoku.sudoku.check_line_last_possible_for_number:11
-#: sudoku.sudoku.check_obvious_number:13
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:13 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:11
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:13
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_by_setting:13
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.fill_last_position_of_group:11
-#: sudoku.sudoku.fill_only_one_possible:13 sudoku.sudoku.guess:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:13 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:12 ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:16
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:17
-#: sudoku.sudoku.reduce_by_group_number:11
-#: sudoku.sudoku.reduce_by_two_possible_in_one_position:14
-#: sudoku.sudoku.update_chain:12 sudoku.sudoku.update_group_number:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:11 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:14
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:12
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.update_indirect_group_number:17
-#: sudoku.sudoku.write_down_possible:13
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:13
 msgid "only: bool, if only check the first number or not"
 msgstr "only: bool, 返回後要讓其他求解法址只解第一個數字嗎"
 
@@ -1137,9 +1169,7 @@ msgstr "int, 目前使用的求解法索引數"
 msgid ""
 "Point list, set this variable, if you want to make an exception when this "
 "position has been set"
-msgstr ""
-"Point list, (x, y)座標列表，如果設定這個 list, 當其中之一被設定時，系統就停止"
-"處理"
+msgstr "Point list, (x, y)座標列表，如果設定這個 list, 當其中之一被設定時，系統就停止處理"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:6
 msgid ""
@@ -1161,9 +1191,7 @@ msgstr "格式為 [(m, x, y, idx),...] 的列表"
 msgid ""
 "m: Matrix object, the Matrix copy before try to set (x, y) to be the idx of "
 "possible numbers"
-msgstr ""
-"m: Matrix 物件, 在 (x, y) 點被設定為第 idx 可能數之前，將其備份起來，以便能夠"
-"回復"
+msgstr "m: Matrix 物件, 在 (x, y) 點被設定為第 idx 可能數之前，將其備份起來，以便能夠回復"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:11
 msgid "x: int, the position x of trying"
@@ -1215,29 +1243,27 @@ msgstr "str, 目前的工作目錄"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:1
 msgid ""
-"emulate the x, y to be set v, then start to use some basic methods to try to "
-"solve it will stop when and return:"
-msgstr ""
-"以猜測法將座標 (x, y) 的點設為數字 v，然後再開始使用一些基本求解法其求解， 直"
-"到有其下狀況發生時才停止並返回:"
+"emulate the x, y to be set v, then start to use some basic methods to try to"
+" solve it will stop when and return:"
+msgstr "以猜測法將座標 (x, y) 的點設為數字 v，然後再開始使用一些基本求解法其求解， 直到有其下狀況發生時才停止並返回:"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:4
-#: sudoku.sudoku.emulator:21
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:21
 msgid "1: one of the targets have been set the checkval"
 msgstr "1: 當 targets 座標列表中的一點被設定為 checkval 這個數時"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:5
-#: sudoku.sudoku.emulator:22
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:22
 msgid "2: isDone"
 msgstr "2: 已經解開了此數獨"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:6
-#: sudoku.sudoku.emulator:23
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:23
 msgid "-1: error is True"
 msgstr "-1: 如果破壞了數獨規則時"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:7
-#: sudoku.sudoku.emulator:24
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:24
 msgid "0: all basic methods have been tested, and can't solve"
 msgstr "0: 所有的基本求解法都嘗試過了，但還是無法得解"
 
@@ -1253,16 +1279,14 @@ msgstr "matrix: 模擬結果的 Matrix 物件"
 msgid ""
 "idx: int, if the rtn == 1, this will indicate the index of the target that "
 "has been assigned the number, checkval"
-msgstr ""
-"idx: int, 如果 rtn == 1 時, 此索引值將指出是哪一個點被設定為 checkval 這個數"
+msgstr "idx: int, 如果 rtn == 1 時, 此索引值將指出是哪一個點被設定為 checkval 這個數"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:1
 msgid ""
 "when a position(p1) has 2 or more possible numbers, we can emulate every "
 "possible number and get its result:"
-msgstr ""
-"當一個點(p1)有兩個或以上的可能數時，我們可以模擬每個數字，並取得其模擬結果:"
+msgstr "當一個點(p1)有兩個或以上的可能數時，我們可以模擬每個數字，並取得其模擬結果:"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:3
@@ -1277,21 +1301,17 @@ msgstr "假如它能夠解開整個數獨，那我們就可以設定這個數字
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:5
 msgid ""
-"if all possible number can's get condition 1 or 2, we can compare their rec, "
-"if they have the same records, we can do it."
-msgstr ""
-"使如所有的數都不能得到 1 或 2 的結果，我們可以比較這些模擬的求解過程，如果有"
-"它們都有相同的求解結果時，那表示這個步驟是個通解。"
+"if all possible number can's get condition 1 or 2, we can compare their rec,"
+" if they have the same records, we can do it."
+msgstr "使如所有的數都不能得到 1 或 2 的結果，我們可以比較這些模擬的求解過程，如果有它們都有相同的求解結果時，那表示這個步驟是個通解。"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:1
 msgid ""
 "when a group(lineX, lineY, Box) has 2 or more position have the same "
-"possible number, we can emulate every position to set the number and get its "
-"result:"
-msgstr ""
-"當一個群組(x 軸、y 軸、區塊)有兩個或以上的點能夠被填上某個特定的數字時，我們"
-"可以模擬每個點填上該數字後來取得此模擬結果:"
+"possible number, we can emulate every position to set the number and get its"
+" result:"
+msgstr "當一個群組(x 軸、y 軸、區塊)有兩個或以上的點能夠被填上某個特定的數字時，我們可以模擬每個點填上該數字後來取得此模擬結果:"
 
 #: ..\..\..\sudoku\sudoku.pydocstring of
 #: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:4
@@ -1310,6 +1330,15 @@ msgstr "假如能夠解開這個數獨時，我們就可以在此點設定此數
 msgid ""
 "if all possible position can's get condition 1 or 2, we can compare their "
 "rec, if they have the same records, we can do it."
-msgstr ""
-"假如所有的點都不能得到 1 或 2 的結果，我們可以比較每個位置模擬的結果，如果他"
-"們有共通的求解結果，那表示那個動作是一個通解"
+msgstr "假如所有的點都不能得到 1 或 2 的結果，我們可以比較每個位置模擬的結果，如果他們有共通的求解結果，那表示那個動作是一個通解"
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:6
+msgid ""
+"int, limit the methods using, 0: no limit, >0: just using the methods which "
+"lever < level_limit"
+msgstr "int, 限制使用求解法的困難度， 0:  沒有限制， >0:  只使用困難度小於此參數的求解法"
+
+#~ msgid ""
+#~ "int, limit the methods using, 0 -- no limit, >0 -- just using the methods "
+#~ "which lever < level_limit"
+#~ msgstr "int, 限制使用求解法的困難度， 0:  沒有限制， >0:  只使用困難度小於此參數的求解法"

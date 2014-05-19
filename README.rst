@@ -1,10 +1,6 @@
 Sudoku Solving Library
 ======================
 
-.. image:: animation.gif
-    :width: 100
-    :align: left
-
 For the purpose of studying solving Sudoku and learning python programming,
 including traditional method and oop.
 
@@ -27,6 +23,3 @@ There are so many sudoku's puzzle games and studying in the world. Some are made
 7. Studying OOP programming to solve a sudoku. OOP method can be treated as human behavior.
 
 You can read document at http://sudokustudylib.readthedocs.org/en/latest/index.html
-
-
-
