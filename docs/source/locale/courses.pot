@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Robert J. Hwang
+# This file is distributed under the same license as the SudokuStudyLib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-18 05:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\courses.rst:2
+# e2a65f17a4544c12a48cdd651e6ef378
+msgid "Courses"
+msgstr ""
+
+#: ..\courses.rst:4
+# e465a53e33e24ff498e3c13d3b57f27d
+msgid "We can arrange these courses as a sudoku summer camp. We can prepare 1-6 different level sudokus. The learners don't need to learn all levels. The purpose of these courses is NOT to teach all solving methods of sudoku, its purpose is logic learning. So, we can let different learners have their suitable target to learn."
+msgstr ""
+
+#: ..\courses.rst:8
+# 7cd5c8a4a34c46a695e96298cef8f848
+msgid "Who are suitable for these courses"
+msgstr ""
+
+#: ..\courses.rst:10
+# 2e902e4aeab94ecd984a24bbecdb66e9
+msgid "Every one who have studied in an elementary school for three or four years."
+msgstr ""
+
+#: ..\courses.rst:13
+# e561622416094152bcfc97ea1ce7c1d9
+msgid "First Step: Learn solve a sudoku by hand"
+msgstr ""
+
+#: ..\courses.rst:16
+#: ..\courses.rst:26
+#: ..\courses.rst:37
+# 376fd36db89c440597a80b6e1a521e91
+# 4b3eb78e72ac499a9f1ff43f517e7d62
+# 95876919d6f6433cb87251fc2a8d919b
+msgid "Hours:"
+msgstr ""
+
+#: ..\courses.rst:16
+#: ..\courses.rst:26
+#: ..\courses.rst:37
+# 3131a41375464df4a23d856748e366ba
+# d901f649eb984ef2b7069071c3a505ba
+# 1520d5c478174eeb8d3fe11a4ad66952
+msgid "14 hours, 2 hours/day, 7 days"
+msgstr ""
+
+#: ..\courses.rst:20
+#: ..\courses.rst:31
+#: ..\courses.rst:40
+# f43928827b694a5fae8fc4753738c27e
+# 771e35d0b7e7450087fd878e560d7edf
+# dab7b6b9fc0543e59c80d4eb788d2df4
+msgid "Purpose:"
+msgstr ""
+
+#: ..\courses.rst:19
+# 842f1a9c7c8044e88933c8547c9f3e03
+msgid "Find the suitable level for every learner"
+msgstr ""
+
+#: ..\courses.rst:20
+# 6b0ee63c3a1f4ab3ae286ed1e40768d9
+msgid "Learn the basic computer knowledge"
+msgstr ""
+
+#: ..\courses.rst:23
+# 1f321d4391714978b34e0d005f4c1ca3
+msgid "Second Step: Learn to find methods to solve a sudoku"
+msgstr ""
+
+#: ..\courses.rst:29
+# 51787ed73b154bd9b1bb125a80349594
+msgid "Nameing the method that they have found a model to solving a sudoku, and write down the description."
+msgstr ""
+
+#: ..\courses.rst:30
+# 043364fcb8c74164969d2cf8fb08cfd4
+msgid "Let them can express their methods to others."
+msgstr ""
+
+#: ..\courses.rst:31
+# 39520f338ebb4f249ed1832d9ac7dc4f
+msgid "Learn the basic python programming by solving their home work, like solving how add all the value of 1 to 100."
+msgstr ""
+
+#: ..\courses.rst:34
+# 1894989db7e44a85a98689ae6a20c790
+msgid "Third Step: Learn to write python code to implement their methods"
+msgstr ""
+
+#: ..\courses.rst:40
+# 215ca31b985941e9b12698ac0bc483e4
+msgid "Learning Object Oriented Programming(OOP) concept."
+msgstr ""
+
+#: ..\courses.rst:41
+# 107cde9a5c7d48339e84ac65d24098a6
+msgid "Learning to use OOP to implement their methods."
+msgstr ""
+

@@ -6,9 +6,9 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to SudokuStudyLib’s documentation! &mdash; SudokuStudyLib 1.0 documentation</title>
+    <title>安裝與使用 &mdash; SudokuStudyLib 1.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -46,7 +46,44 @@
              accesskey="P">上一頁</a> |</li>
         <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
       </ul>
-    </div>  
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">內容目錄</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">安裝與使用</a><ul>
+<li><a class="reference internal" href="#install">安裝方法</a></li>
+<li><a class="reference internal" href="#usage">使用方法</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一個主題</h4>
+  <p class="topless"><a href="index.html"
+                        title="上一章">SudokuStudyLib</a></p>
+  <h4>下一個主題</h4>
+  <p class="topless"><a href="base.html"
+                        title="下一章">數獨(Sudoku)基礎知識</a></p>
+  <h3>本頁</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/intro.txt"
+           rel="nofollow">顯示原始碼</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>快速搜尋</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -54,27 +91,26 @@
           <div class="body">
             
   <div class="section" id="welcome-to-sudokustudylib-s-documentation">
-<h1>Welcome to SudokuStudyLib&#8217;s documentation!<a class="headerlink" href="#welcome-to-sudokustudylib-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>This is a tool and library for studying Logic and Python programming. It includes two packages, one is Sudoku, and another is Matrix. The Sudoku is an oop approaching library,
-while the Matrix is a traditional function processing library.</p>
-<p>This library and document are major for Soduku package, the Matrix package is just a reference for a traditional programmer.</p>
+<h1>安裝與使用<a class="headerlink" href="#welcome-to-sudokustudylib-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>這個專案是一個 Python 程式庫以便讓使用者學習邏輯與 Python 程式設計。它包含了兩個套件，一個是 Sudoku，另一個是 Matrix。Sudoku 是一個以物件導向程式設計的模組，而 Matrix 則是一個傳統程式設計的模組。</p>
+<p>這個專案與文件只要是提供給 Sudoku 套件來使用。Matrix 只是提供給傳統程式設計者做一參考。</p>
 <div class="section" id="install">
-<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
-<p>You can use pip to install the library:</p>
+<h2>安裝方法<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<p>你可以使用 pip 來安裝這個專案:</p>
 <div class="highlight-python"><div class="highlight"><pre>pip install SudokuStudyLib
 </pre></div>
 </div>
-<p>and you can clone the project from:</p>
+<p>你也可以到下列網址來複製整個專案:</p>
 <div class="highlight-python"><div class="highlight"><pre>https://github.com/RobertOfTaiwan/SudokuStudyLib
 </pre></div>
 </div>
-<p>When you has installed, it will contain two packages, sudoku, and matrix. The following is the file structure:</p>
+<p>當你安裝完畢後，你安裝的目錄應包含了兩個套件，sudoku 及 matrix。下面就是整個目錄的結構表:</p>
 <img alt="_images/p1.png" src="_images/p1.png" />
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>使用方法<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">OOP method: sudoku, in the test.py:</p>
+<li><p class="first">物件導向：sudoku，在 test.py:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sudoku</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c"># to solve a sudoku defined in data directory</span>
@@ -108,7 +144,7 @@ while the Matrix is a traditional function processing library.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Traditional method: matrix, in the test.py:</p>
+<li><p class="first">傳統方法 ：matrix，在 test.py:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">matrix</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c"># solve it directly</span>
@@ -131,43 +167,6 @@ while the Matrix is a traditional function processing library.</p>
 
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">內容目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Welcome to SudokuStudyLib&#8217;s documentation!</a><ul>
-<li><a class="reference internal" href="#install">Install</a></li>
-<li><a class="reference internal" href="#usage">Usage</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>上一個主題</h4>
-  <p class="topless"><a href="index.html"
-                        title="上一章">SudokuStudyLib</a></p>
-  <h4>下一個主題</h4>
-  <p class="topless"><a href="base.html"
-                        title="下一章">數獨(Sudoku)基礎知識</a></p>
-  <h3>本頁</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/intro.txt"
-           rel="nofollow">顯示原始碼</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>快速搜尋</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

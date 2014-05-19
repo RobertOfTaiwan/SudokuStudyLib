@@ -39,27 +39,27 @@ METHOD_LEVEL_LIMIT_WHENTRY = 2  # if start using try, set the level limit to use
 class Status():
     """To Store running condition
 
-    ::
+    :methodLoopIdx: int, the index of the methods loops
+    :methodIdx: int, the method idx which run now
+    :checkPos: Point list, set this variable, if you want to make an exception when this position has been set
+    :writeDownAlready: bool, if the every un-assigned positions have been writen down their possible number?
+    :emulatePossibles: int, to set the possibles when using emulate method, for both positions and numbers
+    :tryStack: list of (m, x, y, idx)
 
-        methodLoopIdx: int, the index of the methods loops
-        methodIdx: int, the method idx which run now
-        checkPos: Point list, set this variable, if you want to make an exception when this position has been set
-        writeDownAlready: bool, if the every un-assigned positions have been writen down their possible number?
-        emulatePossibles: int, to set the possibles when using emulate method, for both positions and numbers
-        tryStack: list of (m, x, y, idx)
-            m: Matrix object, the Matrix copy before try to set (x, y) to be the idx of possible numbers
-            x: int, the position x of trying
-            y: int, the position y of trying
-            idx: int, the index of the possible numbers, starting from 0
-        tryIdx: int, the depth index of trying
-        tryUse: bool, if using Guess method or not
-        emuUse: bool, if using emulator methods or not
-        Scope: int, the difficult level of this sudoku
-        Level: int, the level Limit, 0 means no limit
-        Original: Matrix, the init Matrix
-        Result: Matrix, the now Matrix
-        printSteop: bool, if print the steps of solving
-        nowPath: str, record now path
+    - m: Matrix object, the Matrix copy before try to set (x, y) to be the idx of possible numbers
+    - x: int, the position x of trying
+    - y: int, the position y of trying
+    - idx: int, the index of the possible numbers, starting from 0
+
+    :tryIdx: int, the depth index of trying
+    :tryUse: bool, if using Guess method or not
+    :emuUse: bool, if using emulator methods or not
+    :Scope: int, the difficult level of this sudoku
+    :Level: int, the level Limit, 0 means no limit
+    :Original: Matrix, the init Matrix
+    :Result: Matrix, the now Matrix
+    :printSteop: bool, if print the steps of solving
+    :nowPath: str, record now path
     """
 
     name = {}
@@ -166,12 +166,12 @@ class Point:
         :param p1: Point, a point object
         :returns: int, the value can't be 3 or 7 it means the same pos
 
-        return code::
+        return code:
 
-            0: can't see p1
-            1: can see it in x line
-            2: can see it in y line
-            4: can see it in the box
+        - 0: can't see p1
+        - 1: can see it in x line
+        - 2: can see it in y line
+        - 4: can see it in the box
         """
 
         if self == p1:
@@ -499,18 +499,18 @@ class Matrix:
         """
         :param file: file, the define file of a sudoku
 
-        Properties::
+        Properties:
 
-            rec: list of (x, y, v, t, d), the record of all the solving steps
-            filled: int, the amount of assigned points
-            done: bool, if solved or not
-            error: bool, if there is an error occurs
-            lineX: LineX list
-            lineY: LineY list
-            b: Box List
-            p: a two dimensions of list of Point
-            n: Number list
-            chain: Chain list
+        - rec: list of (x, y, v, t, d), the record of all the solving steps
+        - filled: int, the amount of assigned points
+        - done: bool, if solved or not
+        - error: bool, if there is an error occurs
+        - lineX: LineX list
+        - lineY: LineY list
+        - b: Box List
+        - p: a two dimensions of list of Point
+        - n: Number list
+        - chain: Chain list
         """
         self.rec = []  # record all the steps,
         # element's format is (x, y, v, t, d), t="s"|"r", d="Description String"
@@ -680,11 +680,9 @@ class Matrix:
 
         :return: int, as following code
 
-        ::
-
-            2 -- if set a number,
-            1 -- if just set number
-            0 -- if is not in the possible set, if check is True, it will raise an SudokuError exception
+        - 2: if set a number,
+        - 1: if just set number
+        - 0: if is not in the possible set, if check is True, it will raise an SudokuError exception
         """
 
         if len(self.p[x][y].possible) <= 1:
@@ -760,13 +758,11 @@ def fill_only_one_possible(m, **kw):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
     sets = 0
     for line in m.p:
@@ -785,13 +781,11 @@ def fill_last_position_of_group(m, **kw):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     sets = 0
@@ -816,13 +810,11 @@ def fill_last_position_by_setting(m, sets):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     recIdx = len(m.rec) - 1
@@ -902,13 +894,11 @@ def check_obvious_number(m, first=1, only=False):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     sets = 0
@@ -963,13 +953,11 @@ def update_group_number(m, num):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     sets = 0
@@ -1021,13 +1009,11 @@ def update_indirect_group_number(m, num, amt=0, start=METHOD_DEF_BEGIN, first=SC
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     info = ""
@@ -1073,13 +1059,11 @@ def check_inobvious_number(m, first=1, only=False):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     sets = 0
@@ -1126,13 +1110,11 @@ def check_line_last_possible_for_number(m, **kw):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     sets = 0
@@ -1163,13 +1145,11 @@ def write_down_possible(m, **kw):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     Status.name["writeDownAlready"] = True
@@ -1196,13 +1176,11 @@ def reduce_by_group_number(m, first=1, only=False):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
     sets = 0
     actions = 0
@@ -1262,13 +1240,11 @@ def update_chain(m, **kw):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     sets = 0
@@ -1314,13 +1290,11 @@ def reduce_by_two_possible_in_one_position(m, **kw):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     reduces = 0
@@ -1364,23 +1338,22 @@ def reduce_by_two_possible_in_one_position(m, **kw):
 
 
 def reduce_by_emulate_possible_in_one_position(m, **kw):
-    """when a position(p1) has 2 or more possible numbers, we can emulate every possible number and get its result::
+    """when a position(p1) has 2 or more possible numbers, we can emulate every possible number and get its result:
 
-        1. if it causes an error, we can reduce that number,
-        2. if it can solve the sudoku, we can set this number,
-        3. if all possible number can's get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
+    - if it causes an error, we can reduce that number,
+    - if it can solve the sudoku, we can set this number,
+    - if all possible number can's get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
+
 
     :param m: Matrix object
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     emus = Status.name["emulatePossibles"]
@@ -1413,23 +1386,22 @@ def reduce_by_emulate_possible_in_one_position(m, **kw):
 
 def reduce_by_emulate_possible_number_in_group(m, **kw):
     """when a group(lineX, lineY, Box) has 2 or more position have the same possible number,
-    we can emulate every position to set the number and get its result::
+    we can emulate every position to set the number and get its result:
 
-        1. if it causes an error, we can reduce the position's possible number from that number,
-        2. if it can solve the sudoku, we can set this number in the position,
-        3. if all possible position can's get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
+    - if it causes an error, we can reduce the position's possible number from that number,
+    - if it can solve the sudoku, we can set this number in the position,
+    - if all possible position can's get condition 1 or 2, we can compare their rec, if they have the same records, we can do it.
+
 
     :param m: Matrix object
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     emus = Status.name["emulatePossibles"]
@@ -1510,12 +1482,12 @@ def compare_result(m, emu, result):
 
 def emulator(m, x, y, v, targets=[], checkval=0):
     """emulate the x, y to be set v, then start to use some basic methods to try to solve
-    it will stop when and return::
+    it will stop when and return:
 
-        1: one of the targets have been set the checkval
-        2: isDone
-        -1: error is True
-        0: all basic methods have been tested, and can't solve
+    - 1: one of the targets have been set the checkval
+    - 2: isDone
+    - -1: error is True
+    - 0: all basic methods have been tested, and can't solve
 
     and the result matrix
 
@@ -1528,14 +1500,13 @@ def emulator(m, x, y, v, targets=[], checkval=0):
 
     :return: tuple, (rtn, matrix, idx)
 
-    ::
-
-        rtn: 1: one of the targets have been set the checkval
-             2: isDone
-             -1: error is True
-             0: all basic methods have been tested, and can't solve
-        matrix: Matrix, the reulst of emulating
-        idx: int, if the rtn == 1, this will indicate the index of the target that has been assigned the number, checkval
+    - rtn:
+        * 1: one of the targets have been set the checkval
+        * 2: isDone
+        * -1: error is True
+        * 0: all basic methods have been tested, and can't solve
+    - matrix: Matrix, the reulst of emulating
+    - idx: int, if the rtn == 1, this will indicate the index of the target that has been assigned the number, checkval
     """
 
     check_pos_save = Status.name["checkPos"]
@@ -1712,13 +1683,11 @@ def guess(m, idx=0, **kw):
 
     :return: tuple, (sets, reduces, method index, first, only), as following
 
-    ::
-
-        sets: int, the amount of set a number
-        reduces: int, the amount of reduce a number
-        mothod index: int, method Index to restart using
-        first: int, the first number to scan for the methods need this information
-        only: bool, if only check the first number or not
+    - sets: int, the amount of set a number
+    - reduces: int, the amount of reduce a number
+    - mothod index: int, method Index to restart using
+    - first: int, the first number to scan for the methods need this information
+    - only: bool, if only check the first number or not
     """
 
     # if start using tryMethod, set the level to the METHOD_LEVEL_LIMIT_WHENTRY
@@ -1776,13 +1745,11 @@ class SolveMethod():
 
         :return: tuple, (sets, reduces, method index, first, only), as following
 
-        ::
-
-            sets: int, the amount of set a number
-            reduces: int, the amount of reduce a number
-            mothod index: int, method Index to restart using
-            first: int, the first number to scan for the methods need this information
-            only: bool, if only check the first number or not
+        - sets: int, the amount of set a number
+        - reduces: int, the amount of reduce a number
+        - mothod index: int, method Index to restart using
+        - first: int, the first number to scan for the methods need this information
+        - only: bool, if only check the first number or not
         """
 
         return self.fun(m, *args, **ks)
@@ -1819,7 +1786,7 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
     :param loop_limit: int, the limit for the method loops, 0: no limits
     :param rec_limit: int, for debug, when the records >= recLimit, it will stop, 0: no limits
     :param check: int, for debug, to set the a (x,y) list to check, it will stop when these positions have been set
-    :param level_limit: int, limit the methods using, 0 -- no limit, >0 -- just using the methods which lever < level_limit
+    :param level_limit: int, limit the methods using, 0: no limit, >0: just using the methods which lever < level_limit
     :param emu_limits: imt, if using emulator method, this tells the emulator just emulate in emu_limits possible numbers or positions
     :param use_try: bool, using guess method or not
     :param use_emu: bool, using emulator methods or not

@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Robert J. Hwang
+# This file is distributed under the same license as the SudokuStudyLib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-18 05:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\program.rst:2
+# 38d7b6d6a0bf4612b36f0f756f60b1b0
+msgid "Start Programming to Solve a Sudoku"
+msgstr ""
+
+#: ..\program.rst:4
+# c3abd870ae804e57b75c3c12d0a34d22
+msgid "When we have created a sudoku simulate world in the computer to solve a sudoku, now we should go ahead to implement some methods which we solve it in our own hands. In other world, programming, is the stuff which we teach computer to do something that we have known it."
+msgstr ""
+
+#: ..\program.rst:7
+# c9005807bf344eafadd5e062cca70aa0
+msgid "We first introduce the solve environment, then we will introduce some basic methods in this library."
+msgstr ""
+
+#: ..\program.rst:11
+# 43b5413810654e468f78ff0dd6733366
+msgid "Solving Environment"
+msgstr ""
+
+#: ..\program.rst:13
+# 09d02014310247c9bbb6ab3bd2ad198d
+msgid "We create a function solve() to do the real solving a sudoku, and we make two exception classes, SudokuDone, SudokuError to capture event happen when we use methods to solve a sudoku."
+msgstr ""
+
+#: ..\program.rst:15
+# 697346c8f4004ea0a951044c8bf82192
+msgid "What is \"Exception\"?"
+msgstr ""
+
+#: ..\program.rst:17
+# 0140ce8c8b7148fbb11f6fc3bde0b355
+msgid "Exception is an event defined, when the event condition has occurred, system will stop the processing and jump to the exception processing. There are two major exceptions in the environment:"
+msgstr ""
+
+#: ..\program.rst:21
+# 82a8cf7f97124a308b4cf1960fdc896a
+msgid "SudokuDone:"
+msgstr ""
+
+#: ..\program.rst:21
+# 45f9360a1d764eed8b6d1798b67d060c
+msgid "when the sudoku has been solved, will raise this exception"
+msgstr ""
+
+#: ..\program.rst:23
+# 610651ce4dcb45f89bd595b484cddee0
+msgid "SudokuError:"
+msgstr ""
+
+#: ..\program.rst:24
+# c4d8878567aa4a46bc19bed176b0a333
+msgid "when a country people to set in a house, but will break the rule of game, this will raise this exception"
+msgstr ""
+
+#: ..\program.rst:26
+# b525fd7c4aea4e47a49520a8cb1e9655
+msgid "To let the environment know how many methods they can use to solve a sudoku, we create a class, SolveMethod. We use this class to create all methods in a BRAIN. We can treat this BRAIN like the god of this valley. Every time, when people don't how to choose their suitable houses, you can ask the god of valley, and it will give an answer, or it would say that, \"**I don't know how to do either!**\""
+msgstr ""
+
+#: ..\program.rst:29
+# 5243d03616b7444dbd251b7119672d79
+msgid "Every method register in the Brain as a SovleMethod object, they have these major properties:"
+msgstr ""
+
+#: ..\program.rst:31
+# a6c246cf4403412dab6e3d9de0f22a4a
+msgid "fun: the function name of the method in python coding"
+msgstr ""
+
+#: ..\program.rst:32
+# 561545a246cd4dcc8c29435869a9559f
+msgid "idx: the index of the method, from the easier to the more difficult, the brain will use this sequence to solve a game one by one."
+msgstr ""
+
+#: ..\program.rst:33
+# 87389c702fd049f6bd36bdc2c36f43a4
+msgid "name: the name of the method"
+msgstr ""
+
+#: ..\program.rst:34
+# 58331337517d4dd091cb65cabe72de8f
+msgid "level: the difficult level for human, using to count a game's difficult level"
+msgstr ""
+
+#: ..\program.rst:37
+# f449564d413a4f33bdb3aa7304a1f18e
+msgid "Solving Process"
+msgstr ""
+
+#: ..\program.rst:39
+# b792fe752d7645ce83c60ffcbe22fa64
+msgid "The following is the flow chart of solve():"
+msgstr ""
+
+#: ..\program.rst:43
+# f19c718c4d8a452c91f06d3d11ea645d
+msgid "**WORK or NOT WORK?**"
+msgstr ""
+
+#: ..\program.rst:45
+# cfc4808b74304f629a8eca1d99c5fa68
+msgid "A method works or not means that using this method can:"
+msgstr ""
+
+#: ..\program.rst:47
+# 5495c099b8b34cd39c2daca9801718ac
+msgid "let one or more people to find his or their own house,"
+msgstr ""
+
+#: ..\program.rst:48
+# 73c7649591b44521b6665b413531cbb1
+msgid "OR can let one or more houses know they are not allowed for some countries' people."
+msgstr ""
+
+#: ..\program.rst:50
+# 66b7e60d976b46a3b0125ccb645ad09d
+msgid "In this flow chart, we know that:"
+msgstr ""
+
+#: ..\program.rst:52
+# fc9ef9ae74a248438214dbf12672bf4a
+msgid "When a method works to set a person or reduce a house's allowed people, it will return to the first method to restart solving the game."
+msgstr ""
+
+#: ..\program.rst:53
+# adfc1b2988554e3589f4ce887c3bb4e0
+msgid "If a method can't work to solve a game, it will give the game to the next method to solve it."
+msgstr ""
+
+#: ..\program.rst:54
+# 7fbaac3c42f84c879b7f746fbbbf7e26
+msgid "And if final method can't solve a game, it will go out and say \"I can't figure out this game, sorry!\""
+msgstr ""
+
+#: ..\program.rst:55
+# 373687f22ad842a28a6f30a818f1fbd8
+msgid "In the solving process, if \"Done\" or \"Error\" event occur, it will go out."
+msgstr ""
+
+#: ..\program.rst:58
+# f968343debbd49e28becd79db58858f4
+msgid "Some Basic Methods"
+msgstr ""
+
+#: ..\program.rst:60
+# f028101b6850481795d943a68747e8c8
+msgid "fill_only_one_possible:"
+msgstr ""
+
+#: ..\program.rst:62
+# 641d77b8ab784b5b8639e90518f4e2f1
+msgid "Find every house in a group, if there is only one house that one country people can live there, that house must let that country's people to live in."
+msgstr ""
+
+#: ..\program.rst:64
+# f418ad270b704ccb92adcdf1f0f4010d
+msgid "fill_last_position_of_group:"
+msgstr ""
+
+#: ..\program.rst:66
+# d94457c821a345e4a42a4ae161f5dc58
+msgid "When in a group(line or box) are only one left, it must allow only one country people to live there."
+msgstr ""
+
+#: ..\program.rst:68
+# b4fa7f61c7e64bf28c85dc3b0a7a2bdd
+msgid "check_obvious_number:"
+msgstr ""
+
+#: ..\program.rst:70
+# c3d6c9df56244856879e1aa6dfa924f2
+msgid "Check every country people who has lived in a house, and when these people observe other boxes which has yet not lived their country people, can find an only house that allowed their country people or not?"
+msgstr ""
+
+#: ..\program.rst:73
+# 0a50c1503475413f9d2769a6c23c3c41
+msgid "check_inobvious_number:"
+msgstr ""
+
+#: ..\program.rst:75
+# 03df5922a0874db897270f38320fa5f5
+msgid "It is the same method as check_obvious_number, but some boxes' houses are formed as a **Group Number**."
+msgstr ""
+
+#: ..\program.rst:0
+# 343e438d99e840abb61186f31830489b
+msgid "What is a **Chain**?"
+msgstr ""
+
+#: ..\program.rst:79
+# 3349a0828a4b451992dec3c3742f2ca1
+msgid "Chain is formed by two or above houses. In these houses, the amount of all different possible countries' people are equal to the amount of the houses. When a chain have formed, we can reduce the possible countries' people from the other houses in the same group of this chain."
+msgstr ""
+
+#: ..\program.rst:82
+# b4062aeb49cf4b689fbed27ddb51a802
+msgid "reduce_by_group_number:"
+msgstr ""
+
+#: ..\program.rst:84
+# 6e66fbf5c7f54150b4cab18ccebc976e
+msgid "If there is a **Group Number** in a box, the empty houses of its same direction could be reduce the possible country people of this Group Number."
+msgstr ""
+
+#: ..\program.rst:86
+# 7069f6d4bcec4606900394b9044d1dfc
+msgid "update_chain:"
+msgstr ""
+
+#: ..\program.rst:88
+# 31945f7518a4420bb12c521618de961f
+msgid "As the houses have been lived some people, this would make some empty houses reduce some possible countries' people. And then these empty houses in a group(x-way line, y-way line, box) may form a **Chain**."
+msgstr ""
+
+#: ..\program.rst:92
+# d12347afc43d4487a5dbfb1b0dc11b06
+msgid "How to implement a method?"
+msgstr ""
+
+#: ..\program.rst:94
+# e75b1418887e4047b90fdffd22812f36
+msgid "We could implement a method called check_obvious_for_a_country(m, num) method as an example:"
+msgstr ""
+
+#: ..\program.rst:121
+# 044caec4b7ff4edfa16c539490401589
+msgid "line#1, define a method, *m* is the world of this game, and **num** is a country id, here is 1-9."
+msgstr ""
+
+#: ..\program.rst:122
+# 0fe7131e7ef04cf1a9f8e3e7b0648bc1
+msgid "line#3, starts to find the all people who have lived in a house of a country."
+msgstr ""
+
+#: ..\program.rst:123
+# 52de2cee47d74907b1107150c0f29418
+msgid "line#4-9, it scan all its effect boxes if those have not been checked."
+msgstr ""
+
+#: ..\program.rst:124
+# a0b1c4281a29415a92b5f4267915a11d
+msgid "line#10-11, it the country people have live in this box, ignore it."
+msgstr ""
+
+#: ..\program.rst:125
+# 3cc7772c58e645d1afb980792347e5d5
+msgid "line#12-19, check all empty houses in this box which allow the country's people or not, if yes, put it in the Possible List."
+msgstr ""
+
+#: ..\program.rst:126
+# d53b22704ce74b7f9331e7d00fba688e
+msgid "line#20-21, if the Possible List has only one house, it must can be assigned this house to the country's people."
+msgstr ""
+

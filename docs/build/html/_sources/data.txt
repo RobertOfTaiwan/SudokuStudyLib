@@ -1,7 +1,7 @@
 How to make a simulator environment in Python to solve a sudoku
 ===============================================================
 
-I think classes defined is the most difficult for learner in the OOP method of programming. So in these courses of learning to solve sudoku, 
+We think classes defined is the most difficult for learner in the OOP method of programming. So in these courses of learning to solve sudoku, 
 we don't explain how to make a class, property, and methods in detail. But just make a explanation of the existed classes, properties and methods in this library to learners.
 So we can explain these data structures as a simulator environment to solve a sudoku like a human being.
 
@@ -23,9 +23,9 @@ Class is collective name for a group of objects which have same behaviors, featu
 
 An object is thing which belong a class or multi classes.You can treat an object is an entity of a class, like human is a class, but you is an object, an entity which belong human class.
 
-Depend to the domain which we want to approach,or to define, we will define some different classes to describe the same objects. Like if we want to design a system to manage houses in a place, we may define a 
-house class, that contain some people, some pets, and so on... But when our domain is to know all relationships of person, we may define a person class that contain some people, but no pets, 
-except we want to study the pets factor in a person relationship.
+Depend to the domain which we want to approach,or to define, we will define some different classes to describe the same objects. Like if we want to study a city bioecology system, we may define an 
+animal class, that contain some people, some pets, and so on... But when our domain is to make a phone book application, we may define a person class that contain some people, but no pets, 
+except our pets have a cell phone too.
 
 In this sudoku solving library, we define the following classes:
 

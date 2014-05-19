@@ -1,0 +1,481 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Robert J. Hwang
+# This file is distributed under the same license as the SudokuStudyLib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-18 05:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\data.rst:2
+# dbec9efeed37493c86ca4ba0c5a5f2bb
+msgid "How to make a simulator environment in Python to solve a sudoku"
+msgstr ""
+
+#: ..\data.rst:4
+# 3a26be1e38b84171b40e561b1c8cda67
+msgid "We think classes defined is the most difficult for learner in the OOP method of programming. So in these courses of learning to solve sudoku, we don't explain how to make a class, property, and methods in detail. But just make a explanation of the existed classes, properties and methods in this library to learners. So we can explain these data structures as a simulator environment to solve a sudoku like a human being."
+msgstr ""
+
+#: ..\data.rst:8
+# e2ddf242c86b45eaa017ae42d704088f
+msgid "We can first image that there are 9x9 houses in a beautiful valley, and they are build like:"
+msgstr ""
+
+#: ..\data.rst:0
+# 3caa571157634900991f38ae4efb17fc
+msgid "**An Imagined World**"
+msgstr ""
+
+#: ..\data.rst:14
+# 32cdf67e4ca046d9810d9aca392fc8d2
+msgid "There are 9 countries, every country has 9 people. They decide to live together in this beautiful valley. And there are 9x9 houses, They want to let every people live in one house, and every X-way line, Y-way line, and every 3x3 box include all countries' people. And if so, they can say themselves are a real united group in the world, can you help them?"
+msgstr ""
+
+#: ..\data.rst:17
+# b4ebf6c715a04255beb8297c2c22d9d7
+msgid "and then we can start to solve the wondeful world for these people..."
+msgstr ""
+
+#: ..\data.rst:20
+# 00b1889181a54b9591a5eaed6a9480d5
+msgid "What is a Class? and an Object?"
+msgstr ""
+
+#: ..\data.rst:22
+# e504229416dd42a1ac72c6de717b6723
+msgid "Class is collective name for a group of objects which have same behaviors, features, forms. So, animal can be a class name, and elephant is an kind of object of this class."
+msgstr ""
+
+#: ..\data.rst:24
+# 971d33862fe1462cb9769f89b22063fe
+msgid "An object is thing which belong a class or multi classes.You can treat an object is an entity of a class, like human is a class, but you is an object, an entity which belong human class."
+msgstr ""
+
+#: ..\data.rst:26
+# 28cf9bc6d4304de38451fd1b79a3a88d
+msgid "Depend to the domain which we want to approach,or to define, we will define some different classes to describe the same objects. Like if we want to study a city bioecology system, we may define an animal class, that contain some people, some pets, and so on... But when our domain is to make a phone book application, we may define a person class that contain some people, but no pets, except our pets have a cell phone too."
+msgstr ""
+
+#: ..\data.rst:30
+# 7860ca3fca044576b188cac501957b22
+msgid "In this sudoku solving library, we define the following classes:"
+msgstr ""
+
+#: ..\data.rst:32
+# ba8e165cb13144a790057a6d61abe382
+msgid "Number Class:"
+msgstr ""
+
+#: ..\data.rst:34
+# 004158a9ee5443c2b96e34ca906cdf10
+msgid "You can treat every number as a different man, there are 9 countries, and every country has 9 men. So we can treat the Number Class as a Country Class. Every country has their ID, here is 1-9, and every country would record the positions where their people live in this valley."
+msgstr ""
+
+#: ..\data.rst:37
+# 541c2034b0d641fcbfee48cc8c2c5c90
+msgid "Point Class:"
+msgstr ""
+
+#: ..\data.rst:39
+# 807e76bdb03145a692226326c7677b47
+msgid "Point is a house here. It indicate that there is empty or not, if it is not empty, which country people lives there? if it is empty, which counties' people can live here?"
+msgstr ""
+
+#: ..\data.rst:41
+# d39dc9d00e694633a369c7f3951879ac
+msgid "GroupBase Class:"
+msgstr ""
+
+#: ..\data.rst:43
+# 7ca664e5f9d4493e9d31c3c0512688c0
+msgid "GroupBase is group of X line, Y line or a 3x3 Box. This is base class of Box, lineX, lineY. It indicate which houses are belong to him, how many people have lived in this group? and which counties' people still not live in this group?"
+msgstr ""
+
+#: ..\data.rst:46
+# ed886fd468d748e59b5c8f9644f4892a
+msgid "Box Class:"
+msgstr ""
+
+#: ..\data.rst:48
+# ac4360a21cbb4ee6ba129b5839db2f9e
+msgid "Every 3x3 block. Every box has its id, from left to right, from top to down, it is assigned 1-9, as the following picture:"
+msgstr ""
+
+#: ..\data.rst:52
+# 317e3ba7d12645c1892157c535ca369c
+msgid "lineX Class:"
+msgstr ""
+
+#: ..\data.rst:54
+# be4b8467a36d440b971d4fb40f3ff688
+msgid "Every x-way line. Every x-way line has its id, from left to right, it is assigned 1-9, as the following picture:"
+msgstr ""
+
+#: ..\data.rst:58
+# 968cf92135c14740acd7f63448069bbd
+msgid "lineY Class:"
+msgstr ""
+
+#: ..\data.rst:60
+# a336e1e9637340908639b431c870e26d
+msgid "Every y-way line. Every y-way line has its id, from top to down, it is assigned 1-9, as the following picture:"
+msgstr ""
+
+#: ..\data.rst:64
+# 6abc4651bf38402aa685b11c04b7627b
+msgid "Matrix Class:"
+msgstr ""
+
+#: ..\data.rst:66
+# 9e728cd337584062a74ad5532a004183
+msgid "Matrix Class is the WORLD of a sudoku game. It is the beautiful valley, including 9 countries, every country have 9 people, there are 9x9 houses for all these people."
+msgstr ""
+
+#: ..\data.rst:69
+# 0ec515fa233d4dd99e8eb6c0ea8bf830
+msgid "What is a Property?"
+msgstr ""
+
+#: ..\data.rst:71
+# f9b5063ee50c4659840b69f7998f09a5
+msgid "Property is in a class to declaim what it cotain and how they look like or their conditions. Like a person class, may have these properties of how much money he have, how many children he have, , and first child is boy or girl, how old are them?"
+msgstr ""
+
+#: ..\data.rst:74
+# 5014a1fcea7241f08cf6928917e4bb4b
+msgid "The following are the major properties of all classes in this libryary:"
+msgstr ""
+
+#: ..\data.rst:76
+#: ..\data.rst:133
+# 67ebee899ad1415f8847ac7c6e1c03ac
+# 46459e0c353c443e8568802fbbb3460f
+msgid "Number class:"
+msgstr ""
+
+#: ..\data.rst:78
+# 90f471a86afb42ae8ad771e30ae73f8a
+msgid "v: the id of a country, it is 1-9."
+msgstr ""
+
+#: ..\data.rst:79
+# e2cd6255813a4063b94c02a443e448d1
+msgid "p: the list of the houses which these country people have lived in"
+msgstr ""
+
+#: ..\data.rst:80
+# 6bb119579b73495ca71494825d408df4
+msgid "filled: how many people have lived in a house"
+msgstr ""
+
+#: ..\data.rst:82
+#: ..\data.rst:137
+# e2827ada6de14a9ca58c5ea5cedd8960
+# f43d079533eb4f5d91722a9e9153971b
+msgid "Point class:"
+msgstr ""
+
+#: ..\data.rst:84
+# 9a1afdb1527b4c16bbb6a65cf86841a8
+msgid "x: the x-way postion of this house"
+msgstr ""
+
+#: ..\data.rst:85
+# 79d8204871fe43109bf023968acbe3dd
+msgid "y: the y-way position of this house"
+msgstr ""
+
+#: ..\data.rst:86
+# abf61656475341c294b86e1729d89f61
+msgid "v: which country people has lived here, if it is still empty, its value is 0"
+msgstr ""
+
+#: ..\data.rst:87
+# a771dcfe1c8b4f7ab23e965374f80733
+msgid "b: this house belogn which 3x3 box"
+msgstr ""
+
+#: ..\data.rst:89
+#: ..\data.rst:146
+# c3650d3c295a4195a578fe3590e6e61d
+# 0d355f57c5494715a0ae8a5be826eb2a
+msgid "GroupBase class:"
+msgstr ""
+
+#: ..\data.rst:91
+# e311b8c8c84242559ef3ee9378e92f2e
+msgid "idx: the id of this group"
+msgstr ""
+
+#: ..\data.rst:92
+# b1bce8147f53400f97cd95134c68adbc
+msgid "p: the list of the houses which belong this group"
+msgstr ""
+
+#: ..\data.rst:93
+# b39e37428a67455994eefbdbc85b4f6e
+msgid "filled: how many people have lived in this group"
+msgstr ""
+
+#: ..\data.rst:94
+# b3c569f714af46ef9ff680983273eb84
+msgid "possible: the list of country id which have not lived in this group"
+msgstr ""
+
+#: ..\data.rst:0
+# 76d4c0fb4df14d06a34d444b2ca7030f
+msgid "What is **effects**?"
+msgstr ""
+
+#: ..\data.rst:98
+# 30987f852bf14b0798dfac33a78d849b
+msgid "Effects of a box are the 4 boxes which the same direction of x or y with it. So, effectsX are the boxes that have the same x-way direction, while effectsY are the boxes that have the same y-way direction of it."
+msgstr ""
+
+#: ..\data.rst:101
+#: ..\data.rst:153
+# 0595f912a4924ed8a817c4d7e609d718
+# 3a70729fec9d40b6b1efdbca5fd0455a
+msgid "Box class:"
+msgstr ""
+
+#: ..\data.rst:103
+# f6d0915a2e794660a9d51bb32d026471
+msgid "All GroupBase Properties"
+msgstr ""
+
+#: ..\data.rst:104
+# ce4d766ff30342e486680a1823c11fbd
+msgid "effects: the box id list of a box's neighbors"
+msgstr ""
+
+#: ..\data.rst:105
+# f0be821308c14984ab8eb7979506f53f
+msgid "effectsX: the box id list of a box's neighbors which in x-way direction"
+msgstr ""
+
+#: ..\data.rst:106
+# 05dbdf2a65594317abe9623799bd13f7
+msgid "effectsY: the box id list of a box's neighbors which in Y-way direction"
+msgstr ""
+
+#: ..\data.rst:108
+#: ..\data.rst:164
+# cfbc064eb569472ea65f725eb0b23ed3
+# 7ddba8eb91c14b639223437ef0b05158
+msgid "lineX class:"
+msgstr ""
+
+#: ..\data.rst:110
+#: ..\data.rst:114
+# 8198f05ba8f248ab85691492cc143606
+# ac108114c959420cae5c827f10af90ac
+msgid "Having the same properties as GroupBase"
+msgstr ""
+
+#: ..\data.rst:112
+#: ..\data.rst:168
+# d0274cc072aa474c88d51ee20576d2fd
+# c03acc0e73864ea48d7208310ad18f24
+msgid "lineY class:"
+msgstr ""
+
+#: ..\data.rst:116
+#: ..\data.rst:172
+# d3397e89d5aa47039a073741a0e75d02
+# cd644c22f8ef4afbae0ca84c698b49b8
+msgid "Matrix class:"
+msgstr ""
+
+#: ..\data.rst:118
+# 60ef8e1ba661434fb0bb8deba83278f8
+msgid "p: A two dimention of point(house), from p[0][0] to p[8][8] to present all the houses in this valley."
+msgstr ""
+
+#: ..\data.rst:119
+# 088fd959d18c4f70bb18ca032a6de124
+msgid "lineX: A list of x-way line of the houses"
+msgstr ""
+
+#: ..\data.rst:120
+# 81c9be321a8e431f9e241698bafad9c9
+msgid "lineY: A list of y-way line of the houses"
+msgstr ""
+
+#: ..\data.rst:121
+# 5767128c19204056896b3cfd5b7e10d5
+msgid "b: A list of 3x3 box of the houses"
+msgstr ""
+
+#: ..\data.rst:122
+# 489f58575ee0462c846a601ebc077e3c
+msgid "n: A list of Country."
+msgstr ""
+
+#: ..\data.rst:123
+# 25ac6fbf165c46e6923d9e4e51ad506c
+msgid "filled: how many people have lived in a house now."
+msgstr ""
+
+#: ..\data.rst:126
+# a1accb0b2c354a269cd172321c2fd14c
+msgid "What is a Method?"
+msgstr ""
+
+#: ..\data.rst:128
+# 4f68faf71830491e9a5b149e137a43a7
+msgid "Methods are the behaviors of a class or an object. For example, if we define a radio class contain several buttons, then we should define the methods when some button has been pushed. It may start to receive a program from a station, or record a program into CD, etc..."
+msgstr ""
+
+#: ..\data.rst:131
+# aca5af2843b54f9e867a542d74a1cc34
+msgid "The following are the major methods of the classes in this library:"
+msgstr ""
+
+#: ..\data.rst:135
+# 4d4a73661e114b7f80719d6a04dd25ce
+msgid "setit(p1): when a country's people find a house(p1) to live, this method will be called"
+msgstr ""
+
+#: ..\data.rst:139
+# 8ed7c668cafe402688074152e40ee336
+msgid "can_see(p1): to check a house can see another house(p1) or not?"
+msgstr ""
+
+#: ..\data.rst:140
+# de8c076a1dd54afe975e5974b9cddc17
+msgid "can_see_those(posList): to check a house can see a list of houses, and return the houses list which it can see them."
+msgstr ""
+
+#: ..\data.rst:142
+# 695af269d96c4b6582f463cdb6871981
+msgid "What is \"**SEE**\"?"
+msgstr ""
+
+#: ..\data.rst:144
+# c098ec65da0541beb3bcb3b90cf44ceb
+msgid "the houses in the same x-way or y-way line, or in the same box, of a house, this means that this house can **SEE** all of them."
+msgstr ""
+
+#: ..\data.rst:148
+# 5b0bdaf1d6a54f4c9675d22bb9bd635a
+msgid "allow(v): check the group can allow the country people(whose id is v) to live or not?"
+msgstr ""
+
+#: ..\data.rst:149
+# b1b325ac14eb4fb6940676bd8b3413a1
+msgid "get_num_pos(v): get where the people live in this group who is the country people(whose id is v), if there is no this country's people, it will return None."
+msgstr ""
+
+#: ..\data.rst:150
+# aff589b16e3148de9e3a0030a876971d
+msgid "count_num_possible(count): get the countries' id and houses, which are empty now, and are possible to be assigned to a certain country people, and the houses are equal to the number(count)"
+msgstr ""
+
+#: ..\data.rst:151
+# 07b3d50249fa41ecbc5c8b0a0ecb7784
+msgid "get_all_pos(method): get all houses in this group, if method=\"a\"; if method=\"u\", get all empty houses, if method=\"s\", get all not empty houses."
+msgstr ""
+
+#: ..\data.rst:155
+# 9af63f291e3d4503b4deae7834858165
+msgid "All GroupBase methods"
+msgstr ""
+
+#: ..\data.rst:156
+# de9c1fac9bd34b6fa46970277be35504
+msgid "get_group_number(num): To Check the num in a box's would form a Group Number or not."
+msgstr ""
+
+#: ..\data.rst:158
+# 00b0c37d6bf34ef59e986b9a254ae00e
+msgid "What is \"**Group Number**\"?"
+msgstr ""
+
+#: ..\data.rst:160
+# 25a288ace49440578068f3391b3ff00b
+msgid "Group Number is in a box. Those houses in this box can and only can allow some country's people, and these houses in a same line(x-way line or y-way line), then we call these houses form a **Group Number**, We don't know which house is the country's people should live finally, but we know the other houses in this line will not allow the same country's people to live."
+msgstr ""
+
+#: ..\data.rst:166
+#: ..\data.rst:170
+# f12cae1117524a81aa787b4383f8071d
+# 3356c8f0e3c043b8919d1c65ebd1ee26
+msgid "Having the same methods as GroupBase"
+msgstr ""
+
+#: ..\data.rst:174
+# 395bf7d5b85a43218af90a08396289e3
+msgid "get_all_pos(method): if method=\"a\", get all houses; if method=\"u\", get all empty houses; if method=\"s\", get all houses where have lived people"
+msgstr ""
+
+#: ..\data.rst:175
+# bdc1c15f0b014a569930837855a4a4a0
+msgid "sort_unassigned_pos_by_possibles(possibles): get all empty houses which are only allowfd for [possibles] countries people, if possibles == 0, it will get all empty houses, and sorted by the possiles from low to high."
+msgstr ""
+
+#: ..\data.rst:177
+# 890f008096174b0ba48a966b557f79c6
+msgid "can_see(p0, method=\"u\", num=0): get the houses which cand the house(p0), if the num!=0, mean get the houses only that are allowed the num country's people."
+msgstr ""
+
+#: ..\data.rst:178
+# bdef03bb5fe94aee9671ef2747d5b81b
+msgid "setit(x, y, v): Let the v country's people live in the the house of the position (x, y)."
+msgstr ""
+
+#: ..\data.rst:179
+# 146421f11841447f808a37d9adbc4570
+msgid "reduce(x, y, v): When a country people find a suitable house to live, then any empty house can SEE the house will reduce their possible countries people to live in."
+msgstr ""
+
+#: ..\data.rst:180
+# 0814d0e01873450ebbde2ac3ad63e15a
+msgid "allow(x, y, v): check the v country people can live in the house of the position (x, y) or not?"
+msgstr ""
+
+#: ..\data.rst:181
+# c11100a2d2d948ca8be4aac4bf0ed9e3
+msgid "read(file): read the first defined that how many people and where they have lived in this valley."
+msgstr ""
+
+#: ..\data.rst:184
+# 367b166ab4f94bcd824f54c5a0b1ef5d
+msgid "Game Defined File"
+msgstr ""
+
+#: ..\data.rst:186
+# d67475f0b88c4b2fb213c5ad54c330ff
+msgid "You can define sudoku's game by giving x, y, v line by line in a text file. like the following: its define file is in the [installed directory]/sudoku/data/"
+msgstr ""
+
+#: ..\data.rst:0
+# 35a0cc33d1744eef91528380d98e06e7
+msgid "A sample define and its original and result matrix"
+msgstr ""
+
+#: ..\data.rst:1
+# 2dca75d7d58d495fa112050606f83037
+msgid "m3.data"
+msgstr ""
+
+#: ..\data.rst:1
+# c2aa64dacd7947b4b4972d4c7b6e9f28
+msgid "Original Matrix"
+msgstr ""
+
+#: ..\data.rst:1
+# 45bd9e1d4d5a47bc927330a7bf6d6f03
+msgid "Result Matrix"
+msgstr ""
+

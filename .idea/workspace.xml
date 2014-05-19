@@ -2,11 +2,159 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b64838e7-f7b1-48c3-9963-39a5d39b9c79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/base.mo" afterPath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/base.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/index.mo" afterPath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/index.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/base.po" afterPath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/base.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/index.po" afterPath="$PROJECT_DIR$/docs/build/locale/zh_TW/LC_MESSAGES/index.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/.doctrees/base.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/base.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_static/contents.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/.doctrees/courses.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/courses.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/.doctrees/data.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/data.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/.doctrees/environment.pickle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/.doctrees/index.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/index.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/.doctrees/intro.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/intro.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/.doctrees/logic.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/logic.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_static/navigation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/.doctrees/program.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/program.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/.doctrees/sudoku.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/sudoku.mo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/lib/sudoku-lib/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/locale/zh_TW/LC_MESSAGES/base.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/base.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/LC_MESSAGES/base.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/base.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/base.pot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/locale/zh_TW/LC_MESSAGES/courses.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/courses.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/LC_MESSAGES/courses.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/locale/zh_TW/LC_MESSAGES/data.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/LC_MESSAGES/data.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/data.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/locale/zh_TW/LC_MESSAGES/index.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/index.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/LC_MESSAGES/index.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/locale/zh_TW/LC_MESSAGES/intro.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/LC_MESSAGES/intro.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/intro.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/locale/zh_TW/LC_MESSAGES/logic.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/LC_MESSAGES/logic.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/logic.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/locale/zh_TW/LC_MESSAGES/program.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/LC_MESSAGES/program.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/program.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_static/sphinxdoc.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/locale/zh_TW/LC_MESSAGES/sudoku.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/LC_MESSAGES/sudoku.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/sudoku.po" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/lib/sudoku-lib/sudoku.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build/html/_static/traditional.css" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\doctrees\code.doctree" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\doctrees\matrix.doctree" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\html\_images\animation.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\html\_images\define.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\html\_modules\matrix\matrix.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\html\_modules\sudoku.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\html\_sources\code.txt" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\html\_sources\matrix.txt" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\html\code.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\html\matrix.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\.doctrees\base.doctree" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\.doctrees\courses.doctree" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\.doctrees\data.doctree" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\.doctrees\environment.pickle" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\.doctrees\index.doctree" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\.doctrees\intro.doctree" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\.doctrees\logic.doctree" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\.doctrees\program.doctree" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\.doctrees\sudoku.doctree" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\base.pot" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\base.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\base.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\courses.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\data.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\index.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\intro.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\logic.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\program.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\sudoku.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\base.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\base.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\courses.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\courses.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\data.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\data.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\index.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\index.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\intro.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\intro.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\logic.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\logic.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\program.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\program.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\sudoku.mo" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\locale\zh-TW\LC_MESSAGES\sudoku.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\source\locale\ja\LC_MESSAGES\base.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\source\locale\ja\LC_MESSAGES\courses.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\source\locale\ja\LC_MESSAGES\data.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\source\locale\ja\LC_MESSAGES\index.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\source\locale\ja\LC_MESSAGES\intro.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\source\locale\ja\LC_MESSAGES\logic.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\source\locale\ja\LC_MESSAGES\program.po" afterPath="" />
+      <change type="DELETED" beforePath="D:\workspace\sudokulib\docs\source\source\locale\ja\LC_MESSAGES\sudoku.po" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/base.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/base.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/courses.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/courses.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/data.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/data.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/intro.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/intro.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/logic.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/logic.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/objects.inv" afterPath="$PROJECT_DIR$/docs/build/html/objects.inv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/program.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/program.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/sudoku.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/sudoku.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/.buildinfo" afterPath="$PROJECT_DIR$/docs/build/html/.buildinfo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/base.html" afterPath="$PROJECT_DIR$/docs/build/html/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/base.rst" afterPath="$PROJECT_DIR$/docs/source/base.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/base.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/base.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/conf.py" afterPath="$PROJECT_DIR$/docs/source/conf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/courses.html" afterPath="$PROJECT_DIR$/docs/build/html/courses.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/data.html" afterPath="$PROJECT_DIR$/docs/build/html/data.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/data.rst" afterPath="$PROJECT_DIR$/docs/source/data.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/data.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/genindex.html" afterPath="$PROJECT_DIR$/docs/build/html/genindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/index.html" afterPath="$PROJECT_DIR$/docs/build/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/index.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/index.rst" afterPath="$PROJECT_DIR$/docs/source/index.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/index.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/index.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/intro.html" afterPath="$PROJECT_DIR$/docs/build/html/intro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/logic.html" afterPath="$PROJECT_DIR$/docs/build/html/logic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/logic.rst" afterPath="$PROJECT_DIR$/docs/source/logic.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/logic.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/logic.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/make.bat" afterPath="$PROJECT_DIR$/docs/make.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/program.html" afterPath="$PROJECT_DIR$/docs/build/html/program.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/py-modindex.html" afterPath="$PROJECT_DIR$/docs/build/html/py-modindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/search.html" afterPath="$PROJECT_DIR$/docs/build/html/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/searchindex.js" afterPath="$PROJECT_DIR$/docs/build/html/searchindex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/sudoku.html" afterPath="$PROJECT_DIR$/docs/build/html/sudoku.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_modules/sudoku/sudoku.html" afterPath="$PROJECT_DIR$/docs/build/html/_modules/sudoku/sudoku.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sudoku/sudoku.py" afterPath="$PROJECT_DIR$/sudoku/sudoku.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\courses.pot" afterPath="$PROJECT_DIR$/docs/source/locale/courses.pot" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\data.pot" afterPath="$PROJECT_DIR$/docs/source/locale/data.pot" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\index.pot" afterPath="$PROJECT_DIR$/docs/source/locale/index.pot" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\intro.pot" afterPath="$PROJECT_DIR$/docs/source/locale/intro.pot" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\logic.pot" afterPath="$PROJECT_DIR$/docs/source/locale/logic.pot" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\program.pot" afterPath="$PROJECT_DIR$/docs/source/locale/program.pot" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\sudoku.pot" afterPath="$PROJECT_DIR$/docs/source/locale/sudoku.pot" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\courses.po" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/courses.po" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\data.po" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/data.po" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\index.po" afterPath="$PROJECT_DIR$/docs/source/locale/zh_TW/LC_MESSAGES/index.po" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\intro.po" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/intro.po" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\logic.po" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/logic.po" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\program.po" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/program.po" />
+      <change type="MOVED" beforePath="D:\workspace\sudokulib\docs\build\locale\zh_TW\LC_MESSAGES\sudoku.po" afterPath="$PROJECT_DIR$/docs/source/locale/LC_MESSAGES/sudoku.po" />
     </list>
     <ignored path="sudokulib.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,16 +212,16 @@
       <file leaf-file-name="base.rst" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/source/base.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="1" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1480">
+            <state line="30" column="1" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1480">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.rst" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.rst" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/source/index.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.8842653" vertical-offset="0" max-vertical-offset="800">
+            <state line="34" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="800">
               <folding />
             </state>
           </provider>
@@ -88,10 +236,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sudoku.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="sudoku.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="13" selection-start="2975" selection-end="2975" vertical-scroll-proportion="0.0" vertical-offset="980" max-vertical-offset="39420">
+            <state line="1788" column="71" selection-start="66543" selection-end="66543" vertical-scroll-proportion="0.43994603" vertical-offset="35334" max-vertical-offset="38660">
               <folding />
             </state>
           </provider>
@@ -152,13 +300,13 @@
         <option value="$PROJECT_DIR$/matrix/test.py" />
         <option value="$PROJECT_DIR$/sudoku/test.py" />
         <option value="$PROJECT_DIR$/README.txt" />
-        <option value="$PROJECT_DIR$/sudoku/sudoku.py" />
         <option value="$PROJECT_DIR$/sudoku/__init__.py" />
         <option value="$PROJECT_DIR$/MANIFEST.in" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/README.rst" />
         <option value="$PROJECT_DIR$/docs/source/base.rst" />
         <option value="$PROJECT_DIR$/docs/source/index.rst" />
+        <option value="$PROJECT_DIR$/sudoku/sudoku.py" />
       </list>
     </option>
   </component>
@@ -267,7 +415,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sudokulib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sudokulib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doctrees" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -712,7 +882,11 @@
       <created>1400217767689</created>
       <updated>1400217767689</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add zh-TW language&#10;">
+      <created>1400219629124</created>
+      <updated>1400219629124</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -745,7 +919,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897863" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20597243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20597243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39904988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936978" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -802,7 +976,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/sudoku/sudoku.py</url>
-          <line>1837</line>
+          <line>1804</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
@@ -1056,13 +1230,6 @@
         <state line="644" column="8" selection-start="23446" selection-end="23446" vertical-scroll-proportion="0.8790637" vertical-offset="12204" max-vertical-offset="115800" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="13" selection-start="2975" selection-end="2975" vertical-scroll-proportion="0.0" vertical-offset="980" max-vertical-offset="39420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sudoku/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
@@ -1100,14 +1267,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/source/base.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="1" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1480">
+        <state line="30" column="1" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1480">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/source/index.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.8842653" vertical-offset="0" max-vertical-offset="800">
+        <state line="34" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sudoku/sudoku.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1788" column="71" selection-start="66543" selection-end="66543" vertical-scroll-proportion="0.43994603" vertical-offset="35334" max-vertical-offset="38660">
           <folding />
         </state>
       </provider>

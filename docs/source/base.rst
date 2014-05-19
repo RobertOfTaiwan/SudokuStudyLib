@@ -7,7 +7,7 @@ So, if we can combine these two kinds of tools to teach children or young men to
 A classic sudoku
 ----------------
 
-You can study what is sudoku in Wiki Page: http://en.wikipedia.org/wiki/Sudoku
+You can study what and how is sudoku in Wiki Page: http://en.wikipedia.org/wiki/Sudoku
 
 .. |sudoku_init| image:: p2.png
                  :width: 300 px
@@ -23,7 +23,7 @@ You can study what is sudoku in Wiki Page: http://en.wikipedia.org/wiki/Sudoku
 Rules
 -----
 
-The basic rules to solve a sudoku is very easy::
+The basic rules to solve a sudoku is very easy:
 
     1. Put the number of 1-9 to every line(including x-way and y-way) and every box.
     2. every line and every box can't duplicate of the number of 1-9.

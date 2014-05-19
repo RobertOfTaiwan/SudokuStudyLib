@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Robert J. Hwang
+# This file is distributed under the same license as the SudokuStudyLib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-18 05:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\index.rst:2
+# 2801d469b6e74266966945346e7f9419
+msgid "SudokuStudyLib"
+msgstr ""
+
+#: ..\index.rst:8
+# cd524684512b43a6b6e1448b32d4ce55
+msgid "**This is a python library for studying logic by solving Sudoku and learning the programming of python language.** Sudoku is a kind of puzzle game. it is one of the best way to learn logic, and at the same time, the Python language is one of the best computer language to learn logic. So, if we can combine these two kinds of tools to teach children or young men to learn logic, it will be perfect. This is why the project be done and going to."
+msgstr ""
+
+#: ..\index.rst:13
+# cc995980cba34a24ab774a427a752625
+msgid "Welcome to SudokuStudyLib's documentation!"
+msgstr ""
+
+#: ..\index.rst:15
+# de85e4ba7c4e40f088395eb742764d32
+msgid "Contents:"
+msgstr ""
+
+#: ..\index.rst:29
+# 329448e2ffb64e68a708fd7a267d957c
+msgid "Indices and tables"
+msgstr ""
+
+#: ..\index.rst:31
+# 4879b7af84064f2eb62b12e1ddeb8757
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ..\index.rst:32
+# ec2c10dabd9047838eee997319df450a
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ..\index.rst:33
+# 10abd241885140afa9beb522e753b33c
+msgid ":ref:`search`"
+msgstr ""
+

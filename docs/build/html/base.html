@@ -8,7 +8,7 @@
     
     <title>數獨(Sudoku)基礎知識 &mdash; SudokuStudyLib 1.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="top" title="SudokuStudyLib 1.0 documentation" href="index.html" />
-    <link rel="next" title="What is logic?" href="logic.html" />
-    <link rel="prev" title="Welcome to SudokuStudyLib’s documentation!" href="intro.html" /> 
+    <link rel="next" title="「邏輯」是甚麼?" href="logic.html" />
+    <link rel="prev" title="安裝與使用" href="intro.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,14 +39,52 @@
           <a href="py-modindex.html" title="Python Module Index"
              >模組</a> |</li>
         <li class="right" >
-          <a href="logic.html" title="What is logic?"
+          <a href="logic.html" title="「邏輯」是甚麼?"
              accesskey="N">下一頁</a> |</li>
         <li class="right" >
-          <a href="intro.html" title="Welcome to SudokuStudyLib’s documentation!"
+          <a href="intro.html" title="安裝與使用"
              accesskey="P">上一頁</a> |</li>
         <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
       </ul>
-    </div>  
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">內容目錄</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">數獨(Sudoku)基礎知識</a><ul>
+<li><a class="reference internal" href="#a-classic-sudoku">一個典型的數獨題目</a></li>
+<li><a class="reference internal" href="#rules">基本規則</a></li>
+<li><a class="reference internal" href="#how-many-possible-puzzles-in-a-9x9-sudoku">在一個 9x9 數獨中, 可以組成多少種可能的遊戲?</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一個主題</h4>
+  <p class="topless"><a href="intro.html"
+                        title="上一章">安裝與使用</a></p>
+  <h4>下一個主題</h4>
+  <p class="topless"><a href="logic.html"
+                        title="下一章">「邏輯」是甚麼?</a></p>
+  <h3>本頁</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/base.txt"
+           rel="nofollow">顯示原始碼</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>快速搜尋</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -58,7 +96,7 @@
 <p>數獨(Sudoku)是一種智力遊戲,  也是一種學習邏輯的最好工具. 而 Python 則是世界上最好的電腦程式語言之一. 所以如果能夠結合這兩種工具, 來教導小孩或青少年來學習邏輯的話, 那就是最好的組合.  這就是這個專案的緣起, 也是這個專案的目標.</p>
 <div class="section" id="a-classic-sudoku">
 <h2>一個典型的數獨題目<a class="headerlink" href="#a-classic-sudoku" title="Permalink to this headline">¶</a></h2>
-<p>你能夠從下列網站學習數獨相關知識: <a class="reference external" href="http://en.wikipedia.org/wiki/Sudoku">http://en.wikipedia.org/wiki/Sudoku</a></p>
+<p>你可以從下列網站取得與學習數獨(sudoku)的相關知識：<a class="reference external" href="http://en.wikipedia.org/wiki/Sudoku">http://en.wikipedia.org/wiki/Sudoku</a></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="42%" />
@@ -81,11 +119,15 @@
 </div>
 <div class="section" id="rules">
 <h2>基本規則<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h2>
-<p>數獨遊戲的規則相當簡單:</p>
-<div class="highlight-python"><div class="highlight"><pre>1. Put the number of 1-9 to every line(including x-way and y-way) and every box.
-2. every line and every box can&#39;t duplicate of the number of 1-9.
-</pre></div>
-</div>
+<p>數獨(Sudoku)的基本規則非常簡單：</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p class="first">將數字 1-9 填到每一行(包含 x-way 及 y-way)及每一個 3x3 區塊。</p>
+</li>
+<li><p class="first">每行及每個區塊的數字不能夠重複。</p>
+</li>
+</ol>
+</div></blockquote>
 </div>
 <div class="section" id="how-many-possible-puzzles-in-a-9x9-sudoku">
 <h2>在一個 9x9 數獨中, 可以組成多少種可能的遊戲?<a class="headerlink" href="#how-many-possible-puzzles-in-a-9x9-sudoku" title="Permalink to this headline">¶</a></h2>
@@ -226,44 +268,6 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">內容目錄</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">數獨(Sudoku)基礎知識</a><ul>
-<li><a class="reference internal" href="#a-classic-sudoku">一個典型的數獨題目</a></li>
-<li><a class="reference internal" href="#rules">基本規則</a></li>
-<li><a class="reference internal" href="#how-many-possible-puzzles-in-a-9x9-sudoku">在一個 9x9 數獨中, 可以組成多少種可能的遊戲?</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>上一個主題</h4>
-  <p class="topless"><a href="intro.html"
-                        title="上一章">Welcome to SudokuStudyLib&#8217;s documentation!</a></p>
-  <h4>下一個主題</h4>
-  <p class="topless"><a href="logic.html"
-                        title="下一章">What is logic?</a></p>
-  <h3>本頁</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/base.txt"
-           rel="nofollow">顯示原始碼</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>快速搜尋</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
       <div class="clearer"></div>
     </div>
     <div class="related">
@@ -276,10 +280,10 @@
           <a href="py-modindex.html" title="Python Module Index"
              >模組</a> |</li>
         <li class="right" >
-          <a href="logic.html" title="What is logic?"
+          <a href="logic.html" title="「邏輯」是甚麼?"
              >下一頁</a> |</li>
         <li class="right" >
-          <a href="intro.html" title="Welcome to SudokuStudyLib’s documentation!"
+          <a href="intro.html" title="安裝與使用"
              >上一頁</a> |</li>
         <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
       </ul>

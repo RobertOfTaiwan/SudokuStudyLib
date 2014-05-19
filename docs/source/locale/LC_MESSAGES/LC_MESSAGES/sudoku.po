@@ -1,0 +1,1324 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-18 05:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\sudoku.rst:2
+msgid "Package: Sudoku - the OOP method"
+msgstr ""
+
+#: ..\sudoku.rst:4
+msgid "This is the oop method to solve the Sudoku."
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box:1
+msgid "A 3x3 Box Object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box:3
+msgid "int, the box's id"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box:4
+msgid "the Point object list of this object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box:6
+msgid "This will replace the original GroupBase's init()"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box.get_group_number:1
+msgid ""
+"if the unassigned num in this box which it's all possible positions have the"
+" same direction, we call it as a GroupNumber"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box.get_group_number:4
+msgid "int, find this num, it is a group number in this box"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box.get_group_number:5
+msgid ""
+"list, the Point object list which to find a group number, if it is empty, "
+"the function will get all unassigned points to be a list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box.get_group_number:6
+msgid "bool, to call get_all_pos to not include x-line's unassigned point"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box.get_group_number:7
+msgid "bool, as above, but y-line"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Box.get_group_number:9
+msgid "GroupNumber, none or a GroupNumber Object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Chain:1
+msgid ""
+"A chain of two and above positions which are not in the same box but in the "
+"same line and can form a chain, means the possible number in this chain "
+"positions only can be filled in these positions"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Chain:4
+msgid "int list, presents the numbers of this chain"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Chain:5
+msgid "Point list, presents the positions that form the chain"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase:1
+msgid "The Base Class of a Line or Box"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineX:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineY:3
+msgid "The init function of a GroupBase object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase:5
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineX:5
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineY:5
+msgid "int, the id of this object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase:6
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineX:6
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineY:6
+msgid "the point object list in this object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.allow:1
+msgid "check the group can be filled the number(v)?"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.allow:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:5
+msgid "int, the number to be checked"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.allow:5
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.allow:7
+msgid "True or False"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.GroupBase.count_num_possible:1
+msgid ""
+"get the un-assigned position in this group, and possible numbers only in "
+"[count] positions"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.GroupBase.count_num_possible:3
+msgid ""
+"The output format is a tuple list, the tuple has two value, one is number, "
+"another is s position list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.GroupBase.count_num_possible:6
+msgid "int, how many positions are un-assigned to get"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.GroupBase.count_num_possible:8
+msgid "list, [(num,[p1, p2...]),...]"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_all_pos:1
+msgid "get position list in this group"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_all_pos:3
+msgid "list, exclude the positions in it"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_all_pos:4
+msgid "char, a: all, s:has assigned, u:not assigned"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_all_pos:5
+msgid ""
+"int, if method is u and set the number to 1-9, will get all possible pos "
+"which are possible to be assigned the num"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_all_pos:6
+msgid "bool, exclude the x line's positions"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_all_pos:7
+msgid "bool, exclude the y line's positions"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_all_pos:8
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:6
+msgid ""
+"bool, if set, check it, if it is True, just get the chain positions, or get "
+"the un-chained positions"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_all_pos:9
+msgid ""
+"int, if method=\"u\" and possibles!=None, it will only get the possible "
+"set's length = possibles"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.GroupBase.get_all_pos:11
+msgid "list: a List of Position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_num_pos:1
+msgid "get the position of a group which have been filled the number(v"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_num_pos:3
+msgid "int, the number to be found its position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupBase.get_num_pos:5
+msgid "None or a Point object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupNumber:1
+msgid "Group Number in Box"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupNumber:3
+msgid "int, the Box Object Idx"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupNumber:4
+msgid "int, the number that the object presents"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupNumber:5
+msgid "Point List, the Point Object List that form this Group Number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupNumber:6
+msgid "char, \"x\" or \"y\" means the direction of this Group Number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.GroupNumber:7
+msgid "int, the line(x or y) index"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineX:1
+msgid "Line of X"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.LineY:1
+msgid "Line of Y"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:1
+msgid "A Table of a Sudoku"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:3
+msgid "file, the define file of a sudoku"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:5
+msgid "Properties:"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:7
+msgid "rec: list of (x, y, v, t, d), the record of all the solving steps"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:8
+msgid "filled: int, the amount of assigned points"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:9
+msgid "done: bool, if solved or not"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:10
+msgid "error: bool, if there is an error occurs"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:11
+msgid "lineX: LineX list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:12
+msgid "lineY: LineY list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:13
+msgid "b: Box List"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:14
+msgid "p: a two dimensions of list of Point"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:15
+msgid "n: Number list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix:16
+msgid "chain: Chain list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.allow:1
+msgid "Checking if the position x, y, can be set the value v"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.allow:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.setit:3
+msgid "int, x position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.allow:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.setit:4
+msgid "int, y position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.allow:5
+msgid "int, the number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.can_see:1
+msgid "get the position list which can see the position, p"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.can_see:3
+msgid "char, \"u\": un-assigned positions, \"a\": all, \"s\": assigned positions"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.can_see:4
+msgid ""
+"if method=\"u\", the position must have be possible to be filled the number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.can_see:6
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles:6
+msgid "Point list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:1
+msgid ""
+"get all positions, to call the :meth:GroupBase.get_all_pos function to get "
+"it"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:3
+msgid "Point list, other than the postions in this list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:4
+msgid "char, \"a\" -- all, \"u\" -- unassigned, \"s\" -- assigned"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:5
+msgid ""
+"int, the unassigned position which has the [num] in its possible numbers"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.get_all_pos:7
+msgid ""
+"int, if set, only get the unassigned positions that those possible numbers "
+"are equal to it"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.print_rec:1
+msgid "Print all the steps of solving process"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.read:1
+msgid "Read Sudoku's Define from file"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.read:3
+msgid ""
+"file, the sudoku define file, can give it the absolute path name, if only "
+"the file name, it would find file in the data path."
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:1
+msgid "reduce the position(x, y)'s possible numbers from v"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:5
+msgid "int, the possible number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:6
+msgid "str, the description of solving"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:7
+msgid "bool, check or not"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:8
+msgid "str, the details of solving"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:10
+msgid "int, as following code"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:12
+msgid "2: if set a number,"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:13
+msgid "1: if just set number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.reduce:14
+msgid ""
+"0: if is not in the possible set, if check is True, it will raise an "
+"SudokuError exception"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.setit:1
+msgid "set the position x, y to be the number v"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.setit:5
+msgid "int, the number of this position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.setit:6
+msgid "str, the description of the solving"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.setit:7
+msgid "str, the detail methods of the solving"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Matrix.setit:9
+msgid "int, >=1 if set successfully, 0 if it can't be set the number v"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles:1
+msgid ""
+"Get unassign position's possible number list, format is [p1, p2,...] and "
+"Sorted By the possible numbers"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles:4
+msgid "0 for all, >=2, mean get only the possible numbers for it"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Number:1
+msgid "Number Object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Number:3
+msgid ""
+"You can imagine that an object of this class is equal to a country, every "
+"country has its own id from 1-9."
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Number:6
+msgid "int, the id of the Number, from 1 to 9"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.Number.can_see_by_group_number:1
+msgid ""
+"Check if the position, p1, can be seen of all this number's group number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.Number.can_see_by_group_number:3
+msgid "Point, a position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.Number.can_see_by_group_number:5
+msgid "gn if can be seen by it, or None"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Number.setit:1
+msgid "save assigned position in the p list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Number.setit:3
+msgid "Point, a position that are assigned to this object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point:1
+msgid "A Position in a Sudoku's table"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point:3
+msgid "We can imagine that a Point object is an house"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point:6
+msgid "This is the init of Point Object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point:8
+msgid "int, the x position of this object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point:9
+msgid "int, the y position of this object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see:1
+msgid "Check this position can see p1?"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see:3
+msgid "Point, a point object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see:4
+msgid "int, the value can't be 3 or 7 it means the same pos"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see:6
+msgid "return code:"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see:8
+msgid "0: can't see p1"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see:9
+msgid "1: can see it in x line"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see:10
+msgid "2: can see it in y line"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see:11
+msgid "4: can see it in the box"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see_those:1
+msgid "check this position can see which positions in the posList"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see_those:3
+msgid "list, a [(x, y),...] list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Point.can_see_those:4
+msgid "list, [(x, y),..."
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod:1
+msgid "Method Object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod:3
+msgid "function, the function name defined in Python"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod:4
+msgid "int, the sequence of executing solving"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod:5
+msgid "str, the description of this function"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod:6
+msgid "int, the difficult level"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod:7
+msgid "bool, is it a obvious method for a human"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:1
+msgid "To execute a method to solve a sudoku"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:3 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.compare_result:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:11
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.get_chains:3
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.guess:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:8
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:3 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:6
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.set_obvious_method_for_pos:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:15
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:5
+msgid "Matrix object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:4
+msgid "first(int), only(bool)"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:6
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:7 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:5
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:7
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_by_setting:7
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_of_group:5
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:7 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:6 ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:5 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:8
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:6
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:6
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:11
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:7
+msgid "tuple, (sets, reduces, method index, first, only), as following"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:8
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:9 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:7
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_by_setting:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_of_group:7
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:9 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:8 ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:13
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:7 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:10
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:8
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:8
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:13
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:9
+msgid "sets: int, the amount of set a number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:10 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:8
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_by_setting:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_of_group:8
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:10 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:9 ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:13
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:14
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:8 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:11
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:9
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:14
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:10
+msgid "reduces: int, the amount of reduce a number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:11 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:9
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_by_setting:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_of_group:9
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:11 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:10 ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:14
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:15
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:9 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:12
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:10
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:15
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:11
+msgid "mothod index: int, method Index to restart using"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:12 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:10
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_by_setting:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_of_group:10
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:12 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:11 ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:15
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:16
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:10 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:13
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:11
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:16
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:12
+msgid ""
+"first: int, the first number to scan for the methods need this information"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SolveMethod.run:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:13 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_line_last_possible_for_number:11
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:13
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_by_setting:13
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_of_group:11
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:13 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.guess:12 ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:16
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:17
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:11 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.reduce_by_two_possible_in_one_position:14
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:12
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:12
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:17
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:13
+msgid "only: bool, if only check the first number or not"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:1
+msgid "To Store running condition"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:3
+msgid "int, the index of the methods loops"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:4
+msgid "int, the method idx which run now"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:5
+msgid ""
+"Point list, set this variable, if you want to make an exception when this "
+"position has been set"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:6
+msgid ""
+"bool, if the every un-assigned positions have been writen down their "
+"possible number?"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:7
+msgid ""
+"int, to set the possibles when using emulate method, for both positions and "
+"numbers"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:8
+msgid "list of (m, x, y, idx)"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:10
+msgid ""
+"m: Matrix object, the Matrix copy before try to set (x, y) to be the idx of "
+"possible numbers"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:11
+msgid "x: int, the position x of trying"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:12
+msgid "y: int, the position y of trying"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:13
+msgid "idx: int, the index of the possible numbers, starting from 0"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:15
+msgid "int, the depth index of trying"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:16
+msgid "bool, if using Guess method or not"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:17
+msgid "bool, if using emulator methods or not"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:18
+msgid "int, the difficult level of this sudoku"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:19
+msgid "int, the level Limit, 0 means no limit"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:20
+msgid "Matrix, the init Matrix"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:21
+msgid "Matrix, the now Matrix"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:22
+msgid "bool, if print the steps of solving"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.Status:23
+msgid "str, record now path"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuDone:1
+msgid "An exception When the table has been filled 81 positions"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuDone:3
+msgid "int, last position x, when done"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuDone:4
+msgid "int, last position y, when done"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuDone:5
+msgid "int, the last number be set, when done"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuError:1
+msgid ""
+"An exception when x, y can't be set or reduce to or form the number v t: is "
+"the type: 's' means set, 'r' means reduce"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuError:4
+msgid "int, position x, which occurs an error"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuError:5
+msgid "int, position y, which occurs an error"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuError:6
+msgid "int, the number be set or reduced that occurs an error"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuError:7
+msgid "char, \"s\" -- set, \"r\" -- reduce"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuStop:1
+msgid "An exception When the the record number >= recLimit"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuWhenPosSet:1
+msgid ""
+"An exception When the position, checkPos, has been set, and program want to "
+"setit"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuWhenPosSet:3
+msgid "int, position x, when one of the check positions has been set"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuWhenPosSet:4
+msgid "int, position y, when one of the check positions has been set"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.SudokuWhenPosSet:5
+msgid "int, the number be set"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:1
+msgid ""
+"Check every number which has been assigned and known as group-number and its"
+" effect's boxes' does not have assigned that number\""
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:4 ..\..\..\sudoku\sudoku.pydocstring
+#: of sudoku.sudoku.check_obvious_number:4
+msgid "the first number to be checked"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_inobvious_number:5
+msgid "bool, False -- check all numbers, True -- check the first number only"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.check_line_last_possible_for_number:1
+msgid "Check every line that only have one position for un-assigned number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:1
+msgid ""
+"Check every number which has been assigned and its effect's boxes' does not "
+"have assigned that number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.check_obvious_number:5
+msgid "False, check all numbers, True, check the first number only"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.compare_result:1
+msgid ""
+"compare the result list, to check if there are same result in every step "
+"after the last record of original m.rec if same for all emulate result, it "
+"means that it must be true, so can do by it"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.compare_result:5
+msgid "a two dimension list, [[Point, Assigned Number],...]"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.compare_result:6
+msgid "Matrix list, the list of Matrix object of emulating results"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.compare_result:8
+msgid ""
+"tuple, (sets, reduces), sets: the amount of setting, reduces: the amount of "
+"reducing"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:1
+msgid ""
+"emulate the x, y to be set v, then start to use some basic methods to try to"
+" solve it will stop when and return:"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:4
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:21
+msgid "1: one of the targets have been set the checkval"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:5
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:22
+msgid "2: isDone"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:6
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:23
+msgid "-1: error is True"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:7
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:24
+msgid "0: all basic methods have been tested, and can't solve"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:9
+msgid "and the result matrix"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:12
+msgid "int, the start x position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:13
+msgid "int, the start y position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:14
+msgid "int, the number to be emulated be in the (x, y) position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:15
+msgid "Point list, tho target list to be checked"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:16
+msgid ""
+"int, when the targets be set, it will check whether the checkval has been "
+"assigned in those"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:18
+msgid "tuple, (rtn, matrix, idx)"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:23
+msgid "rtn:"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:25
+msgid "matrix: Matrix, the reulst of emulating"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.emulator:26
+msgid ""
+"idx: int, if the rtn == 1, this will indicate the index of the target that "
+"has been assigned the number, checkval"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_by_setting:1
+msgid ""
+"When setting a number, may cause 1-3 groups left only one possible position "
+"check if a group have only position left, just set it."
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_by_setting:4
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_of_group:3
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:3
+msgid "Matrix Object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_by_setting:5
+msgid "int, how many last sets want to be checked"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_last_position_of_group:1
+msgid "If the un-assigned positions in a group(line or box) are only one left"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:1
+msgid ""
+"Check every unassigned position, if it's possible numbers left one only "
+"WRITEN_POSSIBLE_LIMIT:  True, Check position's writen is True or note False,"
+" don't check."
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:4
+msgid "int, the first number of checking"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.fill_only_one_possible:5
+msgid "bool, just check the first number or not"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.get_chains:1
+msgid "get the possible positions(pos) numbers chain"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.get_chains:4
+msgid "lineX or lineY or Box object"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.get_chains:5
+msgid "Point list of a group"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.get_chains:6
+msgid "int, the amount of the numbers to form a chain"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.get_chains:8
+msgid "Chain list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.guess:1
+msgid ""
+"Guess every possible number in a position by from the min possibles of "
+"positions"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.guess:4
+msgid ""
+"int, 0 means the new guess, others mean the idx of the possible number of a "
+"position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:1
+msgid ""
+"when a position(p1) has 2 or more possible numbers, we can emulate every "
+"possible number and get its result:"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:3
+msgid "if it causes an error, we can reduce that number,"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:4
+msgid "if it can solve the sudoku, we can set this number,"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_in_one_position:5
+msgid ""
+"if all possible number can's get condition 1 or 2, we can compare their rec,"
+" if they have the same records, we can do it."
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:1
+msgid ""
+"when a group(lineX, lineY, Box) has 2 or more position have the same "
+"possible number, we can emulate every position to set the number and get its"
+" result:"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:4
+msgid ""
+"if it causes an error, we can reduce the position's possible number from "
+"that number,"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:5
+msgid "if it can solve the sudoku, we can set this number in the position,"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_emulate_possible_number_in_group:6
+msgid ""
+"if all possible position can's get condition 1 or 2, we can compare their "
+"rec, if they have the same records, we can do it."
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_group_number:1
+msgid "Reduce the possible number in a posiition by GroupNumber"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.reduce_by_two_possible_in_one_position:1
+msgid ""
+"when a position(p1) has two possible numbers only, we can assume if the "
+"position is one number(first) then try to emulate to set the position with "
+"the other number(second), then see the first number will be filled in a "
+"position(p2) which the position can see it if so, we can reduce all these "
+"positions which can see p1 and p2 at the same time from the first number"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.reg_method:1
+msgid "register all method as an object and save them into a list to return"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.reg_method:3
+msgid "SolveMethod list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.set_obvious_method_for_pos:1
+msgid ""
+"Check is there an more obvious method for the position, p1 than method1 "
+"Obvious methods include fillLastPositionOfGroup=0 and checkObviousNumber=1"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.set_obvious_method_for_pos:5
+msgid "int, method index"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.set_obvious_method_for_pos:6
+msgid "Point, the postion to be checked"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.set_obvious_method_for_pos:7
+msgid "int, the number to be assigned"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.set_obvious_method_for_pos:9
+msgid "True: set, False: not set"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:1
+msgid "Solve a sudoku which define in a file!"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:3
+msgid "int, the limit for the method loops, 0: no limits"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:4
+msgid ""
+"int, for debug, when the records >= recLimit, it will stop, 0: no limits"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:5
+msgid ""
+"int, for debug, to set the a (x,y) list to check, it will stop when these "
+"positions have been set"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:6
+msgid ""
+"int, limit the methods using, 0 -- no limit, >0 -- just using the methods "
+"which lever < level_limit"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:7
+msgid ""
+"imt, if using emulator method, this tells the emulator just emulate in "
+"emu_limits possible numbers or positions"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:8
+msgid "bool, using guess method or not"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:9
+msgid "bool, using emulator methods or not"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:10
+msgid "bool, printing the solving steps of not"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:12
+msgid "when a method can solve the sudoku"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.solve:13
+msgid "when a step will break the rules of sudoku game"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.try_error:1
+msgid "Try Error Method, only fill the first possible position"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.try_error:5
+msgid ""
+"Matrix object, if it is None, you should give it the sudoku define file"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.try_error:6
+msgid "file, the sudoku define file"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.try_error:7
+msgid "int, count the call depth of this function"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.try_error:9
+msgid "bool, True if the sudoku has been solved"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_chain:1
+msgid ""
+"Update the chain of line return: >=0 means the chain number's amount in the "
+"matrix, m"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:1
+msgid ""
+"Update the group number, num, in a box, and store those group number in "
+"m.n.group list"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.update_group_number:4
+msgid "the number to be updated"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:1
+msgid ""
+"Update in-direct Group Number, formed by the assigned number and Group "
+"Number already known, a recursive function"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:6
+msgid "int, the amount of Group Number found"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:7
+msgid ""
+"int, the method idx which will be called when it return back to another "
+"method"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:8
+msgid ""
+"int, the pointed number to be checked firstly when it return back to another"
+" method"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of
+#: sudoku.sudoku.update_indirect_group_number:9
+msgid ""
+"bool, just check the first number or not when it return back to another "
+"method"
+msgstr ""
+
+#: ..\..\..\sudoku\sudoku.pydocstring of sudoku.sudoku.write_down_possible:1
+msgid ""
+"Write down the possible numbers in every un-assigned position if "
+"WRITEN_POSSIBLE_LIMITS has set to 1..9, it will only write down the "
+"possibles which <= that limits"
+msgstr ""

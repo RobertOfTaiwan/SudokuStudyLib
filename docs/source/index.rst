@@ -2,7 +2,7 @@ SudokuStudyLib
 ==============
 
 .. image:: logo.jpg
-   :width: 180 px
+   :width: 150 px
    :align: left
 
 **This is a python library for studying logic by solving Sudoku and learning the programming of python language.**

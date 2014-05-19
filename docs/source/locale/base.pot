@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Robert J. Hwang
+# This file is distributed under the same license as the SudokuStudyLib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-18 05:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\base.rst:2
+# ff2a1d9169ac42378ad707fc430ec7e6
+msgid "The base knowledge of sudoku"
+msgstr ""
+
+#: ..\base.rst:4
+# fcc155aaba77458baac3f17d5d1f089b
+msgid "Sudoku is a kind of puzzle game. It is one of the best way to learn logic, and at the same time, the Python language is one of the best computer language to learn logic. So, if we can combine these two kinds of tools to teach children or young men to learn logic, it will be perfect. This is why the project be done and going to."
+msgstr ""
+
+#: ..\base.rst:8
+# 988016406796495cb58efef68422b2f7
+msgid "A classic sudoku"
+msgstr ""
+
+#: ..\base.rst:10
+# 1e13e6846c1441bcbce4e3404b24a7e7
+msgid "You can study what and how is sudoku in Wiki Page: http://en.wikipedia.org/wiki/Sudoku"
+msgstr ""
+
+#: ..\base.rst:19
+# c2b37984e51540528f8e00784b72f8e6
+msgid "The following is a classic sudoku:"
+msgstr ""
+
+#: ..\base.rst:19
+# 9ef5f96e79a6420db97455d812b14ac0
+msgid "and the following is the solution for it:"
+msgstr ""
+
+#: ..\base.rst:20
+# c19147ecb3c64fb283a0910446cbbb66
+msgid "|sudoku_init|"
+msgstr ""
+
+#: ..\base.rst:20
+# c8e4c053e4604dae8c9579f880379ae9
+msgid "|sudoku_result|"
+msgstr ""
+
+#: ..\base.rst:24
+# 30e3ab225fa745b8906c136e12b1d13e
+msgid "Rules"
+msgstr ""
+
+#: ..\base.rst:26
+# 483dc247ef8b4e72ab3f0b91bf606150
+msgid "The basic rules to solve a sudoku is very easy:"
+msgstr ""
+
+#: ..\base.rst:28
+# 14e63b6eaad14457bf252a9dd6c079a9
+msgid "Put the number of 1-9 to every line(including x-way and y-way) and every box."
+msgstr ""
+
+#: ..\base.rst:29
+# a92444656b87421ea6ebe8f3deebee9e
+msgid "every line and every box can't duplicate of the number of 1-9."
+msgstr ""
+
+#: ..\base.rst:32
+# fc50fd68b2f7466caa65f2deeefb95fd
+msgid "How many possible puzzles in a 9x9 sudoku"
+msgstr ""
+
+#: ..\base.rst:34
+# 2805f4c562fa4fe181fdfe752f677fa1
+msgid "If we put the first number in a the position (1, 1), there are must have 9 numbers can be selected to put in. Then we put the second number in the postion (1, 2), there are must have 8 numbers can be selected to put in. So, and as it going on, we can write down the possible numbers we can select in every position:"
+msgstr ""
+
+#: ..\base.rst:39
+# 78142a7b4d6c4540848aee217200685e
+msgid "9!"
+msgstr ""
+
+#: ..\base.rst:39
+#: ..\base.rst:39
+# 4dc76d9bda0d44f892f552bef3540cdb
+# f26e55de74de42bc81a3f02df85d9690
+msgid "6!"
+msgstr ""
+
+#: ..\base.rst:39
+#: ..\base.rst:39
+#: ..\base.rst:39
+# ebae98c21b8740049b6446bb14bd6c36
+# c5ade7ab9fe94bb1a339ac51d679482f
+# 1188ddf11241474c944280439f1fd8b4
+msgid "3!"
+msgstr ""
+
+#: ..\base.rst:39
+#: ..\base.rst:39
+#: ..\base.rst:39
+# 8adfd7f4105240d78efbd4eb110a65b7
+# d7f2f0be0ea942738a859fdc910ed072
+# fc7d8c2c7a10418290534cf3a6a1e5e6
+msgid "1!"
+msgstr ""
+
+#: ..\base.rst:41
+# fc3f818938934c2980bb233cd03c22e0
+msgid "9"
+msgstr ""
+
+#: ..\base.rst:41
+#: ..\base.rst:41
+#: ..\base.rst:44
+# 7072da921fe6492db44854d7b8dfcde5
+# 0e7d4e303c0b4d75854b290fb9a66d44
+# 9a27cb309f05417b813393fdf9883ab1
+msgid "6"
+msgstr ""
+
+#: ..\base.rst:41
+#: ..\base.rst:41
+#: ..\base.rst:41
+#: ..\base.rst:44
+#: ..\base.rst:44
+#: ..\base.rst:47
+# 9ab744de147b4f7fb36a61d028b003b4
+# 3be32b4d499542949fae01b10b0219de
+# 26d2c1f9a6864223bd61dd62f57c976d
+# ee414036438a4006aa63874df5d5ef35
+# 4a52f760537746c48c6ccbc95b3ba47d
+# f3113720608c4d87bf966897c7310495
+msgid "3"
+msgstr ""
+
+#: ..\base.rst:41
+#: ..\base.rst:41
+#: ..\base.rst:41
+#: ..\base.rst:42
+#: ..\base.rst:42
+#: ..\base.rst:42
+#: ..\base.rst:43
+#: ..\base.rst:43
+#: ..\base.rst:43
+#: ..\base.rst:43
+#: ..\base.rst:43
+#: ..\base.rst:43
+#: ..\base.rst:44
+#: ..\base.rst:44
+#: ..\base.rst:44
+#: ..\base.rst:44
+#: ..\base.rst:44
+#: ..\base.rst:44
+#: ..\base.rst:45
+#: ..\base.rst:45
+#: ..\base.rst:45
+#: ..\base.rst:45
+#: ..\base.rst:45
+#: ..\base.rst:45
+#: ..\base.rst:46
+#: ..\base.rst:46
+#: ..\base.rst:46
+#: ..\base.rst:46
+#: ..\base.rst:46
+#: ..\base.rst:46
+#: ..\base.rst:46
+#: ..\base.rst:46
+#: ..\base.rst:47
+#: ..\base.rst:47
+#: ..\base.rst:47
+#: ..\base.rst:47
+#: ..\base.rst:47
+#: ..\base.rst:47
+#: ..\base.rst:47
+#: ..\base.rst:47
+#: ..\base.rst:48
+#: ..\base.rst:48
+#: ..\base.rst:48
+#: ..\base.rst:48
+#: ..\base.rst:48
+#: ..\base.rst:48
+#: ..\base.rst:48
+#: ..\base.rst:48
+#: ..\base.rst:49
+#: ..\base.rst:49
+#: ..\base.rst:49
+#: ..\base.rst:49
+#: ..\base.rst:49
+#: ..\base.rst:49
+#: ..\base.rst:49
+#: ..\base.rst:49
+#: ..\base.rst:49
+# 7ccfb125c4d14beeaaf65a37cb7f8b8c
+# df0480204cba41d9aa747c3e36c0541e
+# c94ccf8a929048e4b8eb893446673b85
+# 15dbf21b2f714e10a5a79ca8a656de40
+# 4c5cd7b21ac74e828960c3903c3caa05
+# cde84181798149a68a7345ad04c1f42c
+# 367687ea06db4168a07f8b7a7f966f63
+# 400e469f4f9d4856b2c63314ee725d52
+# 2591a378cf0f414d831c450f2c38d06a
+# 13629000daae464db9ceed8d4e8222f4
+# 5809665a31b24c3b9e2970704c02c148
+# aee4de56d67d4d488a83f64595f0e6b8
+# da9b0639773e4075b11ef6ef36806aef
+# 976e3aec06c8434c930009dfc20cab69
+# 3c577e74f6ad410d975801bf1d352c61
+# 3b6e9dd903b842499d58c1e48eb93a09
+# 5cd71aa1f9494e9fb85a5b8787fe0737
+# c0618d921b4c4671a1b1e5dce1ae963d
+# e7584e44b10b4c60a29d821441033bbd
+# 5a6fd507cffe4326b9a7ec18452ddaf4
+# b0e382bcf58e4294b7e9593058d0dfab
+# 4bf50f9118c741bb89150f57ad573eb3
+# 7eb1b7f6aba64ffb89fffcc01eafc585
+# 7ceecea26fd44e319f2cc4344a99cfd9
+# aef93cfdae934a1a8a47f2fe7ca21f58
+# 2d4efe14dcd6462aaf1000abe9c3771f
+# 6babea00080c4da29702c13e9cb4c2a6
+# afd556f03def4df18f8fdd26db9b4ba5
+# 2534dbdec04948e2b115547d1db93e05
+# 0f0c85ef660d483da12b833aa5bc351e
+# 9d91411575ca4ddda3097d18e95ab74e
+# ce8980aa4eea40e397d1eeed97ddb81b
+# b31ea341fee349579b29273bd538b946
+# 39d7c5149b08452d9b9096ad069cab78
+# 105f0e826ded4adf8b0dcc6f75587b27
+# 13a7c83f1c4c4f2b94a0bcae2204ea5a
+# 68cca736a0f2477e9ccdeab8e8e62feb
+# 921bd50bf3694fb49463e00db1a3126a
+# de598070f13f4231bf0b6ede64ff5d77
+# 8284c999b01540879b0ef62bb51f4ddf
+# 73143a0ec1734f24b2b9c5a190281e8b
+# df0c316d90e740989432dc14532e5074
+# 5592b78ab2ca43a7a78e1c446b5ffcd6
+# f562c596747348318c3611f1cc31b51a
+# b76fd52c7aad455d808134ad61284403
+# 1270940e741c4a82ae77499d142c4de1
+# 5d05d9ee1d2c40d4a6e86fe7fa25cde0
+# 7e8f18b6d1ec434a84dd0bfe06d38e50
+# c089c4daec80470a8fdf4c5e4bb257b2
+# a37dc9c9c69548cb93a21e5cf34d6847
+# d53b4f3989524d0f914d793348d929f2
+# 8c202e8518f0429cabbdb99b1531abf3
+# a7a54f5f1e25447b96b7f300270ad7af
+# 1521fefe31d94fe4a3bed02054d59f91
+# 387eb8b9df0f42259a7b8fbef190acd7
+# d719349191854f7a84f785ba214e95b1
+# eca44633f52f42f6a879121570e8fec8
+msgid "1"
+msgstr ""
+
+#: ..\base.rst:42
+# 0bc778b95f5741f1b751029f87d81de6
+msgid "8"
+msgstr ""
+
+#: ..\base.rst:42
+#: ..\base.rst:42
+#: ..\base.rst:45
+# c3a0bf7e69794d50a2f333ad38121a1c
+# c6ff9a66c8ea45109edb667acb9e6118
+# 999c2fb604f548dfa2e71603b6fcae90
+msgid "5"
+msgstr ""
+
+#: ..\base.rst:42
+#: ..\base.rst:42
+#: ..\base.rst:42
+#: ..\base.rst:45
+#: ..\base.rst:45
+#: ..\base.rst:48
+# 4870412abd9a4755a3141a028be389fb
+# cc47b1849f654fb997ca6e0185df9eb8
+# 4f62936f4e56482481d55e30d84f9e14
+# 8e1ab1b2d4d346d98af4f9466aaae65d
+# ea2eb7f8746c4a80aad00b705e6aca71
+# e43e66731106417aa5fb6f93628a8572
+msgid "2"
+msgstr ""
+
+#: ..\base.rst:43
+# 88e703be82ed41878ee7d69e015fd2ab
+msgid "7"
+msgstr ""
+
+#: ..\base.rst:43
+#: ..\base.rst:43
+#: ..\base.rst:46
+# 912a3b35d24941ecb60b31ef401cb20d
+# 1f570c72947544f186a3c9c7ac13b9f6
+# a567f09553fd48aba090c155c873fe1f
+msgid "4"
+msgstr ""
+
+#: ..\base.rst:52
+# 022d8a2d63884be990adbbf48d9db313
+msgid "So the possible combinations are 9!*6!*3!*6!*3!*1!*3!*1!*1* = 4,514,807,808,000"
+msgstr ""
+
+#: ..\base.rst:54
+# a3156f9c793a48b6a7ee551831123f6b
+msgid "if we use python to caculate it::"
+msgstr ""
+
+#: ..\base.rst:64
+# afd82ca1a1f94521bf3523f6435171ae
+msgid "About the mathematics of sudoku, you can get it at Wiki, http://en.wikipedia.org/wiki/Mathematics_of_Sudoku"
+msgstr ""
+
