@@ -1,0 +1,60 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-22 06:23+0800\n"
+"Last-Translator: Robert J. Hwang <RobertOfTaiwan@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\index.rst:2
+msgid "SudokuStudyLib"
+msgstr "SudokuStudyLib"
+
+#: ..\index.rst:8
+msgid ""
+"**This is a python library for studying logic by solving Sudoku and learning "
+"the programming of python language.** Sudoku is a kind of puzzle game. it is "
+"one of the best way to learn logic, and at the same time, the Python "
+"language is one of the best computer language to learn logic. So, if we can "
+"combine these two kinds of tools to teach children or young men to learn "
+"logic, it will be perfect. This is why the project be done and going to."
+msgstr ""
+"** Il s'agit d'une bibliothèque Python pour l'étude de la logique en "
+"résolvant Sudoku et l'apprentissage de la programmation du langage python. "
+"** Sudoku est une sorte de jeu de puzzle. il est l'un des meilleur moyen "
+"d'apprendre la logique, et dans le même temps, le langage Python est l'un "
+"des meilleurs langage informatique pour apprendre logique. Donc, si nous "
+"pouvons combiner ces deux types d'outils pour enseigner aux enfants ou "
+"jeunes gens à apprendre la logique, ce sera parfait. C'est pourquoi le "
+"projet soit terminé et va."
+
+#: ..\index.rst:13
+msgid "Welcome to the Purest World of Human: Sudoku and Logic"
+msgstr "Bienvenue dans le monde la plus pure de l'homme: Sudoku et Logic"
+
+#: ..\index.rst:15
+msgid "Contents:"
+msgstr "contenu:"
+
+#: ..\index.rst:29
+msgid "Indices and tables"
+msgstr "Indices et tableaux"
+
+#: ..\index.rst:31
+msgid ":ref:`genindex`"
+msgstr ":ref:`genindex`"
+
+#: ..\index.rst:32
+msgid ":ref:`modindex`"
+msgstr ":ref:`modindex`"
+
+#: ..\index.rst:33
+msgid ":ref:`search`"
+msgstr ":ref:`search`"

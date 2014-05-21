@@ -1,0 +1,70 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 21:06+0800\n"
+"Last-Translator: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\intro.rst:2
+msgid "Welcome to SudokuStudyLib's documentation!"
+msgstr "Bienvenue à la documentation de SudokuStudyLib!"
+
+#: ..\intro.rst:4
+msgid ""
+"This is a tool and library for studying Logic and Python programming. It "
+"includes two packages, one is Sudoku, and another is Matrix. The Sudoku is "
+"an oop approaching library, while the Matrix is a traditional function "
+"processing library."
+msgstr ""
+"Il s'agit d'un outil et d'une bibliothèque pour étudier la logique et de programmation Python."
+" Il comprend deux forfaits, on est Sudoku, et un autre est Matrix. Le Sudoku est un oop approche bibliothèque,"
+" tandis que la matrice est une bibliothèque traditionnelle de traitement de la fonction."
+
+#: ..\intro.rst:7
+msgid ""
+"This library and document are major for Soduku package, the Matrix package "
+"is just a reference for a traditional programmer."
+msgstr ""
+"Cette bibliothèque et document sont important pour le paquet Soduku, le pa"
+"quet de Matrix est juste une référence pour un programmeur traditionnel."
+
+#: ..\intro.rst:10
+msgid "Install"
+msgstr "installer"
+
+#: ..\intro.rst:11
+msgid "You can use pip to install the library::"
+msgstr "Vous pouvez utiliser pip pour installer la bibliothèque ::"
+
+#: ..\intro.rst:15
+msgid "and you can clone the project from::"
+msgstr "et vous pouvez cloner le projet de ::"
+
+#: ..\intro.rst:19
+msgid ""
+"When you has installed, it will contain two packages, sudoku, and matrix. "
+"The following is the file structure:"
+msgstr ""
+"Lorsque vous a installé, il contiendra deux paquets, sudoku, et de la matrice."
+" Ce qui suit est la structure du fichier:"
+
+#: ..\intro.rst:25
+msgid "Usage"
+msgstr "usage"
+
+#: ..\intro.rst:27
+msgid "OOP method: sudoku, in the test.py::"
+msgstr "Méthode de la programmation orientée objet: sudoku, dans le test.py ::"
+
+#: ..\intro.rst:61
+msgid "Traditional method: matrix, in the test.py::"
+msgstr "Méthode traditionnelle: matrice, dans le test.py ::"
+

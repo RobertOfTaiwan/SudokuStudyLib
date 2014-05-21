@@ -1,0 +1,600 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-22 06:23+0800\n"
+"Last-Translator: Robert J. Hwang <RobertOfTaiwan@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\data.rst:2
+msgid "How to make a simulator environment in Python to solve a sudoku"
+msgstr ""
+"Comment faire un environnement de simulation en Python pour résoudre un "
+"sudoku"
+
+#: ..\data.rst:4
+msgid ""
+"We think classes defined is the most difficult for learner in the OOP method "
+"of programming. So in these courses of learning to solve sudoku, we don't "
+"explain how to make a class, property, and methods in detail. But just make "
+"a explanation of the existed classes, properties and methods in this library "
+"to learners. So we can explain these data structures as a simulator "
+"environment to solve a sudoku like a human being."
+msgstr ""
+"Nous pensons que les classes définies est la plus difficile pour l'apprenant "
+"dans la méthode de la programmation orientée objet de la programmation. "
+"Donc, dans ces cours d'apprentissage pour résoudre le sudoku, nous "
+"n'expliquons pas comment faire une classe, les biens et méthodes en détail. "
+"Mais juste faire une explication de classes existent, les propriétés et "
+"méthodes de cette bibliothèque pour les apprenants. Donc, nous pouvons "
+"expliquer ces structures de données comme un environnement de simulation "
+"pour résoudre un sudoku comme un être humain."
+
+#: ..\data.rst:8
+msgid ""
+"We can first image that there are 9x9 houses in a beautiful valley, and they "
+"are build like:"
+msgstr ""
+"Nous pouvons première image que il ya des maisons 9x9 dans une belle vallée, "
+"et ils sont construits comme:"
+
+#: ..\data.rst:0
+msgid "**An Imagined World**"
+msgstr "** Un monde imaginaire **"
+
+#: ..\data.rst:14
+msgid ""
+"There are 9 countries, every country has 9 people. They decide to live "
+"together in this beautiful valley. And there are 9x9 houses, They want to "
+"let every people live in one house, and every X-way line, Y-way line, and "
+"every 3x3 box include all countries' people. And if so, they can say "
+"themselves are a real united group in the world, can you help them?"
+msgstr ""
+"Il ya 9 pays, chaque pays dispose de 9 personnes. Ils décident de vivre "
+"ensemble dans cette belle vallée. Et il ya des maisons 9x9, Ils veulent "
+"laisser tous les gens vivent dans une maison, et chaque ligne X-chemin, la "
+"ligne Y-chemin, et chaque boîte 3x3 comprennent les gens de tous les pays. "
+"Et si c'est le cas, ils peuvent dire eux-mêmes sont un vrai groupe uni dans "
+"le monde, pouvez-vous les aider?"
+
+#: ..\data.rst:17
+msgid "and then we can start to solve the wondeful world for these people..."
+msgstr ""
+"et alors nous pouvons commencer à résoudre le monde wondeful pour ces "
+"gens ..."
+
+#: ..\data.rst:20
+msgid "What is a Class? and an Object?"
+msgstr "Qu'est-ce qu'une classe? et un objet?"
+
+#: ..\data.rst:22
+msgid ""
+"Class is collective name for a group of objects which have same behaviors, "
+"features, forms. So, animal can be a class name, and elephant is an kind of "
+"object of this class."
+msgstr ""
+"Classe est le nom collectif pour un groupe d'objets qui ont les mêmes "
+"comportements, les caractéristiques, les formes. Donc, animal peut être un "
+"nom de classe, et l'éléphant est un type d'objet de cette classe."
+
+#: ..\data.rst:24
+msgid ""
+"An object is thing which belong a class or multi classes.You can treat an "
+"object is an entity of a class, like human is a class, but you is an object, "
+"an entity which belong human class."
+msgstr ""
+"Un objet est chose qui appartiennent une classe ou plusieurs classes.You "
+"peuvent traiter un objet est une entité d'une classe, comme l'homme est une "
+"classe, mais vous est un objet, une entité qui appartient classe humaine."
+
+#: ..\data.rst:26
+msgid ""
+"Depend to the domain which we want to approach,or to define, we will define "
+"some different classes to describe the same objects. Like if we want to "
+"study a city bioecology system, we may define an animal class, that contain "
+"some people, some pets, and so on... But when our domain is to make a phone "
+"book application, we may define a person class that contain some people, but "
+"no pets, except our pets have a cell phone too."
+msgstr ""
+"Dépendra le domaine qui nous voulons aborder, ou à définir, nous allons "
+"définir quelques classes différentes pour décrire les mêmes objets. Comme si "
+"nous voulons étudier un système de bio-écologie de la ville, on peut définir "
+"une classe d'animaux, qui contiennent certaines personnes, certains animaux, "
+"et ainsi de suite ... Mais quand notre domaine est de faire une demande de "
+"livre de téléphone, nous pouvons définir une classe de personne qui "
+"contiennent certaines personnes, mais pas d'animaux, à l'exception de nos "
+"animaux de compagnie ont un téléphone portable aussi."
+
+#: ..\data.rst:30
+msgid "In this sudoku solving library, we define the following classes:"
+msgstr ""
+"Dans cette bibliothèque sudoku de résolution, nous définissons les classes "
+"suivantes:"
+
+#: ..\data.rst:32
+msgid "Number Class:"
+msgstr "Nombre Classe:"
+
+#: ..\data.rst:34
+msgid ""
+"You can treat every number as a different man, there are 9 countries, and "
+"every country has 9 men. So we can treat the Number Class as a Country "
+"Class. Every country has their ID, here is 1-9, and every country would "
+"record the positions where their people live in this valley."
+msgstr ""
+"Vous pouvez traiter chaque numéro comme un autre homme, il ya 9 pays, et "
+"chaque pays dispose de 9 hommes. Donc, nous pouvons traiter la classe en "
+"tant que numéro un de catégorie Pays. Chaque pays a son ID, voici 1-9, et "
+"chaque pays serait d'enregistrer les positions où leurs habitants vivent "
+"dans cette vallée."
+
+#: ..\data.rst:37
+msgid "Point Class:"
+msgstr "Point de Classe:"
+
+#: ..\data.rst:39
+msgid ""
+"Point is a house here. It indicate that there is empty or not, if it is not "
+"empty, which country people lives there? if it is empty, which counties' "
+"people can live here?"
+msgstr ""
+"Point est une maison ici. Il indique qu'il est vide ou pas, si elle n'est "
+"pas vide, quel pays les gens y vit? si elle est vide, les gens de qui comtés "
+"peuvent vivre ici?"
+
+#: ..\data.rst:41
+msgid "GroupBase Class:"
+msgstr "GroupBase Classe:"
+
+#: ..\data.rst:43
+msgid ""
+"GroupBase is group of X line, Y line or a 3x3 Box. This is base class of "
+"Box, lineX, lineY. It indicate which houses are belong to him, how many "
+"people have lived in this group? and which counties' people still not live "
+"in this group?"
+msgstr ""
+"GroupBase est un groupe de ligne de X, Y ou ligne d'une zone de 3x3. C'est "
+"la classe de base de boîte, Linex, Liney. Il indique que les maisons "
+"appartiennent à lui, combien de personnes ont vécu dans ce groupe? et les "
+"personnes qui comtés toujours pas vivre dans ce groupe?"
+
+#: ..\data.rst:46
+msgid "Box Class:"
+msgstr "Box Classe:"
+
+#: ..\data.rst:48
+msgid ""
+"Every 3x3 block. Every box has its id, from left to right, from top to down, "
+"it is assigned 1-9, as the following picture:"
+msgstr ""
+"Chaque bloc de 3x3. Chaque boîte a son Identifiant, de gauche à droite, de "
+"haut en bas, il est affecté 1-9, comme l'image suivante:"
+
+#: ..\data.rst:52
+msgid "lineX Class:"
+msgstr "LinEx Classe:"
+
+#: ..\data.rst:54
+msgid ""
+"Every x-way line. Every x-way line has its id, from left to right, it is "
+"assigned 1-9, as the following picture:"
+msgstr ""
+"Chaque ligne X-Way. Chaque ligne X-Way a son Identifiant, de gauche à "
+"droite, il est affecté 1-9, comme l'image suivante:"
+
+#: ..\data.rst:58
+msgid "lineY Class:"
+msgstr "Liney Classe:"
+
+#: ..\data.rst:60
+msgid ""
+"Every y-way line. Every y-way line has its id, from top to down, it is "
+"assigned 1-9, as the following picture:"
+msgstr ""
+"Chaque ligne y-chemin. Chaque ligne y-chemin a son Identifiant, de haut en "
+"bas, il est affecté 1-9, comme l'image suivante:"
+
+#: ..\data.rst:64
+msgid "Matrix Class:"
+msgstr "Matrix Class:"
+
+#: ..\data.rst:66
+msgid ""
+"Matrix Class is the WORLD of a sudoku game. It is the beautiful valley, "
+"including 9 countries, every country have 9 people, there are 9x9 houses for "
+"all these people."
+msgstr ""
+"Matrix Class est le monde d'un jeu de sudoku. C'est la belle vallée, dont 9 "
+"pays, tous les pays ont 9 personnes, il ya des maisons 9x9 pour tous ces "
+"gens."
+
+#: ..\data.rst:69
+msgid "What is a Property?"
+msgstr "Qu'est-ce qu'une propriété?"
+
+#: ..\data.rst:71
+msgid ""
+"Property is in a class to declaim what it cotain and how they look like or "
+"their conditions. Like a person class, may have these properties of how much "
+"money he have, how many children he have, , and first child is boy or girl, "
+"how old are them?"
+msgstr ""
+"La propriété est dans une classe à déclamer ce qu'il COTAIN et comment ils "
+"ressemblent ou leurs conditions. Comme une classe de personne, peuvent avoir "
+"ces propriétés de combien d'argent il encore, combien d'enfants il encore, "
+"et premier enfant est garçon ou fille, quel âge ont-elles?"
+
+#: ..\data.rst:74
+msgid "The following are the major properties of all classes in this libryary:"
+msgstr ""
+"Voici les principales propriétés de toutes les classes dans ce libryary:"
+
+#: ..\data.rst:76 ..\data.rst:133
+msgid "Number class:"
+msgstr "Nombre Classe:"
+
+#: ..\data.rst:78
+msgid "v: the id of a country, it is 1-9."
+msgstr "v: l'identifiant d'un pays, il est 1-9."
+
+#: ..\data.rst:79
+msgid "p: the list of the houses which these country people have lived in"
+msgstr "p: la liste des maisons de ces gens de la campagne ont vécu dans"
+
+#: ..\data.rst:80
+msgid "filled: how many people have lived in a house"
+msgstr "rempli: combien de personnes ont vécu dans une maison"
+
+#: ..\data.rst:82 ..\data.rst:137
+msgid "Point class:"
+msgstr "Point de Classe:"
+
+#: ..\data.rst:84
+msgid "x: the x-way postion of this house"
+msgstr "x: x-chemin postion de cette maison"
+
+#: ..\data.rst:85
+msgid "y: the y-way position of this house"
+msgstr "y: la position y-chemin de cette maison"
+
+#: ..\data.rst:86
+msgid ""
+"v: which country people has lived here, if it is still empty, its value is 0"
+msgstr "v: quel pays les gens ont vécu ici, si elle est vide, sa valeur est 0"
+
+#: ..\data.rst:87
+msgid "b: this house belogn which 3x3 box"
+msgstr "b: cette maison qui belogn boîte 3x3"
+
+#: ..\data.rst:89 ..\data.rst:146
+msgid "GroupBase class:"
+msgstr "GroupBase Classe:"
+
+#: ..\data.rst:91
+msgid "idx: the id of this group"
+msgstr "idx: l'identifiant de ce groupe"
+
+#: ..\data.rst:92
+msgid "p: the list of the houses which belong this group"
+msgstr "p: la liste des maisons qui appartiennent à ce groupe"
+
+#: ..\data.rst:93
+msgid "filled: how many people have lived in this group"
+msgstr "rempli: combien de personnes ont vécu dans ce groupe"
+
+#: ..\data.rst:94
+msgid "possible: the list of country id which have not lived in this group"
+msgstr "possible: la liste des id de pays qui n'ont pas vécu dans ce groupe"
+
+#: ..\data.rst:0
+msgid "What is **effects**?"
+msgstr "Qu'est-ce que les effets ** **?"
+
+#: ..\data.rst:98
+msgid ""
+"Effects of a box are the 4 boxes which the same direction of x or y with it. "
+"So, effectsX are the boxes that have the same x-way direction, while "
+"effectsY are the boxes that have the same y-way direction of it."
+msgstr ""
+"Effets d'une boîte sont les quatre cases dont le même sens de x ou y "
+"conformer. Donc, effectsX sont les boîtes qui ont la même direction x à sens "
+"unique, tandis que les boîtes sont effectsY qui ont la même direction y-"
+"chemin de celui-ci."
+
+#: ..\data.rst:101 ..\data.rst:153
+msgid "Box class:"
+msgstr "Box Classe:"
+
+#: ..\data.rst:103
+msgid "All GroupBase Properties"
+msgstr "Toutes les propriétés GroupBase"
+
+#: ..\data.rst:104
+msgid "effects: the box id list of a box's neighbors"
+msgstr "effets: la zone de liste identifiant les voisins d'une boîte"
+
+#: ..\data.rst:105
+msgid "effectsX: the box id list of a box's neighbors which in x-way direction"
+msgstr ""
+"effectsX: la zone de liste identifiant les voisins d'une boîte qui dans la "
+"direction X-Way"
+
+#: ..\data.rst:106
+msgid "effectsY: the box id list of a box's neighbors which in Y-way direction"
+msgstr ""
+"effectsY: la zone de liste identifiant les voisins d'une boîte qui dans la "
+"direction Y-chemin"
+
+#: ..\data.rst:108 ..\data.rst:164
+msgid "lineX class:"
+msgstr "LinEx Classe:"
+
+#: ..\data.rst:110 ..\data.rst:114
+msgid "Having the same properties as GroupBase"
+msgstr "Ayant les mêmes propriétés que GroupBase"
+
+#: ..\data.rst:112 ..\data.rst:168
+msgid "lineY class:"
+msgstr "Liney Classe:"
+
+#: ..\data.rst:116 ..\data.rst:172
+msgid "Matrix class:"
+msgstr "Matrix Class:"
+
+#: ..\data.rst:118
+msgid ""
+"p: A two dimention of point(house), from p[0][0] to p[8][8] to present all "
+"the houses in this valley."
+msgstr ""
+"p: A deux dimention du point (maison), de p [0] [0] pour p [8] [8] de "
+"présenter toutes les maisons dans cette vallée."
+
+#: ..\data.rst:119
+msgid "lineX: A list of x-way line of the houses"
+msgstr "LinEx: Une liste de ligne x-chemin des maisons"
+
+#: ..\data.rst:120
+msgid "lineY: A list of y-way line of the houses"
+msgstr "Liney: Une liste de droite y-chemin des maisons"
+
+#: ..\data.rst:121
+msgid "b: A list of 3x3 box of the houses"
+msgstr "b: Une liste de la boîte de 3x3 des maisons"
+
+#: ..\data.rst:122
+msgid "n: A list of Country."
+msgstr "n: Une liste de pays."
+
+#: ..\data.rst:123
+msgid "filled: how many people have lived in a house now."
+msgstr "remplis: combien de personnes ont vécu dans une maison maintenant."
+
+#: ..\data.rst:126
+msgid "What is a Method?"
+msgstr "Qu'est-ce qu'une méthode?"
+
+#: ..\data.rst:128
+msgid ""
+"Methods are the behaviors of a class or an object. For example, if we define "
+"a radio class contain several buttons, then we should define the methods "
+"when some button has been pushed. It may start to receive a program from a "
+"station, or record a program into CD, etc..."
+msgstr ""
+"Les méthodes sont les comportements d'une classe ou d'un objet. Par exemple, "
+"si nous définissons une classe de la radio contient plusieurs boutons, alors "
+"nous devrions définir les méthodes lorsque certaines bouton a été poussé. Il "
+"peut commencer à recevoir un programme d'une station, ou enregistrer un "
+"programme dans le lecteur CD, etc .."
+
+#: ..\data.rst:131
+msgid "The following are the major methods of the classes in this library:"
+msgstr "Voici les principales méthodes des classes de cette bibliothèque:"
+
+#: ..\data.rst:135
+msgid ""
+"setit(p1): when a country's people find a house(p1) to live, this method "
+"will be called"
+msgstr ""
+"Setit (p1): quand le peuple d'un pays à trouver une maison (p1) à vivre, "
+"cette méthode sera appelée"
+
+#: ..\data.rst:139
+msgid "can_see(p1): to check a house can see another house(p1) or not?"
+msgstr ""
+"can_see (p1): pour vérifier une maison peut voir une autre maison (p1) ou "
+"pas?"
+
+#: ..\data.rst:140
+msgid ""
+"can_see_those(posList): to check a house can see a list of houses, and "
+"return the houses list which it can see them."
+msgstr ""
+"can_see_those (posList): pour vérifier une maison peut voir une liste de "
+"maisons, et retourner la liste des maisons qui ne peut les voir."
+
+#: ..\data.rst:142
+msgid "What is \"**SEE**\"?"
+msgstr "Qu'est-ce que \"** VOIR **\"?"
+
+#: ..\data.rst:144
+msgid ""
+"the houses in the same x-way or y-way line, or in the same box, of a house, "
+"this means that this house can **SEE** all of them."
+msgstr ""
+"les maisons dans le même sens x ou y-chemin ligne ou dans la même boîte, "
+"d'une maison, ce qui signifie que cette maison peut ** VOIR ** tous."
+
+#: ..\data.rst:148
+msgid ""
+"allow(v): check the group can allow the country people(whose id is v) to "
+"live or not?"
+msgstr ""
+"permettre (v): vérifier le groupe peut permettre aux gens de la campagne "
+"(dont l'id est v) de vivre ou pas?"
+
+#: ..\data.rst:149
+msgid ""
+"get_num_pos(v): get where the people live in this group who is the country "
+"people(whose id is v), if there is no this country's people, it will return "
+"None."
+msgstr ""
+"get_num_pos (v): arriver là où les gens vivent dans ce groupe qui est les "
+"gens du pays (dont l'id est v), s'il n'y a pas des gens de ce pays, il "
+"retourne None."
+
+#: ..\data.rst:150
+msgid ""
+"count_num_possible(count): get the countries' id and houses, which are empty "
+"now, and are possible to be assigned to a certain country people, and the "
+"houses are equal to the number(count)"
+msgstr ""
+"count_num_possible (chiffre): obtenir l'identifiant et maisons, qui sont "
+"maintenant vide, et sont peut être attribué à un peuple des pays des pays, "
+"et les maisons sont égales au nombre (chiffre)"
+
+#: ..\data.rst:151
+msgid ""
+"get_all_pos(method): get all houses in this group, if method=\"a\"; if "
+"method=\"u\", get all empty houses, if method=\"s\", get all not empty "
+"houses."
+msgstr ""
+"get_all_pos (méthode): obtenir toutes les maisons de ce groupe, si la "
+"méthode = \"a \"; si la méthode = \" u\", obtenir toutes les maisons vides, "
+"si la méthode = \"s \", obtenir maisons pas tous vides."
+
+#: ..\data.rst:155
+msgid "All GroupBase methods"
+msgstr "Toutes les méthodes GroupBase"
+
+#: ..\data.rst:156
+msgid ""
+"get_group_number(num): To Check the num in a box's would form a Group Number "
+"or not."
+msgstr ""
+"get_group_number (num): Pour vérifier le nombre dans une boîte de formerait "
+"un numéro de groupe ou pas."
+
+#: ..\data.rst:158
+msgid "What is \"**Group Number**\"?"
+msgstr "Qu'est-ce que \"** Nombre de groupe **\"?"
+
+#: ..\data.rst:160
+msgid ""
+"Group Number is in a box. Those houses in this box can and only can allow "
+"some country's people, and these houses in a same line(x-way line or y-way "
+"line), then we call these houses form a **Group Number**, We don't know "
+"which house is the country's people should live finally, but we know the "
+"other houses in this line will not allow the same country's people to live."
+msgstr ""
+"Numéro du groupe se trouve dans une boîte. Ces maisons dans cette case "
+"peuvent et ne peuvent permettre aux gens de certains pays, et ces maisons "
+"dans un même ligne (ligne X-Way ou y de ligne de chemin), nous appellerons "
+"ces maisons forment un numéro de groupe ** **, Nous n 't savent quelle "
+"maison est les gens du pays devraient enfin vivre, mais nous savons que les "
+"autres maisons dans cette ligne ne seront pas permettre aux gens de la même "
+"pays à vivre."
+
+#: ..\data.rst:166 ..\data.rst:170
+msgid "Having the same methods as GroupBase"
+msgstr "Avoir les mêmes méthodes que GroupBase"
+
+#: ..\data.rst:174
+msgid ""
+"get_all_pos(method): if method=\"a\", get all houses; if method=\"u\", get "
+"all empty houses; if method=\"s\", get all houses where have lived people"
+msgstr ""
+"get_all_pos (méthode): si la méthode = \"a\", obtenir toutes les maisons; si "
+"la méthode = \"u\", obtenir toutes les maisons vides; si la méthode = \"s\", "
+"obtenir toutes les maisons où ont vécu les gens"
+
+#: ..\data.rst:175
+msgid ""
+"sort_unassigned_pos_by_possibles(possibles): get all empty houses which are "
+"only allowfd for [possibles] countries people, if possibles == 0, it will "
+"get all empty houses, and sorted by the possiles from low to high."
+msgstr ""
+"sort_unassigned_pos_by_possibles (possibles): obtenir toutes les maisons "
+"vides qui ne sont allowfd pour [possibles] pays, les personnes, si possibles "
+"== 0, il obtiendra toutes les maisons vides, et triés par les possiles de "
+"faible à élevé."
+
+#: ..\data.rst:177
+msgid ""
+"can_see(p0, method=\"u\", num=0): get the houses which cand the house(p0), "
+"if the num!=0, mean get the houses only that are allowed the num country's "
+"people."
+msgstr ""
+"can_see (p0, method = \"u\", num = 0): obtenir les maisons qui cand la "
+"maison (p0), si le num = 0, veut obtenir les maisons seulement sont "
+"autorisés les gens du pays num."
+
+#: ..\data.rst:178
+msgid ""
+"setit(x, y, v): Let the v country's people live in the the house of the "
+"position (x, y)."
+msgstr ""
+"Setit (x, y, v): Laissez les gens du pays de v vivent dans la maison de la "
+"position (x, y)."
+
+#: ..\data.rst:179
+msgid ""
+"reduce(x, y, v): When a country people find a suitable house to live, then "
+"any empty house can SEE the house will reduce their possible countries "
+"people to live in."
+msgstr ""
+"réduire (x, y, v): Quand un peuple du pays à trouver une maison convenable "
+"pour vivre, alors une maison vide peut voir la maison permettra de réduire "
+"leurs pays possibles gens à vivre po"
+
+#: ..\data.rst:180
+msgid ""
+"allow(x, y, v): check the v country people can live in the house of the "
+"position (x, y) or not?"
+msgstr ""
+"permettre (x, y, v): consultez le pays v gens peuvent vivre dans la maison "
+"de la position (x, y) ou pas?"
+
+#: ..\data.rst:181
+msgid ""
+"read(file): read the first defined that how many people and where they have "
+"lived in this valley."
+msgstr ""
+"lire (dossier): lire le premier défini que le nombre de personnes et où ils "
+"ont vécu dans cette vallée."
+
+#: ..\data.rst:184
+msgid "Game Defined File"
+msgstr "Jeu fichier défini"
+
+#: ..\data.rst:186
+msgid ""
+"You can define sudoku's game by giving x, y, v line by line in a text file. "
+"like the following: its define file is in the [installed directory]/sudoku/"
+"data/"
+msgstr ""
+"Vous pouvez définir le jeu de sudoku en donnant x, y, v ligne par ligne dans "
+"un fichier texte. comme suit: définir son fichier est dans le [répertoire "
+"d'installation] / sudoku / données /"
+
+#: ..\data.rst:0
+msgid "A sample define and its original and result matrix"
+msgstr "Un échantillon de définir et de sa matrice originale et le résultat"
+
+#: ..\data.rst:1
+msgid "m3.data"
+msgstr "m3.data"
+
+#: ..\data.rst:1
+msgid "Original Matrix"
+msgstr "Matrice d'origine"
+
+#: ..\data.rst:1
+msgid "Result Matrix"
+msgstr "résultat Matrice"

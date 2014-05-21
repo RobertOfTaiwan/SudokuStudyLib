@@ -1,0 +1,104 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 21:03+0800\n"
+"Last-Translator: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\courses.rst:2
+msgid "Courses"
+msgstr "cours"
+
+#: ..\courses.rst:4
+msgid ""
+"We can arrange these courses as a sudoku summer camp. We can prepare 1-6 "
+"different level sudokus. The learners don't need to learn all levels. The "
+"purpose of these courses is NOT to teach all solving methods of sudoku, its "
+"purpose is logic learning. So, we can let different learners have their "
+"suitable target to learn."
+msgstr ""
+"Nous pouvons organiser ces cours comme un camp d'été de sudoku. Nous pouv"
+"ons préparer 1-6 sudokus de niveau différents. Les apprenants n'ont pas besoin d'apprendre tous les niveaux."
+" Le but de ces cours n'est pas d'enseigner toutes les méthodes de résolution de sudoku,"
+" son but est l'apprentissage de la logique. Donc, nous pouvons laisser diff"
+"érents apprenants ont leur cible appropriée à apprendre."
+
+#: ..\courses.rst:8
+msgid "Who are suitable for these courses"
+msgstr "Qui sont adaptés à ces cours"
+
+#: ..\courses.rst:10
+msgid ""
+"Every one who have studied in an elementary school for three or four years."
+msgstr "Chacun qui ont étudié dans une école primaire de trois ou quatre ans."
+
+#: ..\courses.rst:13
+msgid "First Step: Learn solve a sudoku by hand"
+msgstr "Première étape: savoir résoudre un sudoku à la main"
+
+#: ..\courses.rst:16 ..\courses.rst:26 ..\courses.rst:37
+msgid "Hours:"
+msgstr "heures:"
+
+#: ..\courses.rst:16 ..\courses.rst:26 ..\courses.rst:37
+msgid "14 hours, 2 hours/day, 7 days"
+msgstr "14 heures, 2 heures / jour, 7 jours"
+
+#: ..\courses.rst:20 ..\courses.rst:31 ..\courses.rst:40
+msgid "Purpose:"
+msgstr "objectif:"
+
+#: ..\courses.rst:19
+msgid "Find the suitable level for every learner"
+msgstr "Trouver le niveau approprié pour chaque apprenant"
+
+#: ..\courses.rst:20
+msgid "Learn the basic computer knowledge"
+msgstr "Apprendre les connaissances de base en informatique"
+
+#: ..\courses.rst:23
+msgid "Second Step: Learn to find methods to solve a sudoku"
+msgstr "Deuxième étape: Apprenez à trouver des méthodes pour résoudre un sudoku"
+
+#: ..\courses.rst:29
+msgid ""
+"Nameing the method that they have found a model to solving a sudoku, and "
+"write down the description."
+msgstr ""
+"Nameing la méthode qu'ils ont trouvé un modèle pour résoudre un sudoku, et notez la description."
+
+#: ..\courses.rst:30
+msgid "Let them can express their methods to others."
+msgstr "Qu'ils puissent exprimer leurs méthodes à d'autres."
+
+#: ..\courses.rst:31
+msgid ""
+"Learn the basic python programming by solving their home work, like solving "
+"how add all the value of 1 to 100."
+msgstr ""
+"Apprendre la programmation de python de base par la résolution de leur travail à la maison,"
+" comme la résolution de la façon ajouter toute la valeur de 1 à 100."
+
+#: ..\courses.rst:34
+msgid "Third Step: Learn to write python code to implement their methods"
+msgstr ""
+"Troisième étape: Apprenez à écrire du code python à mettre en œuvre l"
+"eurs méthodes"
+
+#: ..\courses.rst:40
+msgid "Learning Object Oriented Programming(OOP) concept."
+msgstr "Orientée Objet Apprendre la programmation (POO) notion."
+
+#: ..\courses.rst:41
+msgid "Learning to use OOP to implement their methods."
+msgstr ""
+"Apprendre à utiliser la programmation orientée objet de mettre en œuvre leurs méthodes."
+

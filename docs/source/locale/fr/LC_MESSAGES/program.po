@@ -1,0 +1,358 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-22 06:28+0800\n"
+"Last-Translator: Robert J. Hwang <RobertOfTaiwan@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\program.rst:2
+msgid "Start Programming to Solve a Sudoku"
+msgstr "Lancer Programmation pour résoudre un Sudoku"
+
+#: ..\program.rst:4
+msgid ""
+"When we have created a sudoku simulate world in the computer to solve a "
+"sudoku, now we should go ahead to implement some methods which we solve it "
+"in our own hands. In other world, programming, is the stuff which we teach "
+"computer to do something that we have known it."
+msgstr ""
+"Lorsque nous avons créé un monde de sudoku simulation dans l'ordinateur pour "
+"résoudre un sudoku, maintenant nous devons aller de l'avant pour mettre en "
+"œuvre des méthodes qui nous résoudre dans nos propres mains. En autre monde, "
+"la programmation, est la substance qui nous enseignons ordinateur de faire "
+"quelque chose que nous avons connue."
+
+#: ..\program.rst:7
+msgid ""
+"We first introduce the solve environment, then we will introduce some basic "
+"methods in this library."
+msgstr ""
+"Nous présentons d'abord l'environnement résoudre, nous allons présenter "
+"quelques méthodes de base de cette bibliothèque."
+
+#: ..\program.rst:11
+msgid "Solving Environment"
+msgstr "environnement de résolution"
+
+#: ..\program.rst:13
+msgid ""
+"We create a function solve() to do the real solving a sudoku, and we make "
+"two exception classes, SudokuDone, SudokuError to capture event happen when "
+"we use methods to solve a sudoku."
+msgstr ""
+"Nous créons une fonction solve () pour faire la vraie résolution de sudoku, "
+"et nous faisons deux classes d'exception, SudokuDone, SudokuError pour "
+"capturer l'événement se produit lorsque nous utilisons des méthodes pour "
+"résoudre un sudoku."
+
+#: ..\program.rst:15
+msgid "What is \"Exception\"?"
+msgstr "Quelle est \"Exception\"?"
+
+#: ..\program.rst:17
+msgid ""
+"Exception is an event defined, when the event condition has occurred, system "
+"will stop the processing and jump to the exception processing. There are two "
+"major exceptions in the environment:"
+msgstr ""
+"Exception est un événement défini, lorsque la condition d'événement s'est "
+"produit, le système s'arrête le traitement et passer au traitement "
+"d'exception. Il existe deux grandes exceptions dans l'environnement:"
+
+#: ..\program.rst:21
+msgid "SudokuDone:"
+msgstr "SudokuDone:"
+
+#: ..\program.rst:21
+msgid "when the sudoku has been solved, will raise this exception"
+msgstr "lorsque le sudoku a été résolu, va soulever cette exception"
+
+#: ..\program.rst:23
+msgid "SudokuError:"
+msgstr "SudokuError:"
+
+#: ..\program.rst:24
+msgid ""
+"when a country people to set in a house, but will break the rule of game, "
+"this will raise this exception"
+msgstr ""
+"quand un peuple de pays à mettre dans une maison, mais seront briser la "
+"règle de jeu, cela posera cette exception"
+
+#: ..\program.rst:26
+msgid ""
+"To let the environment know how many methods they can use to solve a sudoku, "
+"we create a class, SolveMethod. We use this class to create all methods in a "
+"BRAIN. We can treat this BRAIN like the god of this valley. Every time, when "
+"people don't how to choose their suitable houses, you can ask the god of "
+"valley, and it will give an answer, or it would say that, \"**I don't know "
+"how to do either!**\""
+msgstr ""
+"Pour permettre à l'environnement sait combien les méthodes qu'ils peuvent "
+"utiliser pour résoudre un sudoku, nous créons une classe, SolveMethod. Nous "
+"utilisons cette classe pour créer toutes les méthodes dans un cerveau. Nous "
+"pouvons traiter ce cerveau comme le dieu de cette vallée. Chaque fois, quand "
+"les gens ne font pas la façon de choisir leurs maisons appropriées, vous "
+"pouvez demander au dieu de la vallée, et il vous donnera une réponse, ou il "
+"dire que, \"** Je ne sais pas comment faire non plus! **\""
+
+#: ..\program.rst:29
+msgid ""
+"Every method register in the Brain as a SovleMethod object, they have these "
+"major properties:"
+msgstr ""
+"Chaque registre de la méthode dans le cerveau comme un objet SovleMethod, "
+"ils ont ces propriétés principales:"
+
+#: ..\program.rst:31
+msgid "fun: the function name of the method in python coding"
+msgstr "amusant: le nom de la fonction de la méthode de codage de python"
+
+#: ..\program.rst:32
+msgid ""
+"idx: the index of the method, from the easier to the more difficult, the "
+"brain will use this sequence to solve a game one by one."
+msgstr ""
+"idx: l'indice de la méthode, de la plus facile à la plus difficile, le "
+"cerveau va utiliser cette séquence pour régler un jeu de un à un."
+
+#: ..\program.rst:33
+msgid "name: the name of the method"
+msgstr "nom: le nom de la méthode"
+
+#: ..\program.rst:34
+msgid ""
+"level: the difficult level for human, using to count a game's difficult level"
+msgstr ""
+"niveau: le niveau difficile pour l'homme, l'aide à compter niveau difficile "
+"d'un jeu"
+
+#: ..\program.rst:37
+msgid "Solving Process"
+msgstr "processus de résolution"
+
+#: ..\program.rst:39
+msgid "The following is the flow chart of solve():"
+msgstr "Voici l'organigramme de résoudre ():"
+
+#: ..\program.rst:43
+msgid "**WORK or NOT WORK?**"
+msgstr "** Travailler ou non? **"
+
+#: ..\program.rst:45
+msgid "A method works or not means that using this method can:"
+msgstr ""
+"Une méthode fonctionne ou pas signifie que l'utilisation de cette méthode "
+"peut:"
+
+#: ..\program.rst:47
+msgid "let one or more people to find his or their own house,"
+msgstr ""
+"permettent une ou plusieurs personnes pour trouver son ou sa propre maison,"
+
+#: ..\program.rst:48
+msgid ""
+"OR can let one or more houses know they are not allowed for some countries' "
+"people."
+msgstr ""
+"OU peut laisser une ou plusieurs maisons savent qu'ils ne sont pas autorisés "
+"pour les personnes de certains pays."
+
+#: ..\program.rst:50
+msgid "In this flow chart, we know that:"
+msgstr "Dans ce diagramme, nous savons que:"
+
+#: ..\program.rst:52
+msgid ""
+"When a method works to set a person or reduce a house's allowed people, it "
+"will return to the first method to restart solving the game."
+msgstr ""
+"Quand une méthode est de définir une personne ou réduire permis les gens "
+"d'une maison, il reviendra à la première méthode pour redémarrer la "
+"résolution du jeu."
+
+#: ..\program.rst:53
+msgid ""
+"If a method can't work to solve a game, it will give the game to the next "
+"method to solve it."
+msgstr ""
+"Si une méthode ne peut pas travailler à résoudre un jeu, il va donner le jeu "
+"à la méthode suivante pour le résoudre."
+
+#: ..\program.rst:54
+msgid ""
+"And if final method can't solve a game, it will go out and say \"I can't "
+"figure out this game, sorry!\""
+msgstr ""
+"Et si la méthode finale ne peut pas résoudre un jeu, il va sortir et de dire "
+"\"Je ne peux pas comprendre ce jeu, désolé! \""
+
+#: ..\program.rst:55
+msgid ""
+"In the solving process, if \"Done\" or \"Error\" event occur, it will go out."
+msgstr ""
+"Dans le processus de résolution de problèmes, si événement \"error\", \"done"
+"\" ou se produisent, il s'éteint."
+
+#: ..\program.rst:58
+msgid "Some Basic Methods"
+msgstr "Certaines méthodes de base"
+
+#: ..\program.rst:60
+msgid "fill_only_one_possible:"
+msgstr "fill_only_one_possible:"
+
+#: ..\program.rst:62
+msgid ""
+"Find every house in a group, if there is only one house that one country "
+"people can live there, that house must let that country's people to live in."
+msgstr ""
+"Trouvez toutes les maisons dans un groupe, si il ya une seule maison que les "
+"gens d'un pays peuvent y vivre, cette maison doit laisser partir le peuple "
+"de ce pays à vivre po"
+
+#: ..\program.rst:64
+msgid "fill_last_position_of_group:"
+msgstr "fill_last_position_of_group:"
+
+#: ..\program.rst:66
+msgid ""
+"When in a group(line or box) are only one left, it must allow only one "
+"country people to live there."
+msgstr ""
+"Lorsque dans un groupe (ligne ou boîte) sont une seule gauche, il doit "
+"permettre un seul peuple du pays y vivent."
+
+#: ..\program.rst:68
+msgid "check_obvious_number:"
+msgstr "check_obvious_number:"
+
+#: ..\program.rst:70
+msgid ""
+"Check every country people who has lived in a house, and when these people "
+"observe other boxes which has yet not lived their country people, can find "
+"an only house that allowed their country people or not?"
+msgstr ""
+"Vérifiez tous les gens de la campagne qui a vécu dans une maison, et quand "
+"ces gens observent d'autres boîtes qui a encore pas vécu leurs gens du pays, "
+"peut trouver une seule maison qui a permis à leurs gens du pays ou pas?"
+
+#: ..\program.rst:73
+msgid "check_inobvious_number:"
+msgstr "check_inobvious_number:"
+
+#: ..\program.rst:75
+msgid ""
+"It is the same method as check_obvious_number, but some boxes' houses are "
+"formed as a **Group Number**."
+msgstr ""
+"C'est la même méthode que check_obvious_number, mais quelques maisons de "
+"boîtes sont formés comme un numéro de groupe ** **."
+
+#: ..\program.rst:0
+msgid "What is a **Chain**?"
+msgstr "Qu'est-ce qu'un chaîne ** **?"
+
+#: ..\program.rst:79
+msgid ""
+"Chain is formed by two or above houses. In these houses, the amount of all "
+"different possible countries' people are equal to the amount of the houses. "
+"When a chain have formed, we can reduce the possible countries' people from "
+"the other houses in the same group of this chain."
+msgstr ""
+"Chaîne est formée par deux ou au-dessus des maisons. Dans ces maisons, le "
+"montant de la population tous les différents pays possibles est égal au "
+"montant des maisons. Quand une chaîne ont formé, nous pouvons réduire la "
+"population des pays possibles des autres maisons dans le même groupe de "
+"cette chaîne."
+
+#: ..\program.rst:82
+msgid "reduce_by_group_number:"
+msgstr "reduce_by_group_number:"
+
+#: ..\program.rst:84
+msgid ""
+"If there is a **Group Number** in a box, the empty houses of its same "
+"direction could be reduce the possible country people of this Group Number."
+msgstr ""
+"Si il ya un numéro de groupe ** ** dans une boîte, des maisons vides de son "
+"même sens pourrait être de réduire les gens possibles de pays de ce numéro "
+"de groupe."
+
+#: ..\program.rst:86
+msgid "update_chain:"
+msgstr "update_chain:"
+
+#: ..\program.rst:88
+msgid ""
+"As the houses have been lived some people, this would make some empty houses "
+"reduce some possible countries' people. And then these empty houses in a "
+"group(x-way line, y-way line, box) may form a **Chain**."
+msgstr ""
+"Comme les maisons ont été vécu certaines personnes, cela ferait quelques "
+"maisons vides réduisent les gens de certains pays possibles. Et puis ces "
+"maisons vides dans un groupe (ligne X-Way, y de ligne de chemin, boîte) "
+"peuvent former une chaîne ** **."
+
+#: ..\program.rst:92
+msgid "How to implement a method?"
+msgstr "Comment mettre en œuvre une méthode?"
+
+#: ..\program.rst:94
+msgid ""
+"We could implement a method called check_obvious_for_a_country(m, num) "
+"method as an example:"
+msgstr ""
+"Nous pourrions mettre en œuvre une méthode appelée "
+"check_obvious_for_a_country (m, num) méthode, par exemple:"
+
+#: ..\program.rst:121
+msgid ""
+"line#1, define a method, *m* is the world of this game, and **num** is a "
+"country id, here is 1-9."
+msgstr ""
+"ligne n ° 1, définir une méthode, * m * est le monde de ce jeu, et ** nombre "
+"** est un identifiant de pays, voici 1-9."
+
+#: ..\program.rst:122
+msgid ""
+"line#3, starts to find the all people who have lived in a house of a country."
+msgstr ""
+"ligne n ° 3, commence à trouver les toutes les personnes qui ont vécu dans "
+"une maison d'un pays."
+
+#: ..\program.rst:123
+msgid "line#4-9, it scan all its effect boxes if those have not been checked."
+msgstr ""
+"ligne # 4-9, le scanner toutes ses boîtes d'effet si ceux n'ont pas été "
+"vérifiées."
+
+#: ..\program.rst:124
+msgid "line#10-11, it the country people have live in this box, ignore it."
+msgstr ""
+"ligne # 10-11, il les gens du pays ont en direct dans cette zone, l'ignorer."
+
+#: ..\program.rst:125
+msgid ""
+"line#12-19, check all empty houses in this box which allow the country's "
+"people or not, if yes, put it in the Possible List."
+msgstr ""
+"ligne # 12-19, vérifier toutes les maisons vides dans cette boîte qui "
+"permettent les gens du pays ou pas, si oui, le mettre dans la liste des "
+"possibles."
+
+#: ..\program.rst:126
+msgid ""
+"line#20-21, if the Possible List has only one house, it must can be assigned "
+"this house to the country's people."
+msgstr ""
+"ligne # 20-21, si la liste des possibles ne dispose que d'une maison, il "
+"faut peut être attribué à cette maison pour les gens du pays."
