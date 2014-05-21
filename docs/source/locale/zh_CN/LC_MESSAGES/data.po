@@ -1,0 +1,572 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 11:59+0800\n"
+"Last-Translator: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\data.rst:2
+msgid "How to make a simulator environment in Python to solve a sudoku"
+msgstr "如何在Python 中制作一个解数独的模拟环境?"
+
+#: ..\data.rst:4
+msgid ""
+"We think classes defined is the most difficult for learner in the OOP method"
+" of programming. So in these courses of learning to solve sudoku, we don't "
+"explain how to make a class, property, and methods in detail. But just make "
+"a explanation of the existed classes, properties and methods in this library"
+" to learners. So we can explain these data structures as a simulator "
+"environment to solve a sudoku like a human being."
+msgstr ""
+"我们认为, 类别定义, 是在OOP程式设计中最困难的部分. 所以在这些课程中,"
+" 我们不准备详细地解释如何设计类别, 属性与方法. 我们"
+"只会解说在这个程式库中既有的类别, 属性与方法. 所以我们可以类比这些类别,"
+" 属性与方法所构成的资料结构是一个解决数独的模拟环境,"
+" 以便让学习者以人的思考模式来学习如何解开一个数独."
+
+#: ..\data.rst:8
+msgid ""
+"We can first image that there are 9x9 houses in a beautiful valley, and they"
+" are build like:"
+msgstr ""
+"首先, 我们可以想像在一个美丽的山谷中, 有9x9 间方方正正的房子,"
+" 它们排列如下:"
+
+#: ..\data.rst:0
+msgid "**An Imagined World**"
+msgstr "**一个假想的联合王国**"
+
+#: ..\data.rst:14
+msgid ""
+"There are 9 countries, every country has 9 people. They decide to live "
+"together in this beautiful valley. And there are 9x9 houses, They want to "
+"let every people live in one house, and every X-way line, Y-way line, and "
+"every 3x3 box include all countries' people. And if so, they can say "
+"themselves are a real united group in the world, can you help them?"
+msgstr ""
+"这里有9 个国家, 每一个国家有9 个人, 他们决定一起定居在这个美丽的山谷."
+" 而这个山谷共有9x9 间房子. 他们决定每一排(x-way line), 每一列(y-way line ),"
+" 及每一个3x3 区块都包含了每一个国家的人. 如此, 他们才"
+"会认为他们这个团体才是一个真正的联合王国, 可以永久和平地生活在一起."
+" 你可以帮助他们达到这个目的吗?"
+
+#: ..\data.rst:17
+msgid "and then we can start to solve the wondeful world for these people..."
+msgstr "接着, 我们就可以开始协助这些人来促成这一个美好的世界..."
+
+#: ..\data.rst:20
+msgid "What is a Class? and an Object?"
+msgstr "什么是类别? 什么是物件?"
+
+#: ..\data.rst:22
+msgid ""
+"Class is collective name for a group of objects which have same behaviors, "
+"features, forms. So, animal can be a class name, and elephant is an kind of "
+"object of this class."
+msgstr ""
+"在OOP中，类别(class)的定义是主角。它就如同人类j为了探索、沟通或者纪录等目的，"
+"会将有同样行为、特性与外表的事物归类一样。如同我们会将动物当作一类，"
+"而大象就是动物类别的一个子类别，一只大象就是同属于动物及大象这两类的一个物件。"
+
+#: ..\data.rst:24
+msgid ""
+"An object is thing which belong a class or multi classes.You can treat an "
+"object is an entity of a class, like human is a class, but you is an object,"
+" an entity which belong human class."
+msgstr ""
+"虽然在自然上，一只大象这个物件同时隶属于大象类及动物类，"
+"但看目标的需要，也可以直接将一只大象当做动物类别的一个物件即可。"
+"所以我们可以说在OOP 所说的物件(Object)就是我们现实世界的一个实体，"
+"就如同人类若是一个类别，那你就是隶属此类别的一个唯一独立的物件。"
+
+#: ..\data.rst:26
+msgid ""
+"Depend to the domain which we want to approach,or to define, we will define "
+"some different classes to describe the same objects. Like if we want to "
+"study a city bioecology system, we may define an animal class, that contain "
+"some people, some pets, and so on... But when our domain is to make a phone "
+"book application, we may define a person class that contain some people, but"
+" no pets, except our pets have a cell phone too."
+msgstr ""
+"依据我们设定的范围与需要，我们可能设计出不同的类别，"
+"而让同一个物件同时隶属于它们。如我们想要研究城市生态时，"
+"我们可能会设计一个animal 类别，而这个类别中的物件包括一些人，一些宠物等等."
+"..但当我们想要制作一个电话簿程式时，那我们就会设计一个person 类别，"
+"一些人会成为此类别的物件，但不会包括宠物，除非这些宠物也都拥有手机。"
+
+#: ..\data.rst:30
+msgid "In this sudoku solving library, we define the following classes:"
+msgstr "在这个专案中，我们设计的主要类别有:"
+
+#: ..\data.rst:32
+msgid "Number Class:"
+msgstr "Number Class:"
+
+#: ..\data.rst:34
+msgid ""
+"You can treat every number as a different man, there are 9 countries, and "
+"every country has 9 men. So we can treat the Number Class as a Country "
+"Class. Every country has their ID, here is 1-9, and every country would "
+"record the positions where their people live in this valley."
+msgstr ""
+"我们可以视数独游戏中每个数字是一个人。而整个数独世界中有9 个国家，"
+"每个国家有9 个人。如此，这个Number Class 就可以视为是一个国家类别。"
+"每一个国家都有一个识别代码(ID)，在这里是1-9，而每个"
+"国家都会纪录它的人民住在这山谷中的位置。"
+
+#: ..\data.rst:37
+msgid "Point Class:"
+msgstr "Point Class:"
+
+#: ..\data.rst:39
+msgid ""
+"Point is a house here. It indicate that there is empty or not, if it is not "
+"empty, which country people lives there? if it is empty, which counties' "
+"people can live here?"
+msgstr ""
+"Point 物件就是一间房子。每间房子都会标注它是否已住人，"
+"如果已住人，那是哪个国家的人民；如果是空的，那可以"
+"让哪些国家的人民来申请入住？"
+
+#: ..\data.rst:41
+msgid "GroupBase Class:"
+msgstr "GroupBase Class:"
+
+#: ..\data.rst:43
+msgid ""
+"GroupBase is group of X line, Y line or a 3x3 Box. This is base class of "
+"Box, lineX, lineY. It indicate which houses are belong to him, how many "
+"people have lived in this group? and which counties' people still not live "
+"in this group?"
+msgstr ""
+"GroupBase是一种群组类别，也就是它的物件不是一个实体，而是一群实体的组合。"
+"在这里的GroupBase 包含了三种群组，X​​ 与Y 轴方向的房子群组及区块房子群组。"
+"每个物件都将指出它包含了哪些房子，已经住了多少人，"
+"还有哪些国家的人民还没住进来？"
+
+#: ..\data.rst:46
+msgid "Box Class:"
+msgstr "Box Class:"
+
+#: ..\data.rst:48
+msgid ""
+"Every 3x3 block. Every box has its id, from left to right, from top to down,"
+" it is assigned 1-9, as the following picture:"
+msgstr ""
+"它是GroupBase的子类别，为区块群组。在数独世界中总共有9 个区块物件，"
+"从左到右，从上到下，被标注其区块代码如下:"
+
+#: ..\data.rst:52
+msgid "lineX Class:"
+msgstr "lineX Class:"
+
+#: ..\data.rst:54
+msgid ""
+"Every x-way line. Every x-way line has its id, from left to right, it is "
+"assigned 1-9, as the following picture:"
+msgstr ""
+"这是GroupBase 子类别，为X 轴的房子群组。在数独世界中共有9 个物件，"
+"从左到右被标注1-9，如下图:"
+
+#: ..\data.rst:58
+msgid "lineY Class:"
+msgstr "lineY Class:"
+
+#: ..\data.rst:60
+msgid ""
+"Every y-way line. Every y-way line has its id, from top to down, it is "
+"assigned 1-9, as the following picture:"
+msgstr ""
+"这是GroupBase 子类别，为Y 轴的房子群组。在数独世界中共有9 个物件，"
+"从上到下被标注1-9，如下图:"
+
+#: ..\data.rst:64
+msgid "Matrix Class:"
+msgstr "Matrix Class:"
+
+#: ..\data.rst:66
+msgid ""
+"Matrix Class is the WORLD of a sudoku game. It is the beautiful valley, "
+"including 9 countries, every country have 9 people, there are 9x9 houses for"
+" all these people."
+msgstr ""
+"Matrix class定义了数独游戏的整个世界。它是一个美丽的山谷，"
+"包含了9 个国家的人民，每一个国家有9 个人，山谷中建"
+"造了9x9 间房子以提供给这些人民来居住，以组成一个永远和平的联合王国。"
+
+#: ..\data.rst:69
+msgid "What is a Property?"
+msgstr "什么是属性(Property)？"
+
+#: ..\data.rst:71
+msgid ""
+"Property is in a class to declaim what it cotain and how they look like or "
+"their conditions. Like a person class, may have these properties of how much"
+" money he have, how many children he have, , and first child is boy or girl,"
+" how old are them?"
+msgstr ""
+"属性(Property)是在类别(Class)的定义里面，类别用它来定义成员，特征及纪录状况。"
+"如在一个人的类别里面可能会包含以下一些属性: 这人拥"
+"有多少钱、他有几个小孩子、第一个小孩是男或是女、每"
+"个小孩各是几岁?"
+
+#: ..\data.rst:74
+msgid ""
+"The following are the major properties of all classes in this libryary:"
+msgstr "以下是这个专案中几个主要类别的主要属性定义:"
+
+#: ..\data.rst:76 ..\data.rst:133
+msgid "Number class:"
+msgstr "Number Class:"
+
+#: ..\data.rst:78
+msgid "v: the id of a country, it is 1-9."
+msgstr "v: 这个国家的代码, 1-9"
+
+#: ..\data.rst:79
+msgid "p: the list of the houses which these country people have lived in"
+msgstr "p: 这个国家每一个人民所居住的房子列表"
+
+#: ..\data.rst:80
+msgid "filled: how many people have lived in a house"
+msgstr "filled: 有多少人已经住进房子了"
+
+#: ..\data.rst:82 ..\data.rst:137
+msgid "Point class:"
+msgstr "Point Class:"
+
+#: ..\data.rst:84
+msgid "x: the x-way postion of this house"
+msgstr "x: 这个房子的 x 轴座标"
+
+#: ..\data.rst:85
+msgid "y: the y-way position of this house"
+msgstr "y: 这个房子的 y 轴座标"
+
+#: ..\data.rst:86
+msgid ""
+"v: which country people has lived here, if it is still empty, its value is 0"
+msgstr ""
+"v: 这个房子居住了哪个国家的人民，如果是空的，那它的"
+"值就是 0"
+
+#: ..\data.rst:87
+msgid "b: this house belogn which 3x3 box"
+msgstr "b: 这个房子隶属哪个区块"
+
+#: ..\data.rst:89 ..\data.rst:146
+msgid "GroupBase class:"
+msgstr "GroupBase Class:"
+
+#: ..\data.rst:91
+msgid "idx: the id of this group"
+msgstr "idx: 这个群组的代码"
+
+#: ..\data.rst:92
+msgid "p: the list of the houses which belong this group"
+msgstr "p: 隶属这个群组的房子列表"
+
+#: ..\data.rst:93
+msgid "filled: how many people have lived in this group"
+msgstr "filled: 在这个群组里面已经居住了多少人"
+
+#: ..\data.rst:94
+msgid "possible: the list of country id which have not lived in this group"
+msgstr ""
+"possilbe: 在这个群组里面还有哪些国家还没住进来，值为"
+"这些国家的代码列表"
+
+#: ..\data.rst:0
+msgid "What is **effects**?"
+msgstr "什么是「**effects**」？"
+
+#: ..\data.rst:98
+msgid ""
+"Effects of a box are the 4 boxes which the same direction of x or y with it."
+" So, effectsX are the boxes that have the same x-way direction, while "
+"effectsY are the boxes that have the same y-way direction of it."
+msgstr ""
+"当我们说一个区块(box)的**effects**，是说与这个区块有相同的x 与y 轴方向的其他四个区块。"
+"所以，effectsX就是有同样x 轴方向的区块，effectsY就是有同样y 轴方向的区块。"
+
+#: ..\data.rst:101 ..\data.rst:153
+msgid "Box class:"
+msgstr "Box Class:"
+
+#: ..\data.rst:103
+msgid "All GroupBase Properties"
+msgstr "包含所有 GroupBase 的属性"
+
+#: ..\data.rst:104
+msgid "effects: the box id list of a box's neighbors"
+msgstr "effects: 这个区块的所有邻居区块"
+
+#: ..\data.rst:105
+msgid ""
+"effectsX: the box id list of a box's neighbors which in x-way direction"
+msgstr "effectsX: 这个区块的 x 轴方相邻居"
+
+#: ..\data.rst:106
+msgid ""
+"effectsY: the box id list of a box's neighbors which in Y-way direction"
+msgstr "effectsY: 这个区块的 y 轴方相邻居"
+
+#: ..\data.rst:108 ..\data.rst:164
+msgid "lineX class:"
+msgstr "lineX Class:"
+
+#: ..\data.rst:110 ..\data.rst:114
+msgid "Having the same properties as GroupBase"
+msgstr "与 GroupBase 的属性相同"
+
+#: ..\data.rst:112 ..\data.rst:168
+msgid "lineY class:"
+msgstr "lineY Class:"
+
+#: ..\data.rst:116 ..\data.rst:172
+msgid "Matrix class:"
+msgstr "Matrix Class:"
+
+#: ..\data.rst:118
+msgid ""
+"p: A two dimention of point(house), from p[0][0] to p[8][8] to present all "
+"the houses in this valley."
+msgstr ""
+"p: 一个二阶阵列的房子列表，从p[0][0] 到p[8][8]，代表这个山谷的所有房子。"
+
+#: ..\data.rst:119
+msgid "lineX: A list of x-way line of the houses"
+msgstr "lineX: x 轴方向房子群组的列表"
+
+#: ..\data.rst:120
+msgid "lineY: A list of y-way line of the houses"
+msgstr "lineY: y 轴方向房子群组的列表"
+
+#: ..\data.rst:121
+msgid "b: A list of 3x3 box of the houses"
+msgstr "b: 区块房子群组的列表"
+
+#: ..\data.rst:122
+msgid "n: A list of Country."
+msgstr "n: 所有国家的列表"
+
+#: ..\data.rst:123
+msgid "filled: how many people have lived in a house now."
+msgstr "filled: 纪录已经有多少人入住在这个山谷了"
+
+#: ..\data.rst:126
+msgid "What is a Method?"
+msgstr "什么是方法(Method)？"
+
+#: ..\data.rst:128
+msgid ""
+"Methods are the behaviors of a class or an object. For example, if we define"
+" a radio class contain several buttons, then we should define the methods "
+"when some button has been pushed. It may start to receive a program from a "
+"station, or record a program into CD, etc..."
+msgstr ""
+"方法(methods)是一个类别及其物件的一些特定行为。举个例子，"
+"如果我们定义了一个收音机类别，它将包含一些按钮的属性，"
+"而当我们按下这些按钮时，我们就必须定义一些方法来执行这个动作。"
+"这些动作有可能是开始接收某个电台的节目、或者是录制节目到CD等等."
+".."
+
+#: ..\data.rst:131
+msgid "The following are the major methods of the classes in this library:"
+msgstr "以下是这个专案中的类别中使用道的主要方法:"
+
+#: ..\data.rst:135
+msgid ""
+"setit(p1): when a country's people find a house(p1) to live, this method "
+"will be called"
+msgstr "setit(p1): 当有人找到属于自己的房子时，就会启动这个方法"
+
+#: ..\data.rst:139
+msgid "can_see(p1): to check a house can see another house(p1) or not?"
+msgstr "can_see(p1): 测试一个房子是否能够**看到**另外一个房子(p1)?"
+
+#: ..\data.rst:140
+msgid ""
+"can_see_those(posList): to check a house can see a list of houses, and "
+"return the houses list which it can see them."
+msgstr ""
+"can_see_those(posList): 测试一个房子能否**看见** posList 所列的房子，"
+"并将所有能看见的房子列表传回。"
+
+#: ..\data.rst:142
+msgid "What is \"**SEE**\"?"
+msgstr "什么是「**看见**」？"
+
+#: ..\data.rst:144
+msgid ""
+"the houses in the same x-way or y-way line, or in the same box, of a house, "
+"this means that this house can **SEE** all of them."
+msgstr ""
+"对一个房子而言，与它同一排、同一列、或者同在一个区块的其他房子，"
+"都是它能够**看见**的房子。"
+
+#: ..\data.rst:148
+msgid ""
+"allow(v): check the group can allow the country people(whose id is v) to "
+"live or not?"
+msgstr ""
+"allow(v): 测试一个房子群组能否让标记为v 的国家人民来居"
+"住？"
+
+#: ..\data.rst:149
+msgid ""
+"get_num_pos(v): get where the people live in this group who is the country "
+"people(whose id is v), if there is no this country's people, it will return "
+"None."
+msgstr ""
+"get_num_pos(v): 在这个房子群组中，取得v 国人民居住的房子物件，"
+"如果该国尚未有人入住，则以None来回应。"
+
+#: ..\data.rst:150
+msgid ""
+"count_num_possible(count): get the countries' id and houses, which are empty"
+" now, and are possible to be assigned to a certain country people, and the "
+"houses are equal to the number(count)"
+msgstr ""
+"count_num_possible(count): 在一个房子群组中，取得国家的id及可供该国人民居住的房子列表，"
+"如果有参数count，则表示要取得的可供居住的房子数要等于count 才取回。"
+
+#: ..\data.rst:151
+msgid ""
+"get_all_pos(method): get all houses in this group, if method=\"a\"; if "
+"method=\"u\", get all empty houses, if method=\"s\", get all not empty "
+"houses."
+msgstr ""
+"get_all_pos(method): 如果method = \"a\"， 取得一个房子群组的所有房屋物件列表；如果method=\"u\"，"
+"则取得所有空房列表；如果method=\"s\"，则取得所有已住人的房​​子列表。"
+
+#: ..\data.rst:155
+msgid "All GroupBase methods"
+msgstr "所有 GroupBase 类别的方法"
+
+#: ..\data.rst:156
+msgid ""
+"get_group_number(num): To Check the num in a box's would form a Group Number"
+" or not."
+msgstr ""
+"get_group_number(num): 测试这个国家代码num 在一个房子区块中"
+"能否形成一个**虚拟国民**？"
+
+#: ..\data.rst:158
+msgid "What is \"**Group Number**\"?"
+msgstr "什么是「**虚拟国民**」？"
+
+#: ..\data.rst:160
+msgid ""
+"Group Number is in a box. Those houses in this box can and only can allow "
+"some country's people, and these houses in a same line(x-way line or y-way "
+"line), then we call these houses form a **Group Number**, We don't know "
+"which house is the country's people should live finally, but we know the "
+"other houses in this line will not allow the same country's people to live."
+msgstr ""
+"虚拟国民存在于一个房子区块群组中。在一个区块中尚未有人入住的房子中，"
+"如果所有可能让某个国家居住的房子在同一个方向时(无论是x 轴或y 轴)，"
+"那我们就可以称这些房子形成了一个**虚拟国民**。虽然我还不晓得在这个区块中，"
+"这个国家的人民最后将居住在哪里，但我们从虚拟国民中知道，"
+"在与它同个方向的其他区域的房子，都将不允许居住这个国家的人民了。"
+
+#: ..\data.rst:166 ..\data.rst:170
+msgid "Having the same methods as GroupBase"
+msgstr "与 GroupBase 有相同的方法"
+
+#: ..\data.rst:174
+msgid ""
+"get_all_pos(method): if method=\"a\", get all houses; if method=\"u\", get "
+"all empty houses; if method=\"s\", get all houses where have lived people"
+msgstr ""
+"get_all_pos(method): 如果method = \"a\"， 取得所有房屋物件列表；如果method=\"u\"，"
+"则取得所有空房列表；如果method=\"s\"，则取得所有已住人的房子列表。"
+
+#: ..\data.rst:175
+msgid ""
+"sort_unassigned_pos_by_possibles(possibles): get all empty houses which are "
+"only allowfd for [possibles] countries people, if possibles == 0, it will "
+"get all empty houses, and sorted by the possiles from low to high."
+msgstr ""
+"sort_unassigned_pos_by_possibles(possibles): 取得所有的空房列表，"
+"而这些空房数必须仅能够让possibles 个国家的人入住，如果possibles == 0, 将取得全部空房。"
+"回应回来时将以可居住国家数，从小排到大。"
+
+#: ..\data.rst:177
+msgid ""
+"can_see(p0, method=\"u\", num=0): get the houses which cand the house(p0), "
+"if the num!=0, mean get the houses only that are allowed the num country's "
+"people."
+msgstr ""
+"can_see(p0, method=\"u\", num=0): 取得能够看见某一房子(p0)的房子列表，"
+"如国num!=0，表示仅取得可让国家代码为num 者居住的房子。"
+
+#: ..\data.rst:178
+msgid ""
+"setit(x, y, v): Let the v country's people live in the the house of the "
+"position (x, y)."
+msgstr ""
+"setit(x, y, v): 让国家代码为v 的人民安住在座标为(x, y)的房子。"
+
+#: ..\data.rst:179
+msgid ""
+"reduce(x, y, v): When a country people find a suitable house to live, then "
+"any empty house can SEE the house will reduce their possible countries "
+"people to live in."
+msgstr ""
+"reduce(x, y, v): 当一个房子(x, y)被入住时，任何能够看见此房子的其他空房，"
+"都可用此方法来减掉已入住这个国家人民(v)的可能性。"
+
+#: ..\data.rst:180
+msgid ""
+"allow(x, y, v): check the v country people can live in the house of the "
+"position (x, y) or not?"
+msgstr ""
+"allow(x, y, v): 测试这个国家(v)的人民是否能够居住于座标(x,"
+" y)的房子？"
+
+#: ..\data.rst:181
+msgid ""
+"read(file): read the first defined that how many people and where they have "
+"lived in this valley."
+msgstr ""
+"read(file): 从一个定义档(file)中读入最初到此山谷的国家、人民与居住位置。"
+
+#: ..\data.rst:184
+msgid "Game Defined File"
+msgstr "数独游戏定义档案"
+
+#: ..\data.rst:186
+msgid ""
+"You can define sudoku's game by giving x, y, v line by line in a text file. "
+"like the following: its define file is in the [installed "
+"directory]/sudoku/data/"
+msgstr ""
+"你能够定义数独游戏的最初状况。在文字档中一行定义一个房子的座标及居住者，"
+"格式为x, y, v，如下图，此专案附有一些已定义好的数独，"
+"置于[安装的目录]/sudoku/data/ 目录里。"
+
+#: ..\data.rst:0
+msgid "A sample define and its original and result matrix"
+msgstr "一个定义范例、最初的外观以及解出来的外观"
+
+#: ..\data.rst:1
+msgid "m3.data"
+msgstr "m3.data"
+
+#: ..\data.rst:1
+msgid "Original Matrix"
+msgstr "起始的数独外观"
+
+#: ..\data.rst:1
+msgid "Result Matrix"
+msgstr "已解的数独外观"
+

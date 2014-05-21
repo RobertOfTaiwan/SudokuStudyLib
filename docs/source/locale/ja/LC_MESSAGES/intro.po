@@ -1,0 +1,77 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 11:52+0800\n"
+"Last-Translator: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\intro.rst:2
+msgid "Welcome to SudokuStudyLib's documentation!"
+msgstr "インストールと使用"
+
+#: ..\intro.rst:4
+msgid ""
+"This is a tool and library for studying Logic and Python programming. It "
+"includes two packages, one is Sudoku, and another is Matrix. The Sudoku is "
+"an oop approaching library, while the Matrix is a traditional function "
+"processing library."
+msgstr ""
+"このプロジェクトは、ユーザーはPythonプログラミングロ"
+"ジックとデザインを学ぶことを可能にするPythonのライブラリです。"
+"それは、一方が他方が行列数独、ある2つのパッケージが含まれています。"
+"数独は、モジュラーオブジェクト指向プログラミングで"
+"あり、マトリックスは、従来のプログラミングモジュールである。"
+
+#: ..\intro.rst:7
+msgid ""
+"This library and document are major for Soduku package, the Matrix package "
+"is just a reference for a traditional programmer."
+msgstr ""
+"このプロジェクトは限りファイルを使用するために数独キットに提供される。"
+"伝統的なプログラムへの参照を行うため、設計者だけが利用できる行列。"
+
+#: ..\intro.rst:10
+msgid "Install"
+msgstr "インストール"
+
+#: ..\intro.rst:11
+msgid "You can use pip to install the library::"
+msgstr ""
+"あなたは、PIP、このプロジェクトをインストールを使用"
+"することができます::"
+
+#: ..\intro.rst:15
+msgid "and you can clone the project from::"
+msgstr ""
+"また、プロジェクト全体をコピーするには、以下のWebサ"
+"イトにアクセスすることができます::"
+
+#: ..\intro.rst:19
+msgid ""
+"When you has installed, it will contain two packages, sudoku, and matrix. "
+"The following is the file structure:"
+msgstr ""
+"あなたがインストールしているときは、ディレクトリは"
+"2つのパッケージ数独と行列が含まれているインストールする必要があります。"
+"ここでは、テーブル全体のディレクトリ構造は次のとおりです。"
+
+#: ..\intro.rst:25
+msgid "Usage"
+msgstr "使用"
+
+#: ..\intro.rst:27
+msgid "OOP method: sudoku, in the test.py::"
+msgstr "オブジェクト指向：数独、test.py中::"
+
+#: ..\intro.rst:61
+msgid "Traditional method: matrix, in the test.py::"
+msgstr "伝統的な方法：マトリックス、test.py中::"
+

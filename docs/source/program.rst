@@ -1,4 +1,4 @@
-Start Programming to Solve a Sudoku
+﻿Start Programming to Solve a Sudoku
 ===================================
 
 When we have created a sudoku simulate world in the computer to solve a sudoku, now we should go ahead to implement some methods which we solve it in our own hands. 

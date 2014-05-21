@@ -1,4 +1,4 @@
-Package: Sudoku - the OOP method
+﻿Package: Sudoku - the OOP method
 ================================
 
 This is the oop method to solve the Sudoku.

@@ -1,4 +1,4 @@
-Courses
+﻿Courses
 =======
 
 We can arrange these courses as a sudoku summer camp. We can prepare 1-6 different level sudokus. The learners don't need to learn all levels. 

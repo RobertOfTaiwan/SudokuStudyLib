@@ -1,0 +1,70 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 12:00+0800\n"
+"Last-Translator: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\intro.rst:2
+msgid "Welcome to SudokuStudyLib's documentation!"
+msgstr "安装与使用"
+
+#: ..\intro.rst:4
+msgid ""
+"This is a tool and library for studying Logic and Python programming. It "
+"includes two packages, one is Sudoku, and another is Matrix. The Sudoku is "
+"an oop approaching library, while the Matrix is a traditional function "
+"processing library."
+msgstr ""
+"这个专案是一个Python 程式库以便让使用者学习逻辑与Python 程式设计。"
+"它包含了两个套件，一个是Sudoku，另一个是Matrix。 Sudoku "
+"是一个以物件导向程式设计的模组，而Matrix 则是一个传统程式设计的模组。"
+
+#: ..\intro.rst:7
+msgid ""
+"This library and document are major for Soduku package, the Matrix package "
+"is just a reference for a traditional programmer."
+msgstr ""
+"这个专案与文件只要是提供给Sudoku 套件来使用。 Matrix 只"
+"是提供给传统程式设计者做一参考。"
+
+#: ..\intro.rst:10
+msgid "Install"
+msgstr "安装方法"
+
+#: ..\intro.rst:11
+msgid "You can use pip to install the library::"
+msgstr "你可以使用 pip 来安装这个专案::"
+
+#: ..\intro.rst:15
+msgid "and you can clone the project from::"
+msgstr "你也可以到下列网址来复制整个专案::"
+
+#: ..\intro.rst:19
+msgid ""
+"When you has installed, it will contain two packages, sudoku, and matrix. "
+"The following is the file structure:"
+msgstr ""
+"当你安装完毕后，你安装的目录应包含了两个套件，sudoku 及matrix。"
+"下面就是整个目录的结构表:"
+
+#: ..\intro.rst:25
+msgid "Usage"
+msgstr "使用方法"
+
+#: ..\intro.rst:27
+msgid "OOP method: sudoku, in the test.py::"
+msgstr "物件导向：sudoku，在 test.py::"
+
+#: ..\intro.rst:61
+msgid "Traditional method: matrix, in the test.py::"
+msgstr "传统方法 ：matrix，在 test.py::"
+

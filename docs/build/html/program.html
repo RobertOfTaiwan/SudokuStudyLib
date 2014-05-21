@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>撰寫 Python 程式來解數獨了 &mdash; SudokuStudyLib 1.0 documentation</title>
+    <title>数独にPythonプログラムを書く &mdash; SudokuStudyLib 1.0 ドキュメント</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,63 +24,63 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="SudokuStudyLib 1.0 documentation" href="index.html" />
-    <link rel="next" title="程式詳解: sudoku套件" href="sudoku.html" />
-    <link rel="prev" title="如何在 Python 中製作一個解數獨的模擬環境?" href="data.html" /> 
+    <link rel="top" title="SudokuStudyLib 1.0 ドキュメント" href="index.html" />
+    <link rel="next" title="詳細なプログラム：数独キット" href="sudoku.html" />
+    <link rel="prev" title="数独は、どのようにPythonでシミュレーション環境を作るには？" href="data.html" /> 
   </head>
   <body>
     <div class="related">
-      <h3>瀏覽</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="總索引"
+          <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >模組</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
-          <a href="sudoku.html" title="程式詳解: sudoku套件"
-             accesskey="N">下一頁</a> |</li>
+          <a href="sudoku.html" title="詳細なプログラム：数独キット"
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
-          <a href="data.html" title="如何在 Python 中製作一個解數獨的模擬環境?"
-             accesskey="P">上一頁</a> |</li>
-        <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
+          <a href="data.html" title="数独は、どのようにPythonでシミュレーション環境を作るには？"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 1.0 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">內容目錄</a></h3>
+  <h3><a href="index.html">目次</a></h3>
   <ul>
-<li><a class="reference internal" href="#">撰寫 Python 程式來解數獨了</a><ul>
-<li><a class="reference internal" href="#solving-environment">求解環境</a></li>
-<li><a class="reference internal" href="#solving-process">求解過程</a></li>
-<li><a class="reference internal" href="#some-basic-methods">一些基本求解方法</a></li>
-<li><a class="reference internal" href="#how-to-implement-a-method">如何去實作一個求解方法呢？</a></li>
+<li><a class="reference internal" href="#">数独にPythonプログラムを書く</a><ul>
+<li><a class="reference internal" href="#solving-environment">環境を解く</a></li>
+<li><a class="reference internal" href="#solving-process">解決プロセス</a></li>
+<li><a class="reference internal" href="#some-basic-methods">いくつかの基本的な解法</a></li>
+<li><a class="reference internal" href="#how-to-implement-a-method">それを解決するためのメソッドを実装する方法？</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上一個主題</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="data.html"
-                        title="上一章">如何在 Python 中製作一個解數獨的模擬環境?</a></p>
-  <h4>下一個主題</h4>
+                        title="前の章へ">数独は、どのようにPythonでシミュレーション環境を作るには？</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="sudoku.html"
-                        title="下一章">程式詳解: sudoku套件</a></p>
-  <h3>本頁</h3>
+                        title="次の章へ">詳細なプログラム：数独キット</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/program.txt"
-           rel="nofollow">顯示原始碼</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>快速搜尋</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -93,99 +93,99 @@
           <div class="body">
             
   <div class="section" id="start-programming-to-solve-a-sudoku">
-<h1>撰寫 Python 程式來解數獨了<a class="headerlink" href="#start-programming-to-solve-a-sudoku" title="Permalink to this headline">¶</a></h1>
-<p>當我們已經在電腦建構好一個數獨模擬世界時，對那些我們以前使用手寫的方式所發現的解數獨方法，我們就可以著手來將其以電腦語言(這裡是 Python)來重新闡述。就術語來說，稱為程式設計(Programming)。所以程式設計可以視為我們在教導電腦如何去執行我們解決問題的方法。</p>
-<p>一開始，我們先介紹這個專案整個求解數獨的環境，然後我們再說明一些基本方法。</p>
+<h1>数独にPythonプログラムを書く<a class="headerlink" href="#start-programming-to-solve-a-sudoku" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>我々は、手書きを使用する方法を発見したものは停止ユニークなアプローチのための世界では良い数独コンピュータシミュレーションを構築したとき、我々は再度詳しく説明するため（これは、Pythonで）コンピュータ言語にそれを回すために始めることができます。条件で、プログラミング（プログラミング）と呼ばれる。プログラミングは、では、どのように我々は問題を解決するためにコンピュータを教える方法を実行しようとしていると見ることができる。</p>
+<p>最初に、我々は最初の数独全体の環境を解決するためのプロジェクトを紹介し、その後、我々は基本的な方法をいくつか説明します。</p>
 <div class="section" id="solving-environment">
-<h2>求解環境<a class="headerlink" href="#solving-environment" title="Permalink to this headline">¶</a></h2>
-<p>我們設計了 solve() 這個函數來做整個求解數獨的入口，另外也定義了兩個事件類別，SudokuDon 及 SudokuError，以處理求解過程中發現已經解開數獨或者產生違反數獨規則的狀況。</p>
+<h2>環境を解く<a class="headerlink" href="#solving-environment" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>我々はまた、2つのイベントのカテゴリ、SudokuDonとSudokuErrorを定義しながら、溶液プロセスに対処するために、数独を解くこの全体の入り口を行うには解決（）関数を設計し数独数独を解くかのルールに違反して条件を生成することが判明している。</p>
 <div class="admonition note">
-<p class="first admonition-title">註解</p>
-<p>甚麼是「<strong>例外處理(Exception)</strong>」？</p>
-<p>「例外處理(Exceptions)」是一種事件定義，當構成這個事件的條件滿足時，系統就會停止處理目前的事務，而跳到該事件的處理程序。在這個專案中有兩個主要的例外處理：</p>
+<p class="first admonition-title">ノート</p>
+<p>「<strong>例外（例外）</strong>」とは？</p>
+<p>「（例外）例外処理は、「システムが時事問題の処理を停止し、イベントハンドラにジャンプします、条件が満たされたときに、このイベントを構成し、イベント定義である。このプロジェクトには2つの主要な例外があります。</p>
 <dl class="last docutils">
-<dt>SudokuDone:</dt>
-<dd><p class="first last">當這個數獨已經被解開時，這個例外處理會被叫醒</p>
+<dt>SudokuDone：</dt>
+<dd><p class="first last">これは数独を解決されている場合には、この例外が起こされます</p>
 </dd>
-<dt>SudokuError:</dt>
-<dd><p class="first last">當求解過程中發現違反數獨規則時，這個例外處理會被叫醒</p>
+<dt>SudokuError：</dt>
+<dd><p class="first last">この例外に違反して見つかった数独のルールを解決するプロセスは起こされるいつ</p>
 </dd>
 </dl>
 </div>
-<p>為了讓整個求解環境能夠知道有多少種求解方法它能夠使用，我們設計了一個類別，SolveMethod。我們以這個類別來將所有的求解方法置入成一個**虛擬大腦**。我們可以將這個虛擬大腦視為是這個美麗山谷的守護神。每當有新進來此山谷者，找不到居住所時，都可以透過祂來選擇出適合的房子，但祂也可能回答：「對不起，我也不知道該如何選擇！」</p>
-<p>對**虛擬大腦**而言，每一個解數獨的方法都化為一個 SovleMethod 物件儲存在裡面，這些物件有以下主要屬性：</p>
+<p>To let the environment know how many methods they can use to solve a sudoku, we create a class, SolveMethod. We use this class to create all methods in a BRAIN. We can treat this BRAIN like the god of this valley. Every time,
+when people don&#8217;t how to choose their suitable houses, you can ask the god of valley, and it will give an answer, or it would say that, &#8220;<strong>I don&#8217;t know how to do either!</strong>&#8220;</p>
+<p>仮想脳****のために、内部に格納され、単一のSovleMethodオブジェクトに停止する方法の一人一人が、これらのオブジェクトは、次の主要な属性があります。</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p class="first">fun: 解數獨方法的 Python 函數名稱</p>
+<li><p class="first">楽しい：Pythonの関数名独法</p>
 </li>
-<li><p class="first">idx: 方法的排序，從簡單的方法開始到困難的方法依序排列，虛擬大腦將依序一個一個地使用這些方法來解開數獨。</p>
+<li><p class="first">IDX：苦労して配置順に、1つずつを開始する簡単な方法から、ソートメソッド、仮想脳は、順番に数独を解決するためにこれらのメソッドを使用します。</p>
 </li>
-<li><p class="first">name: 此方法的名稱，使用者可以自訂其名稱</p>
+<li><p class="first">名前：このメソッドの名前、ユーザーが自分の名前をカスタマイズすることができます</p>
 </li>
-<li><p class="first">level: 困難度，對人的直覺而言。系統用此來計數解開整個數獨的困難積分。</p>
+<li><p class="first">レベル：難易度、人間の直感の面で。システムは独特の困難整数全体の数をカウントロックを解除するために使用します。</p>
 </li>
 </ol>
 </div></blockquote>
 </div>
 <div class="section" id="solving-process">
-<h2>求解過程<a class="headerlink" href="#solving-process" title="Permalink to this headline">¶</a></h2>
-<p>下面是主要求解函數，solve()，的流程圖：</p>
+<h2>解決プロセス<a class="headerlink" href="#solving-process" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ここで、（）を解くと、メイン解決関数であり、フローチャート。</p>
 <img alt="_images/flowchart.png" src="_images/flowchart.png" />
 <div class="admonition note">
-<p class="first admonition-title">註解</p>
-<p><strong>「有用(work)」或「沒用(not work)」？</strong></p>
-<p>一個求解方法如果是「有用」，表示它能夠：</p>
+<p class="first admonition-title">ノート</p>
+<p>** &#8216;便利な（作品）」または「役に立たない」（機能しない）？ **</p>
+<p>溶液法は、それがすることができることを意味し、「有用」である場合：</p>
 <ol class="last arabic simple">
-<li><p class="first">讓一個或多個人找到他們的居所</p>
+<li><p class="first">1つ以上の人々が彼らの家を見つけることをしましょう</p>
 </li>
-<li><p class="first">或者是可讓一間或多間房子知道一個或多個國家的人不能居住在他們的房子</p>
+<li><p class="first">または家が1つ以上の国の1つ以上、人々が彼らの家に住むことができないことを知らせる</p>
 </li>
 </ol>
 </div>
-<p>在這張流程圖中，我們知道：</p>
+<p>このフローチャートでは、我々は知っている：</p>
 <ol class="arabic simple">
-<li><p class="first">當一個求解方法有用時，設定了一個人的住所或降低了一間房子可居住者的可能性時，整個虛擬大腦會重新回到第一個求解方法來繼續求解。</p>
+<li><p class="first">人の居住地や家の便利セットは乗員の可能性を減らすことができるときにメソッドを解決するとき、全体の仮想脳はまず継続する解決のアプローチを解決するために戻ります。</p>
 </li>
-<li><p class="first">假如一個求解方法沒用時，它會交給下一個方法來解決。</p>
+<li><p class="first">それが解決するために次の方法に転送されたときに解決法が役に立たない場合。</p>
 </li>
-<li><p class="first">當到最後一個方法都沒用時，他會離開整個求解環境並說：「我無法解開這個遊戲，抱歉！」</p>
-</li>
-<li><p class="first">在整個求解過程中，如果發現已解開數獨(Done)或者違反了數獨規則(Error)時，它就會跳離整個求解環境。</p>
+<li>And if final method can&#8217;t solve a game, it will go out and say &#8220;I can&#8217;t figure out this game, sorry!&#8221;</li>
+<li><p class="first">（完了）数独を解くか、数独のルール（エラー）に違反されたことが判明した場合の解決プロセスを通じて、それは全体の解決環境をオフにジャンプします。</p>
 </li>
 </ol>
 </div>
 <div class="section" id="some-basic-methods">
-<h2>一些基本求解方法<a class="headerlink" href="#some-basic-methods" title="Permalink to this headline">¶</a></h2>
+<h2>いくつかの基本的な解法<a class="headerlink" href="#some-basic-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">fill_only_one_possible:</p>
-<p>在每一個房子群組中，檢查每一間房子，是否只有一間房子能夠讓某國的人民居住，如果是，則該間房子必然要讓那國的人民遷入。</p>
+<li><p class="first">fill_only_one_possible：</p>
+<p>各家のグループでは、すべての家をチェックし、もし唯一の家の人々は、田舎に住むことができそうであるならば、家が進出するその国の人々を維持するようにします。</p>
 </li>
-<li><p class="first">fill_last_position_of_group:</p>
-<p>當一個房子群組中只剩一間空房時，那必然是只有一個國家的人民尚未入住。</p>
+<li><p class="first">fill_last_position_of_group：</p>
+<p>ときに、グループの家ときだけ1が利用可能に、まだ収容されていない国の人々だけである必要があります。</p>
 </li>
-<li><p class="first">check_obvious_number:</p>
-<p>檢查每一個國家中已經定居的國民，看他們所在的位置所交互影響、而尚未有該國人民入住的區塊中，是否可以找到僅剩一間房子容許該國國民來定居，如果是，則可以很明顯地配給該房子給與該國的人民。</p>
+<li><p class="first">check_obvious_number：</p>
+<p>すでに定住し、それぞれの国の国民を確認して、それらが相互作用の影響を受けているところを見て、あなたはそれがある場合は、残りの国民は、に定住するようにできるように、家を見つけることができれば、まだブロックが滞在する国の人々が存在し、明らかにその国の人々を与えるために、家に割り当てることができます。</p>
 </li>
-<li><p class="first">check_inobvious_number:</p>
-<p>這個求解方法與 check_obvious_number 相同，只是先找到一些區塊的虛擬國民，讓他們以及已定居的國民一起來探測其他尚未有本國國民居住的區塊。</p>
+<li><p class="first">check_inobvious_number：</p>
+<p>この解法とは同じcheck_obvious_numberが、彼らは他の人を検出するのに十分に一緒に定住し、まだブロックが自国民の生活しているように、最初の人々の中には、仮想ブロックを見つけること。</p>
 </li>
 </ol>
-<div class="sidebar" id="chain">
-<p class="first sidebar-title">甚麼是「<strong>鏈結(Chain)</strong>」？</p>
-<p class="last">「鏈結(Chain)」是由同一個房子群體中兩個或以上的空房子所組成。形成的要件就是這在這些房子中所有可能能夠居住在這些房子裡面的國家總數與這些房子的總數相等。如此我們就可以說這些房子形成了一個鏈結。這些國家的人都只能居住在這些房子上，而在同一房子群體的其他空房子則不再可能居住這些國家的人民。</p>
+<div class="sidebar" id="id1">
+<p class="first sidebar-title">「<a href="#id1"><span class="problematic" id="id2">**</span></a><a href="#id3"><span class="problematic" id="id4">**</span></a>連鎖（チェーン）」とは？</p>
+<p class="last">「連鎖（チェーン）」は、同じ家から空の家屋からなる二以上の基である。これは、すべてのこれらの家に住んでいることができるかもしれ形成された要素の総数に等しいた家のそれらとこれらの国々の住宅の総数。だから我々はこれらの家は、リンクを形成すると言うことができます。これらの国々の人々はこれらの家に住むことができ、同じ家の他のグループの空の家はこれらの国に住んでいることはもはや不可能である。</p>
 </div>
 <ol class="arabic" start="5">
-<li><p class="first">reduce_by_group_number:</p>
-<p>如果在一個房子區塊中形成了一個虛擬國民時， 那與這個虛擬國民同方向的房子群組中的其他空房子，就不可能居住這個國民。</p>
+<li><p class="first">reduce_by_group_number：</p>
+<p>もし人々が、他の空の家のグループ内の仮想の家と同じ方向に、それはこの国に住んでいることは不可能である家の中で、国家仮想ブロックの形成。</p>
 </li>
-<li><p class="first">update_chain:</p>
-<p>當一些房子開始住人以後，會影響一些房子不再能夠允許一些國家的居民，而這些空房子可能因此在一個房子群組中(x軸、y軸、區塊)中產生了一個**鍵鏈(Chain)**。這個方法就是去尋找可能的鍵鏈，並將鍵鏈所影響的空房子減少它們被這些鍵鏈的國民居住的可能。</p>
+<li><p class="first">update_chain：</p>
+<p>家の数が住んでし始めたとき、それは家の中には、もはやそのため、家グループ（X軸、Y軸、ブロック）内の空の家は、キーチェーンを制作できたいくつかの国の居住者を許可することができます影響を与えません。<strong>（チェーン）</strong>。この方法は、可能なキーチェーン、キーチェーン、空の家を見つけ、これらのキーチェーンに生きている自国民の潜在的な影響を軽減することである。</p>
 </li>
 </ol>
 </div>
 <div class="section" id="how-to-implement-a-method">
-<h2>如何去實作一個求解方法呢？<a class="headerlink" href="#how-to-implement-a-method" title="Permalink to this headline">¶</a></h2>
-<p>我們來實作一個只為一個國家的人民來看是否能有一個直覺的方法來為一個尚未有該國住民的區塊找到住所，我們命為 check_obvious_for_a_country(m, num)：</p>
+<h2>それを解決するためのメソッドを実装する方法？<a class="headerlink" href="#how-to-implement-a-method" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>私達はちょうど私達がcheck_obvious_for_a_country（M、NUM）として注文、人々は国がブロックけれども国の住民のための避難所を実行する検索する直感的な方法を持っているかどうかのために実装する必要があります。</p>
 <pre class="code literal-block">
 <span class="ln"> 1 </span> def check_obvious_for_a country(m, num):
 <span class="ln"> 2 </span> checked = list()
@@ -210,17 +210,17 @@
 <span class="ln">21 </span>             m.setit(possible[0].x, possible[0].y, num, d=&quot;Obvious For a Country People&quot;)
 </pre>
 <ol class="arabic simple">
-<li><p class="first">line#1, 定義一個求解方法, <em>m</em> 是這個遊戲的數獨世界，<strong>num</strong> 則是一個國家代碼, 可能值為1-9。</p>
+<li><p class="first">ライン＃1、解決方法を定義し、* m <em>は世界に一人のゲームの数、*</em> numは**可能な値は1-9である、国コードです。</p>
 </li>
-<li><p class="first">line#3, 將每一個已經入住此山谷的此國國民都找出他們的住所。</p>
+<li><p class="first">ライン＃3は、それぞれがこの谷に住んでいる、この国の国民は、彼らの家を見つけなければなりません。</p>
 </li>
-<li><p class="first">line#4-9, 檢查每一個尚未被檢查的房子區塊。</p>
+<li><p class="first">ライン＃4-9、すべての家をチェックすると、まだブロックがチェックされていない。</p>
 </li>
-<li><p class="first">line#10-11, 如果此區塊已有該國人民居住，那就不用檢查了。</p>
+<li><p class="first">ライン＃10月11日、このブロックは、居住国の人々されている場合は、それがチェックされていません。</p>
 </li>
-<li><p class="first">line#12-19, 檢查此區塊每一個空房是否可以讓該國的人民來居住。如果是，則將該房子放進去可能的名單裡面。</p>
+<li><p class="first">ライン＃12月19日、人々は田舎に住んで来ることができるように、このブロックは、すべての利用可能かどうかを確認してください。イエスならば、内部の可能な家のリストに移動します。</p>
 </li>
-<li><p class="first">line#20-21, 最後檢查可能的名單中，如果只有一個時，那就表示該房子必然由該國人民來居住。</p>
+<li><p class="first">一度だけがある場合、行番号20〜21、可能性の最終チェックリストは、それは家がその国の人々が生きるためにバインドされていることを意味します。</p>
 </li>
 </ol>
 </div>
@@ -233,26 +233,26 @@
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>瀏覽</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="總索引"
+          <a href="genindex.html" title="総合索引"
              >索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >模組</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
-          <a href="sudoku.html" title="程式詳解: sudoku套件"
-             >下一頁</a> |</li>
+          <a href="sudoku.html" title="詳細なプログラム：数独キット"
+             >次へ</a> |</li>
         <li class="right" >
-          <a href="data.html" title="如何在 Python 中製作一個解數獨的模擬環境?"
-             >上一頁</a> |</li>
-        <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
+          <a href="data.html" title="数独は、どのようにPythonでシミュレーション環境を作るには？"
+             >前へ</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 1.0 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, Robert J. Hwang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2 で生成しました。
     </div>
   </body>
 </html>

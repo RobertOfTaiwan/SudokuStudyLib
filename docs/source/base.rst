@@ -1,4 +1,4 @@
-The base knowledge of sudoku
+﻿The base knowledge of sudoku
 ============================
 
 Sudoku is a kind of puzzle game. It is one of the best way to learn logic, and at the same time, the Python language is one of the best computer language to learn logic. 

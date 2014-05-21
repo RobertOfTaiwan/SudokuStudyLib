@@ -1,0 +1,340 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 12:03+0800\n"
+"Last-Translator: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\program.rst:2
+msgid "Start Programming to Solve a Sudoku"
+msgstr "撰写 Python 程式来解数独了"
+
+#: ..\program.rst:4
+msgid ""
+"When we have created a sudoku simulate world in the computer to solve a "
+"sudoku, now we should go ahead to implement some methods which we solve it "
+"in our own hands. In other world, programming, is the stuff which we teach "
+"computer to do something that we have known it."
+msgstr ""
+"当我们已经在电脑建构好一个数独模拟世界时，对那些我"
+"们以前使用手写的方式所发现的解数独方法，我们就可以"
+"着手来将其以电脑语言(这里是Python)来重新阐述。就术语来说，称为程式设计(Programming)。"
+"所以程式设计可以视为我们在教导电脑如何去执行我们解决问题的方法。"
+
+#: ..\program.rst:7
+msgid ""
+"We first introduce the solve environment, then we will introduce some basic "
+"methods in this library."
+msgstr ""
+"一开始，我们先介绍这个专案整个求解数独的环境，然后我们再说明一些基本方法。"
+
+#: ..\program.rst:11
+msgid "Solving Environment"
+msgstr "求解环境"
+
+#: ..\program.rst:13
+msgid ""
+"We create a function solve() to do the real solving a sudoku, and we make "
+"two exception classes, SudokuDone, SudokuError to capture event happen when "
+"we use methods to solve a sudoku."
+msgstr ""
+"我们设计了solve() 这个函数来做整个求解数独的入口，另外也定义了两个事件类别，"
+"SudokuDon 及SudokuError，以处理求解过程中发现已经解开数独或者产生违反数独规则的状况。"
+
+#: ..\program.rst:15
+msgid "What is \"Exception\"?"
+msgstr "什么是「**例外处理(Exception)**」？"
+
+#: ..\program.rst:17
+msgid ""
+"Exception is an event defined, when the event condition has occurred, system"
+" will stop the processing and jump to the exception processing. There are "
+"two major exceptions in the environment:"
+msgstr ""
+"「例外处理(Exceptions)」是一种事件定义，当构成这个事件的条件满足时，"
+"系统就会停止处理目前的事务，而跳到该事件的处理程序。"
+"在这个专案中有两个主要的例外处理："
+
+#: ..\program.rst:21
+msgid "SudokuDone:"
+msgstr "SudokuDone:"
+
+#: ..\program.rst:21
+msgid "when the sudoku has been solved, will raise this exception"
+msgstr "当这个数独已经被解开时，这个例外处理会被叫醒"
+
+#: ..\program.rst:23
+msgid "SudokuError:"
+msgstr "SudokuError:"
+
+#: ..\program.rst:24
+msgid ""
+"when a country people to set in a house, but will break the rule of game, "
+"this will raise this exception"
+msgstr "当求解过程中发现违反数独规则时，这个例外处理会被叫醒"
+
+#: ..\program.rst:26
+msgid ""
+"To let the environment know how many methods they can use to solve a sudoku,"
+" we create a class, SolveMethod. We use this class to create all methods in "
+"a BRAIN. We can treat this BRAIN like the god of this valley. Every time, "
+"when people don't how to choose their suitable houses, you can ask the god "
+"of valley, and it will give an answer, or it would say that, \"**I don't "
+"know how to do either!**\""
+msgstr ""
+"为了让整个求解环境能够知道有多少种求解方法它能够使用，"
+"我们设计了一个类别，SolveMethod。我们以这个类别来将所"
+"有的求解方法置入成一个**虚拟大脑**。我们可以将这个"
+"虚拟大脑视为是这个美丽山谷的守护神。每当有新进来此山谷者，"
+"找不到居住所时，都可以透过祂来选择出适合的房子，但祂也可能回答：「对不起，"
+"我也不知道该如何选择！」"
+
+#: ..\program.rst:29
+msgid ""
+"Every method register in the Brain as a SovleMethod object, they have these "
+"major properties:"
+msgstr ""
+"对**虚拟大脑**而言，每一个解数独的方法都化为一个SovleMethod 物件储存在里面，"
+"这些物件有以下主要属性："
+
+#: ..\program.rst:31
+msgid "fun: the function name of the method in python coding"
+msgstr "fun: 解数独方法的 Python 函数名称"
+
+#: ..\program.rst:32
+msgid ""
+"idx: the index of the method, from the easier to the more difficult, the "
+"brain will use this sequence to solve a game one by one."
+msgstr ""
+"idx: 方法的排序，从简单的方法开始到困难的方法依序排列，"
+"虚拟大脑将依序一个一个地使用这些方法来解开数独。"
+
+#: ..\program.rst:33
+msgid "name: the name of the method"
+msgstr "name: 此方法的名称，使用者可以自订其名称"
+
+#: ..\program.rst:34
+msgid ""
+"level: the difficult level for human, using to count a game's difficult "
+"level"
+msgstr ""
+"level: 困难度，对人的直觉而言。系统用此来计数解开整个数独的困难积分。"
+
+#: ..\program.rst:37
+msgid "Solving Process"
+msgstr "求解过程"
+
+#: ..\program.rst:39
+msgid "The following is the flow chart of solve():"
+msgstr "下面是主要求解函数，solve()，的流程图："
+
+#: ..\program.rst:43
+msgid "**WORK or NOT WORK?**"
+msgstr "**「有用(work)」或「没用(not work)」？ **"
+
+#: ..\program.rst:45
+msgid "A method works or not means that using this method can:"
+msgstr "一个求解方法如果是「有用」，表示它能够："
+
+#: ..\program.rst:47
+msgid "let one or more people to find his or their own house,"
+msgstr "让一个或多个人找到他们的居所"
+
+#: ..\program.rst:48
+msgid ""
+"OR can let one or more houses know they are not allowed for some countries' "
+"people."
+msgstr ""
+"或者是可让一间或多间房子知道一个或多个国家的人不能"
+"居住在他们的房子"
+
+#: ..\program.rst:50
+msgid "In this flow chart, we know that:"
+msgstr "在这张流程图中，我们知道："
+
+#: ..\program.rst:52
+msgid ""
+"When a method works to set a person or reduce a house's allowed people, it "
+"will return to the first method to restart solving the game."
+msgstr ""
+"当一个求解方法有用时，设定了一个人的住所或降低了一间房子可居住者的可能性时，"
+"整个虚拟大脑会重新回到第一个求解方法来继续求解。"
+
+#: ..\program.rst:53
+msgid ""
+"If a method can't work to solve a game, it will give the game to the next "
+"method to solve it."
+msgstr "假如一个求解方法没用时，它会交给下一个方法来解决。"
+
+#: ..\program.rst:54
+msgid ""
+"And if final method can't solve a game, it will go out and say \"I can't "
+"figure out this game, sorry!\""
+msgstr ""
+"当到最后一个方法都没用时，他会离开整个求解环境并说：「我无法解开这个游戏，"
+"抱歉！」"
+
+#: ..\program.rst:55
+msgid "In the solving process, if \"Done\" or \"Error\" event occur, it will go out."
+msgstr ""
+"在整个求解过程中，如果发现已解开数独(Done)或者违反了数独规则(Error)时，"
+"它就会跳离整个求解环境。"
+
+#: ..\program.rst:58
+msgid "Some Basic Methods"
+msgstr "一些基本求解方法"
+
+#: ..\program.rst:60
+msgid "fill_only_one_possible:"
+msgstr "fill_only_one_possible:"
+
+#: ..\program.rst:62
+msgid ""
+"Find every house in a group, if there is only one house that one country "
+"people can live there, that house must let that country's people to live in."
+msgstr ""
+"在每一个房子群组中，检查每一间房子，是否只有一间房子能够让某国的人民居住，"
+"如果是，则该间房子必然要让那国的人民迁入。"
+
+#: ..\program.rst:64
+msgid "fill_last_position_of_group:"
+msgstr "fill_last_position_of_group:"
+
+#: ..\program.rst:66
+msgid ""
+"When in a group(line or box) are only one left, it must allow only one "
+"country people to live there."
+msgstr ""
+"当一个房子群组中只剩一间空房时，那必然是只有一个国家的人民尚未入住。"
+
+#: ..\program.rst:68
+msgid "check_obvious_number:"
+msgstr "check_obvious_number:"
+
+#: ..\program.rst:70
+msgid ""
+"Check every country people who has lived in a house, and when these people "
+"observe other boxes which has yet not lived their country people, can find "
+"an only house that allowed their country people or not?"
+msgstr ""
+"检查每一个国家中已经定居的国民，看他们所在的位置所"
+"交互影响、而尚未有该国人民入住的区块中，是否可以找"
+"到仅剩一间房子容许该国国民来定居，如果是，则可以很"
+"明显地配给该房子给与该国的人民。"
+
+#: ..\program.rst:73
+msgid "check_inobvious_number:"
+msgstr "check_inobvious_number:"
+
+#: ..\program.rst:75
+msgid ""
+"It is the same method as check_obvious_number, but some boxes' houses are "
+"formed as a **Group Number**."
+msgstr ""
+"这个求解方法与check_obvious_number 相同，只是先找到一些区块的虚拟国民，"
+"让他们以及已定居的国民一起来探测其他尚未有本国国民居住的区块。"
+
+#: ..\program.rst:0
+msgid "What is a **Chain**?"
+msgstr "什么是「**链结(Chain)**」？"
+
+#: ..\program.rst:79
+msgid ""
+"Chain is formed by two or above houses. In these houses, the amount of all "
+"different possible countries' people are equal to the amount of the houses. "
+"When a chain have formed, we can reduce the possible countries' people from "
+"the other houses in the same group of this chain."
+msgstr ""
+"「链结(Chain)」是由同一个房子群体中两个或以上的空房子所组成。"
+"形成的要件就是这在这些房子中所有可能能够居住在这些"
+"房子里面的国家总数与这些房子的总数相等。如此我们就可以说这些房子形成了一个链结。"
+"这些国家的人都只能居住在这些房子上，而在同一房子群"
+"体的其他空房子则不再可能居住这些国家的人民。"
+
+#: ..\program.rst:82
+msgid "reduce_by_group_number:"
+msgstr "reduce_by_group_number:"
+
+#: ..\program.rst:84
+msgid ""
+"If there is a **Group Number** in a box, the empty houses of its same "
+"direction could be reduce the possible country people of this Group Number."
+msgstr ""
+"如果在一个房子区块中形成了一个虚拟国民时， 那与这"
+"个虚拟国民同方向的房子群组中的其他空房子，就不可能居住这个国民。"
+
+#: ..\program.rst:86
+msgid "update_chain:"
+msgstr "update_chain:"
+
+#: ..\program.rst:88
+msgid ""
+"As the houses have been lived some people, this would make some empty houses"
+" reduce some possible countries' people. And then these empty houses in a "
+"group(x-way line, y-way line, box) may form a **Chain**."
+msgstr ""
+"当一些房子开始住人以后，会影响一些房子不再能够允许一些国家的居民，"
+"而这些空房子可能因此在一个房子群组中(x轴、y轴、区块)中产生了一个**键链(Chain)**。"
+"这个方法就是去寻找可能的键链，并将键链所影响的空房"
+"子减少它们被这些键链的国民居住的可能。"
+
+#: ..\program.rst:92
+msgid "How to implement a method?"
+msgstr "如何去实作一个求解方法呢？"
+
+#: ..\program.rst:94
+msgid ""
+"We could implement a method called check_obvious_for_a_country(m, num) "
+"method as an example:"
+msgstr ""
+"我们来实作一个只为一个国家的人民来看是否能有一个直"
+"觉的方法来为一个尚未有该国住民的区块找到住所，我们命为check_obvious_for_a_country(m,"
+" num)："
+
+#: ..\program.rst:121
+msgid ""
+"line#1, define a method, *m* is the world of this game, and **num** is a "
+"country id, here is 1-9."
+msgstr ""
+"line#1, 定义一个求解方法, *m* 是这个游戏的数独世界，**num** 则是一个国家代码,"
+" 可能值为1-9。"
+
+#: ..\program.rst:122
+msgid ""
+"line#3, starts to find the all people who have lived in a house of a "
+"country."
+msgstr ""
+"line#3, 将每一个已经入住此山谷的此国国民都找出他们的住所。"
+
+#: ..\program.rst:123
+msgid "line#4-9, it scan all its effect boxes if those have not been checked."
+msgstr "line#4-9, 检查每一个尚未被检查的房子区块。"
+
+#: ..\program.rst:124
+msgid "line#10-11, it the country people have live in this box, ignore it."
+msgstr "line#10-11, 如果此区块已有该国人民居住，那就不用检查了。"
+
+#: ..\program.rst:125
+msgid ""
+"line#12-19, check all empty houses in this box which allow the country's "
+"people or not, if yes, put it in the Possible List."
+msgstr ""
+"line#12-19, 检查此区块每一个空房是否可以让该​​国的人民来居住。"
+"如果是，则将该房子放进去可能的名单里面。"
+
+#: ..\program.rst:126
+msgid ""
+"line#20-21, if the Possible List has only one house, it must can be assigned"
+" this house to the country's people."
+msgstr ""
+"line#20-21, 最后检查可能的名单中，如果只有一个时，那就"
+"表示该房子必然由该国人民来居住。"
+

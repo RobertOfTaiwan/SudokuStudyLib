@@ -1,0 +1,168 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 12:32+0800\n"
+"Last-Translator: Robert J. Hwang <RobertOfTaiwan@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\base.rst:2
+msgid "The base knowledge of sudoku"
+msgstr "数独 （数独） の基礎"
+
+#: ..\base.rst:4
+msgid ""
+"Sudoku is a kind of puzzle game. It is one of the best way to learn logic, "
+"and at the same time, the Python language is one of the best computer "
+"language to learn logic. So, if we can combine these two kinds of tools to "
+"teach children or young men to learn logic, it will be perfect. This is why "
+"the project be done and going to."
+msgstr ""
+"数独 （数独） は、心のゲーム、最良のツールはロジックの種類。 Python は、世界"
+"で最高のプログラミング言語の 1 つです。 子供やティーンエイ ジャーは、ロジック"
+"を学ぶために教えるために両方のツールを混在させることができる場合は、最高の組"
+"み合わせです。 これは、プロジェクトとプロジェクトの目標の原点です。"
+
+#: ..\base.rst:8
+msgid "A classic sudoku"
+msgstr "典型的な数独トピック"
+
+#: ..\base.rst:10
+msgid ""
+"You can study what and how is sudoku in Wiki Page: http://en.wikipedia.org/"
+"wiki/Sudoku"
+msgstr ""
+"你可以從下列網站取得與學習數獨(sudoku)的相關知識：http://en.wikipedia.org/"
+"wiki/Sudoku"
+
+#: ..\base.rst:19
+msgid "The following is a classic sudoku:"
+msgstr "以下は、典型的な数独のタイトルです。"
+
+#: ..\base.rst:19
+msgid "and the following is the solution for it:"
+msgstr "ここでは、典型的な数独を解決します。"
+
+#: ..\base.rst:20
+msgid "|sudoku_init|"
+msgstr "|sudoku_init|"
+
+#: ..\base.rst:20
+msgid "|sudoku_result|"
+msgstr "|sudoku_result|"
+
+#: ..\base.rst:24
+msgid "Rules"
+msgstr "基本的なルール"
+
+#: ..\base.rst:26
+msgid "The basic rules to solve a sudoku is very easy:"
+msgstr "数独 （数独） は、基本的なルールは非常に簡単です："
+
+#: ..\base.rst:28
+msgid ""
+"Put the number of 1-9 to every line(including x-way and y-way) and every box."
+msgstr ""
+"1-9 (x 方向と y 方向を含む) それぞれの行を埋めるために、すべての 3 x 3 チャン"
+"クを数します。"
+
+#: ..\base.rst:29
+msgid "every line and every box can't duplicate of the number of 1-9."
+msgstr "各行および各ブロック番号を繰り返すことはできません。"
+
+#: ..\base.rst:32
+msgid "How many possible puzzles in a 9x9 sudoku"
+msgstr "9 × 9 数独に可能なゲームの数を形成することができますか？"
+
+#: ..\base.rst:34
+msgid ""
+"If we put the first number in a the position (1, 1), there are must have 9 "
+"numbers can be selected to put in. Then we put the second number in the "
+"postion (1, 2), there are must have 8 numbers can be selected to put in. So, "
+"and as it going on, we can write down the possible numbers we can select in "
+"every position:"
+msgstr ""
+"我々 はいくつかの配置の位置 (1, 1) に開始、9 桁の数字が私たちの選択があること"
+"になります。 その後、我々 は 8 桁の数字は 2 番目の数字 (1、2) の位置に配置す"
+"る場合を選択するとします。 だから、類推、上から下、左から右、我々 書き留める"
+"ことができる各位置の番号を選択できます。"
+
+#: ..\base.rst:39
+msgid "9!"
+msgstr "9 ！"
+
+#: ..\base.rst:39
+msgid "6!"
+msgstr "6 ！"
+
+#: ..\base.rst:39
+msgid "3!"
+msgstr "3 ！"
+
+#: ..\base.rst:39
+msgid "1!"
+msgstr "1 ！"
+
+#: ..\base.rst:41
+msgid "9"
+msgstr "9"
+
+#: ..\base.rst:41 ..\base.rst:44
+msgid "6"
+msgstr "6"
+
+#: ..\base.rst:41 ..\base.rst:44 ..\base.rst:47
+msgid "3"
+msgstr "3"
+
+#: ..\base.rst:41 ..\base.rst:42 ..\base.rst:43 ..\base.rst:44 ..\base.rst:45
+#: ..\base.rst:46 ..\base.rst:47 ..\base.rst:48 ..\base.rst:49
+msgid "1"
+msgstr "1"
+
+#: ..\base.rst:42
+msgid "8"
+msgstr "8"
+
+#: ..\base.rst:42 ..\base.rst:45
+msgid "5"
+msgstr "5"
+
+#: ..\base.rst:42 ..\base.rst:45 ..\base.rst:48
+msgid "2"
+msgstr "2"
+
+#: ..\base.rst:43
+msgid "7"
+msgstr "7"
+
+#: ..\base.rst:43 ..\base.rst:46
+msgid "4"
+msgstr "4"
+
+#: ..\base.rst:52
+msgid ""
+"So the possible combinations are 9!*6!*3!*6!*3!*1!*3!*1!*1* = "
+"4,514,807,808,000"
+msgstr ""
+"したがって、すべての組み合わせは 9 ！ * 6 ！ * 3 ！ * 6 ！ * 3 ！ * 1 ！ * "
+"3 ！ * 1 ！ * 1 * = 4,514,807,808,000"
+
+#: ..\base.rst:54
+msgid "if we use python to caculate it::"
+msgstr "我々 の計算に Python を使用する場合::"
+
+#: ..\base.rst:64
+msgid ""
+"About the mathematics of sudoku, you can get it at Wiki, http://en.wikipedia."
+"org/wiki/Mathematics_of_Sudoku"
+msgstr ""
+"数独の数学 http://en.wikipedia.org/wiki/Mathematics_of_Sudoku を取得する次の "
+"web サイトに行くことができます。"

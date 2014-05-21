@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>如何在 Python 中製作一個解數獨的模擬環境? &mdash; SudokuStudyLib 1.0 documentation</title>
+    <title>数独は、どのようにPythonでシミュレーション環境を作るには？ &mdash; SudokuStudyLib 1.0 ドキュメント</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,63 +24,63 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="SudokuStudyLib 1.0 documentation" href="index.html" />
-    <link rel="next" title="Start Programming to Solve a Sudoku" href="program.html" />
-    <link rel="prev" title="課程計畫" href="courses.html" /> 
+    <link rel="top" title="SudokuStudyLib 1.0 ドキュメント" href="index.html" />
+    <link rel="next" title="数独にPythonプログラムを書く" href="program.html" />
+    <link rel="prev" title="レッスンプラン" href="courses.html" /> 
   </head>
   <body>
     <div class="related">
-      <h3>瀏覽</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="總索引"
+          <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >模組</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
-          <a href="program.html" title="Start Programming to Solve a Sudoku"
-             accesskey="N">下一頁</a> |</li>
+          <a href="program.html" title="数独にPythonプログラムを書く"
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
-          <a href="courses.html" title="課程計畫"
-             accesskey="P">上一頁</a> |</li>
-        <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
+          <a href="courses.html" title="レッスンプラン"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 1.0 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">內容目錄</a></h3>
+  <h3><a href="index.html">目次</a></h3>
   <ul>
-<li><a class="reference internal" href="#">如何在 Python 中製作一個解數獨的模擬環境?</a><ul>
-<li><a class="reference internal" href="#what-is-a-class-and-an-object">甚麼是類別? 甚麼是物件?</a></li>
-<li><a class="reference internal" href="#what-is-a-property">甚麼是屬性(Property)？</a></li>
-<li><a class="reference internal" href="#what-is-a-method">甚麼是方法(Method)？</a></li>
-<li><a class="reference internal" href="#game-defined-file">數獨遊戲定義檔案</a></li>
+<li><a class="reference internal" href="#">数独は、どのようにPythonでシミュレーション環境を作るには？</a><ul>
+<li><a class="reference internal" href="#what-is-a-class-and-an-object">カテゴリとは何ですか？オブジェクトとは何ですか？</a></li>
+<li><a class="reference internal" href="#what-is-a-property">プロパティ（プロパティ）とは？</a></li>
+<li><a class="reference internal" href="#what-is-a-method">メソッド（方法）とは何ですか？</a></li>
+<li><a class="reference internal" href="#game-defined-file">数独定義ファイル</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上一個主題</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="courses.html"
-                        title="上一章">課程計畫</a></p>
-  <h4>下一個主題</h4>
+                        title="前の章へ">レッスンプラン</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="program.html"
-                        title="下一章">Start Programming to Solve a Sudoku</a></p>
-  <h3>本頁</h3>
+                        title="次の章へ">数独にPythonプログラムを書く</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/data.txt"
-           rel="nofollow">顯示原始碼</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>快速搜尋</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -93,157 +93,157 @@
           <div class="body">
             
   <div class="section" id="how-to-make-a-simulator-environment-in-python-to-solve-a-sudoku">
-<h1>如何在 Python 中製作一個解數獨的模擬環境?<a class="headerlink" href="#how-to-make-a-simulator-environment-in-python-to-solve-a-sudoku" title="Permalink to this headline">¶</a></h1>
-<p>我們認為, 類別定義, 是在OOP程式設計中最困難的部分. 所以在這些課程中, 我們不準備詳細地解釋如何設計類別, 屬性與方法. 我們只會解說在這個程式庫中既有的類別, 屬性與方法. 所以我們可以類比這些類別, 屬性與方法所構成的資料結構是一個解決數獨的模擬環境, 以便讓學習者以人的思考模式來學習如何解開一個數獨.</p>
-<p>首先, 我們可以想像在一個美麗的山谷中, 有 9x9  間方方正正的房子, 它們排列如下:</p>
+<h1>数独は、どのようにPythonでシミュレーション環境を作るには？<a class="headerlink" href="#how-to-make-a-simulator-environment-in-python-to-solve-a-sudoku" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>私たちは、これらのコースでは、我々はクラス、属性およびメソッドを設計する方法を詳細に説明することが準備されていませんので、我々は両方のカテゴリでこのライブラリで説明し、クラス定義、オブジェクト指向プログラミングの最も困難な部分であると考え数独のロックを解除する方法を学ぶために考えている学習者となるよう、属性やメソッド、私たちはこれらのクラスのデータ構造アナログができ、プロパティとメソッドは、数独を解決するためのシミュレーション環境を提起した。</p>
+<p>まず、我々は美しい谷に想像することができ、家の間の9×9の正方形がある次のように、それらが配置されている。</p>
 <img alt="_images/p4.png" src="_images/p4.png" />
 <div class="topic" id="id1">
-<p class="topic-title first"><strong>一個假想的聯合王國</strong></p>
-<p>這裡有 9 個國家, 每一個國家有 9 個人, 他們決定一起定居在這個美麗的山谷. 而這個山谷共有 9x9 間房子.  他們決定每一排(x-way line), 每一列(y-way line), 及每一個 3x3 區塊都包含了每一個國家的人. 如此, 他們才會認為他們這個團體才是一個真正的聯合王國, 可以永久和平地生活在一起. 你可以幫助他們達到這個目的嗎?</p>
+<p class="topic-title first"><strong>イギリス虚</strong></p>
+<p>9カ国は、谷が9×9の合計を収容しながら、それぞれの国で、彼らはこの美しい谷に定住することを決め、一緒、9人を持って、あります。彼らは、（X-ウェイライン）各行を決め、各列（Y-ウェイライン）、およびすべての3x3のブロックは、すべての国の人が含まれていますので、彼らはこのグループには、本当のイギリスで、永続的に安心して一緒に暮らすことができますし、彼らがこの目標にそれを達成するのを助けることができると思います？</p>
 </div>
-<p>接著, 我們就可以開始協助這些人來促成這一個美好的世界...</p>
+<p>その後、我々はこの世界を良くするために、これらの人々を助けるために始めることができます...</p>
 <div class="section" id="what-is-a-class-and-an-object">
-<h2>甚麼是類別? 甚麼是物件?<a class="headerlink" href="#what-is-a-class-and-an-object" title="Permalink to this headline">¶</a></h2>
-<p>在OOP中，類別(class)的定義是主角。它就如同人類j為了探索、溝通或者紀錄等目的，會將有同樣行為、特性與外表的事物歸類一樣。如同我們會將動物當作一類，而大象就是動物類別的一個子類別，一隻大象就是同屬於動物及大象這兩類的一個物件。</p>
-<p>雖然在自然上，一隻大象這個物件同時隸屬於大象類及動物類，但看目標的需要，也可以直接將一隻大象當做動物類別的一個物件即可。所以我們可以說在 OOP 所說的物件(Object)就是我們現實世界的一個實體，就如同人類若是一個類別，那你就是隸屬此類別的一個唯一獨立的物件。</p>
-<p>依據我們設定的範圍與需要，我們可能設計出不同的類別，而讓同一個物件同時隸屬於它們。如我們想要研究城市生態時，我們可能會設計一個 animal 類別，而這個類別中的物件包括一些人，一些寵物等等...但當我們想要製作一個電話簿程式時，那我們就會設計一個 person 類別，一些人會成為此類別的物件，但不會包括寵物，除非這些寵物也都擁有手機。</p>
-<p>在這個專案中，我們設計的主要類別有:</p>
+<h2>カテゴリとは何ですか？オブジェクトとは何ですか？<a class="headerlink" href="#what-is-a-class-and-an-object" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OOPでは、カテゴリ（クラス）が主人公のように定義されている。 、ヒトJとしてそれを探る通信したり、記録を目的とするためには、同じ動作、特性と分類されている同じものの外観を持つことになります。我々は、クラスのような動物、象、動物のカテゴリのサブカテゴリであると思いますが、1象と象は、オブジェクトの2つのタイプのいずれかに属し動物である。</p>
+<p>象に、自然、このオブジェクトはゾウや動物のクラスに属するが、ターゲットのニーズを見ながら、また、動物のカテゴリへの直接の対象とする象であってもよい。だから我々は、あなたがこのカテゴリー内の単一の独立したオブジェクトに接続されているだけで、人間の範疇かのように、私たちの本当のオブジェクト指向プログラミングは、世界のエンティティオブジェクト（オブジェクト）の中で述べていることを言うことができます。</p>
+<p>我々は、範囲や必要性に基づいて設定され、我々は別のカテゴリをデザインし、それらが同時に同じオブジェクトに属してみましょうことができます。このような我々は都市の生態を勉強したいときなどは、頂きます、私たちは、動物のカテゴリなど何人かの人々、ペットを含むオブジェクトのこのカテゴリを設計するかもしれない...しかし、我々は、電話帳プログラムを作りたい人物カテゴリを設計、一部の人々は、このクラスのオブジェクトになりますが、彼らは携帯電話を持っていない限り、ペット、ペットが含まれていません。</p>
+<p>このプロジェクトでは、主なカテゴリがありますように設計。</p>
 <ul>
-<li><p class="first">Number Class:</p>
+<li><p class="first">Numberクラス：</p>
 <blockquote>
-<div><p>我們可以視數獨遊戲中每個數字是一個人。而整個數獨世界中有 9 個國家，每個國家有 9 個人。如此，這個 Number Class 就可以視為是一個國家類別。每一個國家都有一個識別代碼(ID)，在這裡是 1-9，而每個國家都會紀錄它的人民住在這山谷中的位置。</p>
+<div><p>私たちは、それぞれの番号が人である数独ゲームがかかる場合があります。全世界数独は、それぞれの国が9人を持って、9カ国があります。だから、ナンバークラスは、国家のカテゴリとみなすことができる。すべての国は、識別コード（ID）を持ってここに1-9で、それぞれの国が、この谷に住んでいるその人の位置を記録します。</p>
 </div></blockquote>
 </li>
-<li><p class="first">Point Class:</p>
+<li><p class="first">Pointクラス：</p>
 <blockquote>
-<div><p>Point 物件就是一間房子。 每間房子都會標註它是否已住人，如果已住人，那是哪個國家的人民；如果是空的，那可以讓哪些國家的人民來申請入住？</p>
+<div><p>Pointオブジェクトは、家です。それが空である場合には、入学を申請するためにどの国の人々させることができ、それはあなたが生きていかなければならない場合、それはどの国の人であり、生きるために持っている場合、それぞれの家にマークされるのですか？</p>
 </div></blockquote>
 </li>
-<li><p class="first">GroupBase Class:</p>
+<li><p class="first">GroupBaseクラス：</p>
 <blockquote>
-<div><p>GroupBase是一種群組類別，也就是它的物件不是一個實體，而是一群實體的組合。在這裡的 GroupBase 包含了三種群組，X 與 Y 軸方向的房子群組及區塊房子群組。 每個物件都將指出它包含了哪些房子，已經住了多少人，還有哪些國家的人民還沒住進來？</p>
+<div><p>GroupBaseはつまり、そのオブジェクトは実体ではないが、グループクラスですが、実体の組み合わせのグループ。ここGroupBase3グループ、住宅建設のブロック群とグループXおよびY軸方向が含まれています。各オブジェクトには、多くの人々が住んでいたか、それが含まれている家の指摘だけでなく、ここに住んでいない国々の人々のだろうか？</p>
 </div></blockquote>
 </li>
-<li><p class="first">Box Class:</p>
+<li><p class="first">ボックスクラス：</p>
 <blockquote>
-<div><p>它是GroupBase的子類別，為區塊群組。在數獨世界中總共有 9 個區塊物件，從左到右，從上到下，被標註其區塊代碼如下:</p>
+<div><p>これは、ブロックグループのためGroupBaseサブカテゴリです。 ：左から、次のようにマークされたコードのブロックである右、上から下へ、合計9ブロックオブジェクト内の数独の世界</p>
 <img alt="_images/p5.png" src="_images/p5.png" />
 </div></blockquote>
 </li>
-<li><p class="first">lineX Class:</p>
+<li><p class="first">LINEXクラス：</p>
 <blockquote>
-<div><p>這是 GroupBase 子類別，為 X 軸的房子群組。在數獨世界中共有 9 個物件，從左到右被標註 1-9，如下圖:</p>
+<div><p>GroupBaseこのサブクラス、家のためのグループX軸。次のように左から右に数独の世界では9のオブジェクトの合計は、1〜9のラベルが付いています。</p>
 <img alt="_images/p6.png" src="_images/p6.png" />
 </div></blockquote>
 </li>
-<li><p class="first">lineY Class:</p>
+<li><p class="first">線を引いたクラス：</p>
 <blockquote>
-<div><p>這是 GroupBase 子類別，為 Y 軸的房子群組。在數獨世界中共有 9 個物件，從上到下被標註 1-9，如下圖:</p>
+<div><p>GroupBaseこのサブクラス、家のためのグループのY軸。以下のように上から下に数独の世界では9のオブジェクトの合計は、1〜9ラベル付けされます。</p>
 <img alt="_images/p7.png" src="_images/p7.png" />
 </div></blockquote>
 </li>
-<li><p class="first">Matrix Class:</p>
+<li><p class="first">Matrixクラス：</p>
 <blockquote>
-<div><p>Matrix class定義了數獨遊戲的整個世界。它是一個美麗的山谷，包含了 9 個國家的人民，每一個國家有 9 個人，山谷中建造了 9x9 間房子以提供給這些人民來居住，以組成一個永遠和平的聯合王國。</p>
+<div><p>Matrixクラスは、数独、全世界を定義しています。それはそれぞれの国が9人を持って、9カ国の人々を含む、美しい渓谷、ですが、谷の家は、英国を形成するために、いつまでも平和のうちに生存するこれらの人々に提供するために、9路盤を構築しました。</p>
 </div></blockquote>
 </li>
 </ul>
 </div>
 <div class="section" id="what-is-a-property">
-<h2>甚麼是屬性(Property)？<a class="headerlink" href="#what-is-a-property" title="Permalink to this headline">¶</a></h2>
-<p>屬性(Property)是在類別(Class)的定義裡面，類別用它來定義成員，特徵及紀錄狀況。如在一個人的類別裡面可能會包含以下一些屬性: 這人擁有多少錢、他有幾個小孩子、第一個小孩是男或是女、每個小孩各是幾歲?</p>
-<p>以下是這個專案中幾個主要類別的主要屬性定義:</p>
+<h2>プロパティ（プロパティ）とは？<a class="headerlink" href="#what-is-a-property" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プロパティ（プロパティ）、クラス、文字とレコードの状態のメンバーを定義するために使用し、内部の定義のクラス（クラス）である。次の属性のいくつかを含むことができ、人のカテゴリー場合：この男は、彼はいくつかの子供がいたどのくらいのお金を所有、最初の子は、男性または女性で、それぞれの子それぞれが古い？</p>
+<p>以下はこのプロジェクトのいくつかの主要なカテゴリに定義されている主な属性です。</p>
 <ul>
-<li><p class="first">Number class:</p>
+<li><p class="first">Numberクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">v: 這個國家的代碼, 1-9</p>
+<li><p class="first">V：国コード、1-9</p>
 </li>
-<li><p class="first">p: 這個國家每一個人民所居住的房子列表</p>
+<li><p class="first">P：人々が住んでいるこの国のすべての家をリスト</p>
 </li>
-<li><p class="first">filled: 有多少人已經住進房子了</p>
+<li><p class="first">filled：どのように多くの人々は家に移動しました</p>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Point class:</p>
+<li><p class="first">Pointクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">x: 這個房子的 x 軸座標</p>
+<li><p class="first">X：家のx座標</p>
 </li>
-<li><p class="first">y: 這個房子的 y 軸座標</p>
+<li><p class="first">Y：家のy座標</p>
 </li>
-<li><p class="first">v: 這個房子居住了哪個國家的人民，如果是空的，那它的值就是 0</p>
+<li><p class="first">V：この家は、それが空である場合、その値は0であり、どの国の人が住んでいました</p>
 </li>
-<li><p class="first">b: 這個房子隸屬哪個區塊</p>
+<li><p class="first">B：ブロックは添付の家</p>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">GroupBase class:</p>
+<li><p class="first">GroupBaseクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">idx: 這個群組的代碼</p>
+<li><p class="first">IDX：このコードグループ</p>
 </li>
-<li><p class="first">p: 隸屬這個群組的房子列表</p>
+<li><p class="first">P：このグループの家の会員名簿</p>
 </li>
-<li><p class="first">filled: 在這個群組裡面已經居住了多少人</p>
+<li><p class="first">いっぱい：多くの人々のために生きてきたこのグループの</p>
 </li>
-<li><p class="first">possilbe: 在這個群組裡面還有哪些國家還沒住進來，值為這些國家的代碼列表</p>
+<li><p class="first">possilbe：このグループには住んでいなかった国々は、これらの国々のコードリストの値もある</p>
 </li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
 <div class="sidebar" id="effects">
-<p class="first sidebar-title">什麼是「<strong>effects</strong>」？</p>
-<p class="last">當我們說一個區塊(box)的**effects**，是說與這個區塊有相同的 x 與 y 軸方向的其他四個區塊。所以，effectsX就是有同樣 x 軸方向的區塊，effectsY就是有同樣 y 軸方向的區塊。</p>
+<p class="first sidebar-title">「<strong>effects</strong>」とは何ですか？</p>
+<p class="last">私たちは**影響のそのブロック（ボックス）を言うと、このブロックは、他の4ブロックの同じx軸とy軸の方向を持っていると言われています。たときしたがって、effectsX x軸方向が同一ブロックで、effectsY y軸方向が同じブロックである。</p>
 </div>
 <ul>
-<li><p class="first">Box class:</p>
+<li><p class="first">ボックスクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">包含所有 GroupBase 的屬性</p>
+<li><p class="first">すべての属性が含まれていGroupBase</p>
 </li>
-<li><p class="first">effects: 這個區塊的所有鄰居區塊</p>
+<li><p class="first">effects: すべてのネイバーは、このブロックをブロック</p>
 </li>
-<li><p class="first">effectsX: 這個區塊的 x 軸方相鄰居</p>
+<li><p class="first">effectsX：このブロックは、x軸の等方性の隣人</p>
 </li>
-<li><p class="first">effectsY: 這個區塊的 y 軸方相鄰居</p>
+<li><p class="first">effectsY：このブロックは、Y軸等方性の隣人</p>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">lineX class:</p>
+<li><p class="first">LINEXクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">與 GroupBase 的屬性相同</p>
+<li><p class="first">GroupBaseは同じで属性</p>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">lineY class:</p>
+<li><p class="first">線を引いたクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">與 GroupBase 的屬性相同</p>
+<li><p class="first">GroupBaseは同じで属性</p>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Matrix class:</p>
+<li><p class="first">Matrixクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">p: 一個二階陣列的房子列表，從 p[0][0] 到 p[8][8]，代表這個山谷的所有房子。</p>
+<li><p class="first">P：二次配列の家のリスト、Pから[0][0] P〜[8] [8]、この谷にすべての住宅に代わって。</p>
 </li>
-<li><p class="first">lineX: x 軸方向房子群組的列表</p>
+<li><p class="first">LINEX：X軸方向の家グループのリスト</p>
 </li>
-<li><p class="first">lineY: y 軸方向房子群組的列表</p>
+<li><p class="first">線を引いた：y軸は、グループの家をリストします</p>
 </li>
-<li><p class="first">b: 區塊房子群組的列表</p>
+<li><p class="first">B：ブロックハウスグループリスト</p>
 </li>
-<li><p class="first">n: 所有國家的列表</p>
+<li><p class="first">N：すべての国のリスト</p>
 </li>
-<li><p class="first">filled: 紀錄已經有多少人入住在這個山谷了</p>
+<li><p class="first">いっぱい：谷での滞在を持っているどのように多くの人々の記録を</p>
 </li>
 </ul>
 </div></blockquote>
@@ -251,94 +251,93 @@
 </ul>
 </div>
 <div class="section" id="what-is-a-method">
-<h2>甚麼是方法(Method)？<a class="headerlink" href="#what-is-a-method" title="Permalink to this headline">¶</a></h2>
-<p>方法(methods)是一個類別及其物件的一些特定行為。舉個例子，如果我們定義了一個收音機類別，它將包含一些按鈕的屬性，而當我們按下這些按鈕時，我們就必須定義一些方法來執行這個動作。這些動作有可能是開始接收某個電台的節目、或者是錄製節目到CD等等...</p>
-<p>以下是這個專案中的類別中使用道的主要方法:</p>
+<h2>メソッド（方法）とは何ですか？<a class="headerlink" href="#what-is-a-method" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>方法（メソッド）は、クラスとそのオブジェクトの特定の動作の一部です。例えば我々はラジオのカテゴリを定義した場合、それは、ボタンのプロパティの一部を含むことになる、と私たちはボタンを押したときに、我々は、このアクションを実行するためにいくつかのメソッドを定義する必要があります。これらのアクションは、というようにCDにラジオ番組、または録画された番組の受信を開始することであってもよく、...</p>
+<p>以下は、プロジェクトのクラスパスで使用される主な方法です。</p>
 <ul>
-<li><p class="first">Number class:</p>
+<li><p class="first">Numberクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">setit(p1): 當有人找到屬於自己的房子時，就會啟動這個方法</p>
+<li><p class="first">setit（P1）：誰かが自分の家を見つけたとき、彼らはこの方法を開始します</p>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Point class:</p>
+<li><p class="first">Pointクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">can_see(p1): 測試一個房子是否能夠**看到**另外一個房子(p1)?</p>
+<li><p class="first">can_see（P1）：ハウス****は別の家（P1）を参照してくださいかどうかをテスト？</p>
 </li>
-<li><p class="first">can_see_those(posList): 測試一個房子能否**看見** posList 所列的房子，並將所有能看見的房子列表傳回。</p>
-</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">註解</p>
-<p>甚麼是「<strong>看見</strong>」？</p>
-<p class="last">對一個房子而言，與它同一排、同一列、或者同在一個區塊的其他房子，都是它能夠**看見**的房子。</p>
-</div>
-</div></blockquote>
-</li>
-<li><p class="first">GroupBase class:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p class="first">allow(v): 測試一個房子群組能否讓標記為 v 的國家人民來居住？</p>
-</li>
-<li><p class="first">get_num_pos(v): 在這個房子群組中，取得 v 國人民居住的房子物件，如果該國尚未有人入住，則以None來回應。</p>
-</li>
-<li><p class="first">count_num_possible(count): 在一個房子群組中，取得國家的id及可供該國人民居住的房子列表，如果有參數 count，則表示要取得的可供居住的房子數要等於 count 才取回。</p>
-</li>
-<li><p class="first">get_all_pos(method): 如果 method = &#8220;a&#8221;， 取得一個房子群組的所有房屋物件列表；如果 method=&#8221;u&#8221;，則取得所有空房列表；如果 method=&#8221;s&#8221;，則取得所有已住人的房子列表。</p>
-</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">Box class:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p class="first">所有 GroupBase 類別的方法</p>
-</li>
-<li><p class="first">get_group_number(num): 測試這個國家代碼  num 在一個房子區塊中能否形成一個 <strong>虛擬國民</strong>？</p>
+<li><p class="first">can_see_those（POSLIST）：ハウス**** POSLISTは家がリストされたかどうかをテストし、すべての家のリストが返さを見ることができます。</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">註解</p>
-<p>甚麼是「<strong>虛擬國民</strong>」？</p>
-<p class="last">虛擬國民存在於一個房子區塊群組中。在一個區塊中尚未有人入住的房子中，如果所有可能讓某個國家居住的房子在同一個方向時(無論是 x 軸或 y 軸)，那我們就可以稱這些房子形成了一個**虛擬國民**。雖然我還不曉得在這個區塊中，這個國家的人民最後將居住在哪裡，但我們從虛擬國民中知道，在與它同個方向的其他區域的房子，都將不允許居住這個國家的人民了。</p>
+<p class="first admonition-title">ノート</p>
+<p>「見る」とは何ですか？</p>
+<p class="last">その同じ行、同じ列、または1ブロック内の他の家との家、という点では、の家を見ることが可能である。</p>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">lineX class:</p>
+<li><p class="first">GroupBaseクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">與 GroupBase 有相同的方法</p>
+<li><p class="first">グループをテストするには生きるために家のラベルVの人々を行うことができます。（V）を許可しますか？</p>
+</li>
+<li><p class="first">get_num_pos（V）：この家グループでは、国がまだ占有されていない場合人々は、カントリーハウス生活オブジェクトをV作っなし応答を配置します。</p>
+</li>
+<li><p class="first">count_num_possible（カウント）：自社グループ内では、それは家が生活の数を数えると等しくなるように利用できるようにすべきであることを意味し、カウントが取得されたパラメータがある場合は、国番号と国の人々のリストは、家に住んで利用できるように。</p>
+</li>
+<li>get_all_pos(method): get all houses in this group, if method=&#8221;a&#8221;; if method=&#8221;u&#8221;, get all empty houses, if method=&#8221;s&#8221;, get all not empty houses.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">ボックスクラス：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">すべてGroupBaseクラスメソッド</p>
+</li>
+<li><p class="first">get_group_number（NUM）：numは国家仮想****の形成をブロックすることができます家の中で国コードをテストする？</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p>「仮想国民****」とは？</p>
+<p class="last">ナショナルは、仮想の家のブロックグループ内に存在する。家のブロックでは、まだ占有されておらず、国が同じ方向に家に住んでされる可能性があり、すべての場合には、（XまたはY軸のいずれか）、その後、我々は**仮想を形成するこれらの家を呼び出すことができます国立**。私は、このブロックでは、最終的にはに住んでいるでしょう、この国の人々は知らないが、我々は、仮想国民から知っている、家は人々がこの国に住んでいることはできませんのと同じ方向に、他の地域とのけれどもA。</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">LINEXクラス：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="first">GroupBase同じ方法</p>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">lineY class:</p>
+<li><p class="first">線を引いたクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">與 GroupBase 有相同的方法</p>
+<li><p class="first">GroupBase同じ方法</p>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Matrix class:</p>
+<li><p class="first">Matrixクラス：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="first">get_all_pos(method): 如果 method = &#8220;a&#8221;， 取得所有房屋物件列表；如果 method=&#8221;u&#8221;，則取得所有空房列表；如果 method=&#8221;s&#8221;，則取得所有已住人的房子列表。</p>
+<li><p class="first">get_all_pos(method)： method=&#8221;a&#8221;、すべての住宅を取得する場合は、リストオブジェクト、method=&#8221;u&#8221; 使用可能なすべてのリストを取得する場合は、method=&#8221;s&#8221;、すべての生きて人間を取得する場合家のリスト。</p>
 </li>
-<li><p class="first">sort_unassigned_pos_by_possibles(possibles): 取得所有的空房列表，而這些空房數必須僅能夠讓 possibles 個國家的人入住，如果 possibles == 0,  將取得全部空房。回應回來時將以可居住國家數 ，從小排到大。</p>
+<li><p class="first">sort_unassigned_pos_by_possibles（possibles）：可用性のすべてのリストを取得し、これらを利用できるようにすることができなければならないだけpossibles== 0は、使用可能なすべてを取得する場合は、滞在するいくつかの国をpossibles。多くの国々が居住されるときに戻って応答、小型、大規模排出される。</p>
 </li>
-<li><p class="first">can_see(p0, method=&#8221;u&#8221;, num=0): 取得能夠看見某一房子(p0)的房子列表，如國 num!=0，表示僅取得可讓國家代碼為 num 者居住的房子。</p>
+<li><p class="first">can_see(p0, method=&#8221;u&#8221;, num=0): このような=0ナショナル·テンキーなどのハウス（P0）家のリストを見ることができ得る、唯一の家に住んでいる民のための国別コードを可能にするために利用できるようにことを示しています！。</p>
 </li>
-<li><p class="first">setit(x, y, v): 讓國家代碼為 v 的人民安住在座標為(x, y)的房子。</p>
+<li><p class="first">setit（X、Y、V）：ある家の安全な座標（x、y）に住んでいる人々のためのV国コードをしてみましょう。</p>
 </li>
-<li><p class="first">reduce(x, y, v): 當一個房子(x, y)被入住時，任何能夠看見此房子的其他空房，都可用此方法來減掉已入住這個國家人民(v)的可能性。</p>
+<li><p class="first">（X、Y、V）を減少させる：ハウス（x、y）は、他の利用可能性をチェックするときは、この家を見ることができ、すでにこの国では（V）の可能性を生きる人々を失うため、このように利用できます。</p>
 </li>
-<li><p class="first">allow(x, y, v): 測試這個國家(v)的人民是否能夠居住於座標(x, y)的房子？</p>
+<li><p class="first">許可（X、Y、V）：テストこの国（V）の人々は座標（x、y）の家に住むことができるかどうか？</p>
 </li>
-<li><p class="first">read(file): 從一個定義檔(file)中讀入最初到此山谷的國家、人民與居住位置。</p>
+<li><p class="first">（ファイル）をお読みください。定義ファイル（ファイル）からこの谷、人や居住の場所に最初の国を読み込みます。</p>
 </li>
 </ul>
 </div></blockquote>
@@ -346,10 +345,10 @@
 </ul>
 </div>
 <div class="section" id="game-defined-file">
-<h2>數獨遊戲定義檔案<a class="headerlink" href="#game-defined-file" title="Permalink to this headline">¶</a></h2>
-<p>你能夠定義數獨遊戲的最初狀況。在文字檔中一行定義一個房子的座標及居住者，格式為x, y, v，如下圖，此專案附有一些已定義好的數獨，置於 [安裝的目錄]/sudoku/data/ 目錄裡。</p>
+<h2>数独定義ファイル<a class="headerlink" href="#game-defined-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>あなたは、数独の初期条件を定義することができます。テキストファイルの行に、以下に示すように、フォームXで、Y、V、、このプロジェクトは、[インストールディレクトリ]/独/ data /ディレクトリに置き、数独の数と定義されている、家の座標と乗員を定義内側。</p>
 <table border="1" class="docutils" id="id2">
-<caption>一個定義範例、最初的外觀以及解出來的外觀</caption>
+<caption>例の定義は、初期の外観や外溶液の外観</caption>
 <colgroup>
 <col width="18%" />
 <col width="41%" />
@@ -357,9 +356,9 @@
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">m3.data</th>
-<th class="head"><p class="first last">起始的數獨外觀</p>
+<th class="head"><p class="first last">数独の外観を開始</p>
 </th>
-<th class="head"><p class="first last">已解的數獨外觀</p>
+<th class="head"><p class="first last">数独は、溶液の外観でした</p>
 </th>
 </tr>
 </thead>
@@ -383,26 +382,26 @@
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>瀏覽</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="總索引"
+          <a href="genindex.html" title="総合索引"
              >索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >模組</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
-          <a href="program.html" title="Start Programming to Solve a Sudoku"
-             >下一頁</a> |</li>
+          <a href="program.html" title="数独にPythonプログラムを書く"
+             >次へ</a> |</li>
         <li class="right" >
-          <a href="courses.html" title="課程計畫"
-             >上一頁</a> |</li>
-        <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
+          <a href="courses.html" title="レッスンプラン"
+             >前へ</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 1.0 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, Robert J. Hwang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2 で生成しました。
     </div>
   </body>
 </html>

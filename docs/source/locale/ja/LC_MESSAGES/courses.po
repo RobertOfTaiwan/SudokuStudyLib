@@ -1,0 +1,117 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 11:48+0800\n"
+"Last-Translator: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\courses.rst:2
+msgid "Courses"
+msgstr "レッスンプラン"
+
+#: ..\courses.rst:4
+msgid ""
+"We can arrange these courses as a sudoku summer camp. We can prepare 1-6 "
+"different level sudokus. The learners don't need to learn all levels. The "
+"purpose of these courses is NOT to teach all solving methods of sudoku, its "
+"purpose is logic learning. So, we can let different learners have their "
+"suitable target to learn."
+msgstr ""
+"我々は、これらのプログラムを探索するサマーキャンプ"
+"の数独ロジックを手配することができ、我々は目標を学"
+"習者がすべての数独ソリューションを学習できるようにすることはありません。"
+"対象の異なる数独の難易度の6種類を事前に手配するこ"
+"とができますが、彼らは自分のレベルのを見つけてみま"
+"しょう数独当社の目標は、数独のスキルを解決するため"
+"に、それらのロジックを教えるために、私たちはさまざ"
+"まな学習を行うことができ、異なる材料を使用しており"
+"、それを解決するためのロジックの精神にそれらすべてを教えることはありません。"
+
+#: ..\courses.rst:8
+msgid "Who are suitable for these courses"
+msgstr "誰がこれらのコースをすべきですか？"
+
+#: ..\courses.rst:10
+msgid ""
+"Every one who have studied in an elementary school for three or four years."
+msgstr "コースのそれぞれが適してグレード3-4を持っていた。"
+
+#: ..\courses.rst:13
+msgid "First Step: Learn solve a sudoku by hand"
+msgstr "最初のステップ：それ自身の独立した筆跡を作る"
+
+#: ..\courses.rst:16 ..\courses.rst:26 ..\courses.rst:37
+msgid "Hours:"
+msgstr "営業時間："
+
+#: ..\courses.rst:16 ..\courses.rst:26 ..\courses.rst:37
+msgid "14 hours, 2 hours/day, 7 days"
+msgstr "14時間、7日間、2時間/日"
+
+#: ..\courses.rst:20 ..\courses.rst:31 ..\courses.rst:40
+msgid "Purpose:"
+msgstr "目標："
+
+#: ..\courses.rst:19
+msgid "Find the suitable level for every learner"
+msgstr ""
+"彼は、各学習者の適切なレベルの数独を見つけてみまし"
+"ょう"
+
+#: ..\courses.rst:20
+msgid "Learn the basic computer knowledge"
+msgstr "コンピュータ基本を学ぶ"
+
+#: ..\courses.rst:23
+msgid "Second Step: Learn to find methods to solve a sudoku"
+msgstr ""
+"ステップ2：数独を解決する方法を見つけることを学び"
+"なさい"
+
+#: ..\courses.rst:29
+msgid ""
+"Nameing the method that they have found a model to solving a sudoku, and "
+"write down the description."
+msgstr ""
+"彼らはモデルの名前と、このモードを記述するために言"
+"葉を書き留めて、自分の言葉で、解決すべき見つけたとき。"
+
+#: ..\courses.rst:30
+msgid "Let them can express their methods to others."
+msgstr ""
+"彼らは他の人に耳を傾ける博覧会の独自の方法を見つけるようにします。"
+
+#: ..\courses.rst:31
+msgid ""
+"Learn the basic python programming by solving their home work, like solving "
+"how add all the value of 1 to 100."
+msgstr ""
+"彼らは上のような1から100のように、Pythonの基本的なプ"
+"ログラムを書く、とすることを学ぶ前に、宿題を解くことから道."
+".."
+
+#: ..\courses.rst:34
+msgid "Third Step: Learn to write python code to implement their methods"
+msgstr ""
+"ステップ3：自分自身のプラクティスを見つけることがPy"
+"thonプログラムを書き始める"
+
+#: ..\courses.rst:40
+msgid "Learning Object Oriented Programming(OOP) concept."
+msgstr ""
+"コンセプトに基づいて、オブジェクト指向プログラミング（OOP）を学習する。"
+
+#: ..\courses.rst:41
+msgid "Learning to use OOP to implement their methods."
+msgstr ""
+"彼らが発見した方法をシミュレートするために、オブジ"
+"ェクト指向プログラミングを使用することを学ぶ。"
+

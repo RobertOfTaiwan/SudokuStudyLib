@@ -1,0 +1,58 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 12:00+0800\n"
+"Last-Translator: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\index.rst:2
+msgid "SudokuStudyLib"
+msgstr "SudokuStudyLib"
+
+#: ..\index.rst:8
+msgid ""
+"**This is a python library for studying logic by solving Sudoku and learning"
+" the programming of python language.** Sudoku is a kind of puzzle game. it "
+"is one of the best way to learn logic, and at the same time, the Python "
+"language is one of the best computer language to learn logic. So, if we can "
+"combine these two kinds of tools to teach children or young men to learn "
+"logic, it will be perfect. This is why the project be done and going to."
+msgstr ""
+"**这是一个让学生学习逻辑及Python OOP基础程式设计的一个Python3 程式库。"
+" ** 数独是一种益智类游戏，同时也是学习逻辑的最好工具之一，"
+"而Python 则是世界上最好的初学者学习程式设计的电脑语言。"
+"所以，如果能够结合这两种来教导儿童、学生、青少年来学习逻辑的话，"
+"那将会是最好的组合！这也是这个专案的缘起，也是这个专案追求的目标。"
+
+#: ..\index.rst:13
+msgid "Welcome to the Purest World of Human: Sudoku and Logic"
+msgstr "欢迎来到人类最单纯的世界：数独与逻辑"
+
+#: ..\index.rst:15
+msgid "Contents:"
+msgstr "内容："
+
+#: ..\index.rst:29
+msgid "Indices and tables"
+msgstr "索引与参考资料"
+
+#: ..\index.rst:31
+msgid ":ref:`genindex`"
+msgstr ":ref:`genindex`"
+
+#: ..\index.rst:32
+msgid ":ref:`modindex`"
+msgstr ":ref:`modindex`"
+
+#: ..\index.rst:33
+msgid ":ref:`search`"
+msgstr ":ref:`search`"
+

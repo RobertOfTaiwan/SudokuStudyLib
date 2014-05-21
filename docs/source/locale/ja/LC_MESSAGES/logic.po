@@ -1,0 +1,285 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 11:52+0800\n"
+"Last-Translator: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\logic.rst:2
+msgid "What is logic?"
+msgstr "「論理」とは何ですか？"
+
+#: ..\logic.rst:5
+msgid ""
+"Logic is the most important for a person starting to discover the world"
+msgstr ""
+"学生の世界を探検するために学習を開始するために、ロ"
+"ジックは、最も重要なツールです。"
+"ジックは、最も重要なツールです。"
+
+#: ..\logic.rst:7
+msgid ""
+"The basic logic is dichotomy, is True or False in human language, or is 0 or"
+" 1 in computer language. It is the smallest and simplest classification "
+"which human can recognize and communicate with each other. So learning logic"
+" for children and young men is very important, because this is the base of "
+"all knowledge, and the base of all religion."
+msgstr ""
+"最も基本的な論理が\"yes\"と \"no\"、または内部のコンピュ"
+"ータサイエンス「0」である二分法、「1」である。これ"
+"は人間の認知の最小分類上の他の人とのコミュニケーションです。"
+"それはすべての知識の基盤は、すべての宗教の基礎であ"
+"るであるため、そのように学習する児童生徒の論理は非常に重要です。"
+"るであるため、そのように学習する児童生徒の論理は非常に重要です。"
+
+#: ..\logic.rst:10
+msgid ""
+"**If you can't judge a thing is right or not, is existed or not, in one "
+"certain view point, you don't know the world, as you don't know yourself "
+"either.**"
+msgstr ""
+"*ビューの特定のポイントに応じて、特定の時間に、あ"
+"なたは事を判断できない場合は、「はい」または「いい"
+"え」、または「存在」または、あなたはこの世界を理解"
+"していない、「存在しない」があるあなたは自分自身を知らない。"
+" **"
+" **"
+
+#: ..\logic.rst:13
+msgid "Learning Logic by Solving Sudoku"
+msgstr "数独のロジックから学ぶこと"
+
+#: ..\logic.rst:15
+msgid ""
+"Learning logic can be a very happy thing if we teach it as a game, and "
+"Sudoku is the one. There are several good reasons to study logic by Solving "
+"sudoku:"
+msgstr ""
+"我々は数独は非常に楽しいゲームですが、その後、ゲー"
+"ムから学ぶために行くことができれば、学習ロジックが"
+"、面白いことに変換することができます。私たちは、数"
+"独ロジックに学習に多くの利点を挙げることができる。"
+"独ロジックに学習に多くの利点を挙げることができる。"
+
+#: ..\logic.rst:17
+msgid "Its rules are so simple, everybody can know it in 5 minutes,"
+msgstr ""
+"そのルールはかなり単純であり、誰でも5分以内にそれを理解することができます。"
+"そのルールはかなり単純であり、誰でも5分以内にそれを理解することができます。"
+
+#: ..\logic.rst:18
+msgid "It is so complicated that have more than billions of combinations."
+msgstr ""
+"それはまた、組み合わせの数十億まで持つことができ、十分に複雑。"
+"それはまた、組み合わせの数十億まで持つことができ、十分に複雑。"
+
+#: ..\logic.rst:19
+msgid "It can be separated into different difficult levels easily."
+msgstr ""
+"それは人々の異なるレベルを使用することができる可能"
+"にするために、難易度の異なる種々であり得る。"
+"にするために、難易度の異なる種々であり得る。"
+
+#: ..\logic.rst:22
+msgid "Learning Logic by Learning Python Programming"
+msgstr "Pythonプログラミングロジックを学ぶことを学ぶ"
+
+#: ..\logic.rst:24
+msgid ""
+"Learning a computer language is the nature way to learn logic. Python is a "
+"interpreter script language, you can get every resource from "
+"https://www.python.org/. I recite a period of Python "
+"FAQ<https://docs.python.org/3/faq/general.html> about for the beginning "
+"programmers:"
+msgstr ""
+"コンピュータ言語を学ぶことは、ロジックを学ぶのに非常に直感的な方法です。"
+" Pythonは、プログラムの設計を実装するための簡単な方"
+"法を提供し、解釈コンピュータ言語です。 https://www.python."
+"org/：ここでは、すべてのリソースの言語の公式ウェブ"
+"サイトにコンピュータを得ることができます。私たちの"
+"FAQから Pythonは初心者のための適切なプログラミング理"
+"由を理解するためにいくつかのクリップ："
+"由を理解するためにいくつかのクリップ："
+
+#: ..\logic.rst:28
+msgid "Q:"
+msgstr "問題："
+
+#: ..\logic.rst:28
+msgid "Is Python a good language for beginning programmers?"
+msgstr ""
+"初心者のために設計されたプログラムでは、Pythonは良い"
+"選択です？"
+"選択です？"
+
+#: ..\logic.rst:39
+msgid "A:"
+msgstr "回答："
+
+#: ..\logic.rst:31
+msgid "Yes."
+msgstr "はい。"
+
+#: ..\logic.rst:33
+msgid ""
+"It is still common to start students with a procedural and statically typed "
+"language such as Pascal, C, or a subset of C++ or Java. Students may be "
+"better served by learning Python as their first language. Python has a very "
+"simple and consistent syntax and a large standard library and, most "
+"importantly, using Python in a beginning programming course lets students "
+"concentrate on important programming skills such as problem decomposition "
+"and data type design. With Python, students can be quickly introduced to "
+"basic concepts such as loops and procedures. They can probably even work "
+"with user-defined objects in their very first course."
+msgstr ""
+"今、学生がプログラムを学ぶために始めたとき、または"
+"このようなC + +のパスカル、C、などの従来のコンピュータ言語を使用している。"
+"しかし、それは少し古風であり、学生は自分の探査プロ"
+"グラムを開始するためのより良いと簡単な方法に値する"
+"、とPythonはこれらの機能を提供します。これは非常に単"
+"純で一貫性のある文法構造を有しており、標準ライブラ"
+"リは、多数の、最も重要なのは、それがかなりコンピュ"
+"ータサイエンスの詳細にも、課題を解決するために、学"
+"生がプログラミング技術に集中することを可能にすることである。"
+" Pythonを使って、生徒たちはすぐにこのようなループ（"
+"ループ）、手順（プロシージャ）としてセットアッププ"
+"ログラムの基礎を学ぶことができます。でも、最初のク"
+"ラスでは、彼らはカスタムオブジェクトを使用しようとさせることができます。"
+"ラスでは、彼らはカスタムオブジェクトを使用しようとさせることができます。"
+
+#: ..\logic.rst:35
+msgid ""
+"For a student who has never programmed before, using a statically typed "
+"language seems unnatural. It presents additional complexity that the student"
+" must master and slows the pace of the course. The students are trying to "
+"learn to think like a computer, decompose problems, design consistent "
+"interfaces, and encapsulate data. While learning to use a statically typed "
+"language is important in the long term, it is not necessarily the best topic"
+" to address in the students' first programming course."
+msgstr ""
+"プログラミングの経験は、コンピュータが（など、C、"
+"のような）静的な言語を使用し、当初決して不自然なようである。"
+"これは、コース全体が遅くなるように、学生はまず、コ"
+"ンピュータの複雑な内部構造を理解しなければならないことができます。"
+"学生は、問題やデザインインターフェイスを解決するた"
+"め、考えて見ると、コンピュータのポイントを使用する方法を学ぶ必要があります。"
+"長期目標ながら、静的コンピュータの研究が必要と利益"
+"であるが、まず第一に、しきい値をプログラムされる必要がそれほど高く混同しない。"
+"であるが、まず第一に、しきい値をプログラムされる必要がそれほど高く混同しない。"
+
+#: ..\logic.rst:37
+msgid ""
+"Many other aspects of Python make it a good first language. Like Java, "
+"Python has a large standard library so that students can be assigned "
+"programming projects very early in the course that do something. Assignments"
+" aren't restricted to the standard four-function calculator and check "
+"balancing programs. By using the standard library, students can gain the "
+"satisfaction of working on realistic applications as they learn the "
+"fundamentals of programming. Using the standard library also teaches "
+"students about code reuse. Third-party modules such as PyGame are also "
+"helpful in extending the students' reach."
+msgstr ""
+"Pythonはプログラミングを学ぶための好ましいコンピュー"
+"タ言語として多くの利点があります。 Javaのような、そ"
+"れは教室での最大の学生がプロジェクトのいくつかを実"
+"装することができ、標準的なライブラリをたくさん持っ"
+"ているし、これらのプロジェクトではなく、単純な加算"
+"と減算、乗算、除算4演算よりも、いくつかの実用的な"
+"アプリケーションとすることができる。一方、これらの"
+"標準ライブラリを使用すると、学生がプログラムを学び、再利用することができます。"
+"他のサードパーティモジュールの種々はまた、pygameのよ"
+"うな、非常に使いやすく、直接学生を可能にするために使用することができる。"
+"うな、非常に使いやすく、直接学生を可能にするために使用することができる。"
+
+#: ..\logic.rst:39
+msgid ""
+"Python's interactive interpreter enables students to test language features "
+"while they're programming. They can keep a window with the interpreter "
+"running while they enter their program's source in another window."
+msgstr ""
+"Pythonは、学生がテストの側縁に直接プログラムを記述す"
+"ることを可能にする対話型のインタプリタです。それは"
+"あなたのサイドウィンドウにコードを記述することがで"
+"き、別のウィンドウで、コードを実行してテストします。"
+"き、別のウィンドウで、コードを実行してテストします。"
+
+#: ..\logic.rst:42
+msgid "Features of this Library"
+msgstr "このライブラリの特徴"
+
+#: ..\logic.rst:44
+msgid ""
+"There are so many sudoku's puzzle games and studying in the world. Some are "
+"made for fun, some are for the studying of mathematics,  while this library "
+"focus on logic learning. And the logic mainly is in human view, not in "
+"computer science view. So, there are some features in this package:"
+msgstr ""
+"この世界はあまりにも多くの数独ゲームや学習プログラ"
+"ム、娯楽のためのいくつかの、数学の研究のためのいく"
+"つかを持っており、このプロジェクトは、論理の研究に焦点を当てています。"
+"また、ここではロジックではなく、コンピュータサイエ"
+"ンスの観点よりも、出発点として見ると、人々の視点に捧げられています。"
+"そこで、本プロジェクトでは、次の特徴があります。"
+"そこで、本プロジェクトでは、次の特徴があります。"
+
+#: ..\logic.rst:47
+msgid "This is mainly for studying logic for human."
+msgstr "人々が「論理」の基本精神を学びましょう。"
+
+#: ..\logic.rst:48
+msgid "It is NOT to plan to be a normal programming courses."
+msgstr ""
+"これは、一般的なプログラミングのコースであること」ではありません」。"
+"これは、一般的なプログラミングのコースであること」ではありません」。"
+
+#: ..\logic.rst:49
+msgid "It is NOT to plan to be a studying of serious mathematics."
+msgstr ""
+"これは、厳密な数学的な研究であること」ではありません」。"
+"これは、厳密な数学的な研究であること」ではありません」。"
+
+#: ..\logic.rst:50
+msgid ""
+"The methods of solving a sudoku are mainly in a human view, NOT in computer "
+"science view."
+msgstr ""
+"数独法は「非」コンピュータサイエンスの視点が、人間の視点を探索に基づいています。"
+"数独法は「非」コンピュータサイエンスの視点が、人間の視点を探索に基づいています。"
+
+#: ..\logic.rst:51
+msgid ""
+"Let people to find their own methods to solve a sudoku, and name these "
+"methods in their own way. (This is not in this package, but should be "
+"arranged this in the courses.)"
+msgstr ""
+"ストップは、人々が独自の方法を発見するために取得し"
+"、自分の言葉でそれに名前を付ける。 （これは内部で"
+"このPythonのパッケージではありませんが、内部のこのコ"
+"ースで配置する必要がありますが。）"
+"ースで配置する必要がありますが。）"
+
+#: ..\logic.rst:52
+msgid "Let people learning python to implement their own methods."
+msgstr ""
+"人々は、学生が自分の道を探るときに実行するために、"
+"Pythonプログラミングを学習することができます。"
+"Pythonプログラミングを学習することができます。"
+
+#: ..\logic.rst:53
+msgid ""
+"Studying OOP programming to solve a sudoku. OOP method can be treated as "
+"human behavior."
+msgstr ""
+"数独を解決するために、オブジェクト指向プログラミング（OOP）を学習する。"
+" OOPのアプローチは、人間の思考や行動の角度を一致させることができます。"
+" OOPのアプローチは、人間の思考や行動の角度を一致させることができます。"
+
+

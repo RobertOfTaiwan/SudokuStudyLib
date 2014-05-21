@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>程式詳解: sudoku套件 &mdash; SudokuStudyLib 1.0 documentation</title>
+    <title>詳細なプログラム：数独キット &mdash; SudokuStudyLib 1.0 ドキュメント</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,45 +24,45 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="SudokuStudyLib 1.0 documentation" href="index.html" />
-    <link rel="prev" title="撰寫 Python 程式來解數獨了" href="program.html" /> 
+    <link rel="top" title="SudokuStudyLib 1.0 ドキュメント" href="index.html" />
+    <link rel="prev" title="数独にPythonプログラムを書く" href="program.html" /> 
   </head>
   <body>
     <div class="related">
-      <h3>瀏覽</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="總索引"
+          <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >模組</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
-          <a href="program.html" title="撰寫 Python 程式來解數獨了"
-             accesskey="P">上一頁</a> |</li>
-        <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
+          <a href="program.html" title="数独にPythonプログラムを書く"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 1.0 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>上一個主題</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="program.html"
-                        title="上一章">撰寫 Python 程式來解數獨了</a></p>
-  <h3>本頁</h3>
+                        title="前の章へ">数独にPythonプログラムを書く</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/sudoku.txt"
-           rel="nofollow">顯示原始碼</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>快速搜尋</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -75,45 +75,45 @@
           <div class="body">
             
   <div class="section" id="package-sudoku-the-oop-method">
-<h1>程式詳解: sudoku套件<a class="headerlink" href="#package-sudoku-the-oop-method" title="Permalink to this headline">¶</a></h1>
-<p>這是使用物件導向程式設計來求解數獨的程式庫</p>
+<h1>詳細なプログラム：数独キット<a class="headerlink" href="#package-sudoku-the-oop-method" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>これは、数独ライブラリーを解決するために、オブジェクト指向プログラミングの使用である</p>
 <span class="target" id="module-sudoku.sudoku"></span><span class="target" id="module-sudoku"></span><dl class="class">
 <dt id="sudoku.sudoku.Box">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Box</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Box"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Box" title="Permalink to this definition">¶</a></dt>
-<dd><p>房子區塊群組類別</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Box</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Box"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Box" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ハウスブロックグループカテゴリ</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>idx</strong> &#8211; int, 此群組的代碼</li>
-<li><strong>p</strong> &#8211; 此群組所屬的 Point 物件列表</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>idx</strong> &#8211; INT、このグループのコード</li>
+<li><strong>p</strong> &#8211; Pointオブジェクトは、このグループリストに属している</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="first admonition-title">註解</p>
-<p class="last">這將取代母類別，GroupBase，的 init()</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">これは女性のカテゴリ、GroupBase、INIT（）に置き換えられます</p>
 </div>
 <dl class="method">
 <dt id="sudoku.sudoku.Box.get_group_number">
-<tt class="descname">get_group_number</tt><big>(</big><em>num</em>, <em>pos=</em>, <span class="optional">[</span><span class="optional">]</span><em>notInLineX=None</em>, <em>notInLineY=None</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Box.get_group_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Box.get_group_number" title="Permalink to this definition">¶</a></dt>
-<dd><p>如果在一個區塊群組中所有尚未被給填上的代碼, num, 其可能填上此 num 的 Point 物件有同樣的 x 軸或 y 軸座標時, 我們稱為 Group Numer。</p>
+<tt class="descname">get_group_number</tt><big>(</big><em>num</em>, <em>pos=</em>, <span class="optional">[</span><span class="optional">]</span><em>notInLineX=None</em>, <em>notInLineY=None</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Box.get_group_number"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Box.get_group_number" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>もしブロックグループ内のすべてのコードを埋めるためになかった場合は、このPointオブジェクトを充填することができるnumは、numは同じx-y軸座標を有し、我々はグループNumerを呼ばれる。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>num</strong> &#8211; int, 要尋找的代碼, 它是這個區塊群組的的 Group Number</li>
-<li><strong>pos</strong> &#8211; list, 一個 Point 物件列表，從中來尋找出 Group Number，如果是空白，則函數會取得區塊物件所有空白的 Point 物件。</li>
-<li><strong>notInLineX</strong> &#8211; bool, 呼叫 get_all_pos() 時，設定包含或不包含 x 軸的空白點。</li>
-<li><strong>notInLineY</strong> &#8211; bool, 呼叫 get_all_pos() 時，設定包含或不包含 y 軸的空白點。</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>num</strong> &#8211; INTは、グループ番号のブロックグループのコードを見つけること</li>
+<li><strong>pos</strong> &#8211; それが空白の場合は、リスト、グループ番号を見つけるために、そこから、機能ブロックオブジェクトは、すべての空白PointオブジェクトをPointオブジェクトのリストを取得します。</li>
+<li><strong>notInLineX</strong> &#8211; BOOL、コールget_all_pos（）は、x軸の有無にかかわらず、空白のスポットを設定した場合。</li>
+<li><strong>notInLineY</strong> &#8211; BOOL、コールget_all_pos（）は、空白のスポットを設定するか、Y軸が含まれていない場合があります。</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">GroupNumber, None或者是一個 GroupNumber 物件</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">GroupNumber、なしまたはオブジェクトGroupNumber</p>
 </td>
 </tr>
 </tbody>
@@ -124,15 +124,15 @@
 
 <dl class="class">
 <dt id="sudoku.sudoku.Chain">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Chain</tt><big>(</big><em>numList</em>, <em>posList</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Chain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Chain" title="Permalink to this definition">¶</a></dt>
-<dd><p>一個鏈結(chain)是由同個群組中2個以上的空白點組合起來，在這些點上的可被填上的代碼總數剛好等於這些點數，所以在同個群組中的其他空白點就不可能被填上這個鏈結上的所有代碼。</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Chain</tt><big>(</big><em>numList</em>, <em>posList</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Chain"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Chain" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>チェーン（チェーン）は、これらの点上のコードの総数は、最大2つ以上のブランクスポットの同じグループで構成されているので、他の空白のスポット内の同じグループで、ポイント数と正確に一致に充填することができるこのリンクコードのすべてを満たすことは不可能。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>numList</strong> &#8211; int list, 代表這個鏈結的所有代碼列表</li>
-<li><strong>posList</strong> &#8211; Point list, 代表這個連結上所有空白點的列表</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>numList</strong> &#8211; int型のリスト、リンクコードのすべての代表者のリスト</li>
+<li><strong>posList</strong> &#8211; ポイントリスト、リンク上のすべてのブランクスポットの代表のリスト</li>
 </ul>
 </td>
 </tr>
@@ -142,16 +142,16 @@
 
 <dl class="class">
 <dt id="sudoku.sudoku.GroupBase">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">GroupBase</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>所有群組類別(包含 x 軸, y 軸, 區塊等群組)的基本類別</p>
-<p>基本群組類別的起始函數(init())</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">GroupBase</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>基本的なカテゴリーの（x軸、y軸、ブロックおよび他の基を含む）すべてのグループクラス</p>
+<p>最初のグループ·クラスの基本的な機能（INIT（））</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>idx</strong> &#8211; int, 這個物件的代碼</li>
-<li><strong>p</strong> &#8211; 所屬這個物件的 Point 物件列表</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>idx</strong> &#8211; INT、このオブジェクトコード</li>
+<li><strong>p</strong> &#8211; Pointオブジェクトこのオブジェクトは、リストに属し</li>
 </ul>
 </td>
 </tr>
@@ -159,15 +159,15 @@
 </table>
 <dl class="method">
 <dt id="sudoku.sudoku.GroupBase.allow">
-<tt class="descname">allow</tt><big>(</big><em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.allow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.allow" title="Permalink to this definition">¶</a></dt>
-<dd><p>檢查這個群組物件是否能夠被填上此代碼(v)？</p>
+<tt class="descname">allow</tt><big>(</big><em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.allow"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.allow" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>オブジェクトがこのグループコード（V）に挿入することができるかどうかをチェックする？</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>v</strong> &#8211; int,要被檢查的代碼</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>v</strong> &#8211; int型、検査対象のコード</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">「是」或「非」</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">「はい」または「いいえ」</td>
 </tr>
 </tbody>
 </table>
@@ -175,19 +175,19 @@
 
 <dl class="method">
 <dt id="sudoku.sudoku.GroupBase.count_num_possible">
-<tt class="descname">count_num_possible</tt><big>(</big><em>count=1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.count_num_possible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.count_num_possible" title="Permalink to this definition">¶</a></dt>
-<dd><p>取得這個群組中所有空白點列表，而且可被填寫的數字僅存於 [count] 個點上。</p>
+<tt class="descname">count_num_possible</tt><big>(</big><em>count=1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.count_num_possible"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.count_num_possible" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>このグループ内のすべての空白のスポットのリストを取得し、残りの図の[count]ポイント上で充填することができる。</p>
 <div class="admonition note">
-<p class="first admonition-title">註解</p>
-<p class="last">輸出為一個 tuple 列表，這個 tuple包含兩個值，一個是數字，另一個是 Point 物件列表</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">出力はタプルのリストで、このタプルは2値が含まれ、1は数字、他の物点のリストである</p>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>count</strong> &#8211; int, 要取得的點數</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>count</strong> &#8211; intが、達成されるべき指し</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">list, 格式為  [(num,[p1, p2...]),...]</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">フォーマットのリスト、[（数値、[P1、P2...]）、...]</td>
 </tr>
 </tbody>
 </table>
@@ -195,24 +195,24 @@
 
 <dl class="method">
 <dt id="sudoku.sudoku.GroupBase.get_all_pos">
-<tt class="descname">get_all_pos</tt><big>(</big><em>diff=</em>, <span class="optional">[</span><span class="optional">]</span><em>method='a'</em>, <em>num=0</em>, <em>notInLineX=None</em>, <em>notInLineY=None</em>, <em>chain=None</em>, <em>possibles=None</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.get_all_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.get_all_pos" title="Permalink to this definition">¶</a></dt>
-<dd><p>在這個群組中取得 Point 物件列表</p>
+<tt class="descname">get_all_pos</tt><big>(</big><em>diff=</em>, <span class="optional">[</span><span class="optional">]</span><em>method='a'</em>, <em>num=0</em>, <em>notInLineX=None</em>, <em>notInLineY=None</em>, <em>chain=None</em>, <em>possibles=None</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.get_all_pos"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.get_all_pos" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>このグループのPointオブジェクトのリストを取得します</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>diff</strong> &#8211; list, 要排除點的列癟</li>
-<li><strong>method</strong> &#8211; char, a: 全部, s:非空白, u:空白</li>
-<li><strong>num</strong> &#8211; int, 假如 method 是 u 時, 且此參數設為 1-9, 那就會取得可以容納此數字的所有空白點</li>
-<li><strong>notInLineX</strong> &#8211; bool, 包含或不包含 x 軸的點</li>
-<li><strong>notInLineY</strong> &#8211; bool, 包含或不包含 y 軸的點</li>
-<li><strong>chain</strong> &#8211; bool, 如果有設定此參數則檢查是要取得 chain 的點或者不是 chain 的點</li>
-<li><strong>possibles</strong> &#8211; int, 如果 method=&#8221;u&#8221; 且 possibles!=None, 將只取得可填寫數字總數為 possibles 的點</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>diff</strong> &#8211; 収縮したと指摘して除外するリスト、</li>
+<li><strong>method</strong> &#8211; CHAR、：すべて、S：非ブランク、U：空白</li>
+<li><strong>num</strong> &#8211; ときUの方法であれば、INT、およびこのパラメータが1-9に設定されている、それはすべての空白のスポットが、この数を収容することができます取得します</li>
+<li><strong>notInLineX</strong> &#8211; BOOL、ポイントが含まれているか、X軸が含まれていません</li>
+<li><strong>notInLineY</strong> &#8211; BOOL、ポイントが含まれているか、Y軸が含まれていません</li>
+<li><strong>chain</strong> &#8211; BOOLには、チェーン、チェック·ポイントまたはポイントではないチェーンを取得するには、このパラメータを設定した場合</li>
+<li><strong>possibles</strong> &#8211; int, if method=&#8221;u&#8221; and possibles!=None, it will only get the possible set&#8217;s length = possibles</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">list: 一個 Point 物件列表</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">リスト：Pointオブジェクト一覧</p>
 </td>
 </tr>
 </tbody>
@@ -221,15 +221,15 @@
 
 <dl class="method">
 <dt id="sudoku.sudoku.GroupBase.get_num_pos">
-<tt class="descname">get_num_pos</tt><big>(</big><em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.get_num_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.get_num_pos" title="Permalink to this definition">¶</a></dt>
-<dd><p>在一個群組中取得被填寫數字為 v 的點</p>
+<tt class="descname">get_num_pos</tt><big>(</big><em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupBase.get_num_pos"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupBase.get_num_pos" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>デジタル点vのグループを埋めるために行われて</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>v</strong> &#8211; int, 想要取得點的數字</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>v</strong> &#8211; INTは、デジタルポイントを取得したい</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">None 或者是一個 Point 物件</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">なし、またはPointオブジェクト</td>
 </tr>
 </tbody>
 </table>
@@ -239,18 +239,18 @@
 
 <dl class="class">
 <dt id="sudoku.sudoku.GroupNumber">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">GroupNumber</tt><big>(</big><em>b</em>, <em>num</em>, <em>p</em>, <em>direction</em>, <em>idx</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupNumber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupNumber" title="Permalink to this definition">¶</a></dt>
-<dd><p>在區塊群組中的 Group Number</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">GroupNumber</tt><big>(</big><em>b</em>, <em>num</em>, <em>p</em>, <em>direction</em>, <em>idx</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#GroupNumber"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.GroupNumber" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ブロックグループグループ数</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>b</strong> &#8211; int, 區塊群組的代碼</li>
-<li><strong>num</strong> &#8211; int, 此物件被填入的數字</li>
-<li><strong>p</strong> &#8211; Point List, 形成這個 Group Number 的 Point 物件列表</li>
-<li><strong>direction</strong> &#8211; char, 值為 &#8220;x&#8221; 或 &#8220;y&#8221;， 代表這個 Group Number 的方向</li>
-<li><strong>idx</strong> &#8211; int, 這個 x 軸或 y 軸線群組的代碼</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>b</strong> &#8211; int型、ブロックグループコード</li>
+<li><strong>num</strong> &#8211; INT、このオブジェクトは、図面を充填し</li>
+<li><strong>p</strong> &#8211; ポイントリスト、グループ番号ポイントの対象リストの生成</li>
+<li><strong>direction</strong> &#8211; char, &#8220;x&#8221; or &#8220;y&#8221; means the direction of this Group Number</li>
+<li><strong>idx</strong> &#8211; int型、コードグループのx軸またはy軸</li>
 </ul>
 </td>
 </tr>
@@ -260,16 +260,16 @@
 
 <dl class="class">
 <dt id="sudoku.sudoku.LineX">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">LineX</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#LineX"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.LineX" title="Permalink to this definition">¶</a></dt>
-<dd><p>x 軸線群組</p>
-<p>基本群組類別的起始函數(init())</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">LineX</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#LineX"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.LineX" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>X軸のグループ</p>
+<p>最初のグループ·クラスの基本的な機能（INIT（））</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>idx</strong> &#8211; int, 這個物件的代碼</li>
-<li><strong>p</strong> &#8211; 所屬這個物件的 Point 物件列表</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>idx</strong> &#8211; INT、このオブジェクトコード</li>
+<li><strong>p</strong> &#8211; Pointオブジェクトこのオブジェクトは、リストに属し</li>
 </ul>
 </td>
 </tr>
@@ -279,16 +279,16 @@
 
 <dl class="class">
 <dt id="sudoku.sudoku.LineY">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">LineY</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#LineY"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.LineY" title="Permalink to this definition">¶</a></dt>
-<dd><p>y 軸線群組</p>
-<p>基本群組類別的起始函數(init())</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">LineY</tt><big>(</big><em>idx</em>, <em>p</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#LineY"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.LineY" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>y軸の基</p>
+<p>最初のグループ·クラスの基本的な機能（INIT（））</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>idx</strong> &#8211; int, 這個物件的代碼</li>
-<li><strong>p</strong> &#8211; 所屬這個物件的 Point 物件列表</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>idx</strong> &#8211; INT、このオブジェクトコード</li>
+<li><strong>p</strong> &#8211; Pointオブジェクトこのオブジェクトは、リストに属し</li>
 </ul>
 </td>
 </tr>
@@ -298,55 +298,55 @@
 
 <dl class="class">
 <dt id="sudoku.sudoku.Matrix">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Matrix</tt><big>(</big><em>file=''</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>數獨遊戲的整體物件</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Matrix</tt><big>(</big><em>file=''</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>数独、オブジェクト全体</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>file</strong> &#8211; file, 數獨遊戲的初始設定檔案</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>file</strong> &#8211; ファイル、数独の初期化ファイル</td>
 </tr>
 </tbody>
 </table>
-<p>屬性:</p>
+<p>属性：</p>
 <ul class="simple">
-<li><p class="first">rec: 格式為 [(x, y, v, t, d),...], 求解紀錄列表</p>
+<li><p class="first">rec視聴：フォーマット【の（x、y、V、T、d）は、...]解決するレコードのリスト</p>
 </li>
-<li><p class="first">filled: int, 已被填寫的點數</p>
+<li><p class="first">いっぱい：INTは、ポイントを充填した</p>
 </li>
-<li><p class="first">done: bool, 是否已解</p>
+<li><p class="first">行われます。BOOL、解決するかどうか</p>
 </li>
-<li><p class="first">error: bool, 是否發生錯誤</p>
+<li><p class="first">エラー：BOOL、エラーが発生したかどうか</p>
 </li>
-<li><p class="first">lineX: x 軸線群組物件列表</p>
+<li><p class="first">LINEX：X軸·グループ·オブジェクトのリスト</p>
 </li>
-<li><p class="first">lineY: y 軸線群組物件列表</p>
+<li><p class="first">線を引いた：グループオブジェクトのリストのY軸</p>
 </li>
-<li><p class="first">b: 區塊群組物件列表</p>
+<li><p class="first">B：ブロックグループオブジェクトリスト</p>
 </li>
-<li><p class="first">p: 一個二階陣列的點列表</p>
+<li><p class="first">pは二次アレイ点リスト</p>
 </li>
-<li><p class="first">n: 數字物件列表</p>
+<li><p class="first">N：デジタルオブジェクト一覧</p>
 </li>
-<li><p class="first">chain: 鏈結(chain)物件列表</p>
+<li><p class="first">チェーン：チェーン（連鎖）オブジェクトリスト</p>
 </li>
 </ul>
 <dl class="method">
 <dt id="sudoku.sudoku.Matrix.allow">
-<tt class="descname">allow</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.allow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.allow" title="Permalink to this definition">¶</a></dt>
-<dd><p>檢查座標為 (x, y)  的點(Point)物件能否填入數字 v</p>
+<tt class="descname">allow</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.allow"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.allow" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>座標を確認して（x、y）の点（ポイント）のオブジェクトは、数vを入力することができます</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> &#8211; int, x 座標</li>
-<li><strong>y</strong> &#8211; int, y 座標</li>
-<li><strong>v</strong> &#8211; int, 要填入的數字</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> &#8211; int型、X座標</li>
+<li><strong>y</strong> &#8211; INT、y座標</li>
+<li><strong>v</strong> &#8211; 数字を埋めるために、int型</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">「是」或「非」</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">「はい」または「いいえ」</p>
 </td>
 </tr>
 </tbody>
@@ -355,19 +355,19 @@
 
 <dl class="method">
 <dt id="sudoku.sudoku.Matrix.can_see">
-<tt class="descname">can_see</tt><big>(</big><em>p0</em>, <em>method='u'</em>, <em>num=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.can_see"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.can_see" title="Permalink to this definition">¶</a></dt>
-<dd><p>取得能看的見某點(p)的所有 Point 物件列表</p>
+<tt class="descname">can_see</tt><big>(</big><em>p0</em>, <em>method='u'</em>, <em>num=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.can_see"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.can_see" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ポイントは、すべてのポイントオブジェクトのリストを参照してください（P）を見ることができます作られ</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>method</strong> &#8211; char, &#8220;u&#8221;: 空白點, &#8220;a&#8221;: 全部, &#8220;s&#8221;: 非空白點</li>
-<li><strong>num</strong> &#8211; 如果 method==&#8221;u&#8221; 時，取得的點必須能夠被填入這個數字: number</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>method</strong> &#8211; char, &#8220;u&#8221;: un-assigned positions, &#8220;a&#8221;: all, &#8220;s&#8221;: assigned positions</li>
+<li><strong>num</strong> &#8211; if method=&#8221;u&#8221;, the position must have be possible to be filled the number</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">Point 物件列表</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">点オブジェクトのリスト</p>
 </td>
 </tr>
 </tbody>
@@ -376,22 +376,22 @@
 
 <dl class="method">
 <dt id="sudoku.sudoku.Matrix.get_all_pos">
-<tt class="descname">get_all_pos</tt><big>(</big><em>diff=</em>, <span class="optional">[</span><span class="optional">]</span><em>method='a'</em>, <em>num=0</em>, <em>chain=None</em>, <em>possibles=None</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.get_all_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.get_all_pos" title="Permalink to this definition">¶</a></dt>
-<dd><p>取得所有 Point 物件列表, 藉由呼叫 GroupBase.get_all_pos() 來取得</p>
+<tt class="descname">get_all_pos</tt><big>(</big><em>diff=</em>, <span class="optional">[</span><span class="optional">]</span><em>method='a'</em>, <em>num=0</em>, <em>chain=None</em>, <em>possibles=None</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.get_all_pos"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.get_all_pos" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>取得するために）（GroupBase.get_all_posを呼び出すことによって、すべてのポイントのオブジェクトリストを取得します</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>diff</strong> &#8211; Point 物件列表，排除這些列表上的點</li>
-<li><strong>method</strong> &#8211; char, &#8220;a&#8221; &#8211; 全部l, &#8220;u&#8221; &#8211; 空白點, &#8220;s&#8221; &#8211; 非空白點</li>
-<li><strong>num</strong> &#8211; int, 取得的空白點中必須能夠被填上 [num]  這個數字</li>
-<li><strong>chain</strong> &#8211; bool, 如果有設定此參數則檢查是要取得 chain 的點或者不是 chain 的點</li>
-<li><strong>possibles</strong> &#8211; int, 假如有設定此參數，將只取得可填寫數字總數為 possibles 的點</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>diff</strong> &#8211; Pointオブジェクトのリストは、リスト上のこれらの点を除外</li>
+<li><strong>method</strong> &#8211; char, &#8220;a&#8221; &#8211; all, &#8220;u&#8221; &#8211; unassigned, &#8220;s&#8221; &#8211; assigned</li>
+<li><strong>num</strong> &#8211; INT、ギャップは[数字]この数字を埋めるようにすることができなければなりません</li>
+<li><strong>chain</strong> &#8211; BOOLには、チェーン、チェック·ポイントまたはポイントではないチェーンを取得するには、このパラメータを設定した場合</li>
+<li><strong>possibles</strong> &#8211; int型のみpossiblesのデジタルポイントの合計を埋めるためにそこに行われる場合は、このパラメータを設定する</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">Point 物件列表</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">点オブジェクトのリスト</p>
 </td>
 </tr>
 </tbody>
@@ -400,19 +400,19 @@
 
 <dl class="method">
 <dt id="sudoku.sudoku.Matrix.print_rec">
-<tt class="descname">print_rec</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.print_rec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.print_rec" title="Permalink to this definition">¶</a></dt>
-<dd><p>列印所有的求解過程</p>
+<tt class="descname">print_rec</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.print_rec"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.print_rec" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>溶液プロセスのすべてを印刷</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sudoku.sudoku.Matrix.read">
-<tt class="descname">read</tt><big>(</big><em>file</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.read" title="Permalink to this definition">¶</a></dt>
-<dd><p>讀取數獨遊戲的定義檔</p>
+<tt class="descname">read</tt><big>(</big><em>file</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.read"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.read" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>数独定義ファイルを読む</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>file</strong> &#8211; file, 數獨定義檔案，你可以給予絕對的檔案位址，如果只有給予檔名，系統將到安裝目錄下的 data 中去取得檔案</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>file</strong> &#8211; ファイル名だけを与えた場合のファイル、数独定義ファイルは、あなたが、絶対ファイルのアドレスを与えることができ、システムがファイルを取りに行くためにディレクトリデータの下にインストールされます</td>
 </tr>
 </tbody>
 </table>
@@ -420,55 +420,55 @@
 
 <dl class="method">
 <dt id="sudoku.sudoku.Matrix.reduce">
-<tt class="descname">reduce</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>d='set'</em>, <em>check=False</em>, <em>info=''</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.reduce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.reduce" title="Permalink to this definition">¶</a></dt>
-<dd><p>在座標為 (x, y) 點中可被填寫的數字列表上, 去掉這個數字, v</p>
+<tt class="descname">reduce</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>d='set'</em>, <em>check=False</em>, <em>info=''</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.reduce"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.reduce" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>座標（x、y）を充填することができる番号のリストを指し、この番号を削除し、ν</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> &#8211; int, x 座標</li>
-<li><strong>y</strong> &#8211; int, y 座標</li>
-<li><strong>v</strong> &#8211; int, 要被去掉可能性的數字</li>
-<li><strong>d</strong> &#8211; str, 得到解答的說明</li>
-<li><strong>check</strong> &#8211; bool, 是否要檢查</li>
-<li><strong>info</strong> &#8211; str, 得到解答的詳細說明</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> &#8211; int型、X座標</li>
+<li><strong>y</strong> &#8211; INT、y座標</li>
+<li><strong>v</strong> &#8211; int型、デジタルの可能性が除去される</li>
+<li><strong>d</strong> &#8211; STR、回答の説明を表示</li>
+<li><strong>check</strong> &#8211; BOOL、あなたがチェックしたい場合は、</li>
+<li><strong>info</strong> &#8211; STRの詳細な説明への答えを得る</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">int, 如下面說明</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">int型、後述するように</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">2: 如果設定了一個數字</p>
+<li><p class="first">2：あなたが番号を設定した場合</p>
 </li>
-<li><p class="first">1: 如果只是消減一個數字</p>
+<li><p class="first">1：数値は単なる削減である場合</p>
 </li>
-<li><p class="first">0: 無法消減該數，如果 check 是 True 時，就會啟動 SudokuError 這個例外處理</p>
+<li><p class="first">0：チェックがTrueの場合に番号を和らげることができず、この例外が開始されますSudokuError</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="method">
 <dt id="sudoku.sudoku.Matrix.setit">
-<tt class="descname">setit</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>d='define'</em>, <em>info=''</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.setit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.setit" title="Permalink to this definition">¶</a></dt>
-<dd><p>設定座標 (x, y) 點物件的數值為 v</p>
+<tt class="descname">setit</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>d='define'</em>, <em>info=''</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.setit"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.setit" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>オブジェクトポイントvの座標値（x、y）の設定</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> &#8211; int, x 座標</li>
-<li><strong>y</strong> &#8211; int, y 座標</li>
-<li><strong>v</strong> &#8211; int, 要設定的數字</li>
-<li><strong>d</strong> &#8211; str, 得到解答的說明</li>
-<li><strong>info</strong> &#8211; str, 得到解答的詳細說明</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> &#8211; int型、X座標</li>
+<li><strong>y</strong> &#8211; INT、y座標</li>
+<li><strong>v</strong> &#8211; INTは、デジタルを設定する</li>
+<li><strong>d</strong> &#8211; STR、回答の説明を表示</li>
+<li><strong>info</strong> &#8211; STRの詳細な説明への答えを得る</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">int, &gt;=1: 如果設定成功的話, 0: 如果不成功</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">INT、=1：セットアップが成功した場合、0：失敗した場合</p>
 </td>
 </tr>
 </tbody>
@@ -477,15 +477,15 @@
 
 <dl class="method">
 <dt id="sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles">
-<tt class="descname">sort_unassigned_pos_by_possibles</tt><big>(</big><em>possibles=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.sort_unassigned_pos_by_possibles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles" title="Permalink to this definition">¶</a></dt>
-<dd><p>取得一個群組中的空白點列表，格式為[p1, p2,...]，且以允許填寫的數字總數從低排到高</p>
+<tt class="descname">sort_unassigned_pos_by_possibles</tt><big>(</big><em>possibles=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Matrix.sort_unassigned_pos_by_possibles"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Matrix.sort_unassigned_pos_by_possibles" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>[P1、P2、...]の形式でグループリスト内の空白部分を取得し、高低から排出許可桁数の合計を記入</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>possibles</strong> &#8211; 0: 則取得全部,  &gt;=0: 則只取得允許數字總數為此數的空白點列表</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>possibles</strong> &#8211; 0：すべての取得、=0：数字のみが空白の合計数を終了点のリストを取得することができます</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">Point 物件列表</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">点オブジェクトのリスト</td>
 </tr>
 </tbody>
 </table>
@@ -495,31 +495,31 @@
 
 <dl class="class">
 <dt id="sudoku.sudoku.Number">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Number</tt><big>(</big><em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Number" title="Permalink to this definition">¶</a></dt>
-<dd><p>數字物件</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Number</tt><big>(</big><em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Number"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Number" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>デジタルオブジェクト</p>
 <div class="admonition note">
-<p class="first admonition-title">註解</p>
-<p class="last">你可以想像這個類別的物件唯一個國家，而每個國家有其代碼，從 1 到 9 。</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">このクラスの国の唯一のオブジェクトを想像することができ、それぞれの国が1から9まで、独自のコードを持っています。</p>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>v</strong> &#8211; int, 此物件的代碼, 從 1 到 9</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>v</strong> &#8211; 1〜9のint、このオブジェクトコード、</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="sudoku.sudoku.Number.can_see_by_group_number">
-<tt class="descname">can_see_by_group_number</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Number.can_see_by_group_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Number.can_see_by_group_number" title="Permalink to this definition">¶</a></dt>
-<dd><p>檢查這個點, p1, 是否能夠讓這個數字(number)的 Group Number 看到</p>
+<tt class="descname">can_see_by_group_number</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Number.can_see_by_group_number"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Number.can_see_by_group_number" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>この点を確認し、P1、グループ番号を参照してください、この図の（番号）を作成することができます</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>p1</strong> &#8211; Point, 一個點物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>p1</strong> &#8211; ポイント、Pointオブジェクト</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">如果可以被看見則取得該 Group Number 物件，否則為 None</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">あなたはグループ番号オブジェクトを取得する場合は、[なし]、そうでなければ、見ることができない</td>
 </tr>
 </tbody>
 </table>
@@ -527,13 +527,13 @@
 
 <dl class="method">
 <dt id="sudoku.sudoku.Number.setit">
-<tt class="descname">setit</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Number.setit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Number.setit" title="Permalink to this definition">¶</a></dt>
-<dd><p>儲存所有非空白的點到 p 這個列表</p>
+<tt class="descname">setit</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Number.setit"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Number.setit" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>このリストにないすべての空のP点を保存</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>p1</strong> &#8211; Point, 一個被歸屬到這個物件的點物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>p1</strong> &#8211; ポイントは、このオブジェクトのポイントオブジェクトへの帰属</td>
 </tr>
 </tbody>
 </table>
@@ -543,20 +543,20 @@
 
 <dl class="class">
 <dt id="sudoku.sudoku.Point">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Point</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Point" title="Permalink to this definition">¶</a></dt>
-<dd><p>在數獨表中的一個點</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Point</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Point"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Point" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>数独の表のポイント</p>
 <div class="admonition note">
-<p class="first admonition-title">註解</p>
-<p class="last">你能夠想像每一個點物件是一間房子</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">あなたはすべての点オブジェクトを想像することができます家です</p>
 </div>
-<p>這是點(Point)物件的起始程式(init())</p>
+<p>これは、プログラムの開始点（ポイント）オブジェクト化（init（））である</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> &#8211; int, 這個物件的 x 座標</li>
-<li><strong>y</strong> &#8211; int, 這個物件的 y 座標</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; intが、このオブジェクトのx座標</li>
+<li><strong>y</strong> &#8211; int型、オブジェクトのy座標</li>
 </ul>
 </td>
 </tr>
@@ -564,42 +564,42 @@
 </table>
 <dl class="method">
 <dt id="sudoku.sudoku.Point.can_see">
-<tt class="descname">can_see</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Point.can_see"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Point.can_see" title="Permalink to this definition">¶</a></dt>
-<dd><p>測試這個點物件是否能夠看見另外一個點(p1)？</p>
+<tt class="descname">can_see</tt><big>(</big><em>p1</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Point.can_see"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Point.can_see" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>このオブジェクトが別のポイント·ポイント（P1）を見ることができるかどうかをテストする？</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>p1</strong> &#8211; Point, 一個點物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>p1</strong> &#8211; ポイント、Pointオブジェクト</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">int, 這個值不能為 3 或 7，這代表同個點</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">int型は、この値は同じポイントを表し、3か7にすることはできません</td>
 </tr>
 </tbody>
 </table>
-<p>返回碼:</p>
+<p>リターンコード：</p>
 <ul class="simple">
-<li><p class="first">0: 不能看見 p1 點</p>
+<li><p class="first">0：あなたは、点p1を見ることができない</p>
 </li>
-<li><p class="first">1: 能夠在 x 軸看見它</p>
+<li><p class="first">1：これは、x軸に見ることができる</p>
 </li>
-<li><p class="first">2: 能夠在 y 軸看見它</p>
+<li><p class="first">2：これは、y軸に見ることができる</p>
 </li>
-<li><p class="first">能夠在區塊群組看見它</p>
+<li><p class="first">これは、ブロック群に見られる</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="method">
 <dt id="sudoku.sudoku.Point.can_see_those">
-<tt class="descname">can_see_those</tt><big>(</big><em>posList</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Point.can_see_those"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Point.can_see_those" title="Permalink to this definition">¶</a></dt>
-<dd><p>測試這個點能看的見一個點列表(posList)中的哪些點</p>
+<tt class="descname">can_see_those</tt><big>(</big><em>posList</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#Point.can_see_those"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Point.can_see_those" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>テストは、そのポイントのポイント（POSLIST）のリストを参照して、この点を見ることができます</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>posList</strong> &#8211; list, 列表格式為 [(x, y),...]</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>posList</strong> &#8211; リストは、リスト形式[（x、y）は、...]</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">list, 列表格式為 [(x, y),...]</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">リストは、リスト形式[（x、y）は、...]</td>
 </tr>
 </tbody>
 </table>
@@ -609,18 +609,18 @@
 
 <dl class="class">
 <dt id="sudoku.sudoku.SolveMethod">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SolveMethod</tt><big>(</big><em>fun</em>, <em>idx</em>, <em>name=''</em>, <em>level=0</em>, <em>obvious=True</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SolveMethod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SolveMethod" title="Permalink to this definition">¶</a></dt>
-<dd><p>求解法物件</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SolveMethod</tt><big>(</big><em>fun</em>, <em>idx</em>, <em>name=''</em>, <em>level=0</em>, <em>obvious=True</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SolveMethod"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.SolveMethod" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>課題を解決するMethodオブジェクト</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fun</strong> &#8211; function, 定義在 Python 程式中的涵數名稱</li>
-<li><strong>idx</strong> &#8211; int, 執行的修先順序</li>
-<li><strong>name</strong> &#8211; str, 此求解法的名稱</li>
-<li><strong>level</strong> &#8211; int, 此求解法的困難程度，值越大越困難</li>
-<li><strong>obvious</strong> &#8211; bool, 對人而言是否為直覺的方法，也就是使用眼睛觀察即可</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fun</strong> &#8211; カルバートでのPythonのプログラム名で定義された関数を、</li>
+<li><strong>idx</strong> &#8211; INT、実行の最初の注文を修復</li>
+<li><strong>name</strong> &#8211; STR、解決のこの方法に名前を付ける</li>
+<li><strong>level</strong> &#8211; 整数、この解法の難易度、値が高いほど、より困難</li>
+<li><strong>obvious</strong> &#8211; BOOL、人々のために、どうか、直感的なアプローチは、目視を使用することです</li>
 </ul>
 </td>
 </tr>
@@ -628,33 +628,33 @@
 </table>
 <dl class="method">
 <dt id="sudoku.sudoku.SolveMethod.run">
-<tt class="descname">run</tt><big>(</big><em>m</em>, <em>*args</em>, <em>**ks</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SolveMethod.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SolveMethod.run" title="Permalink to this definition">¶</a></dt>
-<dd><p>執行一個求解法來解開一個數獨遊戲</p>
+<tt class="descname">run</tt><big>(</big><em>m</em>, <em>*args</em>, <em>**ks</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SolveMethod.run"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.SolveMethod.run" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ロックを解除するために数独ゲームを解決するための方法の実現</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨世界整體物件</li>
-<li><strong>ks</strong> &#8211; first(int): 起始數字(int), only(bool): 只檢查一個數</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</li>
+<li><strong>ks</strong> &#8211; 最初の（INT）：開始番号（INT）、のみ（ブール値）：わずか数をチェック</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
@@ -663,73 +663,73 @@
 
 <dl class="class">
 <dt id="sudoku.sudoku.Status">
-<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Status</tt><a class="reference internal" href="_modules/sudoku/sudoku.html#Status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.Status" title="Permalink to this definition">¶</a></dt>
-<dd><p>儲存執行狀態</p>
+<em class="property">class </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">Status</tt><a class="reference internal" href="_modules/sudoku/sudoku.html#Status"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.Status" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ストア実行状況</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">MethodLoopIdx:</th><td class="field-body"><p class="first last">int, 求解周期索引數</p>
+<tr class="field-odd field"><th class="field-name">MethodLoopIdx:</th><td class="field-body"><p class="first last">int型、サイクルインデックス番号を解く</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">MethodIdx:</th><td class="field-body"><p class="first last">int, 目前使用的求解法索引數</p>
+<tr class="field-even field"><th class="field-name">MethodIdx:</th><td class="field-body"><p class="first last">INT、この方法は、現在使用されているインデックス番号を解く</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">CheckPos:</th><td class="field-body"><p class="first last">Point list, (x, y)座標列表，如果設定這個 list, 當其中之一被設定時，系統就停止處理</p>
+<tr class="field-odd field"><th class="field-name">CheckPos:</th><td class="field-body"><p class="first last">このリストを設定した場合、そのうちの一つが設定されるとき、リストの点リスト、座標（x、y）、、、システムは処理を停止する</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name" colspan="2">WriteDownAlready:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">bool, 是否空白點已被模擬寫下它們可被填上的數</p>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">ブール、ギャップがシミュレーションされたか否かを、それらが少数に充填することができると書い</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name" colspan="2">EmulatePossibles:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first last">int, 使用模擬法時的可能數限制, 包括可能點數或數字數</p>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first last">int型は、点または数字の可能な数を含む、シミュレーション時間の使用を制限することができる</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">TryStack:</th><td class="field-body"><p class="first last">格式為 [(m, x, y, idx),...] 的列表</p>
+<tr class="field-even field"><th class="field-name">TryStack:</th><td class="field-body"><p class="first last">【（mは、X、Y、idxの）、...]リストの形式</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">m: Matrix 物件, 在 (x, y) 點被設定為第 idx 可能數之前，將其備份起來，以便能夠回復</p>
+<li><p class="first">M：Matrixオブジェクト、点（x、y）が返信することができるように、バックアップするために、最初のIDX確数に設定される前に</p>
 </li>
-<li><p class="first">x: int, 要嘗試的 x 座標</p>
+<li><p class="first">X：int型、x座標をしようとする</p>
 </li>
-<li><p class="first">y: int, 要嘗試的 y 座標</p>
+<li><p class="first">Y：int型、Yは、試してみるの座標</p>
 </li>
-<li><p class="first">idx: int, 可能數的索引值，由 0 開始起始</p>
+<li><p class="first">idxの：int型、インデックス値の数は、0から開始してもよい</p>
 </li>
 </ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">TryIdx:</th><td class="field-body"><p class="first last">int, 猜測深度索引值，也就是已經是以猜測法來解時，這是第幾次使用此法了</p>
+<tr class="field-odd field"><th class="field-name">TryIdx:</th><td class="field-body"><p class="first last">int型、解があるときにメソッドが、これは数回、この方法を行うことが第一であることがすでに投機であるインデックス値の深さを推測</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">TryUse:</th><td class="field-body"><p class="first last">bool, 是否要使用猜測法</p>
+<tr class="field-even field"><th class="field-name">TryUse:</th><td class="field-body"><p class="first last">ブール値、使用するかどうかを推測する</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">EmuUse:</th><td class="field-body"><p class="first last">bool, 是否要使用模擬法</p>
+<tr class="field-odd field"><th class="field-name">EmuUse:</th><td class="field-body"><p class="first last">シミュレーションを使用するかどうかをBOOL、</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Scope:</th><td class="field-body"><p class="first last">int, 此數獨的困難度</p>
+<tr class="field-even field"><th class="field-name">Scope:</th><td class="field-body"><p class="first last">INT、この数独の難しさ</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Level:</th><td class="field-body"><p class="first last">int, 使用求解法困難度的限制，0: 表示不限制</p>
+<tr class="field-odd field"><th class="field-name">Level:</th><td class="field-body"><p class="first last">制限なし：限定の難しさ、0を解決する方法を用いて、int型</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Original:</th><td class="field-body"><p class="first last">Matrix, 初始化的 Matrix 物件</p>
+<tr class="field-even field"><th class="field-name">Original:</th><td class="field-body"><p class="first last">初期化マトリックス、Matrixオブジェクト</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Result:</th><td class="field-body"><p class="first last">Matrix, 目前的數獨物件</p>
+<tr class="field-odd field"><th class="field-name">Result:</th><td class="field-body"><p class="first last">行列は、現在の数独オブジェクト</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">PrintSteop:</th><td class="field-body"><p class="first last">bool, 是否要列印求解步驟</p>
+<tr class="field-even field"><th class="field-name">PrintSteop:</th><td class="field-body"><p class="first last">BOOL、印刷するかどうかの手順を解く</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">NowPath:</th><td class="field-body"><p class="first last">str, 目前的工作目錄</p>
+<tr class="field-odd field"><th class="field-name">NowPath:</th><td class="field-body"><p class="first last">STR、現在の作業ディレクトリ</p>
 </td>
 </tr>
 </tbody>
@@ -738,16 +738,16 @@
 
 <dl class="exception">
 <dt id="sudoku.sudoku.SudokuDone">
-<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuDone</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuDone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuDone" title="Permalink to this definition">¶</a></dt>
-<dd><p>一個例外處理，當數獨遊戲中每個點都被填滿時產生</p>
+<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuDone</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuDone"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuDone" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>一つの例外処理、各点が満たされたときに数独ゲームを生成する</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> &#8211; int, 當解完數獨時，最後一個點的 x 座標</li>
-<li><strong>y</strong> &#8211; int, 當解完數獨時，最後一個點的 y 座標</li>
-<li><strong>v</strong> &#8211; int, 當解完數獨時，最後一個點被填上的數字</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; 数独は、最後の点のx座標、終わっ解くINT、</li>
+<li><strong>y</strong> &#8211; INTは、数独ソリューションを終えたとき、yは最後の点の座標</li>
+<li><strong>v</strong> &#8211; 数独は、最後のポイントは、数字を記入されて、終わっ解くINT、</li>
 </ul>
 </td>
 </tr>
@@ -757,17 +757,17 @@
 
 <dl class="exception">
 <dt id="sudoku.sudoku.SudokuError">
-<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuError</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>t</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuError" title="Permalink to this definition">¶</a></dt>
-<dd><p>一個例外處理，當一個點無法被設定或減掉某個數字(v)時而產生, 其中 type 為 s 表示為設定動作, r 表示為減掉動作</p>
+<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuError</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em>, <em>t</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuError"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuError" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>唯一の例外、ポイントが設定または（V）時に集合の行動として表現されているタイプの生産の数字を引くことができない場合に、Rはマイナスアクションとして表現されている</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> &#8211; int, 發生規則錯誤時的 x 座標</li>
-<li><strong>y</strong> &#8211; int, 發生規則錯誤時的 y 座標</li>
-<li><strong>v</strong> &#8211; int, 發生規則錯誤時所要設定或減掉的數字</li>
-<li><strong>t</strong> &#8211; char, &#8220;s&#8221; &#8211; 設定動作, &#8220;r&#8221; &#8211; 減掉動作</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; int型、ルールのx座標とすると、エラーが発生した</li>
+<li><strong>y</strong> &#8211; int型、ルールのy座標は、ときに、エラーが発生</li>
+<li><strong>v</strong> &#8211; int型、ルールは、エラーが発生したときの設定や数値を減算する</li>
+<li><strong>t</strong> &#8211; char, &#8220;s&#8221; &#8211; set, &#8220;r&#8221; &#8211; reduce</li>
 </ul>
 </td>
 </tr>
@@ -777,22 +777,22 @@
 
 <dl class="exception">
 <dt id="sudoku.sudoku.SudokuStop">
-<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuStop</tt><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuStop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuStop" title="Permalink to this definition">¶</a></dt>
-<dd><p>一個例外處理, 當求解紀錄達到 recLimit 時 (除錯時用)</p>
+<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuStop</tt><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuStop"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuStop" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>一つの例外処理、（デバッグ）recLimitに達した記録を解く場合</p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="sudoku.sudoku.SudokuWhenPosSet">
-<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuWhenPosSet</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuWhenPosSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuWhenPosSet" title="Permalink to this definition">¶</a></dt>
-<dd><p>一個例外處理, 當一個座標列表, [(x1, y1), ...], checkPos 有設定時, 這些點中如有被設定時, 就會引發此事件的處理</p>
+<em class="property">exception </em><tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">SudokuWhenPosSet</tt><big>(</big><em>x</em>, <em>y</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#SudokuWhenPosSet"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.SudokuWhenPosSet" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>checkPos設定したとき、これらのポイントが設定されている場合、例外時に座標リスト、[（X1、Y1）、...]、、、それは、このイベントの処理がトリガされます</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> &#8211; int, 當要檢查的點被設定時的 x 座標</li>
-<li><strong>y</strong> &#8211; int, 當要檢查的點被設定時的 y 座標</li>
-<li><strong>v</strong> &#8211; int, 當要檢查的點被設定時, 所設定數字</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; あなたが設定する点のx座標を確認したいINT、</li>
+<li><strong>y</strong> &#8211; ポイントはy座標をチェックするように設定されているint型、</li>
+<li><strong>v</strong> &#8211; int型は、あなたがポイントを確認したいときに設定されている、デジタルのセット</li>
 </ul>
 </td>
 </tr>
@@ -802,116 +802,116 @@
 
 <dl class="function">
 <dt id="sudoku.sudoku.check_inobvious_number">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">check_inobvious_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#check_inobvious_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.check_inobvious_number" title="Permalink to this definition">¶</a></dt>
-<dd><p>檢查每一個數字，從它們已被填寫的所在的位置與已發現的 Group Numer交叉影響下、那些尚未有該數字的區塊群組中，是否可以找到僅剩一個點來給予這個數字，如果是，則可以很明顯地此此點填上這個數字</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">check_inobvious_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#check_inobvious_number"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.check_inobvious_number" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>彼らはで満たされることが判明しているところからクロスインパクトグループNumerをする場所の下に、それぞれの番号を確認し、あなたが数字を与えるために、残りのポイントを見つけることができれば、それであれば、まだ、デジタルブロックグループを持っていない人あなたは明らかに、この図にこの点を埋めることができ</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨世界整體物件</li>
-<li><strong>first</strong> &#8211; 要被檢查的第一個數字</li>
-<li><strong>only</strong> &#8211; bool, False: 檢查所有數字, True: 只檢查第一個數字</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</li>
+<li><strong>first</strong> &#8211; チェックされる最初の数に</li>
+<li><strong>only</strong> &#8211; BOOL、偽：最初の数をチェック：真のすべてのデジタルをチェック</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.check_line_last_possible_for_number">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">check_line_last_possible_for_number</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#check_line_last_possible_for_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.check_line_last_possible_for_number" title="Permalink to this definition">¶</a></dt>
-<dd><p>檢查每一個 x 軸或 y 軸線群組，是否只剩一個點能夠填上某個數字</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">check_line_last_possible_for_number</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#check_line_last_possible_for_number"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.check_line_last_possible_for_number" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>一点のみがデジタルに充填することができる場合、各グループのx軸またはy軸をチェックする</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; 數獨世界整體物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.check_obvious_number">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">check_obvious_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#check_obvious_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.check_obvious_number" title="Permalink to this definition">¶</a></dt>
-<dd><p>檢查每一個數字，從它們已被填寫的所在的位置交叉影響下、那些尚未有該數字的區塊群組中，是否可以找到僅剩一個點來給予這個數字，如果是，則可以很明顯地此此點填上這個數字</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">check_obvious_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#check_obvious_number"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.check_obvious_number" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>各図、彼らは満たされた着弾位置し、グループ内のこれらのブロックのさらに数からのクロスをチェックして、それであれば、残りの数を与えるためにポイントを見つけることができ、それは明らかであるこれは、この番号にこのポイントを挿入</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨世界整體物件</li>
-<li><strong>first</strong> &#8211; 要被檢查的第一個數字</li>
-<li><strong>only</strong> &#8211; False: 檢查所有數字, True: 只檢查第一個數字</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</li>
+<li><strong>first</strong> &#8211; チェックされる最初の数に</li>
+<li><strong>only</strong> &#8211; FALSE：最初の数がチェックされます。真のすべてのデジタルをチェック</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.compare_result">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">compare_result</tt><big>(</big><em>m</em>, <em>emu</em>, <em>result</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#compare_result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.compare_result" title="Permalink to this definition">¶</a></dt>
-<dd><p>比較所有的結果列表，比較每個列表從原本最後一筆紀錄之後的行動紀錄，如果有相同者，則表示每一種狀況都會導致這個結果，那此行動就應該是符合邏輯的，可以照做無誤</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">compare_result</tt><big>(</big><em>m</em>, <em>emu</em>, <em>result</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#compare_result"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.compare_result" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>同じ人が、それはそれぞれの状況が正しいに従うことを望むかもしれない、このアクションが論理的であることが、この結果につながることを意味するのであれば、アクションの最後のレコードの後、元のレコードから各リストを比較し、すべての結果のリストを比較</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨世界整體物件</li>
-<li><strong>emu</strong> &#8211; 一個二階列表，格式為 [[Point, Assigned Number],...]</li>
-<li><strong>result</strong> &#8211; Matrix 物件列表, 每一個的 Matrix 物件代表一個模擬結果</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</li>
+<li><strong>emu</strong> &#8211; 二次リスト形式で[[点、割り当てられた番号]、...]</li>
+<li><strong>result</strong> &#8211; マトリックス·オブジェクト·リスト、Matrixオブジェクトの各々は、シミュレーション結果を表す</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, 格式為 (sets, reduces), sets: 設定的總數， reduces: 削減可能性的總數</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">タプル、フォーマット（セット、軽減）は、設定しています。設定した合計を、削減します。可能性の総数を削減する</p>
 </td>
 </tr>
 </tbody>
@@ -920,173 +920,173 @@
 
 <dl class="function">
 <dt id="sudoku.sudoku.emulator">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">emulator</tt><big>(</big><em>m</em>, <em>x</em>, <em>y</em>, <em>v</em>, <em>targets=</em>, <span class="optional">[</span><span class="optional">]</span><em>checkval=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#emulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.emulator" title="Permalink to this definition">¶</a></dt>
-<dd><p>以猜測法將座標 (x, y) 的點設為數字 v，然後再開始使用一些基本求解法其求解， 直到有其下狀況發生時才停止並返回:</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">emulator</tt><big>(</big><em>m</em>, <em>x</em>, <em>y</em>, <em>v</em>, <em>targets=</em>, <span class="optional">[</span><span class="optional">]</span><em>checkval=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#emulator"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.emulator" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>その次の停留所まで塩基性溶液法のいくつかを解決し、状況が発生したときに返すようにして使用を開始後、デジタルvの座標（x、y）点を推測した：</p>
 <ul class="simple">
-<li><p class="first">1: 當 targets 座標列表中的一點被設定為 checkval 這個數時</p>
+<li><p class="first">1：ターゲットのリストは、ポイントが時間checkvalの数に設定された座標</p>
 </li>
-<li><p class="first">2: 已經解開了此數獨</p>
+<li><p class="first">2：これは解決されている数独</p>
 </li>
-<li><p class="first">-1: 如果破壞了數獨規則時</p>
+<li><p class="first">-1：あなたが数独のルールを破壊した場合</p>
 </li>
-<li><p class="first">0: 所有的基本求解法都嘗試過了，但還是無法得解</p>
+<li><p class="first">0：すべての基本的な法律が解決しようとしましたが、まだ解決策を得ることができません</p>
 </li>
 </ul>
-<p>及模擬後的結果Matrix物件</p>
+<p>マトリックス·オブジェクトの後とシミュレーション結果</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨世界整體物件</li>
-<li><strong>x</strong> &#8211; int, 起始的 x 座標</li>
-<li><strong>y</strong> &#8211; int, 起始的 y 座標</li>
-<li><strong>v</strong> &#8211; int, 座標 (x, y) 的點要被模擬設定的數字</li>
-<li><strong>targets</strong> &#8211; Point list, 要被檢查的點列表</li>
-<li><strong>checkval</strong> &#8211; int, 如果已設定了  targets, 則要設定此參數，以便檢查被設定的數字</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</li>
+<li><strong>x</strong> &#8211; INT、初期x座標</li>
+<li><strong>y</strong> &#8211; int型は、出発のy座標</li>
+<li><strong>v</strong> &#8211; int型、座標（x、y）は、デジタルのセットをシミュレートすること指し</li>
+<li><strong>targets</strong> &#8211; ポイントリスト、チェックすべき点のリスト</li>
+<li><strong>checkval</strong> &#8211; INTは、あなたが目標を設定している場合、いくつかのチェックを設定するには、このパラメータを設定する必要があります</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, 格式為 (rtn, matrix, idx)</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">タプル、フォーマット（RTN、マトリックス、IDX）</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li><dl class="first docutils">
-<dt>rtn:</dt>
+<dt>RTN：</dt>
 <dd><ul class="first last simple">
-<li><p class="first">1: 當 targets 座標列表中的一點被設定為 checkval 這個數時</p>
+<li><p class="first">1：ターゲットのリストは、ポイントが時間checkvalの数に設定された座標</p>
 </li>
-<li><p class="first">2: 已經解開了此數獨</p>
+<li><p class="first">2：これは解決されている数独</p>
 </li>
-<li><p class="first">-1: 如果破壞了數獨規則時</p>
+<li><p class="first">-1：あなたが数独のルールを破壊した場合</p>
 </li>
-<li><p class="first">0: 所有的基本求解法都嘗試過了，但還是無法得解</p>
+<li><p class="first">0：すべての基本的な法律が解決しようとしましたが、まだ解決策を得ることができません</p>
 </li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p class="first">matrix: 模擬結果的 Matrix 物件</p>
+<li><p class="first">マトリックス：Matrixオブジェクトのシミュレーション結果</p>
 </li>
-<li><p class="first">idx: int, 如果 rtn == 1 時, 此索引值將指出是哪一個點被設定為 checkval 這個數</p>
+<li><p class="first">IDX：INTは、RTN== 1の場合、このインデックス値は、この数はcheckvalに設定された1点が示されます</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.fill_last_position_by_setting">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">fill_last_position_by_setting</tt><big>(</big><em>m</em>, <em>sets</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#fill_last_position_by_setting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.fill_last_position_by_setting" title="Permalink to this definition">¶</a></dt>
-<dd><p>當一個數字被設定在一個點上時，可能會造成 1 到 3 個群組只剩一個空白點，這裡就會檢查是否此狀況，如果有，則直接設定它，如同人的基本直覺一樣。</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">fill_last_position_by_setting</tt><big>(</big><em>m</em>, <em>sets</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#fill_last_position_by_setting"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.fill_last_position_by_setting" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>数が1点に設定されている場合、1〜3のグループは、それがあれば、直接同じ基本的な人間の本能として設定し、この状態かどうかをチェックします空白部分を残した可能性があります。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨遊戲整體物件</li>
-<li><strong>sets</strong> &#8211; int, 最後多少筆的設定要檢查</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; 数独、オブジェクト全体</li>
+<li><strong>sets</strong> &#8211; INTは、最終的にチェックするためにペンを設定し、どのくらい</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.fill_last_position_of_group">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">fill_last_position_of_group</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#fill_last_position_of_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.fill_last_position_of_group" title="Permalink to this definition">¶</a></dt>
-<dd><p>假如在一群組(線或區塊)中只剩一個空白點時</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">fill_last_position_of_group</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#fill_last_position_of_group"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.fill_last_position_of_group" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>グループ内であれば（ラインまたはブロック）のみのブランク点</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; 數獨遊戲整體物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>m</strong> &#8211; 数独、オブジェクト全体</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.fill_only_one_possible">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">fill_only_one_possible</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#fill_only_one_possible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.fill_only_one_possible" title="Permalink to this definition">¶</a></dt>
-<dd><p>檢查每一個空白點，看是否在可能的數字列表中只剩一個。</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">fill_only_one_possible</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#fill_only_one_possible"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.fill_only_one_possible" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>可能な唯一の1のリストの数字かどうかを確認するために、各ポイントブランクチェック。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨遊戲整體物件</li>
-<li><strong>first</strong> &#8211; int, 第一個要被檢查的數字</li>
-<li><strong>only</strong> &#8211; bool, 只檢查第一個數字或者全部</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; 数独、オブジェクト全体</li>
+<li><strong>first</strong> &#8211; int型、検査されるべき最初の数字</li>
+<li><strong>only</strong> &#8211; BOOL、最初の数またはすべてをチェック</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.get_chains">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">get_chains</tt><big>(</big><em>m</em>, <em>group</em>, <em>pos</em>, <em>numbers</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#get_chains"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.get_chains" title="Permalink to this definition">¶</a></dt>
-<dd><p>從空白點列表(pos)中取得哪些數字形成了鍵結(chain)</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">get_chains</tt><big>(</big><em>m</em>, <em>group</em>, <em>pos</em>, <em>numbers</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#get_chains"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.get_chains" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>どのような空のポイントリスト（POS）から取得した数値は、結合（チェーン）が形成されている</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨世界整體物件</li>
-<li><strong>group</strong> &#8211; x 軸或 y 軸或區塊物件</li>
-<li><strong>pos</strong> &#8211; 一個群組的點物件列表</li>
-<li><strong>numbers</strong> &#8211; int, 形成一個鍵結(chain)的點數</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</li>
+<li><strong>group</strong> &#8211; xまたはy軸またはブロックオブジェクト</li>
+<li><strong>pos</strong> &#8211; ポイント·オブジェクト·リストの基</li>
+<li><strong>numbers</strong> &#8211; INT、結合（連鎖）のポイントを形成する</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">鍵結(chain)列表</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">結合（連鎖）一覧</p>
 </td>
 </tr>
 </tbody>
@@ -1095,174 +1095,174 @@
 
 <dl class="function">
 <dt id="sudoku.sudoku.guess">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">guess</tt><big>(</big><em>m</em>, <em>idx=0</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#guess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.guess" title="Permalink to this definition">¶</a></dt>
-<dd><p>以每個點剩下可填入的數字列表中，一一去猜測那一個數字可以求得數獨的解，猜測的點由最可填入的數字數從小排到大</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">guess</tt><big>(</big><em>m</em>, <em>idx=0</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#guess"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.guess" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>番号リスト内の各点は、残りの解の数が数独を得ることができることを推測するために一枚ずつ充填することができる、デジタル数充填小児期が最も大きい点を排出推測</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨世界整體物件</li>
-<li><strong>idx</strong> &#8211; int, 0: 表示新的一次猜測, 其他: 則表示此次猜測是這個點可能數的第幾個</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</li>
+<li><strong>idx</strong> &#8211; 整数、0：他の新しい推測を示している：それは推測が、この点は、いくつかの数の最初であり得ることであることを意味</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.reduce_by_emulate_possible_in_one_position">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_emulate_possible_in_one_position</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_emulate_possible_in_one_position"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_emulate_possible_in_one_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>當一個點(p1)有兩個或以上的可能數時，我們可以模擬每個數字，並取得其模擬結果:</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_emulate_possible_in_one_position</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_emulate_possible_in_one_position"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_emulate_possible_in_one_position" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>点（p1）が二つ以上の可能な数を有する場合は、各番号をシミュレートし、シミュレーション結果を得ることができる。</p>
 <ul class="simple">
-<li><p class="first">假如它會產生錯誤，那我們可以消減掉那個數</p>
+<li><p class="first">それはエラーを生成した場合、我々は数削減を入れ替えることができます</p>
 </li>
-<li><p class="first">假如它能夠解開整個數獨，那我們就可以設定這個數字</p>
+<li><p class="first">それは全体の数独のロックを解除することが可能であるならば、我々はこの番号を設定できます。</p>
 </li>
-<li><p class="first">使如所有的數都不能得到 1 或 2 的結果，我們可以比較這些模擬的求解過程，如果有它們都有相同的求解結果時，那表示這個步驟是個通解。</p>
+<li><p class="first">ように全ての数は1または2であり得るしないように、我々は、これらのシミュレーションの解決プロセスを比較することができ、それらは、同じ結果を解決する必要がある場合には、それは、このステップは一般的な解決策であることを意味する。</p>
 </li>
 </ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; 數獨世界整體物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.reduce_by_emulate_possible_number_in_group">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_emulate_possible_number_in_group</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_emulate_possible_number_in_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_emulate_possible_number_in_group" title="Permalink to this definition">¶</a></dt>
-<dd><p>當一個群組(x 軸、y 軸、區塊)有兩個或以上的點能夠被填上某個特定的數字時，我們可以模擬每個點填上該數字後來取得此模擬結果:</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_emulate_possible_number_in_group</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_emulate_possible_number_in_group"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_emulate_possible_number_in_group" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>基（x軸、y軸、ブロック）ときに、特定の数の複数点を充填することができる有する場合には、この図に充填箱点をシミュレートすることができるシミュレーション結果を得た。</p>
 <ul class="simple">
-<li><p class="first">假如產生錯誤時，我們可以將此點中的可能數中消除掉此數</p>
+<li><p class="first">我々は排除することができたときにエラーが発生した場合、この数は、この数を指摘するかもしれない</p>
 </li>
-<li><p class="first">假如能夠解開這個數獨時，我們就可以在此點設定此數</p>
+<li><p class="first">我々は時に数独を解くことができれば、我々はこの時点では、この数を設定することができます</p>
 </li>
-<li><p class="first">假如所有的點都不能得到 1 或 2 的結果，我們可以比較每個位置模擬的結果，如果他們有共通的求解結果，那表示那個動作是一個通解</p>
+<li><p class="first">全ての点は、1または2である場合の結果を得ることができない、我々は、彼らが共通の溶液の結果を持っている場合、それはアクションが一般的な解決策であることを意味し、各位置のシミュレーション結果を比較することができ</p>
 </li>
 </ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; 數獨世界整體物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.reduce_by_group_number">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_group_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_group_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_group_number" title="Permalink to this definition">¶</a></dt>
-<dd><p>以 Group Number 來消減其他點的可能數</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_group_number</tt><big>(</big><em>m</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_group_number"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_group_number" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>グループ番号は、他のいくつかのポイントをも和らげるには</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; 數獨世界整體物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.reduce_by_two_possible_in_one_position">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_two_possible_in_one_position</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_two_possible_in_one_position"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_two_possible_in_one_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>當一個點(p1)只有兩個能數時，我們可以先假設這個點其中一數(設為first)，然後將此點設為另外一數(設為second)來模擬f求解，看這求解過程中，first這個數落在哪些點上，那對所落的點與p1有所交集(兩個點都能看見)的空白點而言，都不可能存在填入first這個數的可能，而可以讓這些點將這個可能數消除。</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reduce_by_two_possible_in_one_position</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reduce_by_two_possible_in_one_position"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.reduce_by_two_possible_in_one_position" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>した場合のポイント（P1）のみ2は数、我々は、この点を解決し、これは解決を参照fをシミュレートするために、別の番号（第二組）に設定されている（第1セット）、この時点でいくつかのいずれかをすることを引き受けることができなかったときプロセス、最初の点の交点p1のコロニーが変化することが、このチャタリングが（両方のポイントが表示されている）、ブランクポイントで、最初はこの数が移入さも存在し、缶はできませんこれは、これらの点のいくつかを排除することができる。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; 數獨世界整體物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.reg_method">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reg_method</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reg_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.reg_method" title="Permalink to this definition">¶</a></dt>
-<dd><p>註冊所有求解法為一個個物件並儲存成一個列表送回給呼叫者</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">reg_method</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#reg_method"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.reg_method" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>メソッドの解決に署名すると、すべてのための1であり、呼び出し元に返されるオブジェクトのリストを保存</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">求解法物件列表</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">オブジェクトリストを解決する方法</td>
 </tr>
 </tbody>
 </table>
@@ -1270,21 +1270,21 @@
 
 <dl class="function">
 <dt id="sudoku.sudoku.set_obvious_method_for_pos">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">set_obvious_method_for_pos</tt><big>(</big><em>m</em>, <em>method1</em>, <em>p1</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#set_obvious_method_for_pos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.set_obvious_method_for_pos" title="Permalink to this definition">¶</a></dt>
-<dd><p>當某(p1)點能夠以某求解法取得解答時，檢查此點是否能夠以更直覺的方法來設定，以便符合以人的角度來求解數獨</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">set_obvious_method_for_pos</tt><big>(</big><em>m</em>, <em>method1</em>, <em>p1</em>, <em>v</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#set_obvious_method_for_pos"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.set_obvious_method_for_pos" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>（P1）の点は、これが数独を解決するために、ビューの人々のポイントを満たすために設定するために、より直感的な方法を指しているかどうかをチェックするために、溶液法への回答を得ることができたとき</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨世界整體物件</li>
-<li><strong>method1</strong> &#8211; int, 求解法優先序</li>
-<li><strong>p1</strong> &#8211; Point, 要檢查的點</li>
-<li><strong>v</strong> &#8211; int, 要被設定的數</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</li>
+<li><strong>method1</strong> &#8211; INT、優先解法</li>
+<li><strong>p1</strong> &#8211; ポイント、ポイントをチェックする</li>
+<li><strong>v</strong> &#8211; int型、番号が設定される</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">True: 已設定, False: 未設定</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">TRUE：セット、偽：設定されていません</p>
 </td>
 </tr>
 </tbody>
@@ -1293,31 +1293,31 @@
 
 <dl class="function">
 <dt id="sudoku.sudoku.solve">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">solve</tt><big>(</big><em>file</em>, <em>loop_limit=0</em>, <em>rec_limit=0</em>, <em>check=None</em>, <em>level_limit=0</em>, <em>emu_limits=2</em>, <em>use_try=True</em>, <em>use_emu=False</em>, <em>print_step=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#solve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.solve" title="Permalink to this definition">¶</a></dt>
-<dd><p>解一個定義於檔案的數獨!</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">solve</tt><big>(</big><em>file</em>, <em>loop_limit=0</em>, <em>rec_limit=0</em>, <em>check=None</em>, <em>level_limit=0</em>, <em>emu_limits=2</em>, <em>use_try=True</em>, <em>use_emu=False</em>, <em>print_step=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#solve"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.solve" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ファイルに定義されている数独を解く！</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>loop_limit</strong> &#8211; int, 限制求解法的重複次數， 0: 沒有限制</li>
-<li><strong>rec_limit</strong> &#8211; int, 除錯用, 若求解紀錄 &gt;= recLimit 時就停止，0: 沒有限制</li>
-<li><strong>check</strong> &#8211; int, 除錯用, 如果一個座標 (x, y) 列表中其中的一點被設定時，則停止</li>
-<li><strong>level_limit</strong> &#8211; int, limit the methods using, 0: no limit, &gt;0: just using the methods which lever &lt; level_limit</li>
-<li><strong>emu_limits</strong> &#8211; imt, 如果使用模擬法，則此參數定義模擬的可能數限制</li>
-<li><strong>use_try</strong> &#8211; bool, 是否使用猜測法</li>
-<li><strong>use_emu</strong> &#8211; bool, 是否使用模擬法</li>
-<li><strong>print_step</strong> &#8211; bool, 是否在求解過程中列印信息</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>loop_limit</strong> &#8211; int型、繰り返し回数を制限する法律、0解く：制限なしに</li>
+<li><strong>rec_limit</strong> &#8211; INT、デバッグ、停止する際に、レコード = recLimit解決した場合、0：制限なし</li>
+<li><strong>check</strong> &#8211; int型、デバッグ、リストが設定されている座標点（x、y）場合、停止</li>
+<li><strong>level_limit</strong> &#8211; int型、メソッド、0を解くことの困難の使用を制限していません。0は制限：このパラメータを使用してメソッドを解決することの難しさのほんの度合いを</li>
+<li><strong>emu_limits</strong> &#8211; あなたは、アナログ方式を使用する場合、IMT、これはシミュレーションを定義するパラメータの数を制限することができる</li>
+<li><strong>use_try</strong> &#8211; BOOL、どうか推測</li>
+<li><strong>use_emu</strong> &#8211; BOOL、シミュレーションを使用するかどうか</li>
+<li><strong>print_step</strong> &#8211; ブール、情報は溶液プロセスで印刷か否か</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
-<li><strong>SudokuDone</strong> &#8211; 當一個求解法可以解開這個數獨時</li>
-<li><strong>SudokuError</strong> &#8211; 當一個求解步驟會違反數獨的規則時</li>
+<tr class="field-even field"><th class="field-name">例外:</th><td class="field-body"><ul class="first simple">
+<li><strong>SudokuDone</strong> &#8211; 溶液法は、この数独を解くことができる場合に</li>
+<li><strong>SudokuError</strong> &#8211; 解析ステップは、数独のルールに違反する場合には</li>
 </ul>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">數獨世界整體物件</p>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">オブジェクト全体としての数独の世界</p>
 </td>
 </tr>
 </tbody>
@@ -1326,20 +1326,20 @@
 
 <dl class="function">
 <dt id="sudoku.sudoku.try_error">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">try_error</tt><big>(</big><em>m=None</em>, <em>file=''</em>, <em>depth=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#try_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.try_error" title="Permalink to this definition">¶</a></dt>
-<dd><p>電腦嘗試錯誤求解法，每一次呼叫只填第一個位置</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">try_error</tt><big>(</big><em>m=None</em>, <em>file=''</em>, <em>depth=0</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#try_error"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.try_error" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>コンピュータを解決するための試行錯誤法は、第一の位置毎に荷受人を呼び出す</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; Matrix 物件, 如果值為 None, 你必須給予數獨定義檔來產生 Matrix 初始物件</li>
-<li><strong>file</strong> &#8211; file, 數獨初始定義檔</li>
-<li><strong>depth</strong> &#8211; int, 計數這個函數已經遞迴多少深度了</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; 値がNoneの場合Matrixオブジェクトは、最初のオブジェクトを生成するために、数独行列定義ファイルを指定しなければなりません</li>
+<li><strong>file</strong> &#8211; ファイル、数独、初期定義ファイル</li>
+<li><strong>depth</strong> &#8211; int型、関数の数をカウント再帰の深さを有する</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">bool, True: 如果這個數獨已經得解</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">BOOL、TRUE：あなたはすでにこの数独ソリューションを持っている場合</p>
 </td>
 </tr>
 </tbody>
@@ -1348,126 +1348,126 @@
 
 <dl class="function">
 <dt id="sudoku.sudoku.update_chain">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_chain</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#update_chain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.update_chain" title="Permalink to this definition">¶</a></dt>
-<dd><p>檢查與更新 Matrix 物件(m)的鏈結狀況與資訊，並取得鏈節總數(&gt;= 0)。</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_chain</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#update_chain"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.update_chain" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>チェックして、リンクステータスと情報のMatrixオブジェクト（m）を更新し、リンクの総数を得る（=0）。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; 數獨世界整體物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.update_group_number">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_group_number</tt><big>(</big><em>m</em>, <em>num</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#update_group_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.update_group_number" title="Permalink to this definition">¶</a></dt>
-<dd><p>檢查與更新這個數(num)在 Matrix 物件(m)是否有 Group Numbe，若有新的則更加至 m.n.group 列表</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_group_number</tt><big>(</big><em>m</em>, <em>num</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#update_group_number"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.update_group_number" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>マトリックス·グループ·Numbe（M）内のオブジェクトがある場合は、新しいリストをmngroupする方がある場合は、この番号（数値）を確認し、更新する</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨世界整體物件</li>
-<li><strong>num</strong> &#8211; 要被更新的數字</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</li>
+<li><strong>num</strong> &#8211; 数が更新される</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.update_indirect_group_number">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_indirect_group_number</tt><big>(</big><em>m</em>, <em>num</em>, <em>amt=0</em>, <em>start=0</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#update_indirect_group_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.update_indirect_group_number" title="Permalink to this definition">¶</a></dt>
-<dd><p>一個遞迴函數，由已填在位置上的某數及其已知的 Group Number 遞迴地呼叫自己來找出此數所有其他可能的 Group Number</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">update_indirect_group_number</tt><big>(</big><em>m</em>, <em>num</em>, <em>amt=0</em>, <em>start=0</em>, <em>first=1</em>, <em>only=False</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#update_indirect_group_number"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.update_indirect_group_number" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>再帰関数は、位置が再帰的に他のすべての可能なグループ番号に自分自身を識別するために、この番号に電話して、既知のグループ番号の数に記入されています</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><ul class="first simple">
-<li><strong>m</strong> &#8211; 數獨世界整體物件</li>
-<li><strong>num</strong> &#8211; int,要被檢查的代碼</li>
-<li><strong>amt</strong> &#8211; int, 找到的 Group Number 總數</li>
-<li><strong>start</strong> &#8211; int, 當此求解法有用時，解後要跳到哪一個求解法來繼續</li>
-<li><strong>first</strong> &#8211; int, 當此求解法有用時，解後是否要指定某數當作其他求解法的起始數</li>
-<li><strong>only</strong> &#8211; bool, 當此求解法有用時，解後是否要讓其他求解法只針對某數來求解</li>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</li>
+<li><strong>num</strong> &#8211; int型、検査対象のコード</li>
+<li><strong>amt</strong> &#8211; INT、合計が見つかったグループ番号</li>
+<li><strong>start</strong> &#8211; INT、このメソッドを解決する上で有用であるが解決策は、メソッドを解決し続けるにジャンプした後、</li>
+<li><strong>first</strong> &#8211; あなたが解決策を解決する他の方法の数として数値を指定する場合に有用な方法は、これを解決するint型、</li>
+<li><strong>only</strong> &#8211; BOOL、ときにソリューションが数を解決するための唯一の他の方法を解決したい場合は、これを解決する便利な方法</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</p>
 </td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
 
 <dl class="function">
 <dt id="sudoku.sudoku.write_down_possible">
-<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">write_down_possible</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#write_down_possible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sudoku.sudoku.write_down_possible" title="Permalink to this definition">¶</a></dt>
-<dd><p>如果常數 WRITEN_POSSIBLE_LIMITS 設定為 1..9 時，則表示要像人一樣將每個點的可能數 &lt;= WRITEN_POSSIBLE_LIMITS 都寫在點上，讓人可以看出這些數的關聯而繼續求解</p>
+<tt class="descclassname">sudoku.sudoku.</tt><tt class="descname">write_down_possible</tt><big>(</big><em>m</em>, <em>**kw</em><big>)</big><a class="reference internal" href="_modules/sudoku/sudoku.html#write_down_possible"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#sudoku.sudoku.write_down_possible" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>定数WRITEN_POSSIBLE_LIMITSは9..1に設定すると、数値はおそらく人々のように、各ポイントになります</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">參數:</th><td class="field-body"><strong>m</strong> &#8211; 數獨世界整體物件</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><strong>m</strong> &#8211; オブジェクト全体としての数独の世界</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">tuple, 格式為 (sets, reduces, method index, first, only), 其意義如下:</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">タプルの形式は以下のように、その意味は、（セットは、メソッド指数は、まず、のみ、低下させる）。</td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p class="first">sets: int, 設定了多少點</p>
+<li><p class="first">セット：INT、ポイント数を設定</p>
 </li>
-<li><p class="first">reduces: int, 削減了多少點</p>
+<li><p class="first">低減します。int、ポイント数を削減</p>
 </li>
-<li><p class="first">mothod index: int, 返回後要跳到哪一個求解法</p>
+<li><p class="first">优先インデックス：int型、戻り値は、解決方法をジャンプした後、</p>
 </li>
-<li><p class="first">first: int, 返回後要讓其他求解法從哪一個數字開始解</p>
+<li><p class="first">最初：INT、別のスタート解法デジタルソリューションを作るために戻るとき</p>
 </li>
-<li><p class="first">only: bool, 返回後要讓其他求解法址只解第一個數字嗎</p>
+<li><p class="first">のみ：BOOL、同法を解決するために、他の解決策をできるように戻った後、最初の数は、アドレス</p>
 </li>
 </ul>
 </dd></dl>
@@ -1481,23 +1481,23 @@
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>瀏覽</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="總索引"
+          <a href="genindex.html" title="総合索引"
              >索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >模組</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
-          <a href="program.html" title="撰寫 Python 程式來解數獨了"
-             >上一頁</a> |</li>
-        <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
+          <a href="program.html" title="数独にPythonプログラムを書く"
+             >前へ</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 1.0 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, Robert J. Hwang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2 で生成しました。
     </div>
   </body>
 </html>

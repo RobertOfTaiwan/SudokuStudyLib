@@ -1,4 +1,4 @@
-How to make a simulator environment in Python to solve a sudoku
+﻿How to make a simulator environment in Python to solve a sudoku
 ===============================================================
 
 We think classes defined is the most difficult for learner in the OOP method of programming. So in these courses of learning to solve sudoku, 

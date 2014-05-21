@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>數獨(Sudoku)基礎知識 &mdash; SudokuStudyLib 1.0 documentation</title>
+    <title>数独 （数独） の基礎 &mdash; SudokuStudyLib 1.0 ドキュメント</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,62 +24,62 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="SudokuStudyLib 1.0 documentation" href="index.html" />
-    <link rel="next" title="「邏輯」是甚麼?" href="logic.html" />
-    <link rel="prev" title="安裝與使用" href="intro.html" /> 
+    <link rel="top" title="SudokuStudyLib 1.0 ドキュメント" href="index.html" />
+    <link rel="next" title="「論理」とは何ですか？" href="logic.html" />
+    <link rel="prev" title="インストールと使用" href="intro.html" /> 
   </head>
   <body>
     <div class="related">
-      <h3>瀏覽</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="總索引"
+          <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >模組</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
-          <a href="logic.html" title="「邏輯」是甚麼?"
-             accesskey="N">下一頁</a> |</li>
+          <a href="logic.html" title="「論理」とは何ですか？"
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
-          <a href="intro.html" title="安裝與使用"
-             accesskey="P">上一頁</a> |</li>
-        <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
+          <a href="intro.html" title="インストールと使用"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 1.0 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">內容目錄</a></h3>
+  <h3><a href="index.html">目次</a></h3>
   <ul>
-<li><a class="reference internal" href="#">數獨(Sudoku)基礎知識</a><ul>
-<li><a class="reference internal" href="#a-classic-sudoku">一個典型的數獨題目</a></li>
-<li><a class="reference internal" href="#rules">基本規則</a></li>
-<li><a class="reference internal" href="#how-many-possible-puzzles-in-a-9x9-sudoku">在一個 9x9 數獨中, 可以組成多少種可能的遊戲?</a></li>
+<li><a class="reference internal" href="#">数独 （数独） の基礎</a><ul>
+<li><a class="reference internal" href="#a-classic-sudoku">典型的な数独トピック</a></li>
+<li><a class="reference internal" href="#rules">基本的なルール</a></li>
+<li><a class="reference internal" href="#how-many-possible-puzzles-in-a-9x9-sudoku">9 × 9 数独に可能なゲームの数を形成することができますか？</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>上一個主題</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="intro.html"
-                        title="上一章">安裝與使用</a></p>
-  <h4>下一個主題</h4>
+                        title="前の章へ">インストールと使用</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="logic.html"
-                        title="下一章">「邏輯」是甚麼?</a></p>
-  <h3>本頁</h3>
+                        title="次の章へ">「論理」とは何ですか？</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/base.txt"
-           rel="nofollow">顯示原始碼</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>快速搜尋</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -92,10 +92,10 @@
           <div class="body">
             
   <div class="section" id="the-base-knowledge-of-sudoku">
-<h1>數獨(Sudoku)基礎知識<a class="headerlink" href="#the-base-knowledge-of-sudoku" title="Permalink to this headline">¶</a></h1>
-<p>數獨(Sudoku)是一種智力遊戲,  也是一種學習邏輯的最好工具. 而 Python 則是世界上最好的電腦程式語言之一. 所以如果能夠結合這兩種工具, 來教導小孩或青少年來學習邏輯的話, 那就是最好的組合.  這就是這個專案的緣起, 也是這個專案的目標.</p>
+<h1>数独 （数独） の基礎<a class="headerlink" href="#the-base-knowledge-of-sudoku" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>数独 （数独） は、心のゲーム、最良のツールはロジックの種類。 Python は、世界で最高のプログラミング言語の 1 つです。 子供やティーンエイ ジャーは、ロジックを学ぶために教えるために両方のツールを混在させることができる場合は、最高の組み合わせです。 これは、プロジェクトとプロジェクトの目標の原点です。</p>
 <div class="section" id="a-classic-sudoku">
-<h2>一個典型的數獨題目<a class="headerlink" href="#a-classic-sudoku" title="Permalink to this headline">¶</a></h2>
+<h2>典型的な数独トピック<a class="headerlink" href="#a-classic-sudoku" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>你可以從下列網站取得與學習數獨(sudoku)的相關知識：<a class="reference external" href="http://en.wikipedia.org/wiki/Sudoku">http://en.wikipedia.org/wiki/Sudoku</a></p>
 <table border="1" class="docutils">
 <colgroup>
@@ -104,10 +104,10 @@
 <col width="52%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><p class="first last">下面是一個典型的數獨題目:</p>
+<tr class="row-odd"><td><p class="first last">以下は、典型的な数独のタイトルです。</p>
 </td>
 <td>&nbsp;</td>
-<td><p class="first last">下面是一個典型解出來的數獨:</p>
+<td><p class="first last">ここでは、典型的な数独を解決します。</p>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="_images/p2.png"><img alt="sudoku_init" src="_images/p2.png" style="width: 300px;" /></a></td>
@@ -118,20 +118,20 @@
 </table>
 </div>
 <div class="section" id="rules">
-<h2>基本規則<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h2>
-<p>數獨(Sudoku)的基本規則非常簡單：</p>
+<h2>基本的なルール<a class="headerlink" href="#rules" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>数独 （数独） は、基本的なルールは非常に簡単です：</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p class="first">將數字 1-9 填到每一行(包含 x-way 及 y-way)及每一個 3x3 區塊。</p>
+<li><p class="first">1-9 (x 方向と y 方向を含む) それぞれの行を埋めるために、すべての 3 x 3 チャンクを数します。</p>
 </li>
-<li><p class="first">每行及每個區塊的數字不能夠重複。</p>
+<li><p class="first">各行および各ブロック番号を繰り返すことはできません。</p>
 </li>
 </ol>
 </div></blockquote>
 </div>
 <div class="section" id="how-many-possible-puzzles-in-a-9x9-sudoku">
-<h2>在一個 9x9 數獨中, 可以組成多少種可能的遊戲?<a class="headerlink" href="#how-many-possible-puzzles-in-a-9x9-sudoku" title="Permalink to this headline">¶</a></h2>
-<p>假如我們開始在位置 (1, 1) 中置放一個數, 那必然是有9個可能的數字讓我們選擇. 然後當我要置放第二個數到位置 (1, 2) 時, 那我們會有8個數字可以選擇. 所以, 以此類推, 從上往下, 從左到右, 我們可以寫下每一個位置可以被選擇的數字:</p>
+<h2>9 × 9 数独に可能なゲームの数を形成することができますか？<a class="headerlink" href="#how-many-possible-puzzles-in-a-9x9-sudoku" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>我々 はいくつかの配置の位置 (1, 1) に開始、9 桁の数字が私たちの選択があることになります。 その後、我々 は 8 桁の数字は 2 番目の数字 (1、2) の位置に配置する場合を選択するとします。 だから、類推、上から下、左から右、我々 書き留めることができる各位置の番号を選択できます。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="11%" />
@@ -145,15 +145,24 @@
 <col width="11%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">9!</th>
-<th class="head">6!</th>
-<th class="head">3!</th>
-<th class="head">6!</th>
-<th class="head">3!</th>
-<th class="head">1!</th>
-<th class="head">3!</th>
-<th class="head">1!</th>
-<th class="head">1!</th>
+<tr class="row-odd"><th class="head"><p class="first last">9 ！</p>
+</th>
+<th class="head"><p class="first last">6 ！</p>
+</th>
+<th class="head"><p class="first last">3 ！</p>
+</th>
+<th class="head"><p class="first last">6 ！</p>
+</th>
+<th class="head"><p class="first last">3 ！</p>
+</th>
+<th class="head"><p class="first last">1 ！</p>
+</th>
+<th class="head"><p class="first last">3 ！</p>
+</th>
+<th class="head"><p class="first last">1 ！</p>
+</th>
+<th class="head"><p class="first last">1 ！</p>
+</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -249,8 +258,8 @@
 </tr>
 </tbody>
 </table>
-<p>所以, 所有的組合就是  9!*6!*3!*6!*3!*1!*3!*1!*1* = 4,514,807,808,000</p>
-<p>假如我們使用 python 來計算時:</p>
+<p>したがって、すべての組み合わせは 9 ！ * 6 ！ * 3 ！ * 6 ！ * 3 ！ * 1 ！ * 3 ！ * 1 ！ * 1 * = 4,514,807,808,000</p>
+<p>我々 の計算に Python を使用する場合:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">n</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="go">    if x==1:</span>
 <span class="go">        return 1</span>
@@ -260,7 +269,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>關於數獨的數學知識, 你可以到下列網站來取得, <a class="reference external" href="http://en.wikipedia.org/wiki/Mathematics_of_Sudoku">http://en.wikipedia.org/wiki/Mathematics_of_Sudoku</a></p>
+<p>数独の数学 <a class="reference external" href="http://en.wikipedia.org/wiki/Mathematics_of_Sudoku">http://en.wikipedia.org/wiki/Mathematics_of_Sudoku</a> を取得する次の web サイトに行くことができます。</p>
 </div>
 </div>
 
@@ -271,26 +280,26 @@
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>瀏覽</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="總索引"
+          <a href="genindex.html" title="総合索引"
              >索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >模組</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
-          <a href="logic.html" title="「邏輯」是甚麼?"
-             >下一頁</a> |</li>
+          <a href="logic.html" title="「論理」とは何ですか？"
+             >次へ</a> |</li>
         <li class="right" >
-          <a href="intro.html" title="安裝與使用"
-             >上一頁</a> |</li>
-        <li><a href="index.html">SudokuStudyLib 1.0 documentation</a> &raquo;</li> 
+          <a href="intro.html" title="インストールと使用"
+             >前へ</a> |</li>
+        <li><a href="index.html">SudokuStudyLib 1.0 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, Robert J. Hwang.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2 で生成しました。
     </div>
   </body>
 </html>

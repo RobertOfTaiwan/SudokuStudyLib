@@ -1,0 +1,214 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 15:15+0800\n"
+"Last-Translator: Robert J. Hwang <RobertOfTaiwan@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\logic.rst:2
+msgid "What is logic?"
+msgstr "「逻辑」是什么?"
+
+#: ..\logic.rst:5
+msgid "Logic is the most important for a person starting to discover the world"
+msgstr "对一个开始学习去探索这个世界的学子而言，逻辑是最重要的工具之一。"
+
+#: ..\logic.rst:7
+msgid ""
+"The basic logic is dichotomy, is True or False in human language, or is 0 or "
+"1 in computer language. It is the smallest and simplest classification which "
+"human can recognize and communicate with each other. So learning logic for "
+"children and young men is very important, because this is the base of all "
+"knowledge, and the base of all religion."
+msgstr ""
+"最基础的逻辑就是二分法，也就是「是」与「非」，或者在电脑科学里面的「0」与"
+"「1」。这是人类在认知上、与他人沟通上的最小分类方法。所以学习逻辑对中小学生而"
+"言是非常重要的，因为这是所有知识的基础，也是所有信仰的基础。"
+
+#: ..\logic.rst:10
+msgid ""
+"**If you can't judge a thing is right or not, is existed or not, in one "
+"certain view point, you don't know the world, as you don't know yourself "
+"either.**"
+msgstr ""
+"**如果依某一特定的角度、在某一特定时候，你无法判断某个事物是「是」或「非」、"
+"或者「存在」或「不存在」，那你就是不了解这个世界，同时你也不了解你自己。 **"
+
+#: ..\logic.rst:13
+msgid "Learning Logic by Solving Sudoku"
+msgstr "从解数独来学习逻辑"
+
+#: ..\logic.rst:15
+msgid ""
+"Learning logic can be a very happy thing if we teach it as a game, and "
+"Sudoku is the one. There are several good reasons to study logic by Solving "
+"sudoku:"
+msgstr ""
+"学习逻辑可以变成一件有趣的事情，如果我们能够从游戏中去学习的话，而数独就是一"
+"种很好玩的游戏。我们可以列举很多以数独来学习逻辑的优点:"
+
+#: ..\logic.rst:17
+msgid "Its rules are so simple, everybody can know it in 5 minutes,"
+msgstr "它的规则相当简单, 任何一个人能够在5分钟内了解它。"
+
+#: ..\logic.rst:18
+msgid "It is so complicated that have more than billions of combinations."
+msgstr "它又够复杂，它可以有多达数十亿种的组合。"
+
+#: ..\logic.rst:19
+msgid "It can be separated into different difficult levels easily."
+msgstr "它可以分各种不同的困难程度，来让不同程度的人都能使用。"
+
+#: ..\logic.rst:22
+msgid "Learning Logic by Learning Python Programming"
+msgstr "以学习 Python 程式设计来学习逻辑"
+
+#: ..\logic.rst:24
+msgid ""
+"Learning a computer language is the nature way to learn logic. Python is a "
+"interpreter script language, you can get every resource from https://www."
+"python.org/. I recite a period of Python FAQ<https://docs.python.org/3/faq/"
+"general.html> about for the beginning programmers:"
+msgstr ""
+"学习一种电脑语言是一种很直觉的方法来学习逻辑。 Python 是一种直译式电脑语言，"
+"提供一种简便的方式来实作程式的设计。你可以在下面官方网站来取得该电脑语言的所"
+"有资源: https://www.python.org/。我们从其 FAQ中剪輯一段來說明為何Python 適合"
+"程式設計的初學者: "
+
+#: ..\logic.rst:28
+msgid "Q:"
+msgstr "问题:"
+
+#: ..\logic.rst:28
+msgid "Is Python a good language for beginning programmers?"
+msgstr "对一个程式设计初学者而言，Python是否是一个好选择？"
+
+#: ..\logic.rst:39
+msgid "A:"
+msgstr "解答:"
+
+#: ..\logic.rst:31
+msgid "Yes."
+msgstr "是的。"
+
+#: ..\logic.rst:33
+msgid ""
+"It is still common to start students with a procedural and statically typed "
+"language such as Pascal, C, or a subset of C++ or Java. Students may be "
+"better served by learning Python as their first language. Python has a very "
+"simple and consistent syntax and a large standard library and, most "
+"importantly, using Python in a beginning programming course lets students "
+"concentrate on important programming skills such as problem decomposition "
+"and data type design. With Python, students can be quickly introduced to "
+"basic concepts such as loops and procedures. They can probably even work "
+"with user-defined objects in their very first course."
+msgstr ""
+"现在学生开始学习程式时，还是在使用传统的电脑语言，如Pascal, C, C++。但这是有"
+"点古板了，学生应该得到更好与更简单的方法来开始他们的程式探索，而Python 就提供"
+"了这些特点。它拥有非常简单及一致的文法结构，以及大量的标准程式库，最重要的"
+"是，它让学生能够将心思放在解决问题的程式设计技巧上，而不是在电脑科学的细节"
+"上。使用Python，学生可以很快地学习程式设的基本知识，如回圈(loops)、程序"
+"(procedures)。甚至在第一堂课，就可以让他们尝试使用自订的物件。"
+
+#: ..\logic.rst:35
+msgid ""
+"For a student who has never programmed before, using a statically typed "
+"language seems unnatural. It presents additional complexity that the student "
+"must master and slows the pace of the course. The students are trying to "
+"learn to think like a computer, decompose problems, design consistent "
+"interfaces, and encapsulate data. While learning to use a statically typed "
+"language is important in the long term, it is not necessarily the best topic "
+"to address in the students' first programming course."
+msgstr ""
+"一个从来没有程式设计经验者，一开始就使用静态式电脑语言(如C等)似乎是不自然的。"
+"它让学生必须先去了解电脑复杂的内部结构，使整个课程缓慢下来。学生必须学习如何"
+"使用电脑的角度来思考、解决问题及设计界面。虽然就长期目标而言，学习静态式电脑"
+"有其必要性与利益性，但对初学者而言，大可不必将程式设计的门槛弄得那么高。"
+
+#: ..\logic.rst:37
+msgid ""
+"Many other aspects of Python make it a good first language. Like Java, "
+"Python has a large standard library so that students can be assigned "
+"programming projects very early in the course that do something. Assignments "
+"aren't restricted to the standard four-function calculator and check "
+"balancing programs. By using the standard library, students can gain the "
+"satisfaction of working on realistic applications as they learn the "
+"fundamentals of programming. Using the standard library also teaches "
+"students about code reuse. Third-party modules such as PyGame are also "
+"helpful in extending the students' reach."
+msgstr ""
+"Python拥有很多优点来当作学习程式设计的首选电脑语言。就如同Java，它拥有大量的"
+"标准程式库，可以让学生在课堂上去实作一些专案，而这些专案都可以是一些实用的应"
+"用程式，而不是简单的加减乘除四则运算。同时，使用这些标准程式库可以让学生学习"
+"程式的再利用。其他丰富的第三方模组也非常好用，如PyGame，都可以直接拿来让学生"
+"使用。"
+
+#: ..\logic.rst:39
+msgid ""
+"Python's interactive interpreter enables students to test language features "
+"while they're programming. They can keep a window with the interpreter "
+"running while they enter their program's source in another window."
+msgstr ""
+"Python是一个互动式的直译器，可以让学生直接边撰写程式边测试。它可以让你在一个"
+"视窗边写程式，而在另外一个视窗执行与测试这些程式码。"
+
+#: ..\logic.rst:42
+msgid "Features of this Library"
+msgstr "这个程式库的特点"
+
+#: ..\logic.rst:44
+msgid ""
+"There are so many sudoku's puzzle games and studying in the world. Some are "
+"made for fun, some are for the studying of mathematics,  while this library "
+"focus on logic learning. And the logic mainly is in human view, not in "
+"computer science view. So, there are some features in this package:"
+msgstr ""
+"这世上已经有太多的数独游戏或者学习程式，有些是为了娱乐，有些是为了数学的研"
+"究，而此专案则是专注在逻辑的学习上。而且，这里的逻辑是专门以人的角度为出发"
+"点，而不是电脑科学的角度。所以这个专案有以下特点:"
+
+#: ..\logic.rst:47
+msgid "This is mainly for studying logic for human."
+msgstr "让人们学习「逻辑」 的基本精神。"
+
+#: ..\logic.rst:48
+msgid "It is NOT to plan to be a normal programming courses."
+msgstr "它「不是」要成为一般性的程式设计课程。"
+
+#: ..\logic.rst:49
+msgid "It is NOT to plan to be a studying of serious mathematics."
+msgstr "它「不是」要成为严谨的数学研究。"
+
+#: ..\logic.rst:50
+msgid ""
+"The methods of solving a sudoku are mainly in a human view, NOT in computer "
+"science view."
+msgstr "探索解数独的方法是以人的角度，而「非」电脑科学角度。"
+
+#: ..\logic.rst:51
+msgid ""
+"Let people to find their own methods to solve a sudoku, and name these "
+"methods in their own way. (This is not in this package, but should be "
+"arranged this in the courses.)"
+msgstr ""
+"让人们自己去发现解数独的方法，并且以自己的文字来命名它。 ( 这虽然不在此"
+"Python Package 里面，但必须将此安排在课程里面。)"
+
+#: ..\logic.rst:52
+msgid "Let people learning python to implement their own methods."
+msgstr "让人们能够学习Python 程式设计以时做学生们自己探索出来的方法。"
+
+#: ..\logic.rst:53
+msgid ""
+"Studying OOP programming to solve a sudoku. OOP method can be treated as "
+"human behavior."
+msgstr ""
+"学习以物件导向程式设计(OOP)来求解数独。 OOP方法可以比拟为人的思考与行为角度。"

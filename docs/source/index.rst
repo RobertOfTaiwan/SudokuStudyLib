@@ -1,4 +1,4 @@
-SudokuStudyLib
+﻿SudokuStudyLib
 ==============
 
 .. image:: logo.jpg

@@ -11,7 +11,7 @@ with open(os.path.join(here, 'CHANGES.rst')) as f:
 requires = []
 
 setup(name='SudokuStudyLib',
-      version='1.0.6',
+      version='1.0.7',
       description='Sudoku Solving Library',
       long_description=README + '\n' + CHANGES,
       classifiers=[

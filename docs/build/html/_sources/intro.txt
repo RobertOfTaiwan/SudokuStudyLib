@@ -1,4 +1,4 @@
-Welcome to SudokuStudyLib's documentation!
+﻿Welcome to SudokuStudyLib's documentation!
 ==========================================
 
 This is a tool and library for studying Logic and Python programming. It includes two packages, one is Sudoku, and another is Matrix. The Sudoku is an oop approaching library, 

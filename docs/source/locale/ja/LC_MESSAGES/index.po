@@ -1,0 +1,59 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SudokuStudyLib 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-19 13:35+0800\n"
+"PO-Revision-Date: 2014-05-21 15:08+0800\n"
+"Last-Translator: Robert J. Hwang <RobertOfTaiwan@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ..\index.rst:2
+msgid "SudokuStudyLib"
+msgstr "SudokuStudyLib"
+
+#: ..\index.rst:8
+msgid ""
+"**This is a python library for studying logic by solving Sudoku and learning "
+"the programming of python language.** Sudoku is a kind of puzzle game. it is "
+"one of the best way to learn logic, and at the same time, the Python "
+"language is one of the best computer language to learn logic. So, if we can "
+"combine these two kinds of tools to teach children or young men to learn "
+"logic, it will be perfect. This is why the project be done and going to."
+msgstr ""
+"**これは、学生が基本的なプログラミングロジックを学習するとPythonのOOPがの"
+"python3ライブラリを設計するための機会です。 *数独パズルゲームだけでなく、ロ"
+"ジックを学ぶための最高のツールの一つであり、Pythonは世界最高のコンピュータ·プ"
+"ログラミング言語を学ぶ初心者のためである。私たちは子供たちを教えるために2を組"
+"み合わせることができますので、もし、学生は、若い人たちがロジックを学び、それ"
+"が最高の組み合わせになります！これは、このプロジェクトの起源であり、それはこ"
+"のプロジェクトの目標です。"
+
+#: ..\index.rst:13
+msgid "Welcome to the Purest World of Human: Sudoku and Logic"
+msgstr "人類の最も簡単なの世界へようこそ：数独、ロジック"
+
+#: ..\index.rst:15
+msgid "Contents:"
+msgstr "内容："
+
+#: ..\index.rst:29
+msgid "Indices and tables"
+msgstr "インデックスと参照"
+
+#: ..\index.rst:31
+msgid ":ref:`genindex`"
+msgstr ":ref:`genindex`"
+
+#: ..\index.rst:32
+msgid ":ref:`modindex`"
+msgstr ":ref:`modindex`"
+
+#: ..\index.rst:33
+msgid ":ref:`search`"
+msgstr ":ref:`search`"
