@@ -1795,7 +1795,7 @@ def solve(file, loop_limit=0, rec_limit=0, check=None, level_limit=0, emu_limits
     :except SudokuDone: when a method can solve the sudoku
     :except SudokuError: when a step will break the rules of sudoku game
 
-    :return: Matrix object
+    :return: Matrix object.
 
     """
 
